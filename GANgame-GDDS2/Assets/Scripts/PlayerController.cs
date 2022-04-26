@@ -22,10 +22,10 @@ public class PlayerController : MonoBehaviour
 
     public void MovementVert(float Direction)
     {
-        transform.position += transform.up*moveSpeed*Direction*Time.deltaTime;
+        transform.position += transform.up*moveSpeed*Direction*Time.fixedDeltaTime;
     }
     public void MovementHori(float Direction)
     {
-        transform.position += transform.right * moveSpeed * Direction* Time.deltaTime;
+        transform.position += transform.right * moveSpeed * Direction* Time.fixedDeltaTime;
     }
 }
