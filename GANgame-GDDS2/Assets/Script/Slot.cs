@@ -5,7 +5,7 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     private Inventory inventory;
-    public int i; //slot numbers 
+    public int i; //slot number.
 
     private void Start()
     {

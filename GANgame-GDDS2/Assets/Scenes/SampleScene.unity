@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1215198268}
-  itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
+  itemButton: {fileID: 0}
 --- !u!58 &705630881
 CircleCollider2D:
   m_ObjectHideFlags: 0
