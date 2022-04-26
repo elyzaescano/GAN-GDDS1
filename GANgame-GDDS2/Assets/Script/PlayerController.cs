@@ -4,28 +4,46 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5;
+    public float moveSpeed = 5f;
 
+    public Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Vector2 movement;
+
+    public InventoryObject inventory;
 
     // Update is called once per frame
     void Update()
     {
-        MovementHori(Input.GetAxis("Horizontal"));
-        MovementVert(Input.GetAxis("Vertical"));
+        movement.x = Input.GetAxisRaw("Horizontal"); //left and right 
+        movement.y = Input.GetAxisRaw("Vertical"); //up and down 
+
+        //if (Input.GetKey(KeyCode.E))
+        //{
+        //    if(inventory.Container.Count != 0)
+        //    {
+        //        inventory.DropItem(inventory.Container[0].item, 1);
+        //    }
+        //}
     }
 
-    public void MovementVert(float Direction)
+    private void FixedUpdate()
     {
-        transform.position += transform.up*moveSpeed*Direction*Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-    public void MovementHori(float Direction)
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.position += transform.right * moveSpeed * Direction* Time.fixedDeltaTime;
+        var item = collision.GetComponent<Item>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
     }
 }
