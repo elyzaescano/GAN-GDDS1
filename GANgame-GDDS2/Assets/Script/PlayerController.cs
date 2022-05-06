@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); //left and right 
+        movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
         movement.y = Input.GetAxisRaw("Vertical"); //up and down 
 
         //if (Input.GetKey(KeyCode.E))
@@ -46,4 +46,13 @@ public class PlayerController : MonoBehaviour
     {
         inventory.Container.Clear();
     }
+
+
+    public void Move(float dirX, float dirY) //Joystick link
+    {
+        movement.x = dirX;
+        movement.y = dirY; 
+
+    }
+
 }

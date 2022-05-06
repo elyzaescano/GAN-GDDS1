@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerJoystickController : MonoBehaviour
 {
-    [SerializeField]
-    PlayerControllerTest player;
+    
+    PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-        player = GetComponent<PlayerControllerTest>();
+        player = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

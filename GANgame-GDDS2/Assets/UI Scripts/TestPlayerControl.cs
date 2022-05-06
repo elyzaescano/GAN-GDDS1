@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerTest : MonoBehaviour
+public class TestPlayerControl : MonoBehaviour
 {
     public float moveSpeed = 5;
     private float turnRate = 5f;
@@ -19,8 +19,8 @@ public class PlayerControllerTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //movement.x = Input.GetAxis("Horizontal");
-      //movement.y = Input.GetAxis("Vertical");
+        //movement.x = Input.GetAxis("Horizontal");
+        //movement.y = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
