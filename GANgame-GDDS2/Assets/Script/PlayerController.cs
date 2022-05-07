@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
-        movement.y = Input.GetAxisRaw("Vertical"); //up and down 
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
 
         //if (Input.GetKey(KeyCode.E))
         //{
@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
+        movement.y = Input.GetAxisRaw("Vertical"); //up and down 
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -51,8 +52,9 @@ public class PlayerController : MonoBehaviour
     public void Move(float dirX, float dirY) //Joystick link
     {
         movement.x = dirX;
-        movement.y = dirY; 
+        movement.y = dirY;
 
+        print(movement);
     }
 
 }
