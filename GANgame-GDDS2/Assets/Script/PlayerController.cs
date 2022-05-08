@@ -19,22 +19,22 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GetID();
+            
         }
     }
 
-    public void GetID()
-    {
-        foreach(InventorySlot _is in inventory.Container)
-        {
-            print(_is.item.id);
-            if(_is.item.id == 0)
-            {
-                //Instantiate(_is., transform.position, Quaternion.identity);
-            }
-        }
+    //public void GetID()
+    //{
+    //    foreach(InventorySlot _is in inventory.Container)
+    //    {
+    //        print(_is.item.id);
+    //        if(_is.item.id == 0)
+    //        {
+    //            //Instantiate(_is., transform.position, Quaternion.identity);
+    //        }
+    //    }
 
-    }
+    //}
 
     private void FixedUpdate()
     {
