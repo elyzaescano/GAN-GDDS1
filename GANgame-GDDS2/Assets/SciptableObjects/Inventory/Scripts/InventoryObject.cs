@@ -25,24 +25,6 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-    //public void DropItem(ItemObject _item, int _amount)
-    //{
-    //    bool hasItem = true;
-    //    for(int i = Container.Count-1 ; i < Container.Count; i--)
-    //    {
-    //        if(Container[i].item == _item)
-    //        {
-    //            Container[i].ReduceAmount(_amount);
-    //            Container.RemoveAt(i);
-    //            hasItem = false;
-    //            break;
-    //        }
-    //    }
-    //    if (!hasItem || Container.Count == 0)
-    //    {
-    //        Debug.Log("No Item");
-    //    }
-    //}
 }
 
 [System.Serializable]
