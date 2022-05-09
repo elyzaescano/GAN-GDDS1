@@ -17,10 +17,9 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GetID();
-        }
+        if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
+    
+        if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
     }
 
     public void GetID()
