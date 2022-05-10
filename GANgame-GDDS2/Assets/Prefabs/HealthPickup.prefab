@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6960759922827148720}
   - component: {fileID: 6960759922827148723}
   - component: {fileID: 6960759922827148722}
-  - component: {fileID: 6960759922827148725}
+  - component: {fileID: 5610680930348520234}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.515
---- !u!114 &6960759922827148725
+--- !u!114 &5610680930348520234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,8 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6960759922827148724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
+  m_Script: {fileID: 11500000, guid: f37dc3876fbb86344bd9cd7a5aa492be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 8467363010879082363, guid: b5b686a922e7eb047936259084c612c6, type: 3}
-  itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
+  item: {fileID: 11400000, guid: afb51c86487255b448df76c093174fb2, type: 2}

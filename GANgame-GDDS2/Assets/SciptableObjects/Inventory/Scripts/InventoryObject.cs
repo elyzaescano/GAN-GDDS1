@@ -38,8 +38,10 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public void DropItem(int _is, Vector2 pos) //Drops item. NOTE: Currently may still work even if item is below 0
     {
         int i = GetItemID(_is);
-        Instantiate(database.items[i].objectPrefab, new Vector2(pos.x + 2, pos.y - 4), Quaternion.identity);
+        Debug.Log(Container[i].amount);
+        Instantiate(database.items[i].objectPrefab, new Vector2(pos.x, pos.y - 2), Quaternion.identity);
         Container[i].ReduceAmount(1);
+       
     }
 
     public int GetItemID(int i)//gets item id in inventory and returns it

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2349888480402116098}
   - component: {fileID: 2349888480402116097}
   - component: {fileID: 2349888480402116096}
-  - component: {fileID: 2349888480402116103}
+  - component: {fileID: 3678529656377594242}
   m_Layer: 0
   m_Name: SwordPickup
   m_TagString: Untagged
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.515
---- !u!114 &2349888480402116103
+--- !u!114 &3678529656377594242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,8 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2349888480402116102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
+  m_Script: {fileID: 11500000, guid: f37dc3876fbb86344bd9cd7a5aa492be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 8467363010879082363, guid: b5b686a922e7eb047936259084c612c6, type: 3}
-  itemButton: {fileID: 5437812880404609763, guid: 57eefe2d9c8b26743952bceb9be40c92, type: 3}
+  item: {fileID: 11400000, guid: 4c6ba44d616faa84d9a2292937c3aa13, type: 2}
