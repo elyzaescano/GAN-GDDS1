@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEditor;
 
-[CreateAssetMenu(fileName ="New Inventory", menuName ="InventorySystem/Inventory")]
+[CreateAssetMenu(fileName = "New Inventory", menuName = "InventorySystem/Inventory")]
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
@@ -23,29 +23,29 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public void AddItem(ItemObject _item, int _amount)
     {
 
-        for(int i = 0; i < Container.Count; i++)
+        for (int i = 0; i < Container.Count; i++)
         {
-            if(Container[i].item == _item)
+            if (Container[i].item == _item)
             {
                 Container[i].AddAmount(_amount);
                 return;
             }
 
         }
-        Container.Add(new InventorySlot(database.GetID[_item],_item, _amount));
-        
+        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount));
+
     }
 
-    public void DropItem( int _is, Vector2 pos) //Drops item. NOTE: Currently may still work even if item is below 0
+    public void DropItem(int _is, Vector2 pos) //Drops item. NOTE: Currently may still work even if item is below 0
     {
         int i = GetItemID(_is);
-        Instantiate(database.items[i].objectPrefab,new Vector2(pos.x+2,pos.y-4), Quaternion.identity);
+        Instantiate(database.items[i].objectPrefab, new Vector2(pos.x + 2, pos.y - 4), Quaternion.identity);
         Container[i].ReduceAmount(1);
     }
 
     public int GetItemID(int i)//gets item id in inventory and returns it
     {
-        int id = Container[i].ID;      
+        int id = Container[i].ID;
         Debug.Log(id);
         return id;
     }
@@ -75,15 +75,15 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        for(int i = 0; i < Container.Count; i++) Container[i].item = database.GetItem[Container[i].ID];
-        
+        for (int i = 0; i < Container.Count; i++) Container[i].item = database.GetItem[Container[i].ID];
+
     }
 
     public void OnBeforeSerialize()
     {
 
     }
-
+}
 [System.Serializable]
 public class InventorySlot
 {
