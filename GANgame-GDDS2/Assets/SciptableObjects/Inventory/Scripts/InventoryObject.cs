@@ -9,20 +9,20 @@ using UnityEditor;
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
+    [SerializeField]
     private ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>();
 
     private void OnEnable()
     {
 #if UNITY_EDITOR
-        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/ItemDatabase.asset", typeof(ItemDatabaseObject));
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
 #else
-        database = Resources.Load<ItemDatabaseObject>("ItemDatabase");
+        database = Resources.Load<ItemDatabaseObject>("Database");
 #endif
     }
     public void AddItem(ItemObject _item, int _amount)
     {
-
         for (int i = 0; i < Container.Count; i++)
         {
             if (Container[i].item == _item)
@@ -30,7 +30,6 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
                 Container[i].AddAmount(_amount);
                 return;
             }
-
         }
         Container.Add(new InventorySlot(database.GetID[_item], _item, _amount));
 
@@ -72,7 +71,6 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
 
 
-
     public void OnAfterDeserialize()
     {
         for (int i = 0; i < Container.Count; i++) Container[i].item = database.GetItem[Container[i].ID];
@@ -81,9 +79,9 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize()
     {
-
     }
 }
+
 [System.Serializable]
 public class InventorySlot
 {
@@ -93,7 +91,6 @@ public class InventorySlot
 
     public InventorySlot(int _id, ItemObject _item, int _amount)
     {
-        ID = _id;
         item = _item;
         amount = _amount;
         ID = _id;
