@@ -17,23 +17,24 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
-    
-        if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
-    }
-
-    public void GetID()
-    {
-        foreach(InventorySlot _is in inventory.Container)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            print(_is.item.id);
-            if(_is.item.id == 0)
-            {
-                //Instantiate(_is., transform.position, Quaternion.identity);
-            }
+            
         }
-
     }
+
+    //public void GetID()
+    //{
+    //    foreach(InventorySlot _is in inventory.Container)
+    //    {
+    //        print(_is.item.id);
+    //        if(_is.item.id == 0)
+    //        {
+    //            //Instantiate(_is., transform.position, Quaternion.identity);
+    //        }
+    //    }
+
+    //}
 
     private void FixedUpdate()
     {
