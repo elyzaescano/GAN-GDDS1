@@ -9,8 +9,7 @@ public enum ItemType
     
 public abstract class ItemObject : ScriptableObject
 {
-    public GameObject UIprefab;
-    public GameObject objectPrefab;
+    public GameObject prefab;
     public ItemType type;
     public string itemName;
     public int id;
