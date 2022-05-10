@@ -39,7 +39,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     {
         int i = GetItemID(_is);
         Debug.Log(Container[i].amount);
-        Instantiate(database.items[i].objectPrefab, new Vector2(pos.x, pos.y - 2), Quaternion.identity);
+        Instantiate(database.items[i].objectPrefab, new Vector2(pos.x, pos.y - 1.5f), Quaternion.identity);
         Container[i].ReduceAmount(1);
        
     }
