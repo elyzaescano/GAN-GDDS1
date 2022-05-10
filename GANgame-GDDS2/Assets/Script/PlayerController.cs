@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
 
     public InventoryObject inventory;
+    public ItemDatabaseObject database;
 
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -20,15 +23,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
     
         if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.DropItem(0);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.DropItem(1);
+
+        
     }
 
-    public void GetID()
+    public void GetID(int _id)
     {
         foreach(InventorySlot _is in inventory.Container)
         {
             print(_is.item.id);
-            if(_is.item.id == 0)
+            if(_is.item.id == _id)
             {
+                //Instantiate(database.)
                 //Instantiate(_is., transform.position, Quaternion.identity);
             }
         }

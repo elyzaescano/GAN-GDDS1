@@ -34,6 +34,18 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         
     }
 
+    public void DropItem( int _id)
+    {
+        foreach(InventorySlot _item in Container)
+        {
+            if(_item.ID == _id)
+            {
+                Debug.Log(_item.ID);
+                //var item = database.GetItem.GetType();
+            }
+        }
+    }
+
     public void Save()
     {
         string saveData = JsonUtility.ToJson(this, true);
