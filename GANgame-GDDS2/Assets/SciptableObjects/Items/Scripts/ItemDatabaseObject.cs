@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 [CreateAssetMenu(fileName = "New Databse Object", menuName = "InventorySystem/Items/Database")]
 public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiver
 {
@@ -17,13 +18,16 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
         for(int i = 0; i < items.Length; i++)
         {
             GetID.Add(items[i], i);
+
             GetItem.Add(i, items[i]);
         }
     }
 
     public void OnBeforeSerialize()
     {
+
         
     }
+
 
 }

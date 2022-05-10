@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
+
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
     
         if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T)) { print(inventory.Container[0].ID); print(inventory.Container[1].ID); }
     }
+
 
  
 

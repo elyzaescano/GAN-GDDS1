@@ -22,6 +22,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
     public void AddItem(ItemObject _item, int _amount)
     {
+
         for(int i = 0; i < Container.Count; i++)
         {
             if(Container[i].item == _item)
@@ -29,6 +30,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
                 Container[i].AddAmount(_amount);
                 return;
             }
+
         }
         Container.Add(new InventorySlot(database.GetID[_item],_item, _amount));
         
@@ -70,6 +72,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
 
 
+
     public void OnAfterDeserialize()
     {
         for(int i = 0; i < Container.Count; i++) Container[i].item = database.GetItem[Container[i].ID];
@@ -78,8 +81,8 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize()
     {
+
     }
-}
 
 [System.Serializable]
 public class InventorySlot
@@ -90,6 +93,7 @@ public class InventorySlot
 
     public InventorySlot(int _id, ItemObject _item, int _amount)
     {
+        ID = _id;
         item = _item;
         amount = _amount;
         ID = _id;
