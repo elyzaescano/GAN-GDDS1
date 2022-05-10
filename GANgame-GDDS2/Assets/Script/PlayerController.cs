@@ -24,26 +24,14 @@ public class PlayerController : MonoBehaviour
     
         if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.DropItem(0);
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.DropItem(1);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.DropItem(0,this.transform.position); 
 
-        
+        if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.DropItem(1,this.transform.position);
+
+        if (Input.GetKeyDown(KeyCode.T)) { print(inventory.Container[0].ID); print(inventory.Container[1].ID); }
     }
 
-    public void GetID(int _id)
-    {
-        foreach(InventorySlot _is in inventory.Container)
-        {
-            print(_is.item.id);
-            if(_is.item.id == _id)
-            {
-                //Instantiate(database.)
-                //Instantiate(_is., transform.position, Quaternion.identity);
-            }
-        }
-
-    }
+ 
 
     private void FixedUpdate()
     {
