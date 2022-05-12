@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
 
         if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
-
+        //First iteration of item interactions
         if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.DropItem(0, this.transform.position);
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.DropItem(1, this.transform.position);

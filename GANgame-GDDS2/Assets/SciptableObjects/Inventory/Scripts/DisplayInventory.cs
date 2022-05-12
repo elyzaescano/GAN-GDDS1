@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 
 public class DisplayInventory : MonoBehaviour
-{
+{   //Manages UI Display for inventory
     public InventoryObject inventory;
-
+    //I need to change these to Gridlayout after I figure out how to use it 
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEMS;

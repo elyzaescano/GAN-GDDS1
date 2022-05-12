@@ -5,6 +5,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEditor;
 
+
+//Creates and handles item management in the player's inventory.
 [CreateAssetMenu(fileName = "New Inventory", menuName = "InventorySystem/Inventory")]
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
@@ -21,17 +23,17 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         database = Resources.Load<ItemDatabaseObject>("Database");
 #endif
     }
-    public void AddItem(ItemObject _item, int _amount)
+    public void AddItem(ItemObject _item, int _amount) //Adds item to player inventory
     {
         for (int i = 0; i < Container.Count; i++)
         {
             if (Container[i].item == _item)
             {
-                Container[i].AddAmount(_amount);
+                Container[i].AddAmount(_amount); //If item already exists, adds to the amount 
                 return;
             }
         }
-        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount));
+        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); //Adds an inventory slot and passes item variables to constructor
 
     }
 
@@ -85,13 +87,13 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 }
 
 [System.Serializable]
-public class InventorySlot
+public class InventorySlot  //Inventory class
 {
     public int ID;
     public ItemObject item;
     public int amount;
 
-    public InventorySlot(int _id, ItemObject _item, int _amount)
+    public InventorySlot(int _id, ItemObject _item, int _amount) //Item constructor
     {
         item = _item;
         amount = _amount;

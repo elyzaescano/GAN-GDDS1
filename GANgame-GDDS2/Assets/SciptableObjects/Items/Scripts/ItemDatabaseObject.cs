@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "New Database Object", menuName = "InventorySystem/Items/Database")]
 public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiver
 {   //Item Database that stores ID for reference in serialization

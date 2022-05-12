@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1215198268}
+  inventory: {fileID: 0}
   itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
 --- !u!212 &86410545
 SpriteRenderer:
@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1215198268}
+  inventory: {fileID: 0}
   itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
 --- !u!212 &896642440
 SpriteRenderer:
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1215198268}
+  inventory: {fileID: 0}
   itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
 --- !u!212 &974806112
 SpriteRenderer:
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1215198268}
+  inventory: {fileID: 0}
   itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
 --- !u!212 &987109331
 SpriteRenderer:
@@ -2032,7 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1215198268}
+  inventory: {fileID: 0}
   itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
 --- !u!212 &1199886778
 SpriteRenderer:
@@ -2086,17 +2086,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1215198268 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8467363010879082363, guid: b5b686a922e7eb047936259084c612c6, type: 3}
-  m_PrefabInstance: {fileID: 8467363009672821575}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923750198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb37f5ee615c6964fa55655eaccad9f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1265022913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,7 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd46997efeaae428acd32f4689cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1215198268}
+  inventory: {fileID: 0}
   itemButton: {fileID: 5326471685006982541, guid: 6530da943ff987b418c1460f98546051, type: 3}
 --- !u!212 &1818942576
 SpriteRenderer:
@@ -3060,5 +3049,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8467363010879082363, guid: b5b686a922e7eb047936259084c612c6, type: 3}
+    - {fileID: 1150874215962410684, guid: b5b686a922e7eb047936259084c612c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5b686a922e7eb047936259084c612c6, type: 3}
