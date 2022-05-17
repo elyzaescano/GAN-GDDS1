@@ -41,7 +41,6 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     {
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
-        //Broken lol: doesnt instantiate correct item based on order in inventory
         Instantiate(IO.objectPrefab, new Vector2(pos.x, pos.y - 1.5f), Quaternion.identity);
         Container[_is].ReduceAmount(1);
        
