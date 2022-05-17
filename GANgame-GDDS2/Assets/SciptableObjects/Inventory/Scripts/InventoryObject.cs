@@ -78,7 +78,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         }
         else
         {
-            Container.RemoveAt(i);
+            Container.RemoveAt(i);  
         }
     }
 

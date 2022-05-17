@@ -19,6 +19,8 @@ MonoBehaviour:
   id: 2
   description: Totally a key
   recipes:
-  - other: {fileID: 0}
-    result: {fileID: 0}
+  - other: {fileID: 11400000, guid: 4c6ba44d616faa84d9a2292937c3aa13, type: 2}
+    result: {fileID: 11400000, guid: afb51c86487255b448df76c093174fb2, type: 2}
+  - other: {fileID: 11400000, guid: afb51c86487255b448df76c093174fb2, type: 2}
+    result: {fileID: 11400000, guid: 4c6ba44d616faa84d9a2292937c3aa13, type: 2}
   _lock: {fileID: 0}
