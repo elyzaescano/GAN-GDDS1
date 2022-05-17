@@ -54,14 +54,32 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         return _io;
     }
 
-    public void CombineItem(int _reactor, int _reagent)
+    public void CombineItem(int _reactor, int _reagent, bool _crafted)
     {
+        Debug.Log("Crafting");
+        bool crafted = _crafted;
         ItemObject reactor = GetItemObject(_reactor);
         ItemObject reagent = GetItemObject(_reagent);
         ItemObject result = reactor.Combine(reagent);
 
-        Container.Add(new InventorySlot(result.id, result, 1));
-        Container[_reactor].ReduceAmount(1);Container[_reagent].ReduceAmount(1);
+        if(!crafted){
+            AddItem(result, 1);
+            //Container[_reactor].ReduceAmount(1); Container[_reagent].ReduceAmount(1);
+            RemoveItem(reactor.id);
+            crafted = true;
+        }
+    }
+
+    public void RemoveItem(int i)
+    {
+        if (Container[i].amount > 0)
+        {
+            Container[i].ReduceAmount(1);
+        }
+        else
+        {
+            Container.RemoveAt(i);
+        }
     }
 
 
@@ -118,6 +136,7 @@ public class InventorySlot  //Inventory class
 
     public void ReduceAmount(int value)
     {
-        amount -= value;
+         amount -= value;
+         
     }
 }
