@@ -18,21 +18,21 @@ public class DialogueTest : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I) && playerInRange) //Letter will open if 'I' is pressed and playerInRange is true
-        {
-            //Checks if dialogueBox is active, if active, then disable.
-            if (dialogueBox.activeInHierarchy)
-            {
-                dialogueBox.SetActive(false);
-            } else
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = dialogue; //Changes text in dialogue box
-            }
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.I) && playerInRange) //Letter will open if 'I' is pressed and playerInRange is true
+    //    {
+    //        //Checks if dialogueBox is active, if active, then disable.
+    //        if (dialogueBox.activeInHierarchy)
+    //        {
+    //            dialogueBox.SetActive(false);
+    //        } else
+    //        {
+    //            dialogueBox.SetActive(true);
+    //            dialogueText.text = dialogue; //Changes text in dialogue box
+    //        }
+    //    }
+    //}
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +49,22 @@ public class DialogueTest : MonoBehaviour
         {
             playerInRange = false;
             dialogueBox.SetActive(false); //dialogueBox not active when out of range
+        }
+    }
+
+    public void SetDiary()
+    {
+        if (playerInRange)
+        {
+            if (dialogueBox.activeInHierarchy)
+            {
+                dialogueBox.SetActive(false);
+            }
+            else
+            {
+                dialogueBox.SetActive(true);
+                dialogueText.text = dialogue; //Changes text in dialogue box
+            }
         }
     }
 }
