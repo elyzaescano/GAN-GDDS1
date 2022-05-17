@@ -43,6 +43,7 @@ public class DisplayInventory : MonoBehaviour
             if (itemsDisplay.ContainsKey(inventory.Container[i]))
             {
                 itemsDisplay[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                
             }
             else
             {
@@ -52,6 +53,12 @@ public class DisplayInventory : MonoBehaviour
                 itemsDisplay.Add(inventory.Container[i], obj);
             }
         }
+        
+    }
+
+    public void RemoveInventorySlotUI(int i)
+    {
+        //itemsDisplay[i]
     }
 
     public Vector3 GetPos(int i)
