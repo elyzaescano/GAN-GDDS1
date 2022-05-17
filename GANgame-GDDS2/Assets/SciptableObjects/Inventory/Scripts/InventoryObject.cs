@@ -54,6 +54,16 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         return _io;
     }
 
+    public void CombineItem(int _reactor, int _reagent)
+    {
+        ItemObject reactor = GetItemObject(_reactor);
+        ItemObject reagent = GetItemObject(_reagent);
+        ItemObject result = reactor.Combine(reagent);
+
+        Container.Add(new InventorySlot(result.id, result, 1));
+        Container[_reactor].ReduceAmount(1);Container[_reagent].ReduceAmount(1);
+    }
+
 
     public void Save()
     {

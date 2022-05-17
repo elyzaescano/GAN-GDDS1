@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         //First iteration of item interactions
         if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.DropItem(0, this.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.DropItem(1, this.transform.position);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.CombineItem(0,1 );
 
         if (Input.GetKeyDown(KeyCode.T)) { print(inventory.Container[0].ID); print(inventory.Container[1].ID); }
     }
