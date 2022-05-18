@@ -74,14 +74,20 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void RemoveItem(int i)
     {
-        if (Container[i].amount > 1)
+        foreach(InventorySlot _is in Container)
         {
-            Container[i].ReduceAmount(1);
-        }
-        else
-        {
-            Container.RemoveAt(i);
-            //inventoryUI.RemoveInventorySlotUI(i);
+            if(_is.ID == i)
+            {
+                if(_is.amount > 1)
+                {
+                    _is.ReduceAmount(1);
+                }
+                else
+                {
+                    Container.Remove(_is);
+                    break;
+                }
+            }
         }
     }
 
@@ -130,7 +136,7 @@ public class InventorySlot  //Inventory class
         item = _item;
         amount = _amount;
         ID = _id;
-
+        Debug.Log("New " + _item + " Created");
     }
     public void AddAmount(int value)
     {

@@ -42,7 +42,14 @@ public class PlayerController : MonoBehaviour
             if (reactor && reagent != null){ StartCoroutine(Crafting(reactor, reagent)); }
         }
 
-        if (Input.GetKeyDown(KeyCode.T)) { print(inventory.Container); }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            foreach(InventorySlot x in inventory.Container)
+            {
+                print(x.item);
+                print(inventory.Container.Count);
+            }
+        }
 
     }
 
@@ -50,10 +57,11 @@ public class PlayerController : MonoBehaviour
     {
         ItemObject io = reactor.Combine(reagent);
         inventoryUI.AddNewItem(io);
-        inventory.AddItem(io, 1);
+        inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
         yield return 1;
 
-        inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
+        
+        inventory.AddItem(io, 1);
         inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
 
     }
