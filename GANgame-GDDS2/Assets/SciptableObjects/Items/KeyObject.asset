@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8536f8b6d4e36f4aa947f6ed67e292a, type: 3}
   m_Name: KeyObject
   m_EditorClassIdentifier: 
+  itemIcon: {fileID: 993590239045490679, guid: 562def6b9e40f8b469ee3431d45044d8, type: 3}
   UIprefab: {fileID: 7368987338422667837, guid: 76e92c3a53ea2a34798e4514352ddcec, type: 3}
   objectPrefab: {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
   type: 0

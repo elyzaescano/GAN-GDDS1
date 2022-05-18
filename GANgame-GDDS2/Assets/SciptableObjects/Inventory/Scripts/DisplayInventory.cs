@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DisplayInventory : MonoBehaviour
+public class DisplayInventory : MonoBehaviour       //CURRENTLY UNUSED. REFER TO InventoryUI FOR CURRENT SCRIPT 
 {   //Manages UI Display for inventory
     public InventoryObject inventory;
     //I need to change these to Gridlayout after I figure out how to use it 
@@ -12,7 +12,7 @@ public class DisplayInventory : MonoBehaviour
     public int X_SPACE_BETWEEN_ITEMS;
     public int Y_SPACE_BETWEEN_ITEMS;
     public int NUMBER_OF_COLUMN;
-    Dictionary<InventorySlot, GameObject> itemsDisplay = new Dictionary<InventorySlot, GameObject>();
+    public Dictionary<InventorySlot, GameObject> itemsDisplay = new Dictionary<InventorySlot, GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,7 @@ public class DisplayInventory : MonoBehaviour
     void Update()
     {
         UpdateDisplay();
+        
     }
 
     public void CreateDisplay()
@@ -45,20 +46,30 @@ public class DisplayInventory : MonoBehaviour
                 itemsDisplay[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                 
             }
-            else
+            else if(itemsDisplay.Count < inventory.Container.Count)
             {
                 var obj = Instantiate(inventory.Container[i].item.UIprefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPos(i);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                 itemsDisplay.Add(inventory.Container[i], obj);
             }
+            //if (inventory.Container.Count < i) print("Less than shown");
+            if (itemsDisplay.Count > inventory.Container.Count)
+            {
+                itemsDisplay.Remove(inventory.Container[i]);
+            }
         }
         
     }
 
-    public void RemoveInventorySlotUI(int i)
+    public void RemoveInventorySlotUI(int i, ItemObject _item)
     {
-        //itemsDisplay[i]
+        if(itemsDisplay.Count > inventory.Container.Count)
+        {
+            itemsDisplay.Remove(inventory.Container[i]);
+        }
+        itemsDisplay.Remove(inventory.Container[i]);
+        //DestroyImmediate(obj,true);
     }
 
     public Vector3 GetPos(int i)

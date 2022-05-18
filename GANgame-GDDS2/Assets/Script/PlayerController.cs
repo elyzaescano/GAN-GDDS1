@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public InventoryObject inventory;
     public ItemDatabaseObject database;
-
+    public InventoryUI inventoryUI;
 
 
     // Update is called once per frame
@@ -25,13 +25,38 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
         //First iteration of item interactions
-        if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.DropItem(0, this.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.CombineItem(0,1, false );
+        //----------
 
-        if (Input.GetKeyDown(KeyCode.T)) { print(inventory.Container[0].ID); print(inventory.Container[1].ID); }
+        //Drops item in first slot
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            inventory.DropItem(0, this.transform.position);
+            inventoryUI.RemoveItem(inventory.GetItemObject(0));
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ItemObject reactor = inventory.GetItemObject(0); ItemObject reagent = inventory.GetItemObject(1);
+            if (reactor && reagent != null){ StartCoroutine(Crafting(reactor, reagent)); }
+        }
+
+        if (Input.GetKeyDown(KeyCode.T)) { print(inventory.Container); }
+
     }
 
+    public IEnumerator Crafting(ItemObject reactor, ItemObject reagent)
+    {
+        ItemObject io = reactor.Combine(reagent);
+        inventoryUI.AddNewItem(io);
+        inventory.AddItem(io, 1);
+        yield return 1;
+
+        inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
+        inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
+
+    }
 
 
     private void FixedUpdate()
@@ -46,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if (item)
         {
             inventory.AddItem(item.item, 1);
+            inventoryUI.AddNewItem(item.item);
             Destroy(collision.gameObject);
         }
     }

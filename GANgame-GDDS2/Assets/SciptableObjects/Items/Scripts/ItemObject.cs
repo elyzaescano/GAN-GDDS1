@@ -12,6 +12,7 @@ public abstract class ItemObject : ScriptableObject
         Key, Note, Diary, Tool, Potion, Sword, Default
     }
 
+    public Sprite itemIcon;
     public GameObject UIprefab;
     public GameObject objectPrefab;
     public Type type;
