@@ -58,9 +58,7 @@ public class PlayerController : MonoBehaviour
         ItemObject io = reactor.Combine(reagent);
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
-        yield return 1;
-
-        
+        yield return 1;       
         inventory.AddItem(io, 1);
         inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
 
