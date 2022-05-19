@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
 
-        if (Input.GetKeyDown(KeyCode.Space)) inventory.Load();
+        if (Input.GetKeyDown(KeyCode.Space)) inventory.Load(); 
         //First iteration of item interactions
 
         //----------
@@ -48,7 +48,9 @@ public class PlayerController : MonoBehaviour
             {
                 print(x.item);
                 print(inventory.Container.Count);
+                StartCoroutine(inventoryUI.UpdateUIFromLoad(x));            
             }
+
         }
 
     }

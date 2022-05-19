@@ -43,4 +43,23 @@ public class InventoryUI : MonoBehaviour
         UpdateSlot(_itemUI.FindIndex(i => i.item == _item), null);
         print("removed" + _item);
     }
+
+    public void UpdateFullUI(InventorySlot _is)
+    {
+        for (int i = 0; i < _is.amount; i++)
+        {
+            AddNewItem(_is.item);
+        }
+    }
+ 
+
+    public IEnumerator UpdateUIFromLoad(InventorySlot _is)
+    {
+        foreach(ItemUI iu in _itemUI)
+        {
+            iu.UpdateImage(null);
+        }
+        yield return 1;
+        UpdateFullUI(_is);
+    }
 }

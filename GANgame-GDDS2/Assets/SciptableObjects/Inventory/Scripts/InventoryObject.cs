@@ -37,7 +37,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         Debug.Log("added " + _item);
     }
 
-    public void DropItem(int _is, Vector2 pos) //Drops item. NOTE: Currently may still work even if item is below 0
+    public void DropItem(int _is, Vector2 pos) 
     {
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
