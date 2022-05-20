@@ -8,6 +8,6 @@ public class SwordObject : ItemObject
     public int damage;
     public void Awake()
     {
-        type = ItemType.Sword;
+        type = Type.Sword;
     }
 }

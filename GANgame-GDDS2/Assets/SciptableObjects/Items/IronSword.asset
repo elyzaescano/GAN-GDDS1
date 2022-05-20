@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9747bdfc810a114dba5d03236b5637e, type: 3}
   m_Name: IronSword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5970242321959697482, guid: a7c90464a8ad5d34194842ad22a14872, type: 3}
+  UIprefab: {fileID: 5970242321959697482, guid: a7c90464a8ad5d34194842ad22a14872, type: 3}
+  objectPrefab: {fileID: 2349888480402116102, guid: 8500bec949fb2ec4da5069275736c91c, type: 3}
   type: 5
   itemName: IronSword
   id: 1
   description: Deals damage ( not really)
+  recipes:
+  - other: {fileID: 11400000, guid: afb51c86487255b448df76c093174fb2, type: 2}
+    result: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
+  - other: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
+    result: {fileID: 11400000, guid: afb51c86487255b448df76c093174fb2, type: 2}
   damage: 5

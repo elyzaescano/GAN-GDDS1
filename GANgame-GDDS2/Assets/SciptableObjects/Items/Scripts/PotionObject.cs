@@ -7,6 +7,6 @@ public class PotionObject : ItemObject
 {
     public void Awake()
     {
-        type = ItemType.Potion;
+        type = Type.Potion;
     }
 }

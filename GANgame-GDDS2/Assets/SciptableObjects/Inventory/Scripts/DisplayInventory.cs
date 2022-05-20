@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 
 public class DisplayInventory : MonoBehaviour
-{
+{   //Manages UI Display for inventory
     public InventoryObject inventory;
-
+    //I need to change these to Gridlayout after I figure out how to use it 
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEMS;
@@ -30,7 +30,7 @@ public class DisplayInventory : MonoBehaviour
     {
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+            var obj = Instantiate(inventory.Container[i].item.UIprefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPos(i);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
         }
@@ -43,15 +43,22 @@ public class DisplayInventory : MonoBehaviour
             if (itemsDisplay.ContainsKey(inventory.Container[i]))
             {
                 itemsDisplay[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                
             }
             else
             {
-                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+                var obj = Instantiate(inventory.Container[i].item.UIprefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPos(i);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                 itemsDisplay.Add(inventory.Container[i], obj);
             }
         }
+        
+    }
+
+    public void RemoveInventorySlotUI(int i)
+    {
+        //itemsDisplay[i]
     }
 
     public Vector3 GetPos(int i)
