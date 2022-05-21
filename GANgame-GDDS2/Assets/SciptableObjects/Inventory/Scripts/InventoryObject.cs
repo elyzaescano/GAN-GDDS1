@@ -52,25 +52,9 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         Debug.Log("Getting " + _io);
         if (_io != null)
             return _io;
-        else { return null; }
+        else { Debug.Log("nth in this bish"); return null;  }
     }
 
-    //public ItemObject CombineItem(int _reactor, int _reagent, bool _crafted)
-    //{
-    //    Debug.Log("Crafting");
-    //    bool crafted = _crafted;
-    //    ItemObject reactor = GetItemObject(_reactor);
-    //    ItemObject reagent = GetItemObject(_reagent);
-    //    ItemObject result = reactor.Combine(reagent);
-
-    //    if(!crafted){
-    //        AddItem(result, 1);
-    //        //Container[_reactor].ReduceAmount(1); Container[_reagent].ReduceAmount(1);
-    //        RemoveItem(reactor.id); RemoveItem(reagent.id);
-    //        crafted = true;
-    //    }
-    //    return result;
-    //}
 
     public void RemoveItem(int i)
     {
