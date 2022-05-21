@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: ScrapMetalObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  UIprefab: {fileID: 0}
-  objectPrefab: {fileID: 0}
+  itemPrefab: {fileID: 5139995895177776049, guid: 0509877b2770d7a499bc066e8f2a89df, type: 3}
   type: 3
   itemName: 
   id: 0

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: PotionObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -6174568118843670042, guid: 562def6b9e40f8b469ee3431d45044d8, type: 3}
-  UIprefab: {fileID: 7368987338422667837, guid: 2fabe8a66873ef249b5659c8e51569ce, type: 3}
-  objectPrefab: {fileID: 6960759922827148724, guid: ecf9abcf3216f2844b2514ec1c2b145d, type: 3}
-  type: 4
+  itemPrefab: {fileID: 6960759922827148724, guid: ecf9abcf3216f2844b2514ec1c2b145d, type: 3}
+  type: 7
   itemName: Potion
   id: 0
   description: Heals you (Doesn't actually)

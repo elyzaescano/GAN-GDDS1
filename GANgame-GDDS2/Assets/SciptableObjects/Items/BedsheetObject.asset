@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: BedsheetObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  UIprefab: {fileID: 0}
-  objectPrefab: {fileID: 0}
+  itemPrefab: {fileID: 2017644858068294920, guid: 69ba63b7968d58d478a5969fe6433122, type: 3}
   type: 1
   itemName: 
   id: 0

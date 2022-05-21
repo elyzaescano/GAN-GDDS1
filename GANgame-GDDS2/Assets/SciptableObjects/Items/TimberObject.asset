@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: TimberObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  UIprefab: {fileID: 0}
-  objectPrefab: {fileID: 0}
+  itemPrefab: {fileID: 4233179619701196984, guid: fc2c9cc839af5fe4da8bd14728efccf4, type: 3}
   type: 6
   itemName: 
   id: 0

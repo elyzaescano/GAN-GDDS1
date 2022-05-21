@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: HairpinObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  UIprefab: {fileID: 0}
-  objectPrefab: {fileID: 0}
+  itemPrefab: {fileID: 3030554014558180666, guid: d0fef50d8787eb34aad92296b76e8552, type: 3}
   type: 2
   itemName: 
   id: 0

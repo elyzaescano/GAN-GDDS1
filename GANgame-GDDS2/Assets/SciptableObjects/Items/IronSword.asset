@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: IronSword
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -5208233660972903108, guid: 562def6b9e40f8b469ee3431d45044d8, type: 3}
-  UIprefab: {fileID: 5970242321959697482, guid: a7c90464a8ad5d34194842ad22a14872, type: 3}
-  objectPrefab: {fileID: 2349888480402116102, guid: 8500bec949fb2ec4da5069275736c91c, type: 3}
-  type: 5
+  itemPrefab: {fileID: 2349888480402116102, guid: 8500bec949fb2ec4da5069275736c91c, type: 3}
+  type: 8
   itemName: IronSword
   id: 1
   description: Deals damage ( not really)
