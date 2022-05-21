@@ -13,7 +13,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public string savePath;
     [SerializeField]
     private ItemDatabaseObject database;
-    public List<InventorySlot> Container = new List<InventorySlot>();
+    public List<InventorySlot> Container = new List<InventorySlot>(10);
 
     private void OnEnable()
     {
@@ -34,10 +34,10 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
             }
         }
         Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); //Adds an inventory slot and passes item variables to constructor
-
+        Debug.Log("added " + _item);
     }
 
-    public void DropItem(int _is, Vector2 pos) //Drops item. NOTE: Currently may still work even if item is below 0
+    public void DropItem(int _is, Vector2 pos) 
     {
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
@@ -49,35 +49,29 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public ItemObject GetItemObject(int i)//gets item id in inventory and returns it
     {
         ItemObject _io = Container[i].item;     
-        Debug.Log(_io);
-        return _io;
+        Debug.Log("Getting " + _io);
+        if (_io != null)
+            return _io;
+        else { Debug.Log("nth in this bish"); return null;  }
     }
 
-    public void CombineItem(int _reactor, int _reagent, bool _crafted)
-    {
-        Debug.Log("Crafting");
-        bool crafted = _crafted;
-        ItemObject reactor = GetItemObject(_reactor);
-        ItemObject reagent = GetItemObject(_reagent);
-        ItemObject result = reactor.Combine(reagent);
-
-        if(!crafted){
-            AddItem(result, 1);
-            //Container[_reactor].ReduceAmount(1); Container[_reagent].ReduceAmount(1);
-            RemoveItem(reactor.id);
-            crafted = true;
-        }
-    }
 
     public void RemoveItem(int i)
     {
-        if (Container[i].amount > 0)
+        foreach(InventorySlot _is in Container)
         {
-            Container[i].ReduceAmount(1);
-        }
-        else
-        {
-            Container.RemoveAt(i);  
+            if(_is.ID == i)
+            {
+                if(_is.amount > 1)
+                {
+                    _is.ReduceAmount(1);
+                }
+                else
+                {
+                    Container.Remove(_is);
+                    break;
+                }
+            }
         }
     }
 
@@ -126,7 +120,7 @@ public class InventorySlot  //Inventory class
         item = _item;
         amount = _amount;
         ID = _id;
-
+        Debug.Log("New " + _item + " Created");
     }
     public void AddAmount(int value)
     {
