@@ -16,7 +16,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
   type: 0
   itemName: Key
-  id: 2
+  id: 6
   description: Totally a key
   recipes:
   - other: {fileID: 11400000, guid: 4c6ba44d616faa84d9a2292937c3aa13, type: 2}

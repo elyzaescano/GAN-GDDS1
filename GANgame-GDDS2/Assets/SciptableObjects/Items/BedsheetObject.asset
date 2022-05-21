@@ -15,7 +15,9 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 2017644858068294920, guid: 69ba63b7968d58d478a5969fe6433122, type: 3}
   type: 1
-  itemName: 
-  id: 0
+  itemName: Bedsheet
+  id: 1
   description: 
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000}
+    result: {fileID: 11400000, guid: 21440597967a71043a63ee36eddc08fd, type: 2}

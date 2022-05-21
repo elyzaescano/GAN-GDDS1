@@ -36,12 +36,14 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        //Takes item in first and second slot and combines them
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ItemObject reactor = inventory.GetItemObject(0); ItemObject reagent = inventory.GetItemObject(1);
             if (reactor && reagent != null){ StartCoroutine(Crafting(reactor, reagent)); }
         }
 
+        //Reloads inventory UI
         if (Input.GetKeyDown(KeyCode.T))
         {
             foreach(InventorySlot x in inventory.Container)
@@ -55,12 +57,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //Crafting Coroutine
     public IEnumerator Crafting(ItemObject reactor, ItemObject reagent)
     {
+        //Access reactor ItemObject Combine script. 
+        //Passes reagent ItemObject into it.
         ItemObject io = reactor.Combine(reagent);
+        //Updates UI
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
         yield return 1;       
+        //Updates Inventory
         inventory.AddItem(io, 1);
         inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
 
@@ -84,6 +91,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Empties inventory upon application quit
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();

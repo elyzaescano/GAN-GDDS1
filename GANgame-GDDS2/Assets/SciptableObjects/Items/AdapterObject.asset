@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74ade69ec97dae4287acdfb179a5b78, type: 3}
-  m_Name: TimberObject
+  m_Script: {fileID: 11500000, guid: dd79d1f9e22b9bd4b8112b10158b270a, type: 3}
+  m_Name: AdapterObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 4233179619701196984, guid: fc2c9cc839af5fe4da8bd14728efccf4, type: 3}
-  type: 6
-  itemName: Timber
-  id: 12
+  itemPrefab: {fileID: 0}
+  type: 4
+  itemName: 
+  id: 0
   description: 
   recipes:
-  - other: {fileID: 11400000}
-    result: {fileID: 11400000, guid: 40dd029b59cb3f4449e196bce481cc26, type: 2}
+  - other: {fileID: 11400000, guid: e102fb929f6f47f448d0fde7868b6c2d, type: 2}
+    result: {fileID: 11400000, guid: 3d405d2197777de4da364406b0bacb18, type: 2}

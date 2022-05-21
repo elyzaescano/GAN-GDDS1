@@ -15,7 +15,9 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 3030554014558180666, guid: d0fef50d8787eb34aad92296b76e8552, type: 3}
   type: 2
-  itemName: 
-  id: 0
+  itemName: Hairpin
+  id: 4
   description: 
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000, guid: 48158a4077a2ac94da55593179f159c9, type: 2}
+    result: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}

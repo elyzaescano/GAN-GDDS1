@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Timber Object", menuName = "InventorySystem/Items/Timber")]
 public class TimberObject : ItemObject
 {
-    private void Awake()
+    public void Awake()
     {
         type = Type.Timber;
     }

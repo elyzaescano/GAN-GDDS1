@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1b65d154546e94ebf719cdd130d250, type: 3}
+  m_Name: PhonePlugObject
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 0}
+  itemPrefab: {fileID: 5086239731914669939, guid: cffbb211d5354cd44bfab1afefc3ca10, type: 3}
+  type: 9
+  itemName: 
+  id: 8
+  description: 
+  recipes: []

@@ -25,7 +25,9 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
     public void AddItem(ItemObject _item, int _amount) //Adds item to player inventory
     {
-        for (int i = 0; i < Container.Count; i++)
+        //For loop that checks if item already exists in inventory,
+        //Then adds to amount if item is already in inventory.
+        for (int i = 0; i < Container.Count; i++) 
         {
             if (Container[i].item == _item)
             {
@@ -33,12 +35,15 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
                 return;
             }
         }
-        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); //Adds an inventory slot and passes item variables to constructor
+        //If item is not already in inventory
+        //Adds an inventory slot and passes item variables to constructor
+        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); 
         Debug.Log("added " + _item);
     }
 
     public void DropItem(int _is, Vector2 pos) 
     {
+        //Get's an ItemObject from GetItemObject(), Then drops the item.
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
         Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - 1.5f), Quaternion.identity);
@@ -48,15 +53,20 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public ItemObject GetItemObject(int i)//gets item id in inventory and returns it
     {
+        //The keypress passes an integer into this function,
+        //it then returns an ItemObject corresponding to it's order in the inventory
         ItemObject _io = Container[i].item;     
         Debug.Log("Getting " + _io);
+
+        //If there is no item, returns a null. 
+        //If there is item, returns ItemObject.
         if (_io != null)
             return _io;
         else { Debug.Log("nth in this bish"); return null;  }
     }
 
 
-    public void RemoveItem(int i)
+    public void RemoveItem(int i)   //Ridiculously inefficient way to remove an item from the inventory. But it works
     {
         foreach(InventorySlot _is in Container)
         {
@@ -75,7 +85,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         }
     }
 
-
+    //Save-Load system for inventory. Tbh I don't quite get it either.
     public void Save()
     {
         string saveData = JsonUtility.ToJson(this, true);

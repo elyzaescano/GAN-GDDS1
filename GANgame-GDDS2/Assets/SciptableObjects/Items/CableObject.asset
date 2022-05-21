@@ -15,7 +15,9 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 2261576813399298374, guid: 721bb4235928ed449a99ab898b3b5f98, type: 3}
   type: 5
-  itemName: 
-  id: 0
+  itemName: Cable
+  id: 3
   description: 
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000, guid: 3a0d7492d1bf93247b81b4f3ef003900, type: 2}
+    result: {fileID: 11400000, guid: 3d405d2197777de4da364406b0bacb18, type: 2}

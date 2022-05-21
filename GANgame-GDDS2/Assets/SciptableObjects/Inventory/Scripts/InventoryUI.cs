@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    //Creates a list of InventorySlots in the UI. Limit has to be the same as InventorySlots
     public List<ItemUI> _itemUI = new List<ItemUI>(10);
     public GameObject slotPrefab;
     public Transform slotPanel;
@@ -43,6 +44,8 @@ public class InventoryUI : MonoBehaviour
         UpdateSlot(_itemUI.FindIndex(i => i.item == _item), null);
         print("removed" + _item);
     }
+
+    //Ok. I spent like 3 hours figuring out how to reload the UI. This was the only way that worked from the POV of a beginner programmer, thank you.
 
     public void UpdateFullUI(InventorySlot _is)
     {
