@@ -9,12 +9,11 @@ public abstract class ItemObject : ScriptableObject
 
     public enum Type
     {
-        Key, Note, Diary, Tool, Potion, Sword, Default
+        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Potion, Sword, Default
     }
 
     public Sprite itemIcon;
-    public GameObject UIprefab;
-    public GameObject objectPrefab;
+    public GameObject itemPrefab;
     public Type type;
     public string itemName;
     public int id;

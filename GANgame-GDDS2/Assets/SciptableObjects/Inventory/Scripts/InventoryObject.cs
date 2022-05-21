@@ -41,7 +41,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     {
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
-        Instantiate(IO.objectPrefab, new Vector2(pos.x, pos.y - 1.5f), Quaternion.identity);
+        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - 1.5f), Quaternion.identity);
         Container[_is].ReduceAmount(1);
        
     }
