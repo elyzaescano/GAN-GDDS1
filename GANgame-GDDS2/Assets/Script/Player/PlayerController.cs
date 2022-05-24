@@ -127,10 +127,17 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float dirX, float dirY) //Joystick link
     {
-        movement.x = dirX;
-        movement.y = dirY;
+        if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
+        {
+            movement.x = dirX;
+        }else if (Mathf.Abs(dirX) < Mathf.Abs(dirY))
+        {
+            movement.y = dirY;
+        }
+        //movement.x = dirX;
+        //movement.y = dirY;
 
-        print(movement);
+        //print(movement);
     }
 
     public void AnimationController()
