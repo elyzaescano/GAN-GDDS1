@@ -27963,6 +27963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 3761094713383455396, guid: cd995e2a5581812438121220586023f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd995e2a5581812438121220586023f4, type: 3}
 --- !u!1 &1590784679

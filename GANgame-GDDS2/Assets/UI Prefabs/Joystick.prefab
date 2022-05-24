@@ -93,7 +93,7 @@ MonoBehaviour:
   control: {fileID: 3761094713383455397}
   sensitivity: 3
   radius: 40
-  dragColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  dragColor: {r: 1, g: 0, b: 0, a: 1}
   consolePrintAxis: 0
   UITextPrintAxis: {fileID: 0}
 --- !u!114 &3761094711965594241
