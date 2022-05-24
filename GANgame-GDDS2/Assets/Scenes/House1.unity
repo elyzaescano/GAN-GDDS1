@@ -27963,6 +27963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 3761094713383455396, guid: cd995e2a5581812438121220586023f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd995e2a5581812438121220586023f4, type: 3}
 --- !u!1 &1590784679
@@ -28142,7 +28146,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2.6666667}
+    oldSize: {x: 1.2857143, y: 2.2857144}
     newSize: {x: 1.8, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -28168,7 +28172,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2.6666667}
+    oldSize: {x: 1.2857143, y: 2.2857144}
     newSize: {x: 1.8, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
