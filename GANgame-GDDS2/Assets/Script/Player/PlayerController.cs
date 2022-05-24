@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public ItemDatabaseObject database;
     public InventoryUI inventoryUI;
 
+    public Animator playerAnim;
+
 
     // Update is called once per frame
     void Update()
