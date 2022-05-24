@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnim;
 
+    private void Start()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -56,6 +60,8 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        playerAnim.SetFloat("Speed.X", movement.x);
+        playerAnim.SetFloat("Speed.Y", movement.y);
 
     }
 
@@ -78,8 +84,27 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        movement = Vector2.zero;
         movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
         movement.y = Input.GetAxisRaw("Vertical"); //up and down 
+        if (movement.x > 0)
+        {
+            movement = Vector2.right;
+        }
+        else if (movement.x < 0)
+        {
+            movement = Vector2.left;
+        }
+        if (movement.y > 0)
+        {
+            movement = Vector2.up;
+        }
+        else if (movement.y < 0)
+        {
+            movement = Vector2.down;
+        }
+
+        if (movement.x != 0 || movement.y != 0) { playerAnim.SetBool("IsMoving", true); } else { playerAnim.SetBool("IsMoving", false); }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -106,6 +131,17 @@ public class PlayerController : MonoBehaviour
         movement.y = dirY;
 
         print(movement);
+    }
+
+    public void AnimationController()
+    {
+
+        //if(movement == new Vector2(0,0)) playerAnim
+        //if (movement.y > 0) playerAnim.SetBool("WalkUp", true);
+        //if (movement.y < 0) playerAnim.SetBool("WalkDown", true);
+        //if (movement.x > 0) playerAnim.SetBool("WalkRight", true);
+        //if (movement.x < 0) playerAnim.SetBool("WalkLeft", true);
+
     }
 
 }
