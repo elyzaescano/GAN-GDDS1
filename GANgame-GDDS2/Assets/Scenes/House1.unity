@@ -27706,6 +27706,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}
   inventoryUI: {fileID: 664450648}
+  playerAnim: {fileID: 0}
 --- !u!114 &1590784685
 MonoBehaviour:
   m_ObjectHideFlags: 0
