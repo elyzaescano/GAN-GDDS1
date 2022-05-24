@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1edd9fb5b454644a9204405ad77fbd, type: 3}
   m_Name: CableObject
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -1523198248423669392, guid: e328723dd35f0124c9a61369e7058e60, type: 3}
   itemPrefab: {fileID: 2261576813399298374, guid: 721bb4235928ed449a99ab898b3b5f98, type: 3}
   type: 5
   itemName: Cable

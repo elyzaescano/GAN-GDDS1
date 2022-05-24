@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c4f26a8c5887a4aacd67c745a19a64, type: 3}
   m_Name: ScrapMetalObject
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -139993833634153166, guid: e328723dd35f0124c9a61369e7058e60, type: 3}
   itemPrefab: {fileID: 5139995895177776049, guid: 0509877b2770d7a499bc066e8f2a89df, type: 3}
   type: 3
   itemName: ScrapMetal
