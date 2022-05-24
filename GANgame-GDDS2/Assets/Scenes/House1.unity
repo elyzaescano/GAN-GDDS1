@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018207c31d0dc404c9a66b4c3ce92621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
+  destGO: {fileID: 1886212825}
 --- !u!222 &127666252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27798,7 +27798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018207c31d0dc404c9a66b4c3ce92621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
+  destGO: {fileID: 1655128408}
 --- !u!1001 &1574010333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28142,7 +28142,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 3.2}
+    oldSize: {x: 1.5, y: 2.6666667}
     newSize: {x: 1.8, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -28168,7 +28168,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 3.2}
+    oldSize: {x: 1.5, y: 2.6666667}
     newSize: {x: 1.8, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -28201,7 +28201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655128408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32, y: 1.54, z: 0}
+  m_LocalPosition: {x: -30.65, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1363371122}
