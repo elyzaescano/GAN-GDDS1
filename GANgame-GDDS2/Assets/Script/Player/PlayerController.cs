@@ -84,7 +84,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        movement = Vector2.zero;
+        //print(Input.GetAxisRaw("Horizontal") + "Hori");
+        //print(Input.GetAxisRaw("Vertical")+ " Verti");
+        //movement = Vector2.zero;
         movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
         movement.y = Input.GetAxisRaw("Vertical"); //up and down 
         if (movement.x > 0)
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             movement = Vector2.left;
         }
+
         if (movement.y > 0)
         {
             movement = Vector2.up;
