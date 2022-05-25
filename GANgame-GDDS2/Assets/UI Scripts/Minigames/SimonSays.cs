@@ -42,15 +42,6 @@ public class SimonSays : MonoBehaviour
 
             fail = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            gamePanel.SetActive(true);
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            gamePanel.SetActive(false);
-        }
     }
 
     private void OnEnable()
@@ -65,7 +56,7 @@ public class SimonSays : MonoBehaviour
         StartCoroutine(ColourOrder());
     }
 
-    void GenerateCode()
+    void GenerateCode() //Generates a random sequence
     {
         for (int i = 0; i < lightOrder.Length; i++)
         {
@@ -76,7 +67,7 @@ public class SimonSays : MonoBehaviour
     public void ButtonClickOrder(int button)
     {
         buttonsPressed++;
-        if (button == lightOrder[buttonsPressed - 1])
+        if (button == lightOrder[buttonsPressed - 1]) //Checks if player has tapped on correct button
         {
             Debug.Log("pass");
             pass = true;
@@ -88,23 +79,28 @@ public class SimonSays : MonoBehaviour
             pass = false;
             win = false;
         }
-        if (buttonsPressed == level && pass == true && buttonsPressed != 5)
+
+        if (buttonsPressed == level && pass == true) //If player successfully completes this level, and...
         {
-            level++;
-            pass = false;
-            StartCoroutine(ColourOrder());
-        }
-        if (buttonsPressed == level && pass == true && buttonsPressed == 5)
-        {
-            level++;  
-            win = true;
+            if (buttonsPressed != 5) //...if player has not reached the final level, proceed to the next level
+            {
+                level++; //Proceed level
+                pass = false; //Reset level progress
+                StartCoroutine(ColourOrder()); //Show order of colours
+            }
+            if (buttonsPressed == 5) //Player has reached final level
+            {
+                level++; 
+                win = true; //Guess
+            }
         }
     }
 
-    IEnumerator ColourOrder()
+    IEnumerator ColourOrder() //Shows the order of lights for the player to press
     {
-        buttonsPressed = 0;
-        colourOrderRunCount++;
+        buttonsPressed = 0; //Resets buttonPressed for the level
+        colourOrderRunCount++; //Adds one more colour to show
+
         DisableButtons();
         for (int i = 0; i <= colourOrderRunCount; i++)
         {
@@ -121,6 +117,7 @@ public class SimonSays : MonoBehaviour
         EnableButtons();
     }
 
+    //Disables the buttons lol
     void DisableButtons()
     {
          for (int i = 0; i < buttons.Length; i++)
@@ -129,6 +126,7 @@ public class SimonSays : MonoBehaviour
         }
     }
 
+    //Enables the buttons lol
     void EnableButtons()
     {
         for (int i = 0; i < buttons.Length; i++)
