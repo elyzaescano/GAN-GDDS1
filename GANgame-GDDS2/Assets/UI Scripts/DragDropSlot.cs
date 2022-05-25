@@ -5,8 +5,6 @@ using UnityEngine.EventSystems;
 
 public class DragDropSlot : MonoBehaviour, IDropHandler
 {
-    public bool toRemove;
-    
     void Start()
     {
         StartCoroutine(PaintingPuzzleCheck());

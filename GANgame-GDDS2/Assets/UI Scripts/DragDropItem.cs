@@ -9,9 +9,6 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     [SerializeField] private Canvas canvas;
     RectTransform rectTrans;
     CanvasGroup canvasGroup;
-    DragDropSlot dragDropSlot;
-    Transform originalParent;
-    bool isDragging;
 
     Vector3 startPos;
 
@@ -19,7 +16,6 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     {
         rectTrans = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        dragDropSlot = FindObjectOfType<DragDropSlot>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
