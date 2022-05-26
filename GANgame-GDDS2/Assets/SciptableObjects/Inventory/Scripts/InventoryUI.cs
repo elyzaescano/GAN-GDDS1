@@ -66,4 +66,6 @@ public class InventoryUI : MonoBehaviour
         yield return 1;
         UpdateFullUI(_is);
     }
+
+
 }
