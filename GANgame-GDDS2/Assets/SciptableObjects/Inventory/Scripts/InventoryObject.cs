@@ -46,7 +46,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         //Get's an ItemObject from GetItemObject(), Then drops the item.
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
-        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - 1.5f), Quaternion.identity);
+        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - 2.5f), Quaternion.identity);
         Container[_is].ReduceAmount(1);
        
     }

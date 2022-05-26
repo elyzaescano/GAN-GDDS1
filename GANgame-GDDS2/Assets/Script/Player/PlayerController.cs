@@ -84,20 +84,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        movement = Vector2.zero;
+        //print(Input.GetAxisRaw("Horizontal") + "Hori");
+        //print(Input.GetAxisRaw("Vertical")+ " Verti");
+        //movement = Vector2.zero;
         movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
         movement.y = Input.GetAxisRaw("Vertical"); //up and down 
-        if (movement.x > 0)
+        if (movement.y > 0) 
+        {
+            movement = Vector2.up;
+        }
+        else if (movement.x > 0)
         {
             movement = Vector2.right;
         }
         else if (movement.x < 0)
         {
             movement = Vector2.left;
-        }
-        if (movement.y > 0)
-        {
-            movement = Vector2.up;
         }
         else if (movement.y < 0)
         {
@@ -127,21 +129,19 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float dirX, float dirY) //Joystick link
     {
-        movement.x = dirX;
-        movement.y = dirY;
+        if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
+        {
+            movement.x = dirX;
+        }else if (Mathf.Abs(dirX) < Mathf.Abs(dirY))
+        {
+            movement.y = dirY;
+        }
+        //movement.x = dirX;
+        //movement.y = dirY;
 
-        print(movement);
+        //print(movement);
     }
 
-    public void AnimationController()
-    {
 
-        //if(movement == new Vector2(0,0)) playerAnim
-        //if (movement.y > 0) playerAnim.SetBool("WalkUp", true);
-        //if (movement.y < 0) playerAnim.SetBool("WalkDown", true);
-        //if (movement.x > 0) playerAnim.SetBool("WalkRight", true);
-        //if (movement.x < 0) playerAnim.SetBool("WalkLeft", true);
-
-    }
 
 }
