@@ -26,19 +26,24 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public void AddItem(ItemObject _item, int _amount) //Adds item to player inventory
     {
         //For loop that checks if item already exists in inventory,
-        //Then adds to amount if item is already in inventory.
-        for (int i = 0; i < Container.Count; i++) 
-        {
-            if (Container[i].item == _item)
-            {
-                Container[i].AddAmount(_amount); //If item already exists, adds to the amount 
-                return;
-            }
-        }
+        //Then adds to amount if item is already in inventory. NOT CURRENTLY IN USE
+        //for (int i = 0; i < Container.Count; i++) 
+        //{
+        //    if (Container[i].item == _item)
+        //    {
+        //        Container[i].AddAmount(_amount); //If item already exists, adds to the amount 
+        //        return;
+        //    }
+        //}
         //If item is not already in inventory
         //Adds an inventory slot and passes item variables to constructor
+        if (Container.Count > 10)
+        {
+            Container.RemoveAt(10); return;
+        }
         Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); 
         Debug.Log("added " + _item);
+        
     }
 
     public void DropItem(int _is, Vector2 pos) 

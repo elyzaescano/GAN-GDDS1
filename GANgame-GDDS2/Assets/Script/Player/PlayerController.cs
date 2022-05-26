@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public InventoryUI inventoryUI;
 
     [SerializeField]
-    private ItemObject _item;
+    public ItemObject _item;
     [SerializeField]
     private GameObject itemGO;
     bool inRangeOfItem;
@@ -70,6 +70,21 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetFloat("Speed.Y", movement.y);
     }
 
+    //Mobile code for crafting
+    ItemObject firstVariable;
+    ItemObject secondVariable;
+    public void GetCraftingItems(ItemObject craftingItem)
+    {
+        if (!firstVariable)
+        {
+            firstVariable = craftingItem;
+        } else
+        {
+            secondVariable = craftingItem;
+            StartCoroutine(Crafting(firstVariable, secondVariable));
+        }
+    }
+
     //Crafting Coroutine
     public IEnumerator Crafting(ItemObject reactor, ItemObject reagent)
     {
@@ -83,6 +98,8 @@ public class PlayerController : MonoBehaviour
         //Updates Inventory
         inventory.AddItem(io, 1);
         inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
+        firstVariable = null;
+        secondVariable = null;
     }
 
 
@@ -156,10 +173,10 @@ public class PlayerController : MonoBehaviour
     {
         if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
         {
-            movement.x = dirX;
+            movement.x = Mathf.Round(dirX);
         }else if (Mathf.Abs(dirX) < Mathf.Abs(dirY))
         {
-            movement.y = dirY;
+            movement.y = Mathf.Round(dirY);
         }
         //movement.x = dirX;
         //movement.y = dirY;
