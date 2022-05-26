@@ -15,11 +15,18 @@ public class PlayerController : MonoBehaviour
     public ItemDatabaseObject database;
     public InventoryUI inventoryUI;
 
+    [SerializeField]
+    private ItemObject _item;
+    [SerializeField]
+    private GameObject itemGO;
+    bool inRangeOfItem;
+
     public Animator playerAnim;
 
     private void Start()
     {
         playerAnim = GetComponent<Animator>();
+        inRangeOfItem = false;
     }
 
     // Update is called once per frame
@@ -58,11 +65,9 @@ public class PlayerController : MonoBehaviour
                 print(inventory.Container.Count);
                 StartCoroutine(inventoryUI.UpdateUIFromLoad(x));            
             }
-
         }
         playerAnim.SetFloat("Speed.X", movement.x);
         playerAnim.SetFloat("Speed.Y", movement.y);
-
     }
 
     //Crafting Coroutine
@@ -78,7 +83,6 @@ public class PlayerController : MonoBehaviour
         //Updates Inventory
         inventory.AddItem(io, 1);
         inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
-
     }
 
 
@@ -114,9 +118,30 @@ public class PlayerController : MonoBehaviour
         var item = collision.GetComponent<Item>();
         if (item)
         {
-            inventory.AddItem(item.item, 1);
-            inventoryUI.AddNewItem(item.item);
-            Destroy(collision.gameObject);
+            inRangeOfItem = true;
+            _item = item.item;
+            itemGO = item.gameObject;
+            //inventory.AddItem(item.item, 1);
+            //inventoryUI.AddNewItem(item.item);
+            //Destroy(collision.gameObject);
+        }
+    }
+
+    public void startAddItemCoroutine()
+    {
+        StartCoroutine(AddItemToInventory());
+    }
+
+    public IEnumerator AddItemToInventory()
+    {
+        if (inRangeOfItem) { 
+            inventory.AddItem(_item, 1);
+            inventoryUI.AddNewItem(_item);
+            Destroy(itemGO);
+            yield return 1;
+            inRangeOfItem = false;
+            _item = null;
+            itemGO = null;
         }
     }
 

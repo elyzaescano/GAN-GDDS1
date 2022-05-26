@@ -27244,6 +27244,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621597030}
     m_Modifications:
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1590784684}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: startAddItemCoroutine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584398, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -28116,6 +28136,8 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}
   inventoryUI: {fileID: 664450648}
+  _item: {fileID: 0}
+  itemGO: {fileID: 0}
   playerAnim: {fileID: 0}
 --- !u!114 &1590784685
 MonoBehaviour:
@@ -28228,11 +28250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741055420757656937, guid: a5727e66217fe594cae9474f3b717718, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 99.324066
+      value: 124.574066
       objectReference: {fileID: 0}
     - target: {fileID: 2741055420757656937, guid: a5727e66217fe594cae9474f3b717718, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4243844
+      value: 0.42438436
       objectReference: {fileID: 0}
     - target: {fileID: 2741055420757656937, guid: a5727e66217fe594cae9474f3b717718, type: 3}
       propertyPath: m_LocalPosition.z
