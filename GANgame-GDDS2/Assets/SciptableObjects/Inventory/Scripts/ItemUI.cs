@@ -20,12 +20,6 @@ public class ItemUI : MonoBehaviour
         pc = FindObjectOfType<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateImage(ItemObject item)
     {
         this.item = item;

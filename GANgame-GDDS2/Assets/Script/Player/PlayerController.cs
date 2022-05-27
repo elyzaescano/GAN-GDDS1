@@ -138,9 +138,6 @@ public class PlayerController : MonoBehaviour
             inRangeOfItem = true;
             _item = item.item;
             itemGO = item.gameObject;
-            //inventory.AddItem(item.item, 1);
-            //inventoryUI.AddNewItem(item.item);
-            //Destroy(collision.gameObject);
         }
     }
 
