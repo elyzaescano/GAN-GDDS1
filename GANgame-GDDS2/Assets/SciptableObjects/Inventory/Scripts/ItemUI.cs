@@ -7,12 +7,17 @@ public class ItemUI : MonoBehaviour
 {
     public ItemObject item;
     private Image spriteImage;
+    public InventoryObject playerInventory;
+    public int itemSlotID;
+
+    public PlayerController pc;
 
     // Start is called before the first frame update
     void Awake()
     {
         spriteImage = GetComponent<Image>();
         UpdateImage(null);
+        pc = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -31,4 +36,13 @@ public class ItemUI : MonoBehaviour
         }
         else { spriteImage.color = Color.clear; }
     }
+
+    public void GiveItemObject()
+    {
+        ItemObject item = playerInventory.Container[itemSlotID].item;
+        print(item);
+        pc.GetCraftingItems(item);
+    }
+
+
 }

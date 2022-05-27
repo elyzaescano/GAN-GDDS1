@@ -158,8 +158,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3a40a229439b04b9357074cc93b41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemUI: []
+  _itemUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   slotPrefab: {fileID: 2980043492992639304, guid: 08fec2dcd94c4bc46929f9b6806d69be, type: 3}
   slotPanel: {fileID: 8140239313256044307}
   numberOfSlots: 0
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}

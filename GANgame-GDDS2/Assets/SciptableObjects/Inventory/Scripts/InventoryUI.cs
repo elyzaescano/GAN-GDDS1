@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -22,6 +23,7 @@ public class InventoryUI : MonoBehaviour
             GameObject instance = Instantiate(slotPrefab);
             instance.transform.SetParent(slotPanel);
             _itemUI.Add(instance.GetComponentInChildren<ItemUI>());
+            instance.GetComponentInChildren<ItemUI>().itemSlotID = i;
         }
     }
 
@@ -65,4 +67,7 @@ public class InventoryUI : MonoBehaviour
         yield return 1;
         UpdateFullUI(_is);
     }
+
+
+
 }
