@@ -15129,6 +15129,7 @@ GameObject:
   - component: {fileID: 566766540}
   - component: {fileID: 566766539}
   - component: {fileID: 566766538}
+  - component: {fileID: 566766541}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -15184,6 +15185,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566766541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566766537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f511e52dff03f4f823e5f7a19f6141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorID: 0
 --- !u!1 &567272580
 GameObject:
   m_ObjectHideFlags: 0
@@ -33243,7 +33257,7 @@ PrefabInstance:
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1363371123}
+      objectReference: {fileID: 566766541}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -33254,7 +33268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Teleport
+      value: DoorOpen
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -33262,7 +33276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: RoomTeleporter, Assembly-CSharp
+      value: EventManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -33894,7 +33908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1334618155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1590784679}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1334618155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34067,6 +34093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destGO: {fileID: 1655128408}
+  em: {fileID: 566766541}
+  doorID: 0
 --- !u!1 &1513843044
 GameObject:
   m_ObjectHideFlags: 0
@@ -34126,6 +34154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destGO: {fileID: 168450362}
+  em: {fileID: 566766541}
+  doorID: 1
 --- !u!222 &1513843047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34532,7 +34562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590784679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83c82bc701b1c7b498b369360248db73, type: 3}
   m_Name: 

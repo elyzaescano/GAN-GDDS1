@@ -9,6 +9,7 @@ public class ItemUI : MonoBehaviour
     private Image spriteImage;
     public InventoryObject playerInventory;
     public int itemSlotID;
+    public bool selected = false;
 
     public PlayerController pc;
 
@@ -33,9 +34,13 @@ public class ItemUI : MonoBehaviour
 
     public void GiveItemObject()
     {
-        ItemObject item = playerInventory.Container[itemSlotID].item;
-        print(item);
-        pc.GetCraftingItems(item);
+        if (!selected)
+        {
+            ItemObject item = playerInventory.Container[itemSlotID].item;
+            print(item);
+            pc.GetCraftingItems(item);
+            selected = true;
+        }
     }
 
 

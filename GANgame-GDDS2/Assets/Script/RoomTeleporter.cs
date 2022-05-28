@@ -7,10 +7,13 @@ public class RoomTeleporter : MonoBehaviour
     public GameObject destGO;   //Destination GameObject
     private Vector2 destination;  //Destination location relative to worldpsace
     bool isTriggered = false;
+    public EventManager em;
+    public int doorID;
     GameObject player;
 
     private void Start()
     {
+        EventManager.DoorOpenEvent += Teleport;
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
     }
@@ -20,10 +23,11 @@ public class RoomTeleporter : MonoBehaviour
         if(other.gameObject == player)
         {
             isTriggered = true;
+            em.doorID = doorID;
         }
     }
 
-    public void Teleport()
+    public void Teleport(int id)
     {
         if (isTriggered)
         {
@@ -31,6 +35,11 @@ public class RoomTeleporter : MonoBehaviour
             print("Teleported to " + destination);
             isTriggered = false;
         }
+    }
+
+    private void OnDisable()
+    {
+        EventManager.DoorOpenEvent -= Teleport;
     }
 
 }

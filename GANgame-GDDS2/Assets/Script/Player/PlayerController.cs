@@ -166,6 +166,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
+
     public void Move(float dirX, float dirY) //Joystick link
     {
         if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
