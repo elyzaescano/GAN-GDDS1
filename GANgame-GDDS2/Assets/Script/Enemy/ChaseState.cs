@@ -12,7 +12,7 @@ namespace EnemyAI
         public float distanceFromTarget;
         public float stoppingDistance;
 
-        public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn)
+        public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
             if (enemyFOV.currentTarget != null)
             {
@@ -21,9 +21,6 @@ namespace EnemyAI
 
                 //Literally just finds the distance from target 
                 distanceFromTarget = Vector3.Distance(enemyFOV.currentTarget.transform.position, enemyManager.navAgent.transform.position);
-
-                //Makes enemy rotate to player
-                enemyManager.transform.right = enemyFOV.currentTarget.transform.position - enemyManager.transform.position;
 
                 if (distanceFromTarget > stoppingDistance)
                 {

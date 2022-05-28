@@ -11,7 +11,7 @@ namespace EnemyAI
         [Range(1, 200)] public float rotationSpeed;
         public float timeToSearch = 10f;
 
-        public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn)
+        public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
             //Enemy goes to last known player position
             enemyManager.navAgent.SetDestination(enemyManager.playerPos);
@@ -19,7 +19,7 @@ namespace EnemyAI
             //Rotates on the spot of last known player position to look for the player
             if (enemyManager.navAgent.remainingDistance < 1f)
             {
-                enemyManager.navAgent.transform.Rotate(Vector3.forward * Time.deltaTime * rotationSpeed);
+                //no
             }
 
             //Counts down from the moment enemy switches to search state

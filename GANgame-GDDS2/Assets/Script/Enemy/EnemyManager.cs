@@ -10,6 +10,7 @@ namespace EnemyAI
     {
         EnemyFieldOfView enemyFOV;
         EnemySpawnManager enemySpawn;
+        EnemyAnimationHandler enemyAnim;
 
         public State currentState;
 
@@ -29,7 +30,7 @@ namespace EnemyAI
         {
             enemyrb = GetComponent<Rigidbody2D>();
             enemyFOV = FindObjectOfType<EnemyFieldOfView>();
-            navAgent = GetComponent<NavMeshAgent>();
+            navAgent = GetComponentInParent<NavMeshAgent>();
             navAgent.updateRotation = false;
             navAgent.updateUpAxis = false;
             navAgent.autoBraking = false;
@@ -59,7 +60,7 @@ namespace EnemyAI
         {
             if (currentState != null)
             {
-                State nextState = currentState.Tick(this, enemyFOV, enemySpawn);
+                State nextState = currentState.Tick(this, enemyFOV, enemySpawn, enemyAnim);
 
                 if (nextState != null)
                 {
@@ -77,7 +78,7 @@ namespace EnemyAI
         {
             if (collision.CompareTag("Player"))
             {
-                enemyFOV.currentTarget.SetActive(false);
+                GameObject.FindGameObjectWithTag("Player").SetActive(false);
             }
         }
     }

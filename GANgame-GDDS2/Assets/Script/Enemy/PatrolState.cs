@@ -13,10 +13,10 @@ namespace EnemyAI
         public bool pathAvailable;
 
         [Header("Patrol Waypoints")]
-        public Transform[] points;
+        public GameObject[] points;
         public int randomPoint;
 
-        public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn)
+        public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
             //Enemy will pick a random point out of the designated waypoints to go to
             enemyManager.navAgent.SetDestination(points[randomPoint].transform.position);

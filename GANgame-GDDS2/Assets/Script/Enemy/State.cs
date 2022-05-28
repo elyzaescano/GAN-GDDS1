@@ -6,6 +6,6 @@ namespace EnemyAI
 {
     public abstract class State : MonoBehaviour
     {
-        public abstract State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn);
+        public abstract State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim);
     }
 }
