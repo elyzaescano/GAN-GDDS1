@@ -5,12 +5,11 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
-    public static event Action<int> DoorOpenEvent;
+    public static event Action DoorOpenEvent;
 
-    public int doorID;
-    public void DoorOpen()
+    public static void DoorOpen()
     {
-        DoorOpenEvent?.Invoke(doorID);
+        DoorOpenEvent?.Invoke();
     }
 
 }

@@ -15197,7 +15197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f511e52dff03f4f823e5f7a19f6141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 0
 --- !u!1 &567272580
 GameObject:
   m_ObjectHideFlags: 0
@@ -34548,6 +34547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  doorTriggerID: 0
   rb: {fileID: 1590784683}
   inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}

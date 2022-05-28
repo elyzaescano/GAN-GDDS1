@@ -9,6 +9,7 @@ public class RoomTeleporter : MonoBehaviour
     bool isTriggered = false;
     public EventManager em;
     public int doorID;
+    int triggerID;
     GameObject player;
 
     private void Start()
@@ -23,13 +24,13 @@ public class RoomTeleporter : MonoBehaviour
         if(other.gameObject == player)
         {
             isTriggered = true;
-            em.doorID = doorID;
+            triggerID = player.GetComponent<PlayerController>().doorTriggerID = doorID;
         }
     }
 
-    public void Teleport(int id)
+    public void Teleport()
     {
-        if (isTriggered)
+        if (isTriggered && triggerID == doorID)
         {
             player.transform.position = destination;
             print("Teleported to " + destination);
