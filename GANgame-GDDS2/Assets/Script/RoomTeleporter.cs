@@ -14,21 +14,22 @@ public class RoomTeleporter : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
     }
-    private void Update()
-    {
-        if (isTriggered && Input.GetKeyDown(KeyCode.E))
-        {
-            player.transform.position = destination;
-            print("Teleported to " + destination);
-            isTriggered = false;
-        }
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject == player)
         {
             isTriggered = true;
+        }
+    }
+
+    public void Teleport()
+    {
+        if (isTriggered)
+        {
+            player.transform.position = destination;
+            print("Teleported to " + destination);
+            isTriggered = false;
         }
     }
 
