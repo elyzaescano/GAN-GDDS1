@@ -103,32 +103,37 @@ public class PlayerController : MonoBehaviour
         secondVariable = null;
     }
 
+    public bool usingKBM;
 
     private void FixedUpdate()
     {
-        //print(Input.GetAxisRaw("Horizontal") + "Hori");
-        //print(Input.GetAxisRaw("Vertical")+ " Verti");
+        print(movement);
         //movement = Vector2.zero;
-        movement.x = Input.GetAxisRaw("Horizontal"); //left and right  
-        movement.y = Input.GetAxisRaw("Vertical"); //up and down 
-        if (movement.y > 0) 
-        {
-            movement = Vector2.up;
+        
+        if (usingKBM) { movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical"); } else {
+            HorizontalMovement(Mathf.RoundToInt(movement.x)); VerticalMovement(Mathf.RoundToInt(movement.y));
         }
-        else if (movement.x > 0)
-        {
-            movement = Vector2.right;
-        }
-        else if (movement.x < 0)
-        {
-            movement = Vector2.left;
-        }
-        else if (movement.y < 0)
-        {
-            movement = Vector2.down;
-        }
-
         if (movement.x != 0 || movement.y != 0) { playerAnim.SetBool("IsMoving", true); } else { playerAnim.SetBool("IsMoving", false); }
+    }
+
+    public void HorizontalMovement(int directionX) //Joystick link
+    {
+        //if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
+        //{
+        //    movement.x = Mathf.Round(dirX);
+        //}else if (Mathf.Abs(dirX) < Mathf.Abs(dirY))
+        //{
+        //    movement.y = Mathf.Round(dirY);
+        //}
+        movement.x = directionX;
+        //movement.y = direction.y;
+
+        //print(movement);
+    }
+
+    public void VerticalMovement(int DirectionY)
+    {
+        movement.y = DirectionY;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -168,20 +173,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public void Move(float dirX, float dirY) //Joystick link
-    {
-        if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
-        {
-            movement.x = Mathf.Round(dirX);
-        }else if (Mathf.Abs(dirX) < Mathf.Abs(dirY))
-        {
-            movement.y = Mathf.Round(dirY);
-        }
-        //movement.x = dirX;
-        //movement.y = dirY;
-
-        //print(movement);
-    }
+ 
 
 
 

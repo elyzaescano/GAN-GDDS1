@@ -26,12 +26,19 @@ public class PlayerJoystickController : MonoBehaviour
         
         if(dir.sqrMagnitude > 0)
         {
-            player.Move(h,v);
+            //player.Move(h,v);
            
         }
 
 
     }
+
+    float moveDir = 0;
+    public void MovementInput(float dirX, float dirY)
+    {
+        //player.Move(dirX, dirY);
+    }
+
 
 }
 

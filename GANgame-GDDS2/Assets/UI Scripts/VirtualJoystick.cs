@@ -31,12 +31,12 @@ using UnityEngine.UI;
         public const string VERSION = "0.1.0";
         public const string DATE = "25 April 2022";
 
-        public static float GetAxis(string axe) {
+        public static int GetAxis(string axe) {
             switch(axe.ToLower()) {
                 case "horizontal": case "h": case "x":
-                    return instance.axis.x;
+                    return Mathf.RoundToInt(instance.axis.x);
                 case "vertical": case "v": case "y":
-                    return instance.axis.y;
+                    return Mathf.RoundToInt(instance.axis.y);
             }
             return 0;
         }
@@ -106,7 +106,7 @@ using UnityEngine.UI;
             }
         }
 
-        void Update() {
+        void FixedUpdate() {
             // Update the position of the joystick.
             control.transform.position = Vector2.MoveTowards(control.transform.position, desiredPosition, sensitivity);
 
