@@ -27,7 +27,7 @@ public class InventoryButton : MonoBehaviour
         }
     }
 
-
+    [SerializeField] Button[] e;
     public IEnumerator SettingInventoryVisibilityOnStart()
     {
         
@@ -42,7 +42,11 @@ public class InventoryButton : MonoBehaviour
                 Image slotImage = _is.GetComponent<Image>();
                 slotImage.color = Color.clear;
                 print(slotImage.color);
-
+                e = _is.GetComponentsInChildren<Button>();
+                foreach(Button butt in e)
+                {
+                    butt.gameObject.SetActive(false);
+                }
             }
         }
         yield return 1;
@@ -65,6 +69,11 @@ public class InventoryButton : MonoBehaviour
                 Image slotImage = _is.GetComponent<Image>();
                 slotImage.color = Color.white;
                 print(slotImage.color);
+                e = _is.GetComponentsInChildren<Button>();
+                foreach (Button butt in e)
+                {
+                    butt.gameObject.SetActive(true);
+                }
             }
         }
         yield return 1;

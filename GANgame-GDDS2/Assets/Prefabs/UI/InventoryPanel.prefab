@@ -52,13 +52,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 50
     m_Right: 50
-    m_Top: 0
+    m_Top: 20
     m_Bottom: 50
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 70, y: 70}
-  m_Spacing: {x: 10, y: 10}
+  m_Spacing: {x: 25, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!222 &8140239313256044305
@@ -171,5 +171,6 @@ MonoBehaviour:
   - {fileID: 0}
   slotPrefab: {fileID: 2980043492992639304, guid: 08fec2dcd94c4bc46929f9b6806d69be, type: 3}
   slotPanel: {fileID: 8140239313256044307}
+  IB: {fileID: 0}
   numberOfSlots: 0
   inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
