@@ -78,7 +78,10 @@ namespace EnemyAI
         {
             if (collision.CompareTag("Player"))
             {
-                GameObject.FindGameObjectWithTag("Player").SetActive(false);
+                if(enemyFOV.currentTarget != null)
+                {
+                    GameObject.FindGameObjectWithTag("Player").SetActive(false);
+                }
             }
         }
     }

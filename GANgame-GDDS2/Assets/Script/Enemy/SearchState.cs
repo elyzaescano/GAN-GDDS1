@@ -19,7 +19,7 @@ namespace EnemyAI
             //Rotates on the spot of last known player position to look for the player
             if (enemyManager.navAgent.remainingDistance < 1f)
             {
-                //no
+                //search...
             }
 
             //Counts down from the moment enemy switches to search state
