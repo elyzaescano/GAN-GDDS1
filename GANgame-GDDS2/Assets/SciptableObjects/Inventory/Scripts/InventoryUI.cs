@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour
     public List<ItemUI> _itemUI = new List<ItemUI>(10);
     public GameObject slotPrefab;
     public Transform slotPanel;
+    public InventoryButton IB;
     public int numberOfSlots;
 
     public InventoryObject inventory;

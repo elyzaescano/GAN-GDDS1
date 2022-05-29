@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         {
             inventory.DropItem(0, this.transform.position);
             inventoryUI.RemoveItem(inventory.GetItemObject(0));
-
         }
 
         //Takes item in first and second slot and combines them
@@ -92,6 +91,7 @@ public class PlayerController : MonoBehaviour
         //Access reactor ItemObject Combine script. 
         //Passes reagent ItemObject into it.
         ItemObject io = reactor.Combine(reagent);
+        if (io == null) yield break;
         //Updates UI
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
