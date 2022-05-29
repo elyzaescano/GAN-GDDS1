@@ -45,9 +45,9 @@ public class PlayerController : MonoBehaviour
         //Drops item in first slot
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            inventory.DropItem(0, this.transform.position);
             inventoryUI.RemoveItem(inventory.GetItemObject(0));
-
+            inventory.DropItem(0, this.transform.position);            
+            RefreshUI();
         }
 
         //Takes item in first and second slot and combines them
@@ -60,12 +60,7 @@ public class PlayerController : MonoBehaviour
         //Reloads inventory UI
         if (Input.GetKeyDown(KeyCode.T))
         {
-            foreach(InventorySlot x in inventory.Container)
-            {
-                print(x.item);
-                print(inventory.Container.Count);
-                StartCoroutine(inventoryUI.UpdateUIFromLoad(x));            
-            }
+            RefreshUI();
         }
         playerAnim.SetFloat("Speed.X", movement.x);
         playerAnim.SetFloat("Speed.Y", movement.y);
@@ -84,6 +79,8 @@ public class PlayerController : MonoBehaviour
             secondVariable = craftingItem;
             StartCoroutine(Crafting(firstVariable, secondVariable));
         }
+        print("first = " + firstVariable);
+        print("Second = " + secondVariable);
     }
 
     //Crafting Coroutine
@@ -92,6 +89,7 @@ public class PlayerController : MonoBehaviour
         //Access reactor ItemObject Combine script. 
         //Passes reagent ItemObject into it.
         ItemObject io = reactor.Combine(reagent);
+        if (io == null) { firstVariable = null; secondVariable = null; yield break; } //If there is no resultant item, clear both variables and break the coroutine.
         //Updates UI
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
@@ -99,8 +97,17 @@ public class PlayerController : MonoBehaviour
         //Updates Inventory
         inventory.AddItem(io, 1);
         inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
+        //RefreshUI();
         firstVariable = null;
         secondVariable = null;
+    }
+
+    public void RefreshUI()
+    {
+        foreach (InventorySlot x in inventory.Container)
+        {
+            StartCoroutine(inventoryUI.UpdateUIFromLoad(x));
+        }
     }
 
     public bool usingKBM;
