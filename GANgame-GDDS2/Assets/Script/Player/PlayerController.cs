@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //print(movement);
+        print(movement);
         //movement = Vector2.zero;
         
         if (usingKBM) { movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical"); } else {
