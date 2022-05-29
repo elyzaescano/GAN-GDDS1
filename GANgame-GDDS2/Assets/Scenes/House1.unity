@@ -15858,11 +15858,6 @@ MonoBehaviour:
   patrolState: {fileID: 374709172}
   angle: 86
   detectionRadius: 6
---- !u!224 &510963648 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8140239313647749597, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
-  m_PrefabInstance: {fileID: 2100079802}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &514816377
 GameObject:
   m_ObjectHideFlags: 0
@@ -37131,7 +37126,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1152740178
 MonoBehaviour:
@@ -39098,7 +39093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982897424271579336, guid: 69ba63b7968d58d478a5969fe6433122, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5982897424271579336, guid: 69ba63b7968d58d478a5969fe6433122, type: 3}
       propertyPath: m_LocalPosition.x
