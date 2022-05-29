@@ -8,6 +8,7 @@ public class ItemUI : MonoBehaviour
     public ItemObject item;
     private Image spriteImage;
     public InventoryObject playerInventory;
+    public Image UI;
     public int itemSlotID;
     public bool selected = false;
 
@@ -19,6 +20,8 @@ public class ItemUI : MonoBehaviour
         spriteImage = GetComponent<Image>();
         UpdateImage(null);
         pc = FindObjectOfType<PlayerController>();
+        InventoryUI uiScript = FindObjectOfType<InventoryUI>();
+        UI = uiScript.GetComponent<Image>();
     }
 
     public void UpdateImage(ItemObject item)
@@ -26,18 +29,19 @@ public class ItemUI : MonoBehaviour
         this.item = item;
         if (this.item != null)
         {
-            spriteImage.color = Color.white;
             spriteImage.sprite = this.item.itemIcon;
+            if (UI.color == Color.white) spriteImage.color = Color.white; else if(UI.color == Color.clear) spriteImage.color = Color.clear;         
         }
-        else { spriteImage.color = Color.clear; }
+        else { spriteImage.sprite = null; spriteImage.color = Color.clear; }
     }
 
     public void GiveItemObject()
     {
         if (!selected)
         {
+            spriteImage.color = Color.black;
             ItemObject item = playerInventory.Container[itemSlotID].item;
-            print(item);
+            //print(item);
             pc.GetCraftingItems(item);
             selected = true;
         }

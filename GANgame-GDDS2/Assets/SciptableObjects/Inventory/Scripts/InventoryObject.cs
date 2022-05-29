@@ -52,7 +52,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
         Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - 2.5f), Quaternion.identity);
-        Container[_is].ReduceAmount(1);
+        Container.RemoveAt(_is);
        
     }
 

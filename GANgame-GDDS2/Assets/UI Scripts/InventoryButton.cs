@@ -1,18 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryButton : MonoBehaviour
 {
-    public GameObject inventoryPanel;
+    public InventoryUI inventoryPanel;
+    public GameObject slotPanel;
+    Image panelImage;
+
+    public void Start()
+    {
+        panelImage = inventoryPanel.gameObject.GetComponent<Image>();
+        StartCoroutine(SettingInventoryVisibilityOnStart());
+
+    }
+    bool isActive = false;
 
     public void OpenInventory()
     {
         if(inventoryPanel != null)
         {
-            bool isActive = inventoryPanel.activeSelf; //Makes inventory UI toggleable
+            isActive = !isActive; //Makes inventory UI toggleable
 
-            inventoryPanel.SetActive(!isActive); //Activates the inventory UI
+            if (isActive) StartCoroutine(SettingInventoryVisibilityOnStart()); else if (!isActive) StartCoroutine(MakingInventoryVisible()); //Activates the inventory UI
+        }
+    }
+
+
+    public IEnumerator SettingInventoryVisibilityOnStart()
+    {
+        
+        panelImage.color = Color.clear;
+
+        yield return 1;
+        
+        foreach (Transform _is in slotPanel.transform)
+        {
+            if (_is.name.StartsWith("ItemSlot"))
+            {
+                Image slotImage = _is.GetComponent<Image>();
+                slotImage.color = Color.clear;
+                print(slotImage.color);
+
+            }
+        }
+        yield return 1;
+        foreach (ItemUI _im in inventoryPanel._itemUI)
+        {
+            Image spriteImage = _im.GetComponent<Image>();
+            spriteImage.color = Color.clear;        }
+    }
+
+    public IEnumerator MakingInventoryVisible()
+    {
+        panelImage.color = Color.white;
+
+        yield return 1;
+
+        foreach (Transform _is in slotPanel.transform)
+        {
+            if (_is.name.StartsWith("ItemSlot"))
+            {
+                Image slotImage = _is.GetComponent<Image>();
+                slotImage.color = Color.white;
+                print(slotImage.color);
+            }
+        }
+        yield return 1;
+        foreach (ItemUI _im in inventoryPanel._itemUI)
+        {
+            Image spriteImage = _im.GetComponent<Image>();
+            if (spriteImage.sprite == null) spriteImage.color = Color.clear;
+            else 
+            spriteImage.color = Color.white;
         }
     }
 
