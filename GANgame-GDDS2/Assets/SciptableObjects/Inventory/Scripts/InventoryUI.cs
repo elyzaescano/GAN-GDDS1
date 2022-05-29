@@ -49,7 +49,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     //Ok. I spent like 3 hours figuring out how to reload the UI. This was the only way that worked from the POV of a beginner programmer, thank you.
-
+    //Known bug, wil display last inventory item dropped even when inventory is empty.
     public void UpdateFullUI(InventorySlot _is)
     {
         for (int i = 0; i < _is.amount; i++)

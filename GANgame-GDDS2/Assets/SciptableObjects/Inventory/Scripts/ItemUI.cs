@@ -32,15 +32,16 @@ public class ItemUI : MonoBehaviour
             spriteImage.sprite = this.item.itemIcon;
             if (UI.color == Color.white) spriteImage.color = Color.white; else if(UI.color == Color.clear) spriteImage.color = Color.clear;         
         }
-        else { spriteImage.color = Color.clear; }
+        else { spriteImage.sprite = null; spriteImage.color = Color.clear; }
     }
 
     public void GiveItemObject()
     {
         if (!selected)
         {
+            spriteImage.color = Color.black;
             ItemObject item = playerInventory.Container[itemSlotID].item;
-            print(item);
+            //print(item);
             pc.GetCraftingItems(item);
             selected = true;
         }
