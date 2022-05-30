@@ -90,14 +90,17 @@ public class PlayerController : MonoBehaviour
         //Passes reagent ItemObject into it.
         ItemObject io = reactor.Combine(reagent);
         if (io == null) { firstVariable = null; secondVariable = null; yield break; } //If there is no resultant item, clear both variables and break the coroutine.
-        //Updates UI
+                                                                                      //Updates UI
+        inventory.AddItem(io, 1);
+        yield return 1;
+        inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
+        yield return 1;       
+
+        //Updates Inventory
+
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
-        yield return 1;       
-        //Updates Inventory
-        inventory.AddItem(io, 1);
-        inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
-        //RefreshUI();
+        inventoryUI.StartUICoroutine();
         firstVariable = null;
         secondVariable = null;
     }
@@ -106,7 +109,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (InventorySlot x in inventory.Container)
         {
-            StartCoroutine(inventoryUI.UpdateUIFromLoad(x));
+            StartCoroutine(inventoryUI.UpdateUI());
         }
     }
 

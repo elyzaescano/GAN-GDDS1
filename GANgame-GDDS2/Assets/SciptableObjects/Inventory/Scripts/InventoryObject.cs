@@ -14,6 +14,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField]
     private ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>(10);
+    public ItemObject equippedItem = null;
 
     private void OnEnable()
     {

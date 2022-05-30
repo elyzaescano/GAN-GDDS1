@@ -8,11 +8,14 @@ public class ItemUI : MonoBehaviour
     public ItemObject item;
     private Image spriteImage;
     public InventoryObject playerInventory;
+    InventoryUI UIScript;
     public Image UI;
     public int itemSlotID;
     public bool selected = false;
 
     public PlayerController pc;
+    public EventManager em;
+    public GameObject[] inventoryButtons;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,8 +23,19 @@ public class ItemUI : MonoBehaviour
         spriteImage = GetComponent<Image>();
         UpdateImage(null);
         pc = FindObjectOfType<PlayerController>();
-        InventoryUI uiScript = FindObjectOfType<InventoryUI>();
-        UI = uiScript.GetComponent<Image>();
+        UIScript = FindObjectOfType<InventoryUI>();
+        em = FindObjectOfType<EventManager>();
+        UI = UIScript.GetComponent<Image>();
+
+    }
+
+    private void Start()
+    {
+        foreach(GameObject go in inventoryButtons)
+        {
+            go.SetActive(false);
+        }
+        EventManager.OpenInventory += EnableButtons;
     }
 
     public void UpdateImage(ItemObject item)
@@ -47,5 +61,36 @@ public class ItemUI : MonoBehaviour
         }
     }
 
+    public void EnableButtons()
+    {
+        print("Enabling Buttons");
+        foreach(GameObject go in inventoryButtons)
+        {
+            go.SetActive(true);
+        }
+    }
 
+    public void DropItemFromUI()
+    {
+        playerInventory.DropItem(itemSlotID,pc.gameObject.transform.position);
+        //UpdateImage(null);
+        UIScript.StartUICoroutine();
+    }
+
+    public void EquipItemFromUI()
+    {
+        playerInventory.equippedItem = item;
+        StartCoroutine(EquipCoroutine());
+    }
+
+    public IEnumerator EquipCoroutine()
+    {
+        yield return 1;
+        EventManager.ItemEquip();
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OpenInventory -= EnableButtons;
+    }
 }
