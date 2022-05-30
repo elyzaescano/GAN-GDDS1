@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
 
     public static event Action CloseInventory;
 
+    public static event Action EquipItem;
   
     public static void DoorOpen()
     {
@@ -19,18 +20,17 @@ public class EventManager : MonoBehaviour
 
     public static void InventoryToggle()
     {
-        //bool inventoryEnabled;
-        //if (!inventoryEnabled) { OpenInventory?.Invoke(); } else
-        //{
-        //    CloseInventory?.Invoke();
-        //    inventoryEnabled = !inventoryEnabled;
-        //}
         OpenInventory?.Invoke();
     }
 
-    public static void InventoryClose()
+    public static void InventoryClose()     //UNUSED
     {
         CloseInventory?.Invoke();
+    }
+
+    public static void ItemEquip()
+    {
+        EquipItem?.Invoke();
     }
 
 }

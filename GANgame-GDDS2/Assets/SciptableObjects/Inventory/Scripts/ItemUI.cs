@@ -8,6 +8,7 @@ public class ItemUI : MonoBehaviour
     public ItemObject item;
     private Image spriteImage;
     public InventoryObject playerInventory;
+    InventoryUI UIScript;
     public Image UI;
     public int itemSlotID;
     public bool selected = false;
@@ -22,9 +23,9 @@ public class ItemUI : MonoBehaviour
         spriteImage = GetComponent<Image>();
         UpdateImage(null);
         pc = FindObjectOfType<PlayerController>();
-        InventoryUI uiScript = FindObjectOfType<InventoryUI>();
+        UIScript = FindObjectOfType<InventoryUI>();
         em = FindObjectOfType<EventManager>();
-        UI = uiScript.GetComponent<Image>();
+        UI = UIScript.GetComponent<Image>();
 
     }
 
@@ -73,10 +74,23 @@ public class ItemUI : MonoBehaviour
     {
         playerInventory.DropItem(itemSlotID,pc.gameObject.transform.position);
         //UpdateImage(null);
+        UIScript.StartUICoroutine();
+    }
+
+    public void EquipItemFromUI()
+    {
+        playerInventory.equippedItem = item;
+        StartCoroutine(EquipCoroutine());
+    }
+
+    public IEnumerator EquipCoroutine()
+    {
+        yield return 1;
+        EventManager.ItemEquip();
     }
 
     private void OnDisable()
     {
-        EventManager.OpenInventory -= DropItemFromUI;
+        EventManager.OpenInventory -= EnableButtons;
     }
 }
