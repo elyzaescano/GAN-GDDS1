@@ -22,11 +22,15 @@ public class SimonSays : MonoBehaviour
     Color32 invisible = new Color32(4, 204, 0, 0);
     Color32 white = new Color32(255, 255, 255, 255);
 
+    public GameObject closeSimon;
+
     // Update is called once per frame
     void Update()
     {
         if (win)
         {
+            closeSimon.SetActive(true);
+            //gameDoor.GetComponent<RoomTeleporter>().isLocked = false; //make the door false
             Debug.Log("Yippee");
         }
 
@@ -82,13 +86,13 @@ public class SimonSays : MonoBehaviour
 
         if (buttonsPressed == level && pass == true) //If player successfully completes this level, and...
         {
-            if (buttonsPressed != 5) //...if player has not reached the final level, proceed to the next level
+            if (buttonsPressed != 4) //...if player has not reached the final level, proceed to the next level
             {
                 level++; //Proceed level
                 pass = false; //Reset level progress
                 StartCoroutine(ColourOrder()); //Show order of colours
             }
-            if (buttonsPressed == 5) //Player has reached final level
+            if (buttonsPressed == 4) //Player has reached final level
             {
                 level++; 
                 win = true; //Guess

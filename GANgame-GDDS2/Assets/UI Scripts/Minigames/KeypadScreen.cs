@@ -59,6 +59,7 @@ public class KeypadScreen : MonoBehaviour
             itemSpawn.Spawn();
             audioSource.clip = feedback[1];
             audioSource.Play();
+            
         }
         else
         {

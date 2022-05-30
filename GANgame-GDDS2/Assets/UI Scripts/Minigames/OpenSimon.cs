@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyPadPuzzle : MonoBehaviour
+public class OpenSimon : MonoBehaviour
 {
-    [Header("Keypad")]
-    public ItemSpawn itemSpawn;
-    public GameObject keyPadUI;
-
-    bool inRange = false;
+    public GameObject simonGame;
+    public GameObject simonPanel;
+    bool isNear = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +24,7 @@ public class KeyPadPuzzle : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            inRange = true;
+            isNear = true;
         }
     }
 
@@ -34,23 +32,24 @@ public class KeyPadPuzzle : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            inRange = false;
+            isNear = false;
         }
     }
 
 
-    public void UnlockKey()
+    public void SimonGame()
     {
-        if (inRange)
+        if (isNear)
         {
-            keyPadUI.SetActive(true);
+            simonPanel.SetActive(true);
         }
+        
     }
 
-    public void CloseKey()
+    public void Close()
     {
-        keyPadUI.SetActive(false);
-        Destroy(GetComponent<KeyPadPuzzle>());
-    }
+        simonPanel.SetActive(false);
+        Destroy(simonGame);
 
+    }
 }
