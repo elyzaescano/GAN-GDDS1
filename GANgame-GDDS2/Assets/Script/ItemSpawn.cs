@@ -8,6 +8,12 @@ public class ItemSpawn : MonoBehaviour
     public GameObject itemPrefab;
     public Transform spawnPoint;
     bool canSpawn = false;
+    public bool itemNeeded = false; //if we need any item to interact with 
+
+    //checks with inventory 
+    public InventoryObject playerInventory;
+    public ItemObject itemRequired;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +30,18 @@ public class ItemSpawn : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            ItemObject o = playerInventory.equippedItem;
+            if(o == itemRequired)
+            {
+                itemNeeded = true;
+            }
             canSpawn = true;
         }
     }
 
     public void Spawn()
     {
-        if (canSpawn)
+        if (canSpawn && itemNeeded)
         {
             Instantiate(itemPrefab, spawnPoint);
             canSpawn = false;
