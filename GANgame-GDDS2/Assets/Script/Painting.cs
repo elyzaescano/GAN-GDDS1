@@ -21,12 +21,16 @@ public class Painting : MonoBehaviour
     {
         
     }
-    public void OnTriggerStay2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             viewPaint = true;
         }
+    }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        viewPaint = false;
     }
 
     public void FlipBack() //flip towards back 

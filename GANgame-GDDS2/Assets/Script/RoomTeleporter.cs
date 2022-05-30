@@ -14,6 +14,11 @@ public class RoomTeleporter : LockDoor
 
     LockDoor lockDoor;
 
+    //checks if player has the item 
+    public InventoryObject playerInventory;
+    public ItemObject itemRequired;
+    public bool itemNeeded = false; //if we need any key
+
     private void Start()
     {
         EventManager.DoorOpenEvent += Teleport;
@@ -26,6 +31,13 @@ public class RoomTeleporter : LockDoor
     {
         if(other.gameObject == player)
         {
+            ItemObject o = playerInventory.equippedItem;
+            if (o == itemRequired)
+            {
+                itemNeeded = true;
+                lockDoor.isLocked = false;
+            }
+
             isTriggered = true;
             triggerID = player.GetComponent<PlayerController>().doorTriggerID = doorID;
         }
@@ -40,7 +52,7 @@ public class RoomTeleporter : LockDoor
     {
         if (isTriggered && triggerID == doorID)
         {
-            if (!lockDoor.isLocked)
+            if (!lockDoor.isLocked && itemNeeded)
             {
                 player.transform.position = destination;
                 print("Teleported to " + destination);
