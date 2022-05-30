@@ -12,11 +12,13 @@ public class KeypadScreen : MonoBehaviour
     bool canAddDigit;
 
     AudioSource audioSource;
-    public AudioClip[] feedback; 
+    public AudioClip[] feedback;
+
+    public ItemSpawn itemSpawn; //refer from itemSpawn
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();  
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -54,7 +56,7 @@ public class KeypadScreen : MonoBehaviour
     {
         if (codeTextValue == passCode)
         {
-            print("OPEN");
+            itemSpawn.Spawn();
             audioSource.clip = feedback[1];
             audioSource.Play();
         }
