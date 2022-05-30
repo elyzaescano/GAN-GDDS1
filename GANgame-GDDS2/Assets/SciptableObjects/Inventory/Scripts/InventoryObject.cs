@@ -18,6 +18,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     private void OnEnable()
     {
+        equippedItem = null;
 #if UNITY_EDITOR
         database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
 #else
@@ -54,7 +55,8 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         Debug.Log(Container[_is].amount);
         Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - 2.5f), Quaternion.identity);
         Container.RemoveAt(_is);
-       
+        if(IO == equippedItem) { equippedItem = null; }
+        EventManager.ItemEquip();
     }
 
     public ItemObject GetItemObject(int i)//gets item id in inventory and returns it
