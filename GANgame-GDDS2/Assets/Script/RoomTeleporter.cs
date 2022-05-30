@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomTeleporter : MonoBehaviour
+public class RoomTeleporter : LockDoor
 {
     public GameObject destGO;   //Destination GameObject
     private Vector2 destination;  //Destination location relative to worldpsace
@@ -12,11 +12,14 @@ public class RoomTeleporter : MonoBehaviour
     int triggerID;
     GameObject player;
 
+    LockDoor lockDoor;
+
     private void Start()
     {
         EventManager.DoorOpenEvent += Teleport;
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
+        lockDoor = FindObjectOfType<LockDoor>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -32,9 +35,12 @@ public class RoomTeleporter : MonoBehaviour
     {
         if (isTriggered && triggerID == doorID)
         {
-            player.transform.position = destination;
-            print("Teleported to " + destination);
-            isTriggered = false;
+            if (!lockDoor.isLocked)
+            {
+                player.transform.position = destination;
+                print("Teleported to " + destination);
+                isTriggered = false;
+            }
         }
     }
 
