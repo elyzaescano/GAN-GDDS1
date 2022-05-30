@@ -32,17 +32,6 @@ public class DragDropSlot : MonoBehaviour, IDropHandler
             {
                 itemToRemove.parent = GameObject.FindGameObjectWithTag("holdingframe2").transform;
                 itemToRemove.position = GameObject.FindGameObjectWithTag("holdingframe2").transform.position;
-
-                if (GameObject.FindGameObjectWithTag("holdingframe2").transform.childCount > 1)
-                {
-                    itemToRemove.parent = GameObject.FindGameObjectWithTag("holdingframe3").transform;
-                    itemToRemove.position = GameObject.FindGameObjectWithTag("holdingframe3").transform.position;
-                }
-                    if (GameObject.FindGameObjectWithTag("holdingframe3").transform.childCount > 1)
-                    {
-                        itemToRemove.parent = GameObject.FindGameObjectWithTag("holdingframe4").transform;
-                        itemToRemove.position = GameObject.FindGameObjectWithTag("holdingframe4").transform.position;
-                    }
             }
 
         }

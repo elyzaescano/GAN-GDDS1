@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class PaintingPuzzle : MonoBehaviour
 {
+    public GameObject paintingPanel;
     [SerializeField] GameObject[] frames;
     [SerializeField] GameObject[] pieces;
-    int pieceOrder;
-    int frameOrder;
 
     private void Update()
     {
-        if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform) &&
-            pieces[2].transform.IsChildOf(frames[2].transform) && pieces[3].transform.IsChildOf(frames[3].transform))
+        if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform))
         {
             print("Win");
+            paintingPanel.SetActive(false);
         }
     }
 }
