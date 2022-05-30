@@ -13,6 +13,8 @@ public class ItemUI : MonoBehaviour
     public bool selected = false;
 
     public PlayerController pc;
+    public EventManager em;
+    public GameObject[] inventoryButtons;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,7 +23,18 @@ public class ItemUI : MonoBehaviour
         UpdateImage(null);
         pc = FindObjectOfType<PlayerController>();
         InventoryUI uiScript = FindObjectOfType<InventoryUI>();
+        em = FindObjectOfType<EventManager>();
         UI = uiScript.GetComponent<Image>();
+
+    }
+
+    private void Start()
+    {
+        foreach(GameObject go in inventoryButtons)
+        {
+            go.SetActive(false);
+        }
+        EventManager.OpenInventory += EnableButtons;
     }
 
     public void UpdateImage(ItemObject item)
@@ -47,5 +60,23 @@ public class ItemUI : MonoBehaviour
         }
     }
 
+    public void EnableButtons()
+    {
+        print("Enabling Buttons");
+        foreach(GameObject go in inventoryButtons)
+        {
+            go.SetActive(true);
+        }
+    }
 
+    public void DropItemFromUI()
+    {
+        playerInventory.DropItem(itemSlotID,pc.gameObject.transform.position);
+        //UpdateImage(null);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OpenInventory -= DropItemFromUI;
+    }
 }

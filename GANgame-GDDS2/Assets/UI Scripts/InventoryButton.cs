@@ -13,7 +13,6 @@ public class InventoryButton : MonoBehaviour
     {
         panelImage = inventoryPanel.gameObject.GetComponent<Image>();
         StartCoroutine(SettingInventoryVisibilityOnStart());
-
     }
     bool isActive = false;
 

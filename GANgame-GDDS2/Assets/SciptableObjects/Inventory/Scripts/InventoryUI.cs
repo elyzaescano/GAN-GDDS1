@@ -14,10 +14,13 @@ public class InventoryUI : MonoBehaviour
     public int numberOfSlots;
 
     public InventoryObject inventory;
+    EventManager em;
 
     // Start is called before the first frame update
     void Awake()
     {
+        em = FindObjectOfType<EventManager>();
+        EventManager.OpenInventory += StartUICoroutine;
         numberOfSlots = _itemUI.Capacity;
         for (int i = 0; i < numberOfSlots; i++)
         {
@@ -50,23 +53,27 @@ public class InventoryUI : MonoBehaviour
 
     //Ok. I spent like 3 hours figuring out how to reload the UI. This was the only way that worked from the POV of a beginner programmer, thank you.
     //Known bug, wil display last inventory item dropped even when inventory is empty.
-    public void UpdateFullUI(InventorySlot _is)
-    {
-        for (int i = 0; i < _is.amount; i++)
-        {
-            AddNewItem(_is.item);
-        }
-    }
- 
 
-    public IEnumerator UpdateUIFromLoad(InventorySlot _is)
+    public void StartUICoroutine()
+    {
+        StartCoroutine(UpdateUI());
+    }
+
+    public IEnumerator UpdateUI()
     {
         foreach(ItemUI iu in _itemUI)
         {
             iu.UpdateImage(null);
         }
         yield return 1;
-        UpdateFullUI(_is);
+        foreach(InventorySlot slots in inventory.Container)
+        {
+            for (int i = 0; i < slots.amount; i++)
+            {
+                AddNewItem(slots.item);
+            }
+        }
+
     }
 
 

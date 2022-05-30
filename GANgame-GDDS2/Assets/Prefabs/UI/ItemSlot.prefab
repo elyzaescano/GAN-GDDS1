@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2980043492992639305}
   - component: {fileID: 2980043492992639307}
   - component: {fileID: 2980043492992639306}
-  - component: {fileID: 4114483727757539558}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -31,8 +30,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2980043493039192462}
-  - {fileID: 5094932081249085660}
-  - {fileID: 1396041346670939377}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,18 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4114483727757539558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2980043492992639304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1249d922b0aa94184dca440817b919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2980043493039192461
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +106,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5094932081249085660}
+  - {fileID: 1396041346670939377}
   m_Father: {fileID: 2980043492992639305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -186,6 +173,10 @@ MonoBehaviour:
   itemSlotID: 0
   selected: 0
   pc: {fileID: 0}
+  em: {fileID: 0}
+  inventoryButtons:
+  - {fileID: 8178443052625777108}
+  - {fileID: 6304826950519602700}
 --- !u!114 &3232889482271483572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +218,7 @@ GameObject:
   - component: {fileID: 9092867500416068804}
   - component: {fileID: 2967553409272478730}
   - component: {fileID: 2825247307456944923}
+  - component: {fileID: 9183908844394535090}
   m_Layer: 5
   m_Name: DropButton
   m_TagString: Untagged
@@ -241,12 +233,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6304826950519602700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25222316, y: 1.0892228, z: 1.0892228}
   m_Children: []
-  m_Father: {fileID: 2980043492992639305}
-  m_RootOrder: 2
+  m_Father: {fileID: 2980043493039192462}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -334,7 +326,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2967553409272478730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2980043493039192457}
+        m_TargetAssemblyTypeName: ItemUI, Assembly-CSharp
+        m_MethodName: DropItemFromUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9183908844394535090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6304826950519602700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &8178443052625777108
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,12 +382,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178443052625777108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25222316, y: 1.0892228, z: 1.0892228}
   m_Children: []
-  m_Father: {fileID: 2980043492992639305}
-  m_RootOrder: 1
+  m_Father: {fileID: 2980043493039192462}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (InventorySlot x in inventory.Container)
         {
-            StartCoroutine(inventoryUI.UpdateUIFromLoad(x));
+            StartCoroutine(inventoryUI.UpdateUI());
         }
     }
 
