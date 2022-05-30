@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public InventoryObject inventory;
     public ItemDatabaseObject database;
     public InventoryUI inventoryUI;
+    public EventManager em;
 
     [SerializeField]
     public ItemObject _item;
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
         //Access reactor ItemObject Combine script. 
         //Passes reagent ItemObject into it.
         ItemObject io = reactor.Combine(reagent);
+        if (inventory.equippedItem == reactor || reagent ) { inventory.equippedItem = null; }
         if (io == null) { firstVariable = null; secondVariable = null; yield break; } //If there is no resultant item, clear both variables and break the coroutine.
                                                                                       //Updates UI
         inventory.AddItem(io, 1);
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
         inventoryUI.StartUICoroutine();
+        EventManager.ItemEquip();
         firstVariable = null;
         secondVariable = null;
     }

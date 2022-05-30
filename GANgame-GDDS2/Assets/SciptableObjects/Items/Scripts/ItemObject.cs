@@ -9,7 +9,7 @@ public abstract class ItemObject : ScriptableObject
 
     public enum Type
     {
-        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Potion, Sword, Default
+        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Matches, Cane, HardDrive, Axe, FilledBucket ,Potion, Sword, Default
     }
 
     public Sprite itemIcon;
