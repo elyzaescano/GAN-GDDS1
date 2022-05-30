@@ -31,6 +31,11 @@ public class RoomTeleporter : LockDoor
         }
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        isTriggered = false;
+    }
+
     public void Teleport()
     {
         if (isTriggered && triggerID == doorID)
