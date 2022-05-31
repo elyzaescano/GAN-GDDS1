@@ -9,14 +9,16 @@ public class PaintingPuzzle : MonoBehaviour
     [SerializeField] GameObject[] frames;
     [SerializeField] GameObject[] pieces;
 
+    public GameObject finalDoor;
     bool isNear = false;
+    public bool piecesCollected;
 
     private void Update()
     {
         if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform))
         {
             print("Win");
-            EventManager.CompletePainting();
+            finalDoor.GetComponent<EndGame>().isLocked = false;
             paintingPanel.SetActive(false);
         }
         else
