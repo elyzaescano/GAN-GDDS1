@@ -174,13 +174,6 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 709342830221204964, guid: 9ea94d7dad7cd4f4e84803c1cf9c7be0, type: 3}
     audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
-  - name: Level
-    clip: {fileID: 8300000, guid: e5724d12f2bd71448bd539f8d9a56e9d, type: 3}
-    volume: 0.18
-    pitch: 0.38
-    loop: 1
-    source: {fileID: 6807441785506685086, guid: 71a3f424e3de04e4094ad1e6ecabccb0, type: 3}
-    audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
 --- !u!1 &169889345
 GameObject:
   m_ObjectHideFlags: 0
