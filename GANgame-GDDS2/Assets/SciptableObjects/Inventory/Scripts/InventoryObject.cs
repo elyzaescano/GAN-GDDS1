@@ -74,22 +74,25 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
 
 
-    public void RemoveItem(int i)   //Ridiculously inefficient way to remove an item from the inventory. But it works
+    public void RemoveItem( ItemObject io)   //Ridiculously inefficient way to remove an item from the inventory. But it works
     {
         foreach(InventorySlot _is in Container)
         {
-            if(_is.ID == i)
+            if (_is.item == io)
             {
-                if(_is.amount > 1)
+                if (_is.amount > 1)
                 {
                     _is.ReduceAmount(1);
                 }
                 else
                 {
                     Container.Remove(_is);
+                    Debug.Log("Removed " + _is.item);
                     break;
                 }
             }
+
+
         }
     }
 
