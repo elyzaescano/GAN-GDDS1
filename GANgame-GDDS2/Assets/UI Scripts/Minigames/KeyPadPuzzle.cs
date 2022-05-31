@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyPadPuzzle : MonoBehaviour
 {
     [Header("Keypad")]
-    public ItemSpawn itemSpawn;
+    //public ItemSpawn itemSpawn;
     public GameObject keyPadUI;
 
     bool inRange = false;
