@@ -10,7 +10,7 @@ public class EndGame : LockDoor
     {
         if (!isLocked)
         {
-            SceneManager.LoadScene("sceneToMoveTo");
+            SceneManager.LoadScene(1);
         }
     }
 }

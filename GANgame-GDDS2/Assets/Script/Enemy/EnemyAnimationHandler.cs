@@ -35,7 +35,7 @@ namespace EnemyAI
 
                 if (clips[0].clip.name == "monster_walkdown")
                 {
-                    enemyFOV.transform.eulerAngles = new Vector3(0, 0, 270);
+                    enemyFOV.transform.eulerAngles = new Vector3(0, 0, 270); //Changes direction of FOV
                 }
                 if (clips[0].clip.name == "monster_walkup")
                 {

@@ -30,6 +30,14 @@ namespace EnemyAI
             transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
         }
 
+        private void Update()
+        {
+            if (canSeePlayer)
+            {
+                print("Sex");
+            }
+        }
+
         public IEnumerator FOVCheck()
         {
             WaitForSeconds wait = new WaitForSeconds(0.2f);
