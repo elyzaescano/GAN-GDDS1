@@ -169,7 +169,7 @@ MonoBehaviour:
   music:
   - name: Menu
     clip: {fileID: 8300000, guid: 90c2b2d20a17ab84bac595e69590d9a3, type: 3}
-    volume: 0.211
+    volume: 0.4
     pitch: 0.59
     loop: 1
     source: {fileID: 709342830221204964, guid: 9ea94d7dad7cd4f4e84803c1cf9c7be0, type: 3}
@@ -1751,6 +1751,10 @@ PrefabInstance:
     - target: {fileID: 709342830221204964, guid: 9ea94d7dad7cd4f4e84803c1cf9c7be0, type: 3}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709342830221204964, guid: 9ea94d7dad7cd4f4e84803c1cf9c7be0, type: 3}
+      propertyPath: m_Volume
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 3230260435215283109, guid: 9ea94d7dad7cd4f4e84803c1cf9c7be0, type: 3}
       propertyPath: m_RootOrder
