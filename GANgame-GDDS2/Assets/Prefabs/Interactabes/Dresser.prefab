@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4363321478079406441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028764725, y: -0.24376106, z: 10.076839}
+  m_LocalPosition: {x: -0.028764725, y: -0.24376106, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4363321478222943216}
@@ -185,6 +185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 3030554014558180666, guid: d0fef50d8787eb34aad92296b76e8552, type: 3}
   spawnPoint: {fileID: 4363321479273797254}
+  itemNeeded: 0
+  playerInventory: {fileID: 0}
+  itemRequired: {fileID: 0}
 --- !u!1 &4363321479044448096
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4363321479044448096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028764725, y: 0.75623894, z: 10.076839}
+  m_LocalPosition: {x: -0.028764725, y: 0.75623894, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4363321478222943216}
