@@ -46,7 +46,10 @@ public class PaintingPuzzle : MonoBehaviour
 
     public void OpenPuzzle()
     {
-        paintingPanel.SetActive(true);
+        if (piecesCollected)
+        {
+            paintingPanel.SetActive(true);
+        }
     }
 
     public void Close()

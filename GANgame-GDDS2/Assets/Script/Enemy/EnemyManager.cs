@@ -80,7 +80,7 @@ namespace EnemyAI
             {
                 if(enemyFOV.currentTarget != null)
                 {
-                    GameObject.FindGameObjectWithTag("Player").SetActive(false);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(3.2f, -6 ,0);
                 }
             }
         }
