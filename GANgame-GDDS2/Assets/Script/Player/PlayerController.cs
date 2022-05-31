@@ -95,9 +95,9 @@ public class PlayerController : MonoBehaviour
                                                                                       //Updates UI
         inventory.AddItem(io, 1);
         yield return 1;
-        inventory.RemoveItem(reactor.id); inventory.RemoveItem(reagent.id);
-        yield return 1;       
 
+        yield return 2;
+        inventory.RemoveItem(reactor); inventory.RemoveItem(reagent);
         //Updates Inventory
 
         inventoryUI.AddNewItem(io);
