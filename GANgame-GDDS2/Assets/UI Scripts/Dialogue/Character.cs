@@ -1,8 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Character", menuName= "Character")]
-public class Character : ScriptableObject
+namespace Dialogue
 {
-    public string charName;
-    public Sprite portrait;
+    [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
+    public class Character : ScriptableObject
+    {
+        public string charName;
+        public Sprite portrait;
+    }
 }
