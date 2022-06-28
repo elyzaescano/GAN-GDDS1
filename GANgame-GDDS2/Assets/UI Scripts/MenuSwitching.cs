@@ -27,6 +27,7 @@ public class MenuSwitching : MonoBehaviour
     public void Settings()
     {
         SceneManager.LoadScene("Settings");
+        
         audioManager.Play("Menu");
         
     }
