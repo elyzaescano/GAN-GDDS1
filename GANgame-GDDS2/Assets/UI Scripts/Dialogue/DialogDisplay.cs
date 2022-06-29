@@ -9,6 +9,7 @@ namespace Dialogue
         public Conversation conversation;
 
         public GameObject speaker;
+
         private SpeakerUI speakerUI;
 
         private int activeLineIndex = 0;
@@ -16,6 +17,8 @@ namespace Dialogue
         private void Start()
         {
             speakerUI = speaker.GetComponent<SpeakerUI>();
+
+            speakerUI.Speaker = conversation.speaker;
         }
         private void Update()
         {
@@ -44,10 +47,8 @@ namespace Dialogue
             Line line = conversation.lines[activeLineIndex];
             Character character = line.character;
 
-            if (speakerUI.SpeakerIs(character))
-            {
-                SetDialog(speakerUI, line.text);
-            }
+             SetDialog(speakerUI, line.text);
+           
         }
 
         void SetDialog(SpeakerUI activeSpeakerUI, string text)
