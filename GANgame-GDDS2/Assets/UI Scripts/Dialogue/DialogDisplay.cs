@@ -7,12 +7,12 @@ namespace Dialogue
     public class DialogDisplay : MonoBehaviour
     {
         public Conversation conversation;
-
         public GameObject speaker;
 
-        private SpeakerUI speakerUI;
+        SpeakerUI speakerUI;
 
-        private int activeLineIndex = 0;
+        public float typeSpeed;
+        int activeLineIndex = 0;
 
         private void Start()
         {
@@ -53,8 +53,24 @@ namespace Dialogue
 
         void SetDialog(SpeakerUI activeSpeakerUI, string text)
         {
-            activeSpeakerUI.Dialog = text;
             activeSpeakerUI.Show();
+            activeSpeakerUI.Dialog = "";
+            StopAllCoroutines();
+            StartCoroutine(Typing(text, activeSpeakerUI));
+        }
+
+        IEnumerator Typing(string text, SpeakerUI speaker)
+        {
+            foreach (char c in text.ToCharArray())
+            {
+                speaker.Dialog += c;
+                yield return new WaitForSeconds(typeSpeed);
+                
+                if (GetComponent<AudioSource>())
+                {
+                    GetComponent<AudioSource>().Play();
+                }
+            }
         }
     }
 }

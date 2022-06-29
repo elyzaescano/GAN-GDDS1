@@ -25,6 +25,7 @@ namespace Dialogue
         }
         public string Dialog
         {
+            get { return dialog.text; }
             set { dialog.text = value; }
         }
 
