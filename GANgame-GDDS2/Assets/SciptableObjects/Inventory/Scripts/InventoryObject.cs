@@ -100,8 +100,8 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public void Save()
     {
         string saveData = JsonUtility.ToJson(this, true); //elyza says The only json i know is derulo
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = File.Create(string.Concat(Application.persistentDataPath, savePath));
+        BinaryFormatter bf = new BinaryFormatter(); //binary formatter converts data types e.g. int, float etc into binary for file saving - greg
+        FileStream fs = File.Create(string.Concat(Application.persistentDataPath, savePath)); //creates or overwrites save file in chosen savePath - greg
         bf.Serialize(fs, saveData);
         fs.Close();
     }
@@ -110,9 +110,9 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     {
         if (File.Exists(string.Concat(Application.persistentDataPath, savePath))) //elyza says you lost me after file exists
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream fs = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
-            JsonUtility.FromJsonOverwrite(bf.Deserialize(fs).ToString(), this);
+            BinaryFormatter bf = new BinaryFormatter(); //converts the data types to be read by the program so that it can be loaded - greg
+            FileStream fs = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open); //opens file in savePath to load - greg
+            JsonUtility.FromJsonOverwrite(bf.Deserialize(fs).ToString(), this); // the fuck what - greg
             fs.Close();
         }
     }
