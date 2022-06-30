@@ -39,9 +39,9 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         //}
         //If item is not already in inventory
         //Adds an inventory slot and passes item variables to constructor
-        if (Container.Count > 10)
+        if (Container.Count > 10) 
         {
-            Container.RemoveAt(10); return;
+            Container.RemoveAt(10); return; //elyza says This is probably to NOT pick up any inventory item if maximum slots has been reached
         }
         Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); 
         Debug.Log("added " + _item);
@@ -76,7 +76,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void RemoveItem( ItemObject io)   //Ridiculously inefficient way to remove an item from the inventory. But it works
     {
-        foreach(InventorySlot _is in Container)
+        foreach(InventorySlot _is in Container) //elyza says If it works it works perfectly
         {
             if (_is.item == io)
             {
