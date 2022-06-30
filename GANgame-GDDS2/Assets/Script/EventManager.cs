@@ -8,9 +8,7 @@ public class EventManager : MonoBehaviour
     public static event Action DoorOpenEvent;
 
     public static event Action OpenInventory;
-
     public static event Action CloseInventory;
-
     public static event Action EquipItem;
 
     public static event Action PaintingCompleted;

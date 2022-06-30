@@ -7,9 +7,10 @@ using UnityEngine;
 public abstract class ItemObject : ScriptableObject
 {
 
-    public enum Type
+    public enum Type //elyza says enums are just thingamabobs (aka values) that STORE INTEGERS. Add item here EVERY SINGLE TIME there's a new item
     {
-        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Matches, Cane, HardDrive, Axe, FilledBucket, Battery, Painting ,Potion, Sword, Default
+        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Matches, Cane, HardDrive, Axe, FilledBucket, Battery, 
+        Painting ,Potion, Sword, Default
     }
 
     public Sprite itemIcon;
@@ -28,7 +29,7 @@ public abstract class ItemObject : ScriptableObject
     }
     public Recipe[] recipes; 
 
-    public ItemObject Combine(ItemObject reagent)
+    public ItemObject Combine(ItemObject reagent) //elyza says Responsible for making the recipes work. Ignore unless there's a bug that needs a fixin'
     {
         for(int i = 0;i < recipes.Length; i++) {
             if (recipes[i].other == reagent) return recipes[i].result;

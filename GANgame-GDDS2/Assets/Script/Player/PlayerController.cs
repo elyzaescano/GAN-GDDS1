@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnim;
 
     private void Start()
-    {
+    {    
         playerAnim = GetComponent<Animator>();
         inRangeOfItem = false;
     }
