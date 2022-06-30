@@ -15,7 +15,7 @@ public class MenuSwitching : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("House1");
-        audioManager.Stop("Menu");
+        
         
     }
 
@@ -28,7 +28,7 @@ public class MenuSwitching : MonoBehaviour
     {
         SceneManager.LoadScene("Settings");
         
-        audioManager.Play("Menu");
+       
         
     }
 
@@ -41,7 +41,7 @@ public class MenuSwitching : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("Menu");
-        audioManager.Play("Menu");
+        
     }
 
 }

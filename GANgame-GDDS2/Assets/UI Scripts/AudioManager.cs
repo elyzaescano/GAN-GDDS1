@@ -7,49 +7,20 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-
-    public Music[] music;
-    void Awake()
+    
+       public static AudioManager instance;
+    // Start is called before the first frame update
+    private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (instance != null)
+            Destroy(gameObject); //If another instance of BGM gameobject exists in another scene, destroy
         else
         {
-            Destroy(gameObject);
+            instance = this;
+            DontDestroyOnLoad(this.gameObject); //If it doesnt, dont destroy on load
         }
-
-        DontDestroyOnLoad(gameObject);
-
-        foreach(Music m in music)
-        {
-            m.source = gameObject.AddComponent<AudioSource>();
-            m.source.clip = m.clip;
-
-            m.source.volume = m.volume;
-            m.source.pitch = m.pitch;
-            m.source.loop = m.loop;
-            m.source.outputAudioMixerGroup = m.audioMixer;
-
-        }
-
     }
 
-    public void Play(string name)
-    {
-        Music m = Array.Find(music, music => music.name == name);
-        if (m == null)
-            return;
-        m.source.Play();
-    }
-
-    public void Stop(string name)
-    {
-        Music m = Array.Find(music, music => music.name == name);
-        if (m == null)
-            return;
-        m.source.Stop();
-    }
 
 
 
