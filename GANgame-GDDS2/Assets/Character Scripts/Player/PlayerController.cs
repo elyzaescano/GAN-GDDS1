@@ -63,8 +63,18 @@ public class PlayerController : MonoBehaviour
         {
             RefreshUI();
         }
-        playerAnim.SetFloat("Speed.X", movement.x);
-        playerAnim.SetFloat("Speed.Y", movement.y);
+
+        if (movement.x != 0 || movement.y != 0)
+        {
+            playerAnim.SetFloat("Speed.X", movement.x);
+            playerAnim.SetFloat("Speed.Y", movement.y);
+
+            playerAnim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            playerAnim.SetBool("IsMoving", false);
+        }
     }
 
     //Mobile code for crafting
@@ -126,7 +136,7 @@ public class PlayerController : MonoBehaviour
         if (usingKBM) { movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical"); } else {
             HorizontalMovement(Mathf.RoundToInt(movement.x)); VerticalMovement(Mathf.RoundToInt(movement.y));
         }
-        if (movement.x != 0 || movement.y != 0) { playerAnim.SetBool("IsMoving", true); } else { playerAnim.SetBool("IsMoving", false); }
+        //if (movement.x != 0 || movement.y != 0) { playerAnim.SetBool("IsMoving", true); } else { playerAnim.SetBool("IsMoving", false); }
     }
 
     public void HorizontalMovement(int directionX) //Joystick link
