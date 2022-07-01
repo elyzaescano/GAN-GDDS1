@@ -31,20 +31,21 @@ public class ItemUI : MonoBehaviour
 
     private void Start()
     {
-        foreach(GameObject go in inventoryButtons)
+        foreach(GameObject go in inventoryButtons) //elyza says Basically sets all the inventory UI inactive
         {
             go.SetActive(false);
         }
         EventManager.OpenInventory += EnableButtons;
     }
 
-    public void UpdateImage(ItemObject item)
+    public void UpdateImage(ItemObject item) //elyza says As the function says, displays the sprite of the item in the inventory
     {
         this.item = item;
         if (this.item != null)
         {
             spriteImage.sprite = this.item.itemIcon;
-            if (UI.color == Color.white) spriteImage.color = Color.white; else if(UI.color == Color.clear) spriteImage.color = Color.clear;         
+            if (UI.color == Color.white) spriteImage.color = Color.white; 
+            else if(UI.color == Color.clear) spriteImage.color = Color.clear;         //elyza says What is the point of all the Color. references?
         }
         else { spriteImage.sprite = null; spriteImage.color = Color.clear; }
     }

@@ -6,11 +6,10 @@ using System;
 public class EventManager : MonoBehaviour
 {
     public static event Action DoorOpenEvent;
+    public static event Action RoomEnterEvent;
 
     public static event Action OpenInventory;
-
     public static event Action CloseInventory;
-
     public static event Action EquipItem;
 
     public static event Action PaintingCompleted;
@@ -35,9 +34,12 @@ public class EventManager : MonoBehaviour
         EquipItem?.Invoke();
     }
 
-    public static void CompletePainting()
+    public static void CompletePainting() //UNUSED
     {
         PaintingCompleted?.Invoke();
     }
 
+    public static void RoomEntered(int roomID){
+        RoomEnterEvent?.Invoke();
+    }
 }
