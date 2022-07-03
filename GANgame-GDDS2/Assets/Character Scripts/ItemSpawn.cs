@@ -14,10 +14,20 @@ public class ItemSpawn : MonoBehaviour
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
 
+    public EventManager em;
+    public int spawnerID;
+    int triggerID;
+
+    private void Start()
+    {
+        
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
+            EventManager.SpawnItem += Spawn;
             ItemObject o = playerInventory.equippedItem;
             if(o == itemRequired)
             {
