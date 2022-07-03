@@ -13,6 +13,8 @@ public class EventManager : MonoBehaviour
     public static event Action EquipItem;
 
     public static event Action PaintingCompleted;
+
+    public static event Action SpawnItem;
   
     public static void DoorOpen()
     {
@@ -42,4 +44,10 @@ public class EventManager : MonoBehaviour
     public static void RoomEntered(int roomID){
         RoomEnterEvent?.Invoke();
     }
+
+    public static void sItem()
+    {
+        SpawnItem?.Invoke();
+    }
+
 }
