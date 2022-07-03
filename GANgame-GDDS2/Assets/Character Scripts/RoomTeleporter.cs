@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RoomTeleporter : LockDoor
 {
@@ -11,6 +12,8 @@ public class RoomTeleporter : LockDoor
     public int doorID;
     int triggerID;
     GameObject player;
+
+    public AudioSource doorOpenClose;
 
     LockDoor lockDoor;
 
@@ -54,9 +57,11 @@ public class RoomTeleporter : LockDoor
         {
             if (!lockDoor.isLocked && itemNeeded)
             {
+                doorOpenClose.Play();
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
+
             }
         }
     }
