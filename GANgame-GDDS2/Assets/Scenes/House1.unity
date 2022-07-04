@@ -8345,17 +8345,6 @@ Transform:
   m_Father: {fileID: 1000595520}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &371461950 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2125875187787803739, guid: 104a0f0f299f2e54f9ea7248117390a3, type: 3}
-  m_PrefabInstance: {fileID: 1844201883}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceda75802c142244d941425ff9d5ae62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &386606824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1403231180701662987, guid: e97b70ab34a56cf41844165332d00a60, type: 3}
@@ -9729,6 +9718,10 @@ PrefabInstance:
       propertyPath: itemSpawn
       value: 
       objectReference: {fileID: 7564098310412883924}
+    - target: {fileID: 7444564139893755698, guid: f106bee5766e6774eab88182f091f98c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_Name
       value: Keypad(box1)
@@ -31691,7 +31684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -31776,35 +31769,35 @@ PrefabInstance:
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 566766541}
+      objectReference: {fileID: 970790287}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 970790287}
+      objectReference: {fileID: 1840847902}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1826657336}
+      objectReference: {fileID: 1755439022}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 371461950}
+      objectReference: {fileID: 566766541}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 7564098310412883916}
+      objectReference: {fileID: 566766541}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 1840847902}
+      objectReference: {fileID: 566766541}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 1755439022}
+      objectReference: {fileID: 566766541}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
-      objectReference: {fileID: 190623875}
+      objectReference: {fileID: 566766541}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_Target
       value: 
@@ -31891,7 +31884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DoorOpen
+      value: FlipFront
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[10].m_CallState
@@ -31935,7 +31928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: FlipFront
+      value: SimonGame
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -31943,23 +31936,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: OpenNote
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: UnlockKey
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: SimonGame
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: OpenNote
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
-      value: UnlockKey
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
@@ -32011,11 +32004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: EventManager, Assembly-CSharp
+      value: Painting, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Painting, Assembly-CSharp
+      value: OpenSimon, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -32023,23 +32016,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: PaperNotes, Assembly-CSharp
+      value: EventManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: KeyPadPuzzle, Assembly-CSharp
+      value: EventManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: OpenSimon, Assembly-CSharp
+      value: EventManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: PaperNotes, Assembly-CSharp
+      value: EventManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
-      value: KeyPadPuzzle, Assembly-CSharp
+      value: EventManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
@@ -69788,7 +69781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564098309235266612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -1.52, z: 10}
+  m_LocalPosition: {x: 0.12, y: -2.14, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7564098310412883915}
@@ -69886,10 +69879,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7564098310412883915}
-  - component: {fileID: 7564098310412883914}
   - component: {fileID: 7564098310412883913}
+  - component: {fileID: 7564098310412883914}
   - component: {fileID: 7564098310412883924}
   - component: {fileID: 7564098310412883916}
+  - component: {fileID: 7564098310412883917}
   m_Layer: 0
   m_Name: Box 1
   m_TagString: Untagged
@@ -69979,6 +69973,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPadUI: {fileID: 933605842}
+--- !u!82 &7564098310412883917
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564098310412883912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7564098310412883924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69986,7 +70076,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564098310412883912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9364accb6f6ac45469774cf30f0d8da4, type: 3}
   m_Name: 

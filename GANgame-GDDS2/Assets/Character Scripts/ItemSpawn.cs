@@ -28,6 +28,7 @@ public class ItemSpawn : MonoBehaviour
         if(other.tag == "Player")
         {
             EventManager.InteractEvent += this.Spawn;
+            print("subscribed");
             ItemObject o = playerInventory.equippedItem;
             if(o == itemRequired)
             {
@@ -44,7 +45,7 @@ public class ItemSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        if (canSpawn && itemNeeded)
+        if (canSpawn && itemNeeded && this.enabled)
         {
             Instantiate(itemPrefab, spawnPoint);
             canSpawn = false;
