@@ -24,7 +24,6 @@ public class RoomTeleporter : LockDoor
 
     private void Start()
     {
-        EventManager.DoorOpenEvent += Teleport;
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
@@ -34,8 +33,9 @@ public class RoomTeleporter : LockDoor
     {
         if(other.gameObject == player)
         {
+            EventManager.InteractEvent += Teleport;
             ItemObject o = playerInventory.equippedItem;
-            if (o == itemRequired)
+            if (o == itemRequired || itemRequired == null)
             {
                 itemNeeded = true;
                 lockDoor.isLocked = false;
@@ -48,6 +48,7 @@ public class RoomTeleporter : LockDoor
 
     void OnTriggerExit2D(Collider2D other)
     {
+        EventManager.InteractEvent -= Teleport;
         isTriggered = false;
     }
 
@@ -68,7 +69,7 @@ public class RoomTeleporter : LockDoor
 
     private void OnDisable()
     {
-        EventManager.DoorOpenEvent -= Teleport;
+        EventManager.InteractEvent -= Teleport;
     }
 
 }

@@ -27,7 +27,7 @@ public class ItemSpawn : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            EventManager.SpawnItem += this.Spawn;
+            EventManager.InteractEvent += this.Spawn;
             ItemObject o = playerInventory.equippedItem;
             if(o == itemRequired)
             {
@@ -39,7 +39,7 @@ public class ItemSpawn : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        EventManager.SpawnItem -= this.Spawn;
+        EventManager.InteractEvent -= this.Spawn;
     }
 
     public void Spawn()
@@ -48,7 +48,7 @@ public class ItemSpawn : MonoBehaviour
         {
             Instantiate(itemPrefab, spawnPoint);
             canSpawn = false;
-            EventManager.SpawnItem -= this.Spawn;
+            EventManager.InteractEvent -= this.Spawn;
             Destroy(GetComponent<ItemSpawn>());
         }
     }

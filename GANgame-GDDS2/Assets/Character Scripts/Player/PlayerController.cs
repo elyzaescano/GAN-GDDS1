@@ -160,6 +160,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        EventManager.InteractEvent += startAddItemCoroutine;
         var item = collision.GetComponent<Item>();
         if (item)
         {
@@ -171,6 +172,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        EventManager.InteractEvent -= startAddItemCoroutine;
         inRangeOfItem = false;
     }
 
@@ -195,6 +197,7 @@ public class PlayerController : MonoBehaviour
     //Empties inventory upon application quit
     private void OnApplicationQuit()
     {
+        EventManager.InteractEvent -= startAddItemCoroutine;
         inventory.Container.Clear();
     }
 
