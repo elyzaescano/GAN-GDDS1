@@ -95,7 +95,7 @@ public class SimonSays : MonoBehaviour
             if (buttonsPressed == 4) //Player has reached final level
             {
                 level++; 
-                win = true; //Guess
+                win = true; //Guess //No
             }
         }
     }
