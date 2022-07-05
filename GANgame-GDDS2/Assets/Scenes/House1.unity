@@ -8212,7 +8212,7 @@ MonoBehaviour:
   doorID: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
-  itemRequired: {fileID: 0}
+  itemRequired: {fileID: 11400000, guid: e6903db603ed7a247b4e3f65e9b8b20b, type: 2}
   itemNeeded: 0
 --- !u!61 &301946422
 BoxCollider2D:

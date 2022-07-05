@@ -62,9 +62,21 @@ public class RoomTeleporter : LockDoor
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
-
+                bool removeItem = itemRequired ? true : false;
+                if (removeItem)
+                {
+                    StartCoroutine(removeEquippedItem());
+                }
             }
         }
+    }
+
+    IEnumerator removeEquippedItem()
+    {
+        playerInventory.equippedItem = null;
+        playerInventory.RemoveItem(playerInventory.equippedItem);
+        yield return null;
+        EventManager.ItemEquip();
     }
 
     private void OnDisable()
