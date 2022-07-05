@@ -48,9 +48,7 @@ public class KeypadScreen : MonoBehaviour
      public void ClearNumber()
     {
         codeTextValue = "";
-        //audioSource.clip = feedback[3];
         itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[3]);
-        //audioSource.Play();
     }
 
     public void EnterCode()
@@ -59,16 +57,12 @@ public class KeypadScreen : MonoBehaviour
         {
             itemSpawn.enabled = true;
             itemSpawn.Spawn();
-           // audioSource.clip = feedback[1];
             itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
-           //audioSource.Play();
             
         }
         else
         {
-            //audioSource.clip = feedback[0];
             itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[0]);
-            //audioSource.Play();
             codeTextValue = "";
         }
     }
