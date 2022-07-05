@@ -190,13 +190,16 @@ public class PlayerController : MonoBehaviour
             inRangeOfItem = true;
             _item = item.item;
             itemGO = item.gameObject;
+            print("Can add" + item.name);
         }
+
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         EventManager.InteractEvent -= startAddItemCoroutine;
         inRangeOfItem = false;
+        print(collision.name + " is not in range");
     }
 
     public void startAddItemCoroutine()
