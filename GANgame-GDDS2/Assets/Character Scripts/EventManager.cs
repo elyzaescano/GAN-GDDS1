@@ -14,6 +14,8 @@ public class EventManager : MonoBehaviour
     public static event Action PaintingCompleted;
 
     public static event Action InteractEvent;
+
+    
   
 
 
@@ -43,6 +45,7 @@ public class EventManager : MonoBehaviour
 
     public static void Interact()
     {
+
         InteractEvent?.Invoke();
     }
 
