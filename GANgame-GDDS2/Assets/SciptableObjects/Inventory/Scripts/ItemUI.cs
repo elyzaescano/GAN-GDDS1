@@ -57,9 +57,15 @@ public class ItemUI : MonoBehaviour
             spriteImage.color = Color.black;
             ItemObject item = playerInventory.Container[itemSlotID].item;
             //print(item);
-            pc.GetCraftingItems(item);
+            pc.GetCraftingItems(item,this);
             selected = true;
         }
+    }
+
+    public void DeSelect()
+    {
+        spriteImage.color = Color.white;
+        selected = false;
     }
 
     public void EnableButtons()

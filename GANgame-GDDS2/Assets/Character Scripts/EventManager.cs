@@ -5,7 +5,6 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
-    public static event Action DoorOpenEvent;
     public static event Action RoomEnterEvent;
 
     public static event Action OpenInventory;
@@ -13,11 +12,12 @@ public class EventManager : MonoBehaviour
     public static event Action EquipItem;
 
     public static event Action PaintingCompleted;
+
+    public static event Action InteractEvent;
+
+    
   
-    public static void DoorOpen()
-    {
-        DoorOpenEvent?.Invoke();
-    }
+
 
     public static void InventoryToggle()
     {
@@ -42,4 +42,11 @@ public class EventManager : MonoBehaviour
     public static void RoomEntered(int roomID){
         RoomEnterEvent?.Invoke();
     }
+
+    public static void Interact()
+    {
+
+        InteractEvent?.Invoke();
+    }
+
 }

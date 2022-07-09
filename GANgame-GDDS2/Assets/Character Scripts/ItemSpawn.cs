@@ -14,10 +14,21 @@ public class ItemSpawn : MonoBehaviour
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
 
+    public EventManager em;
+    public int spawnerID;
+    int triggerID;
+
+    private void Start()
+    {
+        
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
+            EventManager.InteractEvent += this.Spawn;
+            print("subscribed");
             ItemObject o = playerInventory.equippedItem;
             if(o == itemRequired)
             {
@@ -27,12 +38,18 @@ public class ItemSpawn : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        EventManager.InteractEvent -= this.Spawn;
+    }
+
     public void Spawn()
     {
-        if (canSpawn && itemNeeded)
+        if (canSpawn && itemNeeded && this.enabled)
         {
             Instantiate(itemPrefab, spawnPoint);
             canSpawn = false;
+            EventManager.InteractEvent -= this.Spawn;
             Destroy(GetComponent<ItemSpawn>());
         }
     }

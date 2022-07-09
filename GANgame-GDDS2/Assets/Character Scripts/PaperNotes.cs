@@ -9,11 +9,12 @@ public class PaperNotes : MonoBehaviour
     public string note; //ur input 
     public GameObject paperNote;
     bool viewNote = false;
-    
+    EventManager em;
     // Start is called before the first frame update
     void Start()
     {
         //noteText.text = note;
+        em = FindObjectOfType<EventManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,8 @@ public class PaperNotes : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            EventManager.InteractEvent += OpenNote;
+
             viewNote = true;
         }
     }
@@ -34,6 +37,7 @@ public class PaperNotes : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            EventManager.InteractEvent -= OpenNote;
             viewNote = false;
         }
     }
@@ -51,4 +55,10 @@ public class PaperNotes : MonoBehaviour
     {
        paperNote.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        EventManager.InteractEvent -= OpenNote;
+    }
+
 }

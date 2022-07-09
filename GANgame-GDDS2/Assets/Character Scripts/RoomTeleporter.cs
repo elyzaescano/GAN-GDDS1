@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RoomTeleporter : LockDoor
 {
@@ -12,6 +13,8 @@ public class RoomTeleporter : LockDoor
     int triggerID;
     GameObject player;
 
+    public AudioSource doorOpenClose;
+
     LockDoor lockDoor;
 
     //checks if player has the item 
@@ -21,7 +24,6 @@ public class RoomTeleporter : LockDoor
 
     private void Start()
     {
-        EventManager.DoorOpenEvent += Teleport;
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
@@ -31,8 +33,9 @@ public class RoomTeleporter : LockDoor
     {
         if(other.gameObject == player)
         {
+            EventManager.InteractEvent += Teleport;
             ItemObject o = playerInventory.equippedItem;
-            if (o == itemRequired)
+            if (o == itemRequired || itemRequired == null)
             {
                 itemNeeded = true;
                 lockDoor.isLocked = false;
@@ -45,6 +48,7 @@ public class RoomTeleporter : LockDoor
 
     void OnTriggerExit2D(Collider2D other)
     {
+        EventManager.InteractEvent -= Teleport;
         isTriggered = false;
     }
 
@@ -54,16 +58,18 @@ public class RoomTeleporter : LockDoor
         {
             if (!lockDoor.isLocked && itemNeeded)
             {
+                doorOpenClose.Play();
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
+
             }
         }
     }
 
     private void OnDisable()
     {
-        EventManager.DoorOpenEvent -= Teleport;
+        EventManager.InteractEvent -= Teleport;
     }
 
 }

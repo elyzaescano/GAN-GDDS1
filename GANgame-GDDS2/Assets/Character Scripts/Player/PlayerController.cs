@@ -79,19 +79,43 @@ public class PlayerController : MonoBehaviour
 
     //Mobile code for crafting
     ItemObject firstVariable;
+    ItemUI firstItemUI;
     ItemObject secondVariable;
-    public void GetCraftingItems(ItemObject craftingItem)
+    ItemUI secondItemUI;
+    public void GetCraftingItems(ItemObject craftingItem, ItemUI itemIcon)
     {
         if (!firstVariable)
         {
             firstVariable = craftingItem;
+            firstItemUI = itemIcon;
         } else
         {
             secondVariable = craftingItem;
-            StartCoroutine(Crafting(firstVariable, secondVariable));
+            secondItemUI = itemIcon;
+            int i = firstVariable.Combine(secondVariable) ? 1 : 0;
+            
+            int o = secondVariable.Combine(firstVariable) ? 1 : 0;
+            print(i+o);
+            if (i+o == 2)
+            {
+                StartCoroutine(Crafting(firstVariable, secondVariable));
+            }else
+            {
+
+                StartCoroutine(UnCrafting(firstVariable,secondVariable,firstItemUI,secondItemUI));
+            }
         }
+            
         print("first = " + firstVariable);
         print("Second = " + secondVariable);
+    }
+    [SerializeField] AudioClip nope;
+    IEnumerator UnCrafting( ItemObject crafting1, ItemObject crafting2, ItemUI ui1, ItemUI ui2)
+    {
+        firstVariable = null; secondVariable = null; firstItemUI = null; secondItemUI = null;
+        yield return null;
+        ui1.DeSelect(); ui2.DeSelect();
+        GetComponent<AudioSource>().PlayOneShot(nope,.5f);
     }
 
     //Crafting Coroutine
@@ -100,8 +124,7 @@ public class PlayerController : MonoBehaviour
         //Access reactor ItemObject Combine script. 
         //Passes reagent ItemObject into it.
         ItemObject io = reactor.Combine(reagent);
-        if (inventory.equippedItem == reactor || reagent ) { inventory.equippedItem = null; }
-        if (io == null) { firstVariable = null; secondVariable = null; yield break; } //If there is no resultant item, clear both variables and break the coroutine.
+        if (inventory.equippedItem == reactor || reagent ) { inventory.equippedItem = null; } //If there is no resultant item, clear both variables and break the coroutine.
                                                                                       //Updates UI
         inventory.AddItem(io, 1);
         yield return 1;
@@ -160,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        EventManager.InteractEvent += startAddItemCoroutine;
         var item = collision.GetComponent<Item>();
         if (item)
         {
@@ -167,6 +191,12 @@ public class PlayerController : MonoBehaviour
             _item = item.item;
             itemGO = item.gameObject;
         }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        EventManager.InteractEvent -= startAddItemCoroutine;
+        inRangeOfItem = false;
     }
 
     public void startAddItemCoroutine()
@@ -190,6 +220,7 @@ public class PlayerController : MonoBehaviour
     //Empties inventory upon application quit
     private void OnApplicationQuit()
     {
+        EventManager.InteractEvent -= startAddItemCoroutine;
         inventory.Container.Clear();
     }
 

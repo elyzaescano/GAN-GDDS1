@@ -538,7 +538,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 703390998}
         m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
-        m_MethodName: SetLevel
+        m_MethodName: MenuBGM
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

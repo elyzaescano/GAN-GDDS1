@@ -48,23 +48,21 @@ public class KeypadScreen : MonoBehaviour
      public void ClearNumber()
     {
         codeTextValue = "";
-        audioSource.clip = feedback[3];
-        audioSource.Play();
+        itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[3]);
     }
 
     public void EnterCode()
     {
         if (codeTextValue == passCode)
         {
+            itemSpawn.enabled = true;
             itemSpawn.Spawn();
-            audioSource.clip = feedback[1];
-            audioSource.Play();
+            itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
             
         }
         else
         {
-            audioSource.clip = feedback[0];
-            audioSource.Play();
+            itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[0]);
             codeTextValue = "";
         }
     }

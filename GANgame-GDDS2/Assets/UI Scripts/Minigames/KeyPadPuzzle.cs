@@ -9,11 +9,12 @@ public class KeyPadPuzzle : MonoBehaviour
     public GameObject keyPadUI;
 
     bool inRange = false;
+    EventManager em;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        em = FindObjectOfType<EventManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class KeyPadPuzzle : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            EventManager.InteractEvent += UnlockKey;
             inRange = true;
         }
     }
@@ -34,6 +36,7 @@ public class KeyPadPuzzle : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            EventManager.InteractEvent -= UnlockKey;
             inRange = false;
         }
     }
@@ -44,13 +47,14 @@ public class KeyPadPuzzle : MonoBehaviour
         if (inRange)
         {
             keyPadUI.SetActive(true);
+            GetComponent<KeyPadPuzzle>().enabled = true;
         }
     }
 
     public void CloseKey()
     {
         keyPadUI.SetActive(false);
-        Destroy(GetComponent<KeyPadPuzzle>());
+        GetComponent<KeyPadPuzzle>().enabled = false;
     }
 
 }

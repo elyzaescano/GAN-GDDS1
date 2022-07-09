@@ -66,7 +66,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         ItemObject _io = Container[i].item;     
         Debug.Log("Getting " + _io);
 
-        //If there is no item, returns a null. elyza says This is an opportune moment to add VISUAL and AUDIO FEEDBACK
+        //If there is no item, returns a null. elyza says This is an opportune moment to add VISUAL and AUDIO FEEDBACK. Hakeem says this is a scriptable object, you cant attatch this to something to queue audio, it has to be on playercontroller
         //If there is item, returns ItemObject.
         if (_io != null)
             return _io;

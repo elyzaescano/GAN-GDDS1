@@ -6,12 +6,13 @@ public class OpenSimon : MonoBehaviour
 {
     public GameObject simonGame;
     public GameObject simonPanel;
+    EventManager em;
     bool isNear = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        em = FindObjectOfType<EventManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class OpenSimon : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            EventManager.InteractEvent += SimonGame;
             isNear = true;
         }
     }
@@ -32,6 +34,7 @@ public class OpenSimon : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            EventManager.InteractEvent -= SimonGame;
             isNear = false;
         }
     }
@@ -41,7 +44,8 @@ public class OpenSimon : MonoBehaviour
     {
         if (isNear)
         {
-            simonPanel.SetActive(true);
+            bool hasScript = simonGame ? true : false;
+            if(hasScript) simonPanel.SetActive(true);
         }
         
     }
@@ -52,4 +56,11 @@ public class OpenSimon : MonoBehaviour
         Destroy(simonGame);
 
     }
+
+    private void OnDisable()
+    {
+        EventManager.InteractEvent -= SimonGame;
+
+    }
+
 }
