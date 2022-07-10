@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -10,6 +11,7 @@ public class RoomTeleporter : LockDoor
     bool isTriggered = false;
     public EventManager em;
     public int doorID;
+    public float spawnCountdown;
     int triggerID;
     GameObject player;
 
@@ -27,6 +29,7 @@ public class RoomTeleporter : LockDoor
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
+        EventManager.EnterRoomEvent += Teleport;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -62,7 +65,7 @@ public class RoomTeleporter : LockDoor
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
-
+                EventManager.EnterRoom();
             }
         }
     }

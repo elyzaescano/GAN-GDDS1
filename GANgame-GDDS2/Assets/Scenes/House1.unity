@@ -658,6 +658,7 @@ MonoBehaviour:
   destGO: {fileID: 533393786}
   em: {fileID: 566766541}
   doorID: 6
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -8194,6 +8195,7 @@ MonoBehaviour:
   destGO: {fileID: 1494061934}
   em: {fileID: 566766541}
   doorID: 0
+  spawnCountdown: 10
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -9612,6 +9614,7 @@ MonoBehaviour:
   destGO: {fileID: 2125073444}
   em: {fileID: 566766541}
   doorID: 8
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -30048,6 +30051,7 @@ MonoBehaviour:
   destGO: {fileID: 794571430}
   em: {fileID: 566766541}
   doorID: 1
+  spawnCountdown: 3
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
@@ -30264,6 +30268,7 @@ MonoBehaviour:
   destGO: {fileID: 1219944810}
   em: {fileID: 566766541}
   doorID: 7
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}
@@ -30380,6 +30385,7 @@ MonoBehaviour:
   destGO: {fileID: 1626803963}
   em: {fileID: 566766541}
   doorID: 2
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -62007,6 +62013,51 @@ Transform:
   m_Father: {fileID: 1652560867}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1122901809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122901811}
+  - component: {fileID: 1122901810}
+  m_Layer: 0
+  m_Name: EnemySpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1122901810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122901809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7b8ce6aaf44834dbaa303d3369ab62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSpawn: 0
+  enemy: {fileID: 0}
+--- !u!4 &1122901811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122901809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 147.5, y: 3.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1144761646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8140239313256044306, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
@@ -64114,6 +64165,7 @@ MonoBehaviour:
   destGO: {fileID: 1816810877}
   em: {fileID: 566766541}
   doorID: 3
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -65372,6 +65424,7 @@ MonoBehaviour:
   destGO: {fileID: 1109936898}
   em: {fileID: 566766541}
   doorID: 9
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -66761,6 +66814,7 @@ MonoBehaviour:
   destGO: {fileID: 221428217}
   em: {fileID: 566766541}
   doorID: 10
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -66913,6 +66967,7 @@ MonoBehaviour:
   destGO: {fileID: 2034017585}
   em: {fileID: 566766541}
   doorID: 4
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
@@ -67135,6 +67190,7 @@ MonoBehaviour:
   destGO: {fileID: 1771853228}
   em: {fileID: 566766541}
   doorID: 5
+  spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
