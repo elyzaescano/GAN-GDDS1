@@ -24,13 +24,7 @@ public class MenuSwitching : MonoBehaviour
         SceneManager.LoadScene("LoadGame");
     }
 
-    public void Settings()
-    {
-        SceneManager.LoadScene("Settings");
-
-
-
-    }
+    
 
     public void Credits()
     {
