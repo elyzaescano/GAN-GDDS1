@@ -13,7 +13,7 @@ public class EventManager : MonoBehaviour
 
     public static event Action InteractEvent;
 
-    public static event Action RoomChanged;
+    public static event Action EnemyCanSpawn;
 
     public static void InventoryToggle()
     {
@@ -40,9 +40,9 @@ public class EventManager : MonoBehaviour
         InteractEvent?.Invoke();
     }
 
-    public static void EnterRoom()
+    public static void SpawnChecker()
     {
-        RoomChanged?.Invoke();
+        EnemyCanSpawn?.Invoke();
     }
 
 }

@@ -11,32 +11,31 @@ namespace EnemyAI
         public GameObject enemy;
         public GameObject currentRoom;
         PlayerController player;
+
         private void Start() 
         {
             player = FindObjectOfType<PlayerController>();
-            EventManager.RoomChanged += RoomChecker;
+
+            canSpawn = true;
         }
         private void Update()
         {
             currentRoom = FindRoom();
 
-            
+            if (canSpawn)
+            {
+                EventManager.EnemyCanSpawn += SpawnEnemy;
+            }
+            else
+            {
+                EventManager.EnemyCanSpawn -= SpawnEnemy;
+            }
         }
 
-        void RoomChecker()
+        void SpawnEnemy()
         {
-            StartCoroutine(SpawnTimeManager());
-        }
-
-        IEnumerator SpawnTimeManager()
-        {
-            float spawnCountdown = currentRoom.GetComponent<Room>().timeToSpawn;
-
-            print(spawnCountdown);
-            yield return new WaitForSeconds(spawnCountdown);
-
-            Instantiate(enemy, player.transform);
-            canSpawn = false;
+            Instantiate(enemy, player.transform);    
+            canSpawn = false;          
         }
 
 

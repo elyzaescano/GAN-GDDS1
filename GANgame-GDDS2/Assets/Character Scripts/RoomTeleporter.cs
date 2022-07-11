@@ -30,7 +30,7 @@ public class RoomTeleporter : LockDoor
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
-        EventManager.RoomChanged += Teleport;
+        EventManager.EnemyCanSpawn += Teleport;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -68,7 +68,7 @@ public class RoomTeleporter : LockDoor
                 isTriggered = false;
 
                 //Invokes the event for the EnemySpawn
-                EventManager.EnterRoom();
+                EventManager.SpawnChecker();
             }
         }
     }
