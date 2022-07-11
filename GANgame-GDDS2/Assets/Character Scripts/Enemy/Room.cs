@@ -28,7 +28,7 @@ namespace EnemyAI
 
             EventManager.SpawnChecker();
 
-            while (esm.currentRoom.GetComponent<Room>().roomNo != roomNo)
+            while (esm.currentRoom.GetComponent<Room>().roomNo != roomNo) //Supposedly pauses the coroutine 
             {
                 yield return null;
             }
