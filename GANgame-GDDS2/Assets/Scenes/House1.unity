@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 6
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!1 &169178445
 GameObject:
   m_ObjectHideFlags: 0
@@ -13596,7 +13596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 4
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!1 &642914069
 GameObject:
   m_ObjectHideFlags: 0
@@ -62783,7 +62783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 2
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!1 &1267039564
 GameObject:
   m_ObjectHideFlags: 0
@@ -65424,7 +65424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 3
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!1 &1621287476
 GameObject:
   m_ObjectHideFlags: 0
@@ -67348,7 +67348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!1 &1884062057
 GameObject:
   m_ObjectHideFlags: 0
@@ -68545,7 +68545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 5
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!1 &1987744681
 GameObject:
   m_ObjectHideFlags: 0
@@ -68590,7 +68590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 10
+  timeToSpawn: 3
 --- !u!4 &1994839118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 741976666149874985, guid: 6143356540cd3ec4f92672aba2c32f91, type: 3}

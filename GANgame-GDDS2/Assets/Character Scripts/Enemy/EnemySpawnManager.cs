@@ -15,21 +15,25 @@ namespace EnemyAI
         private void Start() 
         {
             player = FindObjectOfType<PlayerController>();
+            canSpawn = true;
 
-            EventManager.EnemyCanSpawn += SpawnEnemy; //Like, follow and subscribes to the Event triggered by the ROOM
+            EventManager.EnemyCanSpawn += SpawnEnemy;
         }
         private void Update()
         {
             currentRoom = FindRoom();
-
-            if (canSpawn){SpawnEnemy();}
         }
 
         void SpawnEnemy()
         {
             print("If this prints more than once, assume the game crashes");
-            //Instantiate(enemy, player.transform);    
+            Instantiate(enemy, player.transform);    
             canSpawn = false;          
+        }
+
+        private void OnDisable() 
+        {
+            EventManager.EnemyCanSpawn -= SpawnEnemy;
         }
 
 

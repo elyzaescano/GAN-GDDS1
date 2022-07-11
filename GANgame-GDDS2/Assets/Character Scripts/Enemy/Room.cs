@@ -9,28 +9,30 @@ namespace EnemyAI
     {
         public int roomNo;
         public float timeToSpawn;
+        float originalTime;
         EnemySpawnManager esm;
         
-        private void Start() {
+        private void Start() 
+        {
             esm = FindObjectOfType<EnemySpawnManager>();
+            originalTime = timeToSpawn;
         }
         void Update()
         {
-            if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo)
+            if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn)
             {
-                StartCoroutine(SpawnCountdown());
+                timeToSpawn -= Time.deltaTime;
             }
-        }
-
-        IEnumerator SpawnCountdown()
-        {
-            yield return new WaitForSeconds(timeToSpawn);
-
-            EventManager.SpawnChecker();
-
-            while (esm.currentRoom.GetComponent<Room>().roomNo != roomNo) //Supposedly pauses the coroutine 
+            else
             {
-                yield return null;
+                timeToSpawn -= 0;
+            }
+
+            if (timeToSpawn <= 0)
+            {
+                timeToSpawn = originalTime;
+                EventManager.SpawnChecker();
+                //print("fn check");
             }
         }
     }
