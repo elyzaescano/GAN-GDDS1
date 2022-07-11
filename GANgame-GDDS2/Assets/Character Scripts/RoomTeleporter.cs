@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using EnemyAI;
 
 public class RoomTeleporter : LockDoor
 {
@@ -16,7 +17,7 @@ public class RoomTeleporter : LockDoor
     GameObject player;
 
     public AudioSource doorOpenClose;
-
+    EnemySpawnManager esm;
     LockDoor lockDoor;
 
     //checks if player has the item 
@@ -65,6 +66,8 @@ public class RoomTeleporter : LockDoor
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
+
+                //Invokes the event for the EnemySpawn
                 EventManager.EnterRoom();
             }
         }

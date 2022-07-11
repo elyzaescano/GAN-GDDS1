@@ -8530,6 +8530,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 201726923895346199, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2229395669223836519, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
       propertyPath: target
       value: 
@@ -8537,6 +8541,10 @@ PrefabInstance:
     - target: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
       propertyPath: m_Name
       value: enemyholder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5010446474347724943, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
       propertyPath: points.Array.size
@@ -64871,7 +64879,7 @@ MonoBehaviour:
   itemGO: {fileID: 0}
   playerAnim: {fileID: 0}
   nope: {fileID: 8300000, guid: e2d4f212587fd4347a756d47f1df9058, type: 3}
-  usingKBM: 0
+  usingKBM: 1
 --- !u!114 &1590784685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69103,6 +69111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 201726923895346199, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2229395669223836519, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
       propertyPath: target
       value: 
@@ -69110,6 +69122,10 @@ PrefabInstance:
     - target: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
       propertyPath: m_Name
       value: enemyholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5010446474347724943, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
       propertyPath: points.Array.data[0]

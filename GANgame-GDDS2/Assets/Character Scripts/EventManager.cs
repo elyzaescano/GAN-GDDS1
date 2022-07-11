@@ -42,10 +42,7 @@ public class EventManager : MonoBehaviour
 
     public static void EnterRoom()
     {
-        if (EnterRoomEvent != null)
-        {
-            EnterRoomEvent();
-        }
+        EnterRoomEvent?.Invoke();
     }
 
 }

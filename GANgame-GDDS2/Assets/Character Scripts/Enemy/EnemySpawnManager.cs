@@ -14,6 +14,7 @@ namespace EnemyAI
 
         private void Start() 
         {
+            roomTele = FindObjectOfType<RoomTeleporter>();
             EventManager.EnterRoomEvent += SpawnManager;
         }
 
@@ -23,9 +24,9 @@ namespace EnemyAI
         }
 
         IEnumerator SpawnTimer()
-        {
+        {   
             yield return new WaitForSeconds(roomTele.spawnCountdown);    
-            print("God");        
+            print(roomTele.spawnCountdown);
         }
 
         void ActuallySpawn()
