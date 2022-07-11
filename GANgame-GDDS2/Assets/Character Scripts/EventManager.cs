@@ -13,7 +13,7 @@ public class EventManager : MonoBehaviour
 
     public static event Action InteractEvent;
 
-    public static event Action EnterRoomEvent;
+    public static event Action RoomChanged;
 
     public static void InventoryToggle()
     {
@@ -42,7 +42,7 @@ public class EventManager : MonoBehaviour
 
     public static void EnterRoom()
     {
-        EnterRoomEvent?.Invoke();
+        RoomChanged?.Invoke();
     }
 
 }

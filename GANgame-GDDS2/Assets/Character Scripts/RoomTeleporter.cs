@@ -30,7 +30,7 @@ public class RoomTeleporter : LockDoor
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
-        EventManager.EnterRoomEvent += Teleport;
+        EventManager.RoomChanged += Teleport;
     }
 
     void OnTriggerEnter2D(Collider2D other)

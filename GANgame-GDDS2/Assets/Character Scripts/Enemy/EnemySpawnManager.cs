@@ -9,29 +9,56 @@ namespace EnemyAI
     {
         public bool canSpawn;
         public GameObject enemy;
-        RoomTeleporter roomTele;
-
-
+        public GameObject currentRoom;
+        PlayerController player;
         private void Start() 
         {
-            roomTele = FindObjectOfType<RoomTeleporter>();
-            EventManager.EnterRoomEvent += SpawnManager;
+            player = FindObjectOfType<PlayerController>();
+            EventManager.RoomChanged += RoomChecker;
         }
-
-        public void SpawnManager()
+        private void Update()
         {
-                StartCoroutine(SpawnTimer());
-        }
+            currentRoom = FindRoom();
 
-        IEnumerator SpawnTimer()
-        {   
-            yield return new WaitForSeconds(roomTele.spawnCountdown);    
-            print(roomTele.spawnCountdown);
-        }
-
-        void ActuallySpawn()
-        {
             
+        }
+
+        void RoomChecker()
+        {
+            StartCoroutine(SpawnTimeManager());
+        }
+
+        IEnumerator SpawnTimeManager()
+        {
+            float spawnCountdown = currentRoom.GetComponent<Room>().timeToSpawn;
+
+            print(spawnCountdown);
+            yield return new WaitForSeconds(spawnCountdown);
+
+            Instantiate(enemy, player.transform);
+            canSpawn = false;
+        }
+
+
+        public GameObject FindRoom()
+        {
+            GameObject[] rooms;
+            rooms = GameObject.FindGameObjectsWithTag("Room");
+
+            GameObject closest = null;
+            float distance = Mathf.Infinity;
+            Vector3 position = player.transform.position;
+            foreach (GameObject active in rooms)
+            {
+                Vector3 diff = active.transform.position - position;
+                float curDistance = diff.sqrMagnitude;
+                if (curDistance < distance)
+                {
+                    closest = active;
+                    distance = curDistance;
+                }
+            }
+            return closest;
         }
     }
 }
