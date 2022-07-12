@@ -75,11 +75,12 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetFloat("Speed.Y", movement.y);
 
             playerAnim.SetBool("IsMoving", true);
-            
+
         }
         else
         {
             playerAnim.SetBool("IsMoving", false);
+            
            
         }
     }
@@ -172,7 +173,7 @@ public class PlayerController : MonoBehaviour
         {
             
             HorizontalMovement(Mathf.RoundToInt(movement.x)); VerticalMovement(Mathf.RoundToInt(movement.y));
-            
+           
             
         }
     }
@@ -249,19 +250,21 @@ public class PlayerController : MonoBehaviour
     {
         if(movement.x != 0 || movement.y != 0)
         {
-            isMoving = true;
+            isMoving = true; //works
         } else
         {
             isMoving = false;
         }
 
-        if (isMoving && !walking.isPlaying)
+        if (isMoving && !walking.isPlaying) //works
         {
-            walking.Play();
+            walking.Play(); //does not work
+            print("Fuck this");
         }
         else
         {
             walking.Stop();
+            print("Fuck you");
         }
     }
 
