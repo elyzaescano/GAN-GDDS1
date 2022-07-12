@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioSource pickup;
     public AudioSource walking;
+    public AudioSource craftSuccess;
+    
     [SerializeField] private AudioClip[] stepclips;
     private void Start()
     {    
@@ -108,6 +110,7 @@ public class PlayerController : MonoBehaviour
             if (i+o == 2)
             {
                 StartCoroutine(Crafting(firstVariable, secondVariable));
+                
             }else
             {
 
@@ -141,20 +144,21 @@ public class PlayerController : MonoBehaviour
         yield return 2;
         inventory.RemoveItem(reactor); inventory.RemoveItem(reagent);
         //Updates Inventory
-
+        
         inventoryUI.AddNewItem(io);
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
         inventoryUI.StartUICoroutine();
         EventManager.ItemEquip();
         firstVariable = null;
         secondVariable = null;
+        
     }
 
     public void RefreshUI()
     {
         foreach (InventorySlot x in inventory.Container)
         {
-            StartCoroutine(inventoryUI.UpdateUI());
+            StartCoroutine(inventoryUI.UpdateUI()); 
         }
     }
 

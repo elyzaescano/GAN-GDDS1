@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
     
 public abstract class ItemObject : ScriptableObject
 {
-
+    
     public enum Type //elyza says enums are just thingamabobs (aka values) that STORE INTEGERS. Add item here EVERY SINGLE TIME there's a new item
     {
         Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Matches, Cane, FloppyDisk, Axe, FilledBucket, Battery, 
@@ -33,6 +34,7 @@ public abstract class ItemObject : ScriptableObject
     {
         for(int i = 0;i < recipes.Length; i++) {
             if (recipes[i].other == reagent) return recipes[i].result;
+            
         }
         return null;
     }
