@@ -1432,6 +1432,10 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 407912685600878771, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a3554292867244bbb86a2996038764, type: 3}
 --- !u!4 &212974826 stripped
@@ -69442,7 +69446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 972747853216301313, guid: 9ad41b87f5b87864e98c9a70ecbca6d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.106017
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 972747853216301313, guid: 9ad41b87f5b87864e98c9a70ecbca6d6, type: 3}
       propertyPath: m_LocalRotation.w
