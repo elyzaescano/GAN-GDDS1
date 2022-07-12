@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioSource pickup;
     public AudioSource walking;
+    [SerializeField] private AudioClip[] stepclips;
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
     { 
         
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        WalkingAudio();
+        //WalkingAudio();
        
 
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
@@ -246,7 +247,7 @@ public class PlayerController : MonoBehaviour
         inventory.Container.Clear();
     }
 
-    void WalkingAudio()
+    /*void WalkingAudio()
     {
         if(movement.x != 0 || movement.y != 0)
         {
@@ -266,10 +267,16 @@ public class PlayerController : MonoBehaviour
             walking.Stop();
             print("Fuck you");
         }
+    }*/
+
+    void Step()
+    {
+        AudioClip clip = GetRandomClip();
+        walking.PlayOneShot(clip);
     }
 
- 
-
-
-
+    private AudioClip GetRandomClip()
+    {
+        return stepclips[UnityEngine.Random.Range(0, stepclips.Length)];
+    }
 }
