@@ -6,8 +6,11 @@ using System.IO;
 using UnityEditor;
 
 
+
+
 //Creates and handles item management in the player's inventory.
 [CreateAssetMenu(fileName = "New Inventory", menuName = "InventorySystem/Inventory")]
+
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;

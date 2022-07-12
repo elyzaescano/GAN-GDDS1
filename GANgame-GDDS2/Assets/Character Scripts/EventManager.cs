@@ -5,8 +5,6 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
-    public static event Action RoomEnterEvent;
-
     public static event Action OpenInventory;
     public static event Action CloseInventory;
     public static event Action EquipItem;
@@ -14,8 +12,8 @@ public class EventManager : MonoBehaviour
     public static event Action PaintingCompleted;
 
     public static event Action InteractEvent;
-  
 
+    public static event Action EnemyCanSpawn;
 
     public static void InventoryToggle()
     {
@@ -37,13 +35,14 @@ public class EventManager : MonoBehaviour
         PaintingCompleted?.Invoke();
     }
 
-    public static void RoomEntered(int roomID){
-        RoomEnterEvent?.Invoke();
-    }
-
     public static void Interact()
     {
         InteractEvent?.Invoke();
+    }
+
+    public static void SpawnChecker()
+    {
+        EnemyCanSpawn?.Invoke();
     }
 
 }

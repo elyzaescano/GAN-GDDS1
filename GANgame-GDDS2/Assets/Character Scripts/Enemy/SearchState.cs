@@ -6,6 +6,7 @@ namespace EnemyAI
 {
     public class SearchState : State
     {
+        public GameObject enemyHolder;
         public ChaseState chaseState;
         public PatrolState patrolState;
         [Range(1, 200)] public float rotationSpeed;
@@ -21,6 +22,10 @@ namespace EnemyAI
             {
                 //search...
             }
+            if (timeToSearch <= 0)
+            {
+                Destroy(enemyHolder);
+            }
 
             //Counts down from the moment enemy switches to search state
             timeToSearch -= Time.deltaTime;
@@ -29,10 +34,6 @@ namespace EnemyAI
             if (enemyFOV.currentTarget != null)
             {
                 return chaseState;
-            }
-            else if (timeToSearch <= 0)
-            {
-                return patrolState;
             }
             else
             {

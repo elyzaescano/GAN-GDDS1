@@ -14,6 +14,12 @@ public class PauseBGM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Menu();
+       
+    }
+
+    void Menu()
+    {
         if(SceneManager.GetActiveScene().name == "House1")
         {
             AudioManager.instance.GetComponent<AudioSource>().Pause();
@@ -27,4 +33,6 @@ public class PauseBGM : MonoBehaviour
             AudioManager.instance.GetComponent<AudioSource>().Pause();
         }
     }
+
+    
 }

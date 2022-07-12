@@ -1,85 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace EnemyAI
 {
     public class EnemySpawnManager : MonoBehaviour
     {
-        // The enemy prefab to be spawned.
-        public static EnemySpawnManager instance;
+        public bool canSpawn;
         public GameObject enemy;
+        public GameObject currentRoom;
+        PlayerController player;
 
-        // An array of the spawn points this enemy can spawn from.
-        public Transform[] spawnPoints;
-
-        public float maxTime = 50;
-        public float minTime = 10;
-
-        //make sure only one enemy can be on the scene at all times
-        //current time
-        private float time;
-
-        //The time to spawn the object
-        private float spawnTime;
-
-        void Awake()
+        private void Start() 
         {
-            List<Transform> spawningPointsAsList = new List<Transform>();
+            player = FindObjectOfType<PlayerController>();
+            canSpawn = true;
 
-            // Get All the children of the object this script is assigned to (EnemyManager) and consider them as spawning points
-            foreach (Transform child in transform)
-            {
-                spawningPointsAsList.Add(child);
-            }
+            EventManager.EnemyCanSpawn += SpawnEnemy;
+        }
+        private void Update()
+        {
+            currentRoom = FindRoom();
+        }
 
-            spawnPoints = spawningPointsAsList.ToArray();
+        void SpawnEnemy()
+        {
+            print("If this prints more than once, assume the game crashes");
+            Instantiate(enemy, player.transform);    
+            canSpawn = false;          
+        }
 
-            if (instance == null)
-            {
-                instance = this;
-                DontDestroyOnLoad(this);
-            }
-            else if (instance != null)
-            {
-                Destroy(this);
-            }
+        private void OnDisable() 
+        {
+            EventManager.EnemyCanSpawn -= SpawnEnemy;
         }
 
 
-        void Start()
+        public GameObject FindRoom()
         {
-            SetRandomTime();
-            time = 0;
-        }
+            GameObject[] rooms;
+            rooms = GameObject.FindGameObjectsWithTag("Room");
 
-        //Sets the random time between minTime and maxTime
-        void SetRandomTime()
-        {
-            spawnTime = Random.Range(minTime, maxTime);
-            Debug.Log("Next object spawn in " + spawnTime + " seconds.");
-        }
-
-        void FixedUpdate()
-        {
-            //Counts up
-            time += Time.deltaTime;
-            //Check if its the right time to spawn the object
-            if (time >= spawnTime)
+            GameObject closest = null;
+            float distance = Mathf.Infinity;
+            Vector3 position = player.transform.position;
+            foreach (GameObject active in rooms)
             {
-                Debug.Log("Time to spawn: " + enemy.name);
-                Spawn();
-                SetRandomTime();
-                time = 0;
+                Vector3 diff = active.transform.position - position;
+                float curDistance = diff.sqrMagnitude;
+                if (curDistance < distance)
+                {
+                    closest = active;
+                    distance = curDistance;
+                }
             }
-        }
-
-        void Spawn()
-        {
-            // Find a random index between zero and one less than the number of spawn points.
-            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            return closest;
         }
     }
 }

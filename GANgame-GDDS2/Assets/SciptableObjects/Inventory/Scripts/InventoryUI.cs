@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class InventoryUI : MonoBehaviour
 
     public InventoryObject inventory;
     EventManager em;
+
+    public AudioSource pickup;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,6 +46,7 @@ public class InventoryUI : MonoBehaviour
     }
     public void AddNewItem(ItemObject _item)
     {
+        
         UpdateSlot(_itemUI.FindIndex(i => i.item == null), _item);
     }
     public void RemoveItem(ItemObject _item)
@@ -70,6 +74,7 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < slots.amount; i++)
             {
+                
                 AddNewItem(slots.item);
             }
         }

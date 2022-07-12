@@ -43,6 +43,7 @@ namespace EnemyAI
             }
             else
             {
+                //enemySpawn.canSpawn = true;
                 return searchState;
             }
 

@@ -11,7 +11,7 @@ namespace EnemyAI
         public LayerMask targetLayer;
         public LayerMask obstructionLayer;
 
-        public PatrolState patrolState;
+        //public PatrolState patrolState;
         public bool canSeePlayer { get; private set; }
 
         [Range(1, 360)] public float angle = 45f;
@@ -19,7 +19,7 @@ namespace EnemyAI
 
         private void Awake()
         {
-            patrolState = FindObjectOfType<PatrolState>();
+            //patrolState = FindObjectOfType<PatrolState>();
 
             StartCoroutine(FOVCheck());
             //Checks if the player is in 5 times per second as opposed to every frame
@@ -28,14 +28,6 @@ namespace EnemyAI
         protected void LateUpdate()
         {
             transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
-        }
-
-        private void Update()
-        {
-            if (canSeePlayer)
-            {
-                print("Sex");
-            }
         }
 
         public IEnumerator FOVCheck()
@@ -52,7 +44,7 @@ namespace EnemyAI
                 else
                 {
                     currentTarget = null;
-                    currentWaypoint = patrolState.points[patrolState.randomPoint];
+                    //currentWaypoint = patrolState.points[patrolState.randomPoint];
                 }
 
                 yield return wait;

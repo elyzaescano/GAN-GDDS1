@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using EnemyAI;
 
 public class RoomTeleporter : LockDoor
 {
@@ -10,11 +12,12 @@ public class RoomTeleporter : LockDoor
     bool isTriggered = false;
     public EventManager em;
     public int doorID;
+    public float spawnCountdown;
     int triggerID;
     GameObject player;
 
     public AudioSource doorOpenClose;
-
+    EnemySpawnManager esm;
     LockDoor lockDoor;
 
     //checks if player has the item 
@@ -62,21 +65,8 @@ public class RoomTeleporter : LockDoor
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
-                bool removeItem = itemRequired ? true : false;
-                if (removeItem)
-                {
-                    StartCoroutine(removeEquippedItem());
-                }
             }
         }
-    }
-
-    IEnumerator removeEquippedItem()
-    {
-        playerInventory.equippedItem = null;
-        playerInventory.RemoveItem(playerInventory.equippedItem);
-        yield return null;
-        EventManager.ItemEquip();
     }
 
     private void OnDisable()
