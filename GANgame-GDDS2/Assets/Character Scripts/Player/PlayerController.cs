@@ -20,15 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public ItemObject _item;
     [SerializeField]
-    private GameObject itemGO;
-    bool inRangeOfItem;
+    public GameObject itemGO;
 
     public Animator playerAnim;
 
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
-        inRangeOfItem = false;
     }
 
     // Update is called once per frame
@@ -38,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
 
-        if (Input.GetKeyDown(KeyCode.Space)) inventory.Load(); 
+        //if (Input.GetKeyDown(KeyCode.Space)) inventory.Load(); 
         //First iteration of item interactions
 
         //----------
@@ -181,23 +179,24 @@ public class PlayerController : MonoBehaviour
         movement.y = DirectionY;
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        EventManager.InteractEvent += startAddItemCoroutine;
-        var item = collision.GetComponent<Item>();
-        if (item)
-        {
-            inRangeOfItem = true;
-            _item = item.item;
-            itemGO = item.gameObject;
-        }
-    }
+    //public void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    EventManager.InteractEvent += startAddItemCoroutine;
+    //    var item = collision.GetComponent<Item>();
+    //    if (item)
+    //    {
+    //        _item = item.item;
+    //        itemGO = item.gameObject;
+    //        print("Can add" + item.name);
+    //    }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        EventManager.InteractEvent -= startAddItemCoroutine;
-        inRangeOfItem = false;
-    }
+    //}
+
+    //public void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    EventManager.InteractEvent -= startAddItemCoroutine;
+    //    print(collision.name + " is not in range");
+    //}
 
     public void startAddItemCoroutine()
     {
@@ -206,15 +205,14 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator AddItemToInventory()
     {
-        if (inRangeOfItem) { 
-            inventory.AddItem(_item, 1);
-            inventoryUI.AddNewItem(_item);
-            Destroy(itemGO);
-            yield return 1;
-            inRangeOfItem = false;
-            _item = null;
-            itemGO = null;
-        }
+
+        inventory.AddItem(_item, 1);
+        inventoryUI.AddNewItem(_item);
+        Destroy(itemGO);
+        yield return 1;
+        _item = null;
+        itemGO = null;
+        
     }
 
     //Empties inventory upon application quit
