@@ -16,7 +16,8 @@ public class ItemUI : MonoBehaviour
 
     public PlayerController pc;
     public EventManager em;
-    public GameObject[] inventoryButtons;
+    GameObject[] inventoryButtonObject;
+    [SerializeField] List<Button> inventoryButtons = new List<Button>();
 
     public AudioSource buttonSound;
 
@@ -32,15 +33,16 @@ public class ItemUI : MonoBehaviour
         buttonSound = FindObjectOfType<AudioSource>();
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
 
+        inventoryButtonObject = GameObject.FindGameObjectsWithTag("InventoryButtons");
+        foreach(GameObject go in inventoryButtonObject)
+        {
+            Button butt =  go.GetComponent<Button>();
+            inventoryButtons.Add(butt);
+        }
     }
 
     private void Start()
     {
-        foreach(GameObject go in inventoryButtons) //elyza says Basically sets all the inventory UI inactive
-        {
-            go.SetActive(false);
-        }
-        EventManager.OpenInventory += EnableButtons;
     }
 
     public void UpdateImage(ItemObject item) //elyza says As the function says, displays the sprite of the item in the inventory
@@ -55,19 +57,34 @@ public class ItemUI : MonoBehaviour
         else { spriteImage.sprite = null; spriteImage.color = Color.clear; }
     }
 
-    public void GiveItemObject()
+    public void Select()
     {
         if (!selected)
         {
             spriteImage.color = Color.black;
-            ItemObject item = playerInventory.Container[itemSlotID].item;
-            buttonSound.Play();
-            descriptionText.text = item.description;
-            //print(item);
-            pc.GetCraftingItems(item,this);
-            selected = true;
-            
+            inventoryButtons[0].onClick.AddListener(GiveItemObject);
+            inventoryButtons[1].onClick.AddListener(DropItemFromUI);
+            inventoryButtons[2].onClick.AddListener(EquipItemFromUI);
+            selected = !selected;
         }
+        else
+        {
+            spriteImage.color = Color.white;
+            foreach (Button butt in inventoryButtons)
+            {
+                butt.onClick.RemoveAllListeners();
+            }
+            selected = !selected;
+        }
+    }
+    public void GiveItemObject()
+    {
+        ItemObject item = playerInventory.Container[itemSlotID].item;
+        buttonSound.Play();
+        descriptionText.text = item.description;
+        //print(item);
+        pc.GetCraftingItems(item,this);
+        selected = true;    
     }
 
     public void DeSelect()
@@ -80,11 +97,7 @@ public class ItemUI : MonoBehaviour
 
     public void EnableButtons()
     {
-        print("Enabling Buttons");
-        foreach(GameObject go in inventoryButtons)
-        {
-            go.SetActive(true);
-        }
+
     }
 
     public void DropItemFromUI()
@@ -112,7 +125,7 @@ public class ItemUI : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.OpenInventory -= EnableButtons;
+
     }
 
     
