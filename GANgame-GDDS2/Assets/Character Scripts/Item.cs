@@ -7,6 +7,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public ItemObject item;
+    
     //Item hitbox variables
 
 
@@ -24,6 +25,7 @@ public class Item : MonoBehaviour
         var player = collision.GetComponent<PlayerController>();
         if(player && !isused)
         {
+            
             EventManager.InteractEvent += player.startAddItemCoroutine;
             player._item = this.item;
             player.itemGO = this.gameObject;
