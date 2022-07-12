@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnim;
 
+
+    [Header("Audio")]
+    public AudioSource pickup;
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
@@ -209,6 +212,7 @@ public class PlayerController : MonoBehaviour
         inventory.AddItem(_item, 1);
         inventoryUI.AddNewItem(_item);
         Destroy(itemGO);
+        pickup.Play();
         yield return 1;
         _item = null;
         itemGO = null;
