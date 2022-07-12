@@ -18,8 +18,28 @@ public class Item : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         //sr.sprite = item.s
     }
+    bool isused =false;
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        var player = collision.GetComponent<PlayerController>();
+        if(player && !isused)
+        {
+            EventManager.InteractEvent += player.startAddItemCoroutine;
+            player._item = this.item;
+            player.itemGO = this.gameObject;
+            print("added");
+            isused = true;
+        }
+    }
 
-
-
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        var player = collision.GetComponent<PlayerController>();
+        if (player)
+        {
+            EventManager.InteractEvent -= player.startAddItemCoroutine;
+            isused = false;
+        }
+    }
 
 }
