@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -135, y: -221}
+  m_AnchoredPosition: {x: -140, y: -287}
   m_SizeDelta: {x: 183.85999, y: 330.85803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &690282501332177915
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1249923142582123552}
   - component: {fileID: 3596157583573758776}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,4 +319,5 @@ MonoBehaviour:
   slotPanel: {fileID: 8140239313256044307}
   IB: {fileID: 0}
   numberOfSlots: 20
+  descriptionTxt: {fileID: 3596157583573758776}
   inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}

@@ -8380,6 +8380,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5848777298514023527, guid: 74bafc0f8d1354e4ab84849d33bad36c, type: 3}
   m_PrefabInstance: {fileID: 325031528}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &355037850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2765028703178382074, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
+  m_PrefabInstance: {fileID: 890624601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &355108901
 GameObject:
   m_ObjectHideFlags: 0
@@ -13225,6 +13236,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &595043672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3771250751459889760, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
+  m_PrefabInstance: {fileID: 890624601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596414972
 GameObject:
   m_ObjectHideFlags: 0
@@ -30740,6 +30756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1536558997}
   slotPanel: {fileID: 1144761646}
+  descriptiontText: {fileID: 595043672}
+  playerImage: {fileID: 355037850}
   e: []
 --- !u!114 &799627305
 MonoBehaviour:

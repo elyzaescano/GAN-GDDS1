@@ -7,6 +7,9 @@ public class InventoryButton : MonoBehaviour
 {
     public InventoryUI inventoryPanel;
     public GameObject slotPanel;
+    public GameObject descriptiontText;
+    public Image playerImage;
+
     Image panelImage;
 
     public void Start()
@@ -53,6 +56,9 @@ public class InventoryButton : MonoBehaviour
         {
             Image spriteImage = _im.GetComponent<Image>();
             spriteImage.color = Color.clear;        }
+
+        descriptiontText.GetComponent<Text>().enabled = false;
+        playerImage.color = Color.clear;
     }
 
     public IEnumerator MakingInventoryVisible()
@@ -83,6 +89,9 @@ public class InventoryButton : MonoBehaviour
             else 
             spriteImage.color = Color.white;
         }
+
+        descriptiontText.GetComponent<Text>().enabled = true;
+        playerImage.color = Color.white;
     }
 
 }
