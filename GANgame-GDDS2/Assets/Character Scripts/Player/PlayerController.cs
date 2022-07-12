@@ -24,9 +24,10 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnim;
 
-
+    bool isMoving = false;
     [Header("Audio")]
     public AudioSource pickup;
+    public AudioSource walking;
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+       
 
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
 
@@ -71,10 +74,12 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetFloat("Speed.Y", movement.y);
 
             playerAnim.SetBool("IsMoving", true);
+            
         }
         else
         {
             playerAnim.SetBool("IsMoving", false);
+            
         }
     }
 
@@ -157,8 +162,17 @@ public class PlayerController : MonoBehaviour
         //print(movement);
         //movement = Vector2.zero;
         
-        if (usingKBM) { movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical"); } else {
+        if (usingKBM) 
+        { 
+            movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical");
+            
+        } 
+        else 
+        {
+            
             HorizontalMovement(Mathf.RoundToInt(movement.x)); VerticalMovement(Mathf.RoundToInt(movement.y));
+            
+            
         }
     }
 
@@ -171,7 +185,9 @@ public class PlayerController : MonoBehaviour
         //{
         //    movement.y = Mathf.Round(dirY);
         //}
+        
         movement.x = directionX;
+        
         //movement.y = direction.y;
 
         //print(movement);
@@ -179,7 +195,9 @@ public class PlayerController : MonoBehaviour
 
     public void VerticalMovement(int DirectionY)
     {
+        
         movement.y = DirectionY;
+       
     }
 
     //public void OnTriggerEnter2D(Collider2D collision)
@@ -226,7 +244,7 @@ public class PlayerController : MonoBehaviour
         inventory.Container.Clear();
     }
 
-
+    
 
  
 
