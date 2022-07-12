@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2006732233070906920}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190623873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9364accb6f6ac45469774cf30f0d8da4, type: 3}
   m_Name: 
@@ -65236,6 +65236,7 @@ MonoBehaviour:
   itemGO: {fileID: 0}
   playerAnim: {fileID: 0}
   pickup: {fileID: 0}
+  walking: {fileID: 0}
   nope: {fileID: 8300000, guid: e2d4f212587fd4347a756d47f1df9058, type: 3}
   usingKBM: 1
 --- !u!114 &1590784685
@@ -66576,7 +66577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteText: {fileID: 411847381}
-  note: 1234
+  note: 6363
   paperNote: {fileID: 1731543793}
 --- !u!1 &1755629209
 GameObject:
@@ -68192,7 +68193,7 @@ PrefabInstance:
       objectReference: {fileID: 190623874}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_Name
-      value: Keypad (1)
+      value: Keypad (box 6)
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_IsActive
@@ -69611,6 +69612,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006732232072437703, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006732232072437720, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2006732232072437720, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
