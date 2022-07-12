@@ -17,6 +17,8 @@ public class ItemUI : MonoBehaviour
     public EventManager em;
     public GameObject[] inventoryButtons;
 
+    public AudioSource buttonSound;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -56,9 +58,11 @@ public class ItemUI : MonoBehaviour
         {
             spriteImage.color = Color.black;
             ItemObject item = playerInventory.Container[itemSlotID].item;
+            buttonSound.Play();
             //print(item);
             pc.GetCraftingItems(item,this);
             selected = true;
+            
         }
     }
 
@@ -66,6 +70,7 @@ public class ItemUI : MonoBehaviour
     {
         spriteImage.color = Color.white;
         selected = false;
+       
     }
 
     public void EnableButtons()
@@ -79,15 +84,19 @@ public class ItemUI : MonoBehaviour
 
     public void DropItemFromUI()
     {
+        buttonSound.Play();
         playerInventory.DropItem(itemSlotID,pc.gameObject.transform.position);
         //UpdateImage(null);
         UIScript.StartUICoroutine();
+        
     }
 
     public void EquipItemFromUI()
     {
+        buttonSound.Play();
         playerInventory.equippedItem = item;
         StartCoroutine(EquipCoroutine());
+        
     }
 
     public IEnumerator EquipCoroutine()
@@ -100,4 +109,6 @@ public class ItemUI : MonoBehaviour
     {
         EventManager.OpenInventory -= EnableButtons;
     }
+
+    
 }
