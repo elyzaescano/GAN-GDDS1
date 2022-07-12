@@ -12,6 +12,7 @@ public class ItemUI : MonoBehaviour
     public Image UI;
     public int itemSlotID;
     public bool selected = false;
+    public Text descriptionText;
 
     public PlayerController pc;
     public EventManager em;
@@ -29,6 +30,7 @@ public class ItemUI : MonoBehaviour
         em = FindObjectOfType<EventManager>();
         UI = UIScript.GetComponent<Image>();
         buttonSound = FindObjectOfType<AudioSource>();
+        descriptionText = GameObject.Find("Description").GetComponent<Text>();
 
     }
 
@@ -60,6 +62,7 @@ public class ItemUI : MonoBehaviour
             spriteImage.color = Color.black;
             ItemObject item = playerInventory.Container[itemSlotID].item;
             buttonSound.Play();
+            descriptionText.text = item.description;
             //print(item);
             pc.GetCraftingItems(item,this);
             selected = true;
@@ -70,6 +73,7 @@ public class ItemUI : MonoBehaviour
     public void DeSelect()
     {
         spriteImage.color = Color.white;
+        descriptionText.text = null;
         selected = false;
        
     }

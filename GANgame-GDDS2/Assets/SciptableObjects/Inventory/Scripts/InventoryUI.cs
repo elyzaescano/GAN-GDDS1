@@ -8,7 +8,7 @@ using UnityEngine.Audio;
 public class InventoryUI : MonoBehaviour
 {
     //Creates a list of InventorySlots in the UI. Limit has to be the same as InventorySlots
-    public List<ItemUI> _itemUI = new List<ItemUI>(10);
+    public List<ItemUI> _itemUI = new List<ItemUI>(9);
     public GameObject slotPrefab;
     public Transform slotPanel;
     public InventoryButton IB;
@@ -17,7 +17,6 @@ public class InventoryUI : MonoBehaviour
     public InventoryObject inventory;
     EventManager em;
 
-    public AudioSource pickup;
 
     // Start is called before the first frame update
     void Awake()

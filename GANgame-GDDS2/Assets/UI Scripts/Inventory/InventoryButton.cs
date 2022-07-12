@@ -7,6 +7,10 @@ public class InventoryButton : MonoBehaviour
 {
     public InventoryUI inventoryPanel;
     public GameObject slotPanel;
+    public GameObject descriptiontText;
+    public Image playerImage;
+    public Button[] inventoryButtons;
+
     Image panelImage;
 
     public void Start()
@@ -41,7 +45,7 @@ public class InventoryButton : MonoBehaviour
                 Image slotImage = _is.GetComponent<Image>();
                 slotImage.color = Color.clear;
                 print(slotImage.color);
-                e = _is.GetComponentsInChildren<Button>();
+                e =_is.GetComponentsInChildren<Button>();
                 foreach(Button butt in e)
                 {
                     butt.gameObject.SetActive(false);
@@ -53,6 +57,14 @@ public class InventoryButton : MonoBehaviour
         {
             Image spriteImage = _im.GetComponent<Image>();
             spriteImage.color = Color.clear;        }
+
+        foreach(Button butt in inventoryButtons)
+        {
+            butt.gameObject.SetActive(false);
+        }
+
+        descriptiontText.GetComponent<Text>().enabled = false;
+        playerImage.color = Color.clear;
     }
 
     public IEnumerator MakingInventoryVisible()
@@ -83,6 +95,14 @@ public class InventoryButton : MonoBehaviour
             else 
             spriteImage.color = Color.white;
         }
+
+        foreach (Button butt in inventoryButtons)
+        {
+            butt.gameObject.SetActive(true);
+        }
+
+        descriptiontText.GetComponent<Text>().enabled = true;
+        playerImage.color = Color.white;
     }
 
 }
