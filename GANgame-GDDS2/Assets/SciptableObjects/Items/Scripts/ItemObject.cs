@@ -9,7 +9,7 @@ public abstract class ItemObject : ScriptableObject
 
     public enum Type //elyza says enums are just thingamabobs (aka values) that STORE INTEGERS. Add item here EVERY SINGLE TIME there's a new item
     {
-        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Matches, Cane, HardDrive, Axe, FilledBucket, Battery, 
+        Key, Bedsheet, Hairpin, ScrapMetal, Adapter, Cable, Timber, Rope, Lockpick, PhonePlug, Bucket, Matches, Cane, FloppyDisk, Axe, FilledBucket, Battery, 
         Painting ,Potion, Sword, Default
     }
 

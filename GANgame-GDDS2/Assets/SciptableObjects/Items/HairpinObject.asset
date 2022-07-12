@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 2
   itemName: Hairpin
   id: 4
-  description: 
+  description: It's not mine... but I could probably still use it.
   recipes:
   - other: {fileID: 11400000, guid: 48158a4077a2ac94da55593179f159c9, type: 2}
     result: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}

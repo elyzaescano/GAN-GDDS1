@@ -31058,6 +31058,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621597030}
     m_Modifications:
+    - target: {fileID: 3596157583573758776, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596157583573758776, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bb1b46544554bfb4ea24391bf32e3c58, type: 3}
     - target: {fileID: 8140239313647749596, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
       propertyPath: m_Name
       value: InventoryPanel

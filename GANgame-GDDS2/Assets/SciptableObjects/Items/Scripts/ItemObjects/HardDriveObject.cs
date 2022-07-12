@@ -7,6 +7,6 @@ public class HardDriveObject : ItemObject
 {
     public void Awake()
     {
-        type = Type.HardDrive;
+        type = Type.FloppyDisk;
     }
 }

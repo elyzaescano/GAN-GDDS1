@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6b6f6601cda464fad52ac3d9622580, type: 3}
-  m_Name: HardDriveObject
+  m_Name: FloppyDisckObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -6369341155389141361, guid: 7ea5b6a2feb5ada469c76b235698fcde, type: 3}
   itemPrefab: {fileID: 6468826271922931722, guid: b1fd9bdd3465c564bb536bcd070e6f5c, type: 3}
   type: 13
-  itemName: Hard Drive
+  itemName: Floppy Disk
   id: 15
-  description: 
+  description: 'This house is rife with secrets. Dad used these floppy disks to store
+    them and scattered them around the house. '
   recipes: []

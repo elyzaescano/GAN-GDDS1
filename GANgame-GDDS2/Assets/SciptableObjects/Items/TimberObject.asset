@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 6
   itemName: Timber
   id: 12
-  description: 
+  description: A piece of wood, not sure what I could do with this...
   recipes:
   - other: {fileID: 11400000}
     result: {fileID: 11400000, guid: 40dd029b59cb3f4449e196bce481cc26, type: 2}
