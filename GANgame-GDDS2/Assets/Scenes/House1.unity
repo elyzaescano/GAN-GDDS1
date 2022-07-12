@@ -65236,8 +65236,9 @@ MonoBehaviour:
   itemGO: {fileID: 0}
   playerAnim: {fileID: 0}
   pickup: {fileID: 0}
+  walking: {fileID: 0}
   nope: {fileID: 8300000, guid: e2d4f212587fd4347a756d47f1df9058, type: 3}
-  usingKBM: 1
+  usingKBM: 0
 --- !u!114 &1590784685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65245,7 +65246,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590784679}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83c82bc701b1c7b498b369360248db73, type: 3}
   m_Name: 
