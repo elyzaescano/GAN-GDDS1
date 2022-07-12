@@ -28,6 +28,7 @@ public class ItemUI : MonoBehaviour
         UIScript = FindObjectOfType<InventoryUI>();
         em = FindObjectOfType<EventManager>();
         UI = UIScript.GetComponent<Image>();
+        buttonSound = FindObjectOfType<AudioSource>();
 
     }
 
