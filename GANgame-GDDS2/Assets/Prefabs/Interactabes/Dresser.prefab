@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4363321478222943220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.97, y: 1.8, z: -10.076839}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4363321479044448097}
@@ -188,6 +188,8 @@ MonoBehaviour:
   itemNeeded: 0
   playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
+  em: {fileID: 0}
+  spawnerID: 0
 --- !u!1 &4363321479044448096
 GameObject:
   m_ObjectHideFlags: 0
