@@ -177,6 +177,7 @@ MonoBehaviour:
   inventoryButtons:
   - {fileID: 8178443052625777108}
   - {fileID: 6304826950519602700}
+  buttonSound: {fileID: 8549293670149022001, guid: c22bd660ce61fe74dada98e4903d6074, type: 3}
 --- !u!114 &3232889482271483572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,18 +340,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8549293670149022001, guid: c22bd660ce61fe74dada98e4903d6074, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &9183908844394535090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,18 +480,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2980043493039192457}
         m_TargetAssemblyTypeName: ItemUI, Assembly-CSharp
         m_MethodName: EquipItemFromUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8549293670149022001, guid: c22bd660ce61fe74dada98e4903d6074, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
