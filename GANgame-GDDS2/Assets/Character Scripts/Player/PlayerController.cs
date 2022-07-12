@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnim;
 
-    bool isMoving = false;
+    public bool isMoving = false;
     [Header("Audio")]
     public AudioSource pickup;
     public AudioSource walking;
@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
+        WalkingAudio();
        
 
         if (Input.GetKeyDown(KeyCode.E)) inventory.Save();
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-            
+           
         }
     }
 
@@ -244,7 +245,25 @@ public class PlayerController : MonoBehaviour
         inventory.Container.Clear();
     }
 
-    
+    void WalkingAudio()
+    {
+        if(movement.x != 0 || movement.y != 0)
+        {
+            isMoving = true;
+        } else
+        {
+            isMoving = false;
+        }
+
+        if (isMoving && !walking.isPlaying)
+        {
+            walking.Play();
+        }
+        else
+        {
+            walking.Stop();
+        }
+    }
 
  
 
