@@ -62513,6 +62513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 0
+  canStart: 0
   enemy: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
   currentRoom: {fileID: 0}
 --- !u!4 &1122901811
@@ -69841,6 +69842,10 @@ PrefabInstance:
       propertyPath: inventoryUI
       value: 
       objectReference: {fileID: 1536558997}
+    - target: {fileID: 1008948676694964413, guid: 807490b9ee256f1448eca35061e847c4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807490b9ee256f1448eca35061e847c4, type: 3}
 --- !u!1001 &1403231180315318755
