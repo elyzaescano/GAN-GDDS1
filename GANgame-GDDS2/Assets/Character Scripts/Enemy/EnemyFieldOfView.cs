@@ -10,6 +10,8 @@ namespace EnemyAI
         public GameObject currentWaypoint;
         public LayerMask targetLayer;
         public LayerMask obstructionLayer;
+        public GameObject player;
+        EnemyManager enemyMan;
 
         //public PatrolState patrolState;
         public bool canSeePlayer { get; private set; }
@@ -20,6 +22,8 @@ namespace EnemyAI
         private void Awake()
         {
             //patrolState = FindObjectOfType<PatrolState>();
+            player = GameObject.FindGameObjectWithTag("Player");
+            transform.right = player.transform.position - transform.position;
 
             StartCoroutine(FOVCheck());
             //Checks if the player is in 5 times per second as opposed to every frame
@@ -38,8 +42,7 @@ namespace EnemyAI
             {
                 if (canSeePlayer)
                 {
-                    currentTarget = GameObject.FindGameObjectWithTag("Player");
-                    currentWaypoint = GameObject.FindGameObjectWithTag("Player");
+                    currentTarget = player;
                 }
                 else
                 {

@@ -20,7 +20,7 @@ namespace EnemyAI
         {
             Vector3 dir;
 
-            dir = enemyFOV.currentTarget.transform.position - transform.position;
+            dir = enemyFOV.player.transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             dir.Normalize();
 
