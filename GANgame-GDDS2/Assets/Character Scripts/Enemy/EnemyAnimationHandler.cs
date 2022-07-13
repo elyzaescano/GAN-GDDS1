@@ -20,7 +20,7 @@ namespace EnemyAI
         {
             Vector3 dir;
 
-            dir = enemyFOV.currentWaypoint.transform.position - transform.position;
+            dir = enemyFOV.currentTarget.transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             dir.Normalize();
 
@@ -35,7 +35,8 @@ namespace EnemyAI
 
                 if (clips[0].clip.name == "monster_walkdown")
                 {
-                    enemyFOV.transform.eulerAngles = new Vector3(0, 0, 270); //Changes direction of FOV
+                    //Changes direction of FOV
+                    enemyFOV.transform.eulerAngles = new Vector3(0, 0, 270); 
                 }
                 if (clips[0].clip.name == "monster_walkup")
                 {

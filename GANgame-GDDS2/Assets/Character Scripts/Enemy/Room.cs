@@ -10,11 +10,14 @@ namespace EnemyAI
         public int roomNo;
         public float timeToSpawn;
         float originalTime;
+        public Transform spawnPoint;
+    
         EnemySpawnManager esm;
         
         private void Start() 
         {
             esm = FindObjectOfType<EnemySpawnManager>();
+            spawnPoint = transform.GetChild(0).transform;
             originalTime = timeToSpawn;
         }
         void Update()

@@ -44,7 +44,6 @@ namespace EnemyAI
                 else
                 {
                     currentTarget = null;
-                    //currentWaypoint = patrolState.points[patrolState.randomPoint];
                 }
 
                 yield return wait;
@@ -88,7 +87,7 @@ namespace EnemyAI
             #endregion
         }
 
-        /*
+        
         #region Visualising the FOV
         private void OnDrawGizmos()
         {
@@ -116,6 +115,6 @@ namespace EnemyAI
             return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
         }
         #endregion
-        */
+        
     }
 }

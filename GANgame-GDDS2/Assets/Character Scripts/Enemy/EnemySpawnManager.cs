@@ -26,8 +26,7 @@ namespace EnemyAI
 
         void SpawnEnemy()
         {
-            print("If this prints more than once, assume the game crashes");
-            Instantiate(enemy, player.transform);    
+            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);    
             canSpawn = false;          
         }
 
