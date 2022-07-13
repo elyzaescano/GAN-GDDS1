@@ -19,6 +19,7 @@ namespace EnemyAI
             canSpawn = true;
 
             EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
+            EventManager.EnemyDeath += DespawnEnemy;
         }
         private void Update()
         {
@@ -29,6 +30,13 @@ namespace EnemyAI
         {
             Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);    
             canSpawn = false;
+        }
+
+        void DespawnEnemy()
+        {
+            canSpawn = true;
+            EventManager.EnemyCanSpawn -= SpawnEnemy;
+            EventManager.EnemyCanSpawn += SpawnEnemy;
         }
 
         public GameObject FindRoom()

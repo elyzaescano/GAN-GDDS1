@@ -24,6 +24,7 @@ namespace EnemyAI
             }
             if (timeToSearch <= 0)
             {
+                EventManager.EnemyDied();
                 Destroy(enemyHolder);
             }
 

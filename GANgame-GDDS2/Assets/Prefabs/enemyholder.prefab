@@ -385,7 +385,7 @@ MonoBehaviour:
   chaseState: {fileID: 5348747227304171849}
   patrolState: {fileID: 5010446474347724943}
   rotationSpeed: 60
-  timeToSearch: 5
+  timeToSearch: 3
 --- !u!1 &3137335781818844240
 GameObject:
   m_ObjectHideFlags: 0
