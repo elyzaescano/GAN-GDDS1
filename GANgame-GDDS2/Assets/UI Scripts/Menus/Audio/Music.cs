@@ -18,7 +18,9 @@ public class Music
 
     public bool loop;
 
+    [HideInInspector]
     public AudioSource source;
+
     public AudioMixerGroup audioMixer;
 
 }

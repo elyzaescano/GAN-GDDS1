@@ -62563,13 +62563,26 @@ GameObject:
   m_Component:
   - component: {fileID: 1146792813}
   - component: {fileID: 1146792811}
+  - component: {fileID: 1146792810}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: LevelMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1146792810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146792809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7441d2cd2821ee34789c6ebec522779d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1146792811
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62577,11 +62590,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146792809}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2f18f485e3291014c9fe0104c0a8c0af, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
