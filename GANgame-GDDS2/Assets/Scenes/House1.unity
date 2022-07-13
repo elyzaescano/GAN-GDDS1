@@ -9466,6 +9466,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.30769467
       objectReference: {fileID: 0}
+    - target: {fileID: 407912685600878771, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 407912685600878771, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 407912685616014555, guid: 82a3554292867244bbb86a2996038764, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
