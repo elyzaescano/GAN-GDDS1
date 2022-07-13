@@ -172,11 +172,10 @@ MonoBehaviour:
   UI: {fileID: 0}
   itemSlotID: 0
   selected: 0
+  descriptionText: {fileID: 0}
   pc: {fileID: 0}
   em: {fileID: 0}
-  inventoryButtons:
-  - {fileID: 8178443052625777108}
-  - {fileID: 6304826950519602700}
+  inventoryButtons: []
   buttonSound: {fileID: 8549293670149022001, guid: c22bd660ce61fe74dada98e4903d6074, type: 3}
 --- !u!114 &3232889482271483572
 MonoBehaviour:
@@ -197,7 +196,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2980043493039192457}
           m_TargetAssemblyTypeName: ItemUI, Assembly-CSharp
-          m_MethodName: GiveItemObject
+          m_MethodName: Select
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
