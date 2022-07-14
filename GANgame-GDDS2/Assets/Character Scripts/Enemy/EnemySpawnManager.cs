@@ -8,6 +8,7 @@ namespace EnemyAI
     public class EnemySpawnManager : MonoBehaviour
     {
         public bool canSpawn;
+        public bool canStart;
         public GameObject enemy;
         public GameObject currentRoom;
         PlayerController player;
@@ -17,7 +18,8 @@ namespace EnemyAI
             player = FindObjectOfType<PlayerController>();
             canSpawn = true;
 
-            EventManager.EnemyCanSpawn += SpawnEnemy;
+            EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
+            EventManager.EnemyDeath += DespawnEnemy;
         }
         private void Update()
         {
@@ -26,16 +28,16 @@ namespace EnemyAI
 
         void SpawnEnemy()
         {
-            print("If this prints more than once, assume the game crashes");
-            Instantiate(enemy, player.transform);    
-            canSpawn = false;          
+            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);    
+            canSpawn = false;
         }
 
-        private void OnDisable() 
+        void DespawnEnemy()
         {
+            canSpawn = true;
             EventManager.EnemyCanSpawn -= SpawnEnemy;
+            EventManager.EnemyCanSpawn += SpawnEnemy;
         }
-
 
         public GameObject FindRoom()
         {
