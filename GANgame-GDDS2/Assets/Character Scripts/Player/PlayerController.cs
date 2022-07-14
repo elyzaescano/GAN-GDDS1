@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
+        EventManager.EquipItem += CraftingSound;
     }
 
     // Update is called once per frame
@@ -247,6 +248,7 @@ public class PlayerController : MonoBehaviour
     private void OnApplicationQuit()
     {
         EventManager.InteractEvent -= startAddItemCoroutine;
+        EventManager.EquipItem -= CraftingSound;
         inventory.Container.Clear();
     }
 
@@ -282,4 +284,10 @@ public class PlayerController : MonoBehaviour
     {
         return stepclips[UnityEngine.Random.Range(0, stepclips.Length)];
     }
+
+    public void CraftingSound()
+    {
+        craftSuccess.Play();
+    }
+
 }

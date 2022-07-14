@@ -13569,7 +13569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &617191979
 Transform:
   m_ObjectHideFlags: 0
@@ -65431,7 +65431,7 @@ MonoBehaviour:
   isMoving: 0
   pickup: {fileID: 949184828}
   walking: {fileID: 1752009004}
-  craftSuccess: {fileID: 0}
+  craftSuccess: {fileID: 617191980}
   stepclips:
   - {fileID: 8300000, guid: a90164d7fae467d44b83f3de27eb3fb5, type: 3}
   - {fileID: 8300000, guid: 97798b1b38dd13f4fa55e60e9dcab780, type: 3}
