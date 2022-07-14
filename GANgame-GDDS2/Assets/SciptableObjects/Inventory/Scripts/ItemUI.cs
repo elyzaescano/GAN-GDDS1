@@ -63,8 +63,8 @@ public class ItemUI : MonoBehaviour
         {
             spriteImage.color = Color.black;
             inventoryButtons[0].onClick.AddListener(GiveItemObject);
-            inventoryButtons[1].onClick.AddListener(DropItemFromUI);
-            inventoryButtons[2].onClick.AddListener(EquipItemFromUI);
+            inventoryButtons[2].onClick.AddListener(DropItemFromUI);
+            inventoryButtons[1].onClick.AddListener(EquipItemFromUI);
             selected = !selected;
         }
         else
