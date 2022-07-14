@@ -10,7 +10,7 @@ public class PauseScreen : MonoBehaviour
     public bool canMove;
     
 
-    AudioManager audioManager;
+    
 
     public void Resume()
     {
@@ -31,6 +31,7 @@ public class PauseScreen : MonoBehaviour
    public void BacktoMenu()
     {
         SceneManager.LoadScene("Menu");
+        Resume();
     }
 
     public void Quit()
