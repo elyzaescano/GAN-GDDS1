@@ -102,8 +102,12 @@ public class ItemUI : MonoBehaviour
 
     public void DropItemFromUI()
     {
+        if(pc.hit)
+            playerInventory.DropItem(itemSlotID, pc.gameObject.transform.position, 0);
+        else playerInventory.DropItem(itemSlotID, pc.gameObject.transform.position, -2);
+
         buttonSound.Play();
-        playerInventory.DropItem(itemSlotID,pc.gameObject.transform.position);
+
         //UpdateImage(null);
         UIScript.StartUICoroutine();
         

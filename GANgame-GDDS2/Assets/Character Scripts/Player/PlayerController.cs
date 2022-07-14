@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public AudioSource craftSuccess;
     
     [SerializeField] private AudioClip[] stepclips;
+
+    public bool hit;
+    public LayerMask layerToBlock;
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
@@ -55,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             inventoryUI.RemoveItem(inventory.GetItemObject(0));
-            inventory.DropItem(0, this.transform.position);            
+            inventory.DropItem(0, this.transform.position,0);            
             RefreshUI();
         }
 
@@ -83,9 +86,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-            
-           
         }
+
+        hit = Physics.Raycast(transform.position, Vector3.down, 3f, layerToBlock);
     }
 
     //Mobile code for crafting
