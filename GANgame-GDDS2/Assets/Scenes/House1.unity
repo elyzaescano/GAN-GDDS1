@@ -873,6 +873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 6
   timeToSpawn: 3
+  spawnPoint: {fileID: 0}
 --- !u!1 &169178445
 GameObject:
   m_ObjectHideFlags: 0
@@ -13831,6 +13832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 4
   timeToSpawn: 3
+  spawnPoint: {fileID: 0}
 --- !u!1 &642914069
 GameObject:
   m_ObjectHideFlags: 0
@@ -62501,6 +62503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 0
+  canStart: 0
   enemy: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
   currentRoom: {fileID: 0}
 --- !u!4 &1122901811
@@ -62549,110 +62552,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146792813}
-  - component: {fileID: 1146792811}
+  - component: {fileID: 1146792810}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: LevelMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1146792811
-AudioSource:
+--- !u!114 &1146792810
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146792809}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2f18f485e3291014c9fe0104c0a8c0af, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7441d2cd2821ee34789c6ebec522779d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1146792813
 Transform:
   m_ObjectHideFlags: 0
@@ -63229,6 +63148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 2
   timeToSpawn: 3
+  spawnPoint: {fileID: 0}
 --- !u!1 &1267039564
 GameObject:
   m_ObjectHideFlags: 0
@@ -65891,6 +65811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 3
   timeToSpawn: 3
+  spawnPoint: {fileID: 0}
 --- !u!1 &1621287476
 GameObject:
   m_ObjectHideFlags: 0
@@ -67986,6 +67907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 0
   timeToSpawn: 444
+  spawnPoint: {fileID: 0}
 --- !u!1 &1884062057
 GameObject:
   m_ObjectHideFlags: 0
@@ -69183,6 +69105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 5
   timeToSpawn: 3
+  spawnPoint: {fileID: 0}
 --- !u!1 &1987744681
 GameObject:
   m_ObjectHideFlags: 0
@@ -69228,6 +69151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNo: 1
   timeToSpawn: 3
+  spawnPoint: {fileID: 0}
 --- !u!4 &1994839118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 741976666149874985, guid: 6143356540cd3ec4f92672aba2c32f91, type: 3}
