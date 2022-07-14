@@ -56,7 +56,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         //Gets an ItemObject from GetItemObject(), Then drops the item.
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
-        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y - displacement), Quaternion.identity);  //elyza says Instantiates the called item at the Vector2 position
+        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y + displacement), Quaternion.identity);  //elyza says Instantiates the called item at the Vector2 position
         Container.RemoveAt(_is); //elyza says Removes item from the Container (i.e. the inventory slots)
         if(IO == equippedItem) { equippedItem = null; } //elyza says Ensures the equipped item resets
         EventManager.ItemEquip(); 

@@ -32,8 +32,6 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private AudioClip[] stepclips;
 
-    public bool hit;
-    public LayerMask layerToBlock;
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
@@ -87,8 +85,6 @@ public class PlayerController : MonoBehaviour
         {
             playerAnim.SetBool("IsMoving", false);
         }
-
-        hit = Physics.Raycast(transform.position, Vector3.down, 3f, layerToBlock);
     }
 
     //Mobile code for crafting
