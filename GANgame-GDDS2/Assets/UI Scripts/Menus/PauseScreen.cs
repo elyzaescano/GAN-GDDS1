@@ -8,41 +8,15 @@ public class PauseScreen : MonoBehaviour
 {
     public GameObject background;
     public bool canMove;
-
-    AudioManager audioManager;
     
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (Time.timeScale == 0)
-            {
-                Resume();
-                EventManager.PauseScreen -= Resume;
-            }
-            else
-            {
-                Pause();
-                EventManager.PauseScreen += Pause;
-            }
-        }
-    }
+    AudioManager audioManager;
 
     public void Resume()
     {
         Time.timeScale = 1f; //Resume game
         background.SetActive(false);
-        audioManager.GetComponent<AudioSource>().Play();
+        AudioManager.instance.UnPause("Level");
         canMove = true;
     }
 
@@ -50,7 +24,7 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 0f; //Freeze game
         background.SetActive(true);
-        audioManager.GetComponent<AudioSource>().Stop();
+        AudioManager.instance.Pause("Level");
         canMove = false;
     }
 
