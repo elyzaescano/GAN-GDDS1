@@ -19,6 +19,7 @@ public class PauseScreen : MonoBehaviour
         menuButton.Play();
         AudioManager.instance.UnPause("Level");
         canMove = true;
+        EventManager.PauseScreen += Resume;
     }
 
    public void Pause()
@@ -28,6 +29,7 @@ public class PauseScreen : MonoBehaviour
         menuButton.Play();
         AudioManager.instance.Pause("Level");
         canMove = false;
+        EventManager.PauseScreen += Pause;
     }
 
    public void BacktoMenu()
