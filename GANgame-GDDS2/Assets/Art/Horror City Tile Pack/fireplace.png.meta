@@ -1,31 +1,40 @@
 fileFormatVersion: 2
-guid: 6fa1808a9558d59479ef638c3916a3d0
+guid: dfb2a829c2c57cd47b73395ae6dcaad6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8961307887796047852
-    second: PSF-KillerFace01_0
+      213: 5698017828174702254
+    second: fireplace_0
   - first:
-      213: 4030696117049918519
-    second: PSF-KillerFace01_1
+      213: 3555795224932194294
+    second: fireplace_1
   - first:
-      213: 4492284972029731911
-    second: PSF-KillerFace01_2
+      213: 2692201480731268342
+    second: fireplace_2
   - first:
-      213: 4055113951863495874
-    second: PSF-KillerFace01_3
+      213: 2497313390202381326
+    second: fireplace_3
   - first:
-      213: -6550161281258136651
-    second: PSF-KillerFace01_4
+      213: -5130110956873843884
+    second: fireplace_4
   - first:
-      213: -9166789620230926531
-    second: PSF-KillerFace01_5
+      213: -8485822813022745045
+    second: fireplace_5
   - first:
-      213: 5803212866560692130
-    second: PSF-KillerFace01_6
+      213: 8965171369056544103
+    second: fireplace_6
   - first:
-      213: 1734654276700280098
-    second: PSF-KillerFace01_7
+      213: 5879710767371932333
+    second: fireplace_7
+  - first:
+      213: 1892349469243698225
+    second: fireplace_8
+  - first:
+      213: -4346544365704419778
+    second: fireplace_9
+  - first:
+      213: -6304793336463531874
+    second: fireplace_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +65,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -111,29 +120,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PSF-KillerFace01_0
+      name: fireplace_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 98
-        width: 92
-        height: 92
+        x: 256
+        y: 288
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cef4dfe7b06fc5c70800000000000000
-      internalID: 8961307887796047852
+      spriteID: 6f71d1ceae8b85130800000000000000
+      internalID: 3555795224932194294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_1
+      name: fireplace_2
       rect:
         serializedVersion: 2
-        x: 98
-        y: 98
-        width: 92
-        height: 92
+        x: 288
+        y: 288
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7348e4e43c8efe730800000000000000
-      internalID: 4030696117049918519
+      spriteID: 6f494ca9bfe9c5520800000000000000
+      internalID: 2692201480731268342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_2
+      name: fireplace_3
       rect:
         serializedVersion: 2
-        x: 194
-        y: 98
-        width: 92
-        height: 92
+        x: 320
+        y: 288
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74468a3816dc75e30800000000000000
-      internalID: 4492284972029731911
+      spriteID: e04e6db0c4d38a220800000000000000
+      internalID: 2497313390202381326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_3
+      name: fireplace_5
       rect:
         serializedVersion: 2
-        x: 290
-        y: 98
-        width: 92
-        height: 92
+        x: 256
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ccdd8087a8a64830800000000000000
-      internalID: 4055113951863495874
+      spriteID: b2e8fd28c1d4c3a80800000000000000
+      internalID: -8485822813022745045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_4
+      name: fireplace_6
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 92.5
-        height: 94
+        x: 288
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bb5719d4072915a0800000000000000
-      internalID: -6550161281258136651
+      spriteID: 7652e135cdfaa6c70800000000000000
+      internalID: 8965171369056544103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_5
+      name: fireplace_7
       rect:
         serializedVersion: 2
-        x: 97
-        y: 2
-        width: 92.5
-        height: 94
+        x: 320
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3fc56b786509c080800000000000000
-      internalID: -9166789620230926531
+      spriteID: da25e377acde89150800000000000000
+      internalID: 5879710767371932333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_6
+      name: fireplace_8
       rect:
         serializedVersion: 2
-        x: 192
-        y: 2
-        width: 92.5
-        height: 94
+        x: 256
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2af835bfa57298050800000000000000
-      internalID: 5803212866560692130
+      spriteID: 13c6b21f0d9f24a10800000000000000
+      internalID: 1892349469243698225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSF-KillerFace01_7
+      name: fireplace_9
       rect:
         serializedVersion: 2
-        x: 287
-        y: 2
-        width: 92.5
-        height: 94
+        x: 288
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +285,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22515d2cfdab21810800000000000000
-      internalID: 1734654276700280098
+      spriteID: e3666b9ade8fda3c0800000000000000
+      internalID: -4346544365704419778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireplace_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9067dd5ddfd088a0800000000000000
+      internalID: -6304793336463531874
       vertices: []
       indices: 
       edges: []

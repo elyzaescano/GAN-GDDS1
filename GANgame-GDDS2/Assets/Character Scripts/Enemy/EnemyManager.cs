@@ -15,7 +15,7 @@ namespace EnemyAI
         public State currentState;
 
         public State searchState;
-        public GameObject target;
+        public GameObject target {get ; private set;}
         public Vector3 playerPos;
 
         public NavMeshAgent navAgent; //Think of the NavMeshAgent as a rigidbody that can detect walls
@@ -30,6 +30,7 @@ namespace EnemyAI
         {
             enemyrb = GetComponent<Rigidbody2D>();
             enemyFOV = FindObjectOfType<EnemyFieldOfView>();
+            target = GameObject.FindGameObjectWithTag("Player");
             navAgent = GetComponentInParent<NavMeshAgent>();
             navAgent.updateRotation = false;
             navAgent.updateUpAxis = false;
