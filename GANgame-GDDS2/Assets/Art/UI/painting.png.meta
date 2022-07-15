@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 2584314847056507604
     second: painting_1
+  - first:
+      213: -8934275123071076098
+    second: painting_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,12 +115,12 @@ TextureImporter:
       name: painting_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 58
+        width: 38
         height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +136,12 @@ TextureImporter:
       name: painting_1
       rect:
         serializedVersion: 2
-        x: 58
+        x: 40
         y: 0
-        width: 58
+        width: 39
         height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,6 +149,27 @@ TextureImporter:
       bones: []
       spriteID: 4d2329e39a45dd320800000000000000
       internalID: 2584314847056507604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: painting_2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 36
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef83db38c14130480800000000000000
+      internalID: -8934275123071076098
       vertices: []
       indices: 
       edges: []
