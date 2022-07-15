@@ -15,8 +15,8 @@ public class EventManager : MonoBehaviour
 
     public static event Action EnemyCanSpawn;
     public static event Action EnemyDeath;
-    public static event Action EnemySearch;
-    public static event Action PauseScreen;
+    public static event Action GamePause;
+    public static event Action GameResume;
 
     public static void InventoryToggle()
     {
@@ -53,14 +53,14 @@ public class EventManager : MonoBehaviour
         EnemyDeath?.Invoke();
     }
 
-    public static void EnemyIsSearching()
+    public static void PauseGame()
     {
-        EnemySearch?.Invoke();
+        GamePause?.Invoke();
     }
 
-    public static void PauseMenu()
+    public static void ResumeGame()
     {
-        PauseScreen?.Invoke();
+        GameResume?.Invoke();
     }
    
 }

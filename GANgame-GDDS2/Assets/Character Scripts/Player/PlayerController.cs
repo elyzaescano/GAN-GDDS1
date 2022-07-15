@@ -32,10 +32,10 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private AudioClip[] stepclips;
 
+    #region Monobehaviour Methods
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
-        EventManager.EquipItem += CraftingSound;
     }
 
     // Update is called once per frame
@@ -88,36 +88,53 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        //print(movement);
+        //movement = Vector2.zero;
+
+        if (usingKBM)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical");
+
+        }
+        else
+        {
+
+            HorizontalMovement(Mathf.RoundToInt(movement.x)); VerticalMovement(Mathf.RoundToInt(movement.y));
+
+
+        }
+    }
+    #endregion
+
+    #region Other methods
     //Mobile code for crafting
     ItemObject firstVariable;
     ItemUI firstItemUI;
     ItemObject secondVariable;
     ItemUI secondItemUI;
-    public void GetCraftingItems(ItemObject craftingItem, ItemUI itemIcon)
+    public void GetCraftingItems(ItemObject firstCraftingItem, ItemObject secondCraftingItem, ItemUI firstItemIcon, ItemUI secondItemIcon)
     {
-        if (!firstVariable)
-        {
-            firstVariable = craftingItem;
-            firstItemUI = itemIcon;
-        } else
-        {
-            secondVariable = craftingItem;
-            secondItemUI = itemIcon;
-            int i = firstVariable.Combine(secondVariable) ? 1 : 0;
-            
-            int o = secondVariable.Combine(firstVariable) ? 1 : 0;
-            print(i+o);
-            if (i+o == 2)
-            {
-                StartCoroutine(Crafting(firstVariable, secondVariable));
-                
-            }else
-            {
 
-                StartCoroutine(UnCrafting(firstVariable,secondVariable,firstItemUI,secondItemUI));
-            }
-        }
+        firstVariable = firstCraftingItem;
+        firstItemUI = firstItemIcon;
+
+        secondVariable = secondCraftingItem;
+        secondItemUI = secondItemIcon;
+        int i = firstVariable.Combine(secondVariable) ? 1 : 0;
             
+        int o = secondVariable.Combine(firstVariable) ? 1 : 0;
+        print(i+o);
+        if (i+o == 2)
+        {
+            StartCoroutine(Crafting(firstVariable, secondVariable));           
+        }else
+        {
+            StartCoroutine(UnCrafting(firstVariable,secondVariable,firstItemUI,secondItemUI));
+        }
+        
+           
         print("first = " + firstVariable);
         print("Second = " + secondVariable);
     }
@@ -149,6 +166,7 @@ public class PlayerController : MonoBehaviour
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
         inventoryUI.StartUICoroutine();
         EventManager.ItemEquip();
+        CraftingSound();
         firstVariable = null;
         secondVariable = null;
         
@@ -164,40 +182,12 @@ public class PlayerController : MonoBehaviour
 
     public bool usingKBM;
 
-    private void FixedUpdate()
-    {
-        //print(movement);
-        //movement = Vector2.zero;
-        
-        if (usingKBM) 
-        { 
-            movement.x = Input.GetAxisRaw("Horizontal"); movement.y = Input.GetAxisRaw("Vertical");
-            
-        } 
-        else 
-        {
-            
-            HorizontalMovement(Mathf.RoundToInt(movement.x)); VerticalMovement(Mathf.RoundToInt(movement.y));
-           
-            
-        }
-    }
+
 
     public void HorizontalMovement(int directionX) //Joystick link
     {
-        //if(Mathf.Abs(dirX) > Mathf.Abs(dirY))
-        //{
-        //    movement.x = Mathf.Round(dirX);
-        //}else if (Mathf.Abs(dirX) < Mathf.Abs(dirY))
-        //{
-        //    movement.y = Mathf.Round(dirY);
-        //}
+       movement.x = directionX;
         
-        movement.x = directionX;
-        
-        //movement.y = direction.y;
-
-        //print(movement);
     }
 
     public void VerticalMovement(int DirectionY)
@@ -207,24 +197,6 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    EventManager.InteractEvent += startAddItemCoroutine;
-    //    var item = collision.GetComponent<Item>();
-    //    if (item)
-    //    {
-    //        _item = item.item;
-    //        itemGO = item.gameObject;
-    //        print("Can add" + item.name);
-    //    }
-
-    //}
-
-    //public void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    EventManager.InteractEvent -= startAddItemCoroutine;
-    //    print(collision.name + " is not in range");
-    //}
 
     public void startAddItemCoroutine()
     {
@@ -248,31 +220,9 @@ public class PlayerController : MonoBehaviour
     private void OnApplicationQuit()
     {
         EventManager.InteractEvent -= startAddItemCoroutine;
-        EventManager.EquipItem -= CraftingSound;
         inventory.Container.Clear();
     }
 
-    /*void WalkingAudio()
-    {
-        if(movement.x != 0 || movement.y != 0)
-        {
-            isMoving = true; //works
-        } else
-        {
-            isMoving = false;
-        }
-
-        if (isMoving && !walking.isPlaying) //works
-        {
-            walking.Play(); //does not work
-            print("Fuck this");
-        }
-        else
-        {
-            walking.Stop();
-            print("Fuck you");
-        }
-    }*/
 
     void Step()
     {
@@ -289,5 +239,6 @@ public class PlayerController : MonoBehaviour
     {
         craftSuccess.Play();
     }
+    #endregion
 
 }

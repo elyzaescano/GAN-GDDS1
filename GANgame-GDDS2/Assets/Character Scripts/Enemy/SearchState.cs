@@ -9,6 +9,7 @@ namespace EnemyAI
         public GameObject enemyHolder;
         public ChaseState chaseState;
         public PatrolState patrolState;
+        [SerializeField] private Vector3 rotation;
         [Range(1, 200)] public float rotationSpeed;
         public float timeToSearch = 10f;
 
@@ -24,6 +25,11 @@ namespace EnemyAI
             {
                 enemyAnim.StartCoroutine(enemyAnim.SearchSpin());
             }
+            else
+            {
+                enemyAnim.StopCoroutine(enemyAnim.SearchSpin());
+            }
+            
             if (timeToSearch <= 0)
             {
                 EventManager.EnemyDied();

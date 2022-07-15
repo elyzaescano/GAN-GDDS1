@@ -10,11 +10,13 @@ namespace EnemyAI
         AnimationState animationState;
         EnemyFieldOfView enemyFOV;
 
+        SearchState searchState;
+
         void Awake()
         {
             anim = GetComponent<Animator>();
             enemyFOV = FindObjectOfType<EnemyFieldOfView>();
-
+            searchState = FindObjectOfType<SearchState>();
         }
 
         void Update()
@@ -58,7 +60,8 @@ namespace EnemyAI
         {
             anim.SetLayerWeight(1, 1);
             anim.SetLayerWeight(0, 0);
-            yield return new WaitForSeconds (4);
+
+            yield return new WaitForSeconds (searchState.timeToSearch);
             anim.SetLayerWeight(1, 0);
             anim.SetLayerWeight(0, 1);            
         }

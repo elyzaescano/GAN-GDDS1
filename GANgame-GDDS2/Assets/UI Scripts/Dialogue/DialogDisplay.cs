@@ -10,6 +10,7 @@ namespace Dialogue
         public GameObject speaker;
 
         SpeakerUI speakerUI;
+        PauseScreen pause;
 
         public float typeSpeed;
         int activeLineIndex = 0;
@@ -17,16 +18,27 @@ namespace Dialogue
         private void Start()
         {
             speakerUI = speaker.GetComponent<SpeakerUI>();
-
             speakerUI.Speaker = conversation.speaker;
+
+            pause = FindObjectOfType<PauseScreen>();
+
+            AdvanceConversation();
+
+
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.touchCount > 0)
             {
                 AdvanceConversation();
             }
+            if (transform.parent.gameObject.active == true)
+            {
+                pause.isPaused = true;
+            }
         }
+
+
 
         void AdvanceConversation()
         {
@@ -37,8 +49,9 @@ namespace Dialogue
             }
             else
             {
-                speakerUI.Hide();
+                pause.isPaused = false;
                 activeLineIndex = 0;
+                transform.parent.gameObject.SetActive(false);
             }
         }
 

@@ -11,7 +11,7 @@ namespace EnemyAI
         public float timeToSpawn;
         float originalTime;
         public Transform spawnPoint;
-    
+        PauseScreen pause;
         EnemySpawnManager esm;
         
         private void Start() 
@@ -19,10 +19,12 @@ namespace EnemyAI
             esm = FindObjectOfType<EnemySpawnManager>();
             spawnPoint = transform.GetChild(0).transform;
             originalTime = timeToSpawn;
+
+            pause = FindObjectOfType<PauseScreen>();
         }
         void Update()
         {
-            if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn)
+            if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn && !pause.isPaused)
             {
                 timeToSpawn -= Time.deltaTime;
             }

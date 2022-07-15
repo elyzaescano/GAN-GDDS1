@@ -9,7 +9,7 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     [SerializeField] private Canvas canvas;
     RectTransform rectTrans;
     CanvasGroup canvasGroup;
-
+    bool dragging;
     Vector3 startPos;
 
     private void Awake()
@@ -21,29 +21,22 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     {
         canvasGroup.alpha = .7f;
         canvasGroup.blocksRaycasts = false;
+        dragging = true;
     }
     public void OnDrag(PointerEventData eventData)
     {
         rectTrans.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        dragging = true;        
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        dragging = false;
+
     }
     public void OnPointerDown(PointerEventData eventData)
     {
     
-    }
-    void Start()
-    {
-        Vector3 startPos = transform.position;
-    }
-    void Update()
-    {
-        if (transform.parent == null)
-        {
-            transform.position = startPos;
-        }
     }
 }

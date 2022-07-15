@@ -29,15 +29,8 @@ namespace EnemyAI
                 {
                     //Makes enemy move to player
                     enemyManager.navAgent.SetDestination(enemyFOV.currentTarget.transform.position);
+                }
 
-                    //Makes enemy keep moving if it hasn't reached the stopping distance
-                    enemyManager.navAgent.isStopped = false;
-                }
-                else
-                {
-                    //Stops the enemy if it is too close to the player
-                    enemyManager.navAgent.isStopped = true;
-                }
 
                 return this;
             }
