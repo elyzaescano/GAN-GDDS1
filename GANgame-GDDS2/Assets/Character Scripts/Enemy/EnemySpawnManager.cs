@@ -9,12 +9,12 @@ namespace EnemyAI
     public class EnemySpawnManager : MonoBehaviour
     {
         public bool canSpawn;
-        public bool canStart;
         public GameObject enemy;
         public GameObject currentRoom;
         PlayerController player;
         public GameObject dialogBox;
         public Conversation con_enemyspawn;
+
         private void Start() 
         {
             player = FindObjectOfType<PlayerController>();
@@ -23,6 +23,7 @@ namespace EnemyAI
             EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
             EventManager.EnemyDeath += DespawnEnemy;
         }
+        
         private void Update()
         {
             currentRoom = FindRoom();

@@ -59797,7 +59797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 0
-  canStart: 0
   enemy: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
   currentRoom: {fileID: 0}
   dialogBox: {fileID: 1161936868}
@@ -65788,7 +65787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 3000
+  timeToSpawn: 3
   spawnPoint: {fileID: 0}
 --- !u!1 &1884062057
 GameObject:
@@ -65842,8 +65841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  sceneToMoveTo:
-    m_Handle: 0
+  sceneToMoveTo: 
 --- !u!61 &1884062060
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -23,6 +23,8 @@ namespace Dialogue
             pause = FindObjectOfType<PauseScreen>();
 
             AdvanceConversation();
+
+
         }
         private void Update()
         {
@@ -30,13 +32,18 @@ namespace Dialogue
             {
                 AdvanceConversation();
             }
+            if (transform.parent.gameObject.active == true)
+            {
+                pause.isPaused = true;
+            }
         }
+
+
 
         void AdvanceConversation()
         {
             if (activeLineIndex < conversation.lines.Length)
             {
-                pause.isPaused = true;
                 DisplayLines();
                 activeLineIndex += 1;
             }
@@ -44,7 +51,7 @@ namespace Dialogue
             {
                 pause.isPaused = false;
                 activeLineIndex = 0;
-                gameObject.SetActive(false);
+                transform.parent.gameObject.SetActive(false);
             }
         }
 
