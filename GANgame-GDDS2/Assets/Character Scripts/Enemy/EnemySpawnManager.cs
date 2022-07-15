@@ -15,8 +15,6 @@ namespace EnemyAI
         PlayerController player;
         public GameObject dialogBox;
         public Conversation con_enemyspawn;
-        public Conversation con_enemydeath;
-
         private void Start() 
         {
             player = FindObjectOfType<PlayerController>();
@@ -33,15 +31,13 @@ namespace EnemyAI
         void SpawnEnemy()
         {
             dialogBox.SetActive(true);
-            dialogBox.GetComponent<DialogDisplay>().conversation = con_enemyspawn;
+            dialogBox.GetComponentInChildren<DialogDisplay>().conversation = con_enemyspawn;
             Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);    
             canSpawn = false;
         }
 
         void DespawnEnemy()
         {
-            dialogBox.GetComponent<DialogDisplay>().conversation = con_enemydeath;
-
             canSpawn = true;
             EventManager.EnemyCanSpawn -= SpawnEnemy;
             EventManager.EnemyCanSpawn += SpawnEnemy;

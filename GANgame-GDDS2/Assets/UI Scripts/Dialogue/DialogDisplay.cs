@@ -10,6 +10,7 @@ namespace Dialogue
         public GameObject speaker;
 
         SpeakerUI speakerUI;
+        PauseScreen pause;
 
         public float typeSpeed;
         int activeLineIndex = 0;
@@ -17,8 +18,11 @@ namespace Dialogue
         private void Start()
         {
             speakerUI = speaker.GetComponent<SpeakerUI>();
-
             speakerUI.Speaker = conversation.speaker;
+
+            pause = FindObjectOfType<PauseScreen>();
+
+            AdvanceConversation();
         }
         private void Update()
         {
@@ -32,13 +36,15 @@ namespace Dialogue
         {
             if (activeLineIndex < conversation.lines.Length)
             {
+                pause.isPaused = true;
                 DisplayLines();
                 activeLineIndex += 1;
             }
             else
             {
-                speakerUI.Hide();
+                pause.isPaused = false;
                 activeLineIndex = 0;
+                gameObject.SetActive(false);
             }
         }
 
