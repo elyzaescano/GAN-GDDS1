@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class SetVolume : MonoBehaviour
 {
-    [SerializeField] private Slider volumeSlider = null;
+    //[SerializeField] private Slider volumeSlider;
 
     public AudioMixer mixer;
-    float volume = 1.0f;
+    //float volume = 1.0f;
 
-    private void Start()
+    /*private void Start()
     {
         LoadValues();
-    }
+    }*/
     public void MenuBGM(float sliderValue)
     {
 
@@ -27,7 +27,7 @@ public class SetVolume : MonoBehaviour
         mixer.SetFloat("SoundEffects", Mathf.Log10(sliderValue) * 20);
     }
 
-    public void SaveVolume()
+    /*public void SaveVolume()
     {
         float volumeValue = volumeSlider.value;
         PlayerPrefs.SetFloat("VolumeLevel", volume);
@@ -40,5 +40,5 @@ public class SetVolume : MonoBehaviour
         float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
         volumeSlider.value = volumeValue;
         AudioListener.volume = volumeValue;
-    }
+    }*/
 }
