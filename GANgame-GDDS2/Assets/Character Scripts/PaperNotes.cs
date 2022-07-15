@@ -13,7 +13,7 @@ public class PaperNotes : MonoBehaviour
     public InventoryObject playerInventory; //checks with player inventory 
     public ItemObject itemRequired; //item that need to be used
     public bool itemNeeded; //check if item is required to interact 
-    bool canOpen = true; //checks if player can open note(can by default)
+    bool canOpen = true; //checks if player can open note
     EventManager em;
     // Start is called before the first frame update
     void Start()
@@ -32,20 +32,20 @@ public class PaperNotes : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if (itemNeeded) //tick in inspector
+            if (itemNeeded)
             {
                 canOpen = false; //disable player to open
+                EventManager.InteractEvent += OpenNote;
                 ItemObject o = playerInventory.equippedItem;
                 if (o == itemRequired)
                 {
                     canOpen = true;
                 }
-                EventManager.InteractEvent += OpenNote;
-            }   
+            }
+            //EventManager.InteractEvent += OpenNote;
 
             else
             {
-                canOpen = true;
                 EventManager.InteractEvent += OpenNote;
             }
             viewNote = true;
