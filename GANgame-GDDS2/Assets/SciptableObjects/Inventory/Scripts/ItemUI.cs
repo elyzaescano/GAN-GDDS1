@@ -30,7 +30,7 @@ public class ItemUI : MonoBehaviour
         UIScript = FindObjectOfType<InventoryUI>();
         em = FindObjectOfType<EventManager>();
         UI = UIScript.GetComponent<Image>();
-        buttonSound = FindObjectOfType<AudioSource>();
+        buttonSound = GameObject.Find("Button Press").GetComponent<AudioSource>();
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
 
         inventoryButtonObject = GameObject.FindGameObjectsWithTag("InventoryButtons");
