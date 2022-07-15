@@ -44,6 +44,10 @@ public class PaperNotes : MonoBehaviour
             }
             //EventManager.InteractEvent += OpenNote;
 
+            else
+            {
+                EventManager.InteractEvent += OpenNote;
+            }
             viewNote = true;
         }
     }
