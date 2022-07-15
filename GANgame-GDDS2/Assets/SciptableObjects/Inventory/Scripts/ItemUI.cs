@@ -93,10 +93,14 @@ public class ItemUI : MonoBehaviour
 
     public void DeSelect()
     {
-        spriteImage.color = Color.white;
+
         descriptionText.text = null;
         selected = false;
        
+        if(spriteImage.sprite != null)
+        {
+            spriteImage.color = Color.white;
+        }
     }
 
     public void EnableButtons()

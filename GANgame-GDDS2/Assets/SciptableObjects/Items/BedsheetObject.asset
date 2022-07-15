@@ -22,3 +22,5 @@ MonoBehaviour:
   recipes:
   - other: {fileID: 11400000}
     result: {fileID: 11400000, guid: 21440597967a71043a63ee36eddc08fd, type: 2}
+  - other: {fileID: 11400000}
+    result: {fileID: 11400000, guid: 21440597967a71043a63ee36eddc08fd, type: 2}
