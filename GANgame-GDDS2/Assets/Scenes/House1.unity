@@ -10447,6 +10447,10 @@ PrefabInstance:
       propertyPath: feedback.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 036971103eac06d4888b70b9d61a41b3, type: 3}
+    - target: {fileID: 7444564139893755699, guid: f106bee5766e6774eab88182f091f98c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f6f732e381b6034b806455a6118bfb0, type: 2}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_Name
       value: Keypad(box1)
@@ -67242,6 +67246,10 @@ PrefabInstance:
       propertyPath: feedback.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 036971103eac06d4888b70b9d61a41b3, type: 3}
+    - target: {fileID: 7444564139893755699, guid: f106bee5766e6774eab88182f091f98c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f6f732e381b6034b806455a6118bfb0, type: 2}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_Name
       value: Keypad (box 6)
