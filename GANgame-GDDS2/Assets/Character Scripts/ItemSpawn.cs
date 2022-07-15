@@ -47,7 +47,7 @@ public class ItemSpawn : MonoBehaviour
     {
         if (canSpawn && itemNeeded && this.enabled)
         {
-            Instantiate(itemPrefab, spawnPoint);
+            Instantiate(itemPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
             canSpawn = false;
             EventManager.InteractEvent -= this.Spawn;
             Destroy(GetComponent<ItemSpawn>());

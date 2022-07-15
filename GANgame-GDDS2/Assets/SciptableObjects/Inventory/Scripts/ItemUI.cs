@@ -62,9 +62,10 @@ public class ItemUI : MonoBehaviour
         if (!selected)
         {
             spriteImage.color = Color.black;
-            inventoryButtons[0].onClick.AddListener(GiveItemObject);
+            GiveItemObject();
             inventoryButtons[2].onClick.AddListener(DropItemFromUI);
             inventoryButtons[1].onClick.AddListener(EquipItemFromUI);
+            descriptionText.text = item.description;
             selected = !selected;
         }
         else
@@ -77,14 +78,17 @@ public class ItemUI : MonoBehaviour
             selected = !selected;
         }
     }
+
+    CombineButton combineButton;
+
     public void GiveItemObject()
     {
+        //Aivated upon being selected. Gives the item and its ui to the combine button for it to be accessed.
         ItemObject item = playerInventory.Container[itemSlotID].item;
+        var combineVariables = FindObjectOfType<CombineButton>().GetComponent<CombineButton>();
+        combineVariables.UpdateItemVariables(item, this);
         buttonSound.Play();
-        descriptionText.text = item.description;
         //print(item);
-        pc.GetCraftingItems(item,this);
-        selected = true;    
     }
 
     public void DeSelect()
@@ -107,6 +111,7 @@ public class ItemUI : MonoBehaviour
 
         //UpdateImage(null);
         UIScript.StartUICoroutine();
+        DeSelect();
         
     }
 
