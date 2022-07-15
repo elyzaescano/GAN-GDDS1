@@ -35,17 +35,18 @@ public class PaperNotes : MonoBehaviour
             if (itemNeeded)
             {
                 canOpen = false; //disable player to open
-                EventManager.InteractEvent += OpenNote;
                 ItemObject o = playerInventory.equippedItem;
                 if (o == itemRequired)
                 {
                     canOpen = true;
                 }
+                EventManager.InteractEvent += OpenNote;
             }
             //EventManager.InteractEvent += OpenNote;
 
             else
             {
+                canOpen = true;
                 EventManager.InteractEvent += OpenNote;
             }
             viewNote = true;
