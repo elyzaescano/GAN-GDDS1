@@ -59732,6 +59732,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1096822814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 320266034101240537, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+  m_PrefabInstance: {fileID: 4115918359445409986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1109936898
 GameObject:
   m_ObjectHideFlags: 0
@@ -61229,6 +61234,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1370806286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6352739866843225074, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+  m_PrefabInstance: {fileID: 4115918359445409986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1378517354
 GameObject:
   m_ObjectHideFlags: 0
@@ -64992,13 +65002,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paintingPanel: {fileID: 4115918359445409993}
-  closeButton: {fileID: 4115918359445409992}
+  closeButton: {fileID: 1370806286}
   frames:
   - {fileID: 4115918359445409991}
   - {fileID: 4115918359445409990}
+  - {fileID: 1096822814}
   pieces:
-  - {fileID: 4115918359445409989}
   - {fileID: 4115918359445409987}
+  - {fileID: 4115918359445409989}
+  - {fileID: 1908276092}
   finalDoor: {fileID: 1884062057}
   piecesCollected: 0
 --- !u!4 &1773044952
@@ -65776,7 +65788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 3
+  timeToSpawn: 3000
   spawnPoint: {fileID: 0}
 --- !u!1 &1884062057
 GameObject:
@@ -66229,6 +66241,11 @@ MonoBehaviour:
   itemRequired: {fileID: 11400000, guid: e6903db603ed7a247b4e3f65e9b8b20b, type: 2}
   em: {fileID: 0}
   spawnerID: 0
+--- !u!1 &1908276092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2919569319436921193, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+  m_PrefabInstance: {fileID: 4115918359445409986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912863993
 GameObject:
   m_ObjectHideFlags: 0
@@ -67690,7 +67707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0025024414, y: -0.49749756}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.5, y: -3.4899902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102839088
@@ -68521,6 +68538,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621597030}
     m_Modifications:
+    - target: {fileID: 91604970643134972, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 621597029}
+    - target: {fileID: 1569626878728686127, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 621597029}
     - target: {fileID: 2657297792104947169, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -68587,11 +68612,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2657297792104947169, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 2657297792104947169, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4
+      value: 1.7449951
       objectReference: {fileID: 0}
     - target: {fileID: 2657297792104947169, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -68609,6 +68634,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaintingPuzzle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5510770409390803286, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683135074489889192, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.346802
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683135074489889192, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.0716858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978813903032350667, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 621597029}
+    - target: {fileID: 7515790691999793865, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: finalDoor
+      value: 
+      objectReference: {fileID: 1884062057}
+    - target: {fileID: 7515790691999793865, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515790691999793865, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 1370806286}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
 --- !u!1 &4115918359445409987 stripped
@@ -68634,11 +68687,6 @@ GameObject:
 --- !u!1 &4115918359445409991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5510770409437447212, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
-  m_PrefabInstance: {fileID: 4115918359445409986}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4115918359445409992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2495950063757831845, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
   m_PrefabInstance: {fileID: 4115918359445409986}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4115918359445409993 stripped
