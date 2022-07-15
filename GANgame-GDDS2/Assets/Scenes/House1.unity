@@ -66938,6 +66938,9 @@ MonoBehaviour:
   noteText: {fileID: 411847381}
   note: 3636
   paperNote: {fileID: 1731543793}
+  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  itemRequired: {fileID: 11400000, guid: fbc80e14b7e1c9543a0d62365a36d209, type: 2}
+  itemNeeded: 1
 --- !u!1 &1755629209
 GameObject:
   m_ObjectHideFlags: 0

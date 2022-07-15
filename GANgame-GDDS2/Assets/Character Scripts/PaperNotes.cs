@@ -9,6 +9,11 @@ public class PaperNotes : MonoBehaviour
     public string note; //ur input 
     public GameObject paperNote;
     bool viewNote = false;
+
+    public InventoryObject playerInventory; //checks with player inventory 
+    public ItemObject itemRequired; //item that need to be used
+    public bool itemNeeded; //check if item is required to interact 
+    bool canOpen = true; //checks if player can open note
     EventManager em;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +32,17 @@ public class PaperNotes : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            EventManager.InteractEvent += OpenNote;
+            if (itemNeeded)
+            {
+                canOpen = false; //disable player to open
+                EventManager.InteractEvent += OpenNote;
+                ItemObject o = playerInventory.equippedItem;
+                if (o == itemRequired)
+                {
+                    canOpen = true;
+                }
+            }
+            //EventManager.InteractEvent += OpenNote;
 
             viewNote = true;
         }
@@ -42,9 +57,10 @@ public class PaperNotes : MonoBehaviour
         }
     }
 
+
     public void OpenNote()
     {
-        if (viewNote)
+        if (viewNote && canOpen)
         {
             paperNote.SetActive(true);
             noteText.text = note;
@@ -53,6 +69,7 @@ public class PaperNotes : MonoBehaviour
     }
     public void Close()
     {
+       canOpen = false;
        paperNote.SetActive(false);
     }
 
