@@ -23,7 +23,7 @@ namespace EnemyAI
                 distanceFromTarget = Vector3.Distance(enemyFOV.currentTarget.transform.position, enemyManager.navAgent.transform.position);
 
                 //Makes FOV rotate to player
-                enemyFOV.transform.right = enemyFOV.currentTarget.transform.position - enemyManager.transform.position;
+                //enemyFOV.transform.right = enemyFOV.currentTarget.transform.position - enemyManager.transform.position;
 
                 if (distanceFromTarget > stoppingDistance)
                 {

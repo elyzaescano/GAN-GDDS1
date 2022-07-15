@@ -31,9 +31,11 @@ public class PlayerController : MonoBehaviour
     public AudioSource craftSuccess;
     
     [SerializeField] private AudioClip[] stepclips;
+
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
+        EventManager.EquipItem += CraftingSound;
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             inventoryUI.RemoveItem(inventory.GetItemObject(0));
-            inventory.DropItem(0, this.transform.position);            
+            inventory.DropItem(0, this.transform.position,0);            
             RefreshUI();
         }
 
@@ -83,8 +85,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-            
-           
         }
     }
 
@@ -248,6 +248,7 @@ public class PlayerController : MonoBehaviour
     private void OnApplicationQuit()
     {
         EventManager.InteractEvent -= startAddItemCoroutine;
+        EventManager.EquipItem -= CraftingSound;
         inventory.Container.Clear();
     }
 
@@ -283,4 +284,10 @@ public class PlayerController : MonoBehaviour
     {
         return stepclips[UnityEngine.Random.Range(0, stepclips.Length)];
     }
+
+    public void CraftingSound()
+    {
+        craftSuccess.Play();
+    }
+
 }

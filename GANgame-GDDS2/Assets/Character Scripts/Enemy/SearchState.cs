@@ -10,7 +10,7 @@ namespace EnemyAI
         public ChaseState chaseState;
         public PatrolState patrolState;
         [Range(1, 200)] public float rotationSpeed;
-        public float timeToSearch = 10f;
+        public float timeToSearch = 5f;
 
         public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
@@ -20,10 +20,11 @@ namespace EnemyAI
             //Rotates on the spot of last known player position to look for the player
             if (enemyManager.navAgent.remainingDistance < 1f)
             {
-                //search...
+                enemyFOV.transform.rotation = Quaternion.Euler(0, 0, 30);
             }
             if (timeToSearch <= 0)
             {
+                EventManager.EnemyDied();
                 Destroy(enemyHolder);
             }
 

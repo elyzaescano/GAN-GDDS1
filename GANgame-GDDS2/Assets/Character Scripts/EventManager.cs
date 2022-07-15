@@ -14,6 +14,8 @@ public class EventManager : MonoBehaviour
     public static event Action InteractEvent;
 
     public static event Action EnemyCanSpawn;
+    public static event Action EnemyDeath;
+    public static event Action PauseScreen;
 
     public static void InventoryToggle()
     {
@@ -45,4 +47,14 @@ public class EventManager : MonoBehaviour
         EnemyCanSpawn?.Invoke();
     }
 
+    public static void EnemyDied()
+    {
+        EnemyDeath?.Invoke();
+    }
+
+    public static void PauseMenu()
+    {
+        PauseScreen?.Invoke();
+    }
+   
 }

@@ -10,6 +10,8 @@ namespace EnemyAI
         public GameObject currentWaypoint;
         public LayerMask targetLayer;
         public LayerMask obstructionLayer;
+        public GameObject player;
+        EnemyManager enemyMan;
 
         //public PatrolState patrolState;
         public bool canSeePlayer { get; private set; }
@@ -20,6 +22,8 @@ namespace EnemyAI
         private void Awake()
         {
             //patrolState = FindObjectOfType<PatrolState>();
+            player = GameObject.FindGameObjectWithTag("Player");
+            transform.right = player.transform.position - transform.position;
 
             StartCoroutine(FOVCheck());
             //Checks if the player is in 5 times per second as opposed to every frame
@@ -38,13 +42,11 @@ namespace EnemyAI
             {
                 if (canSeePlayer)
                 {
-                    currentTarget = GameObject.FindGameObjectWithTag("Player");
-                    currentWaypoint = GameObject.FindGameObjectWithTag("Player");
+                    currentTarget = player;
                 }
                 else
                 {
                     currentTarget = null;
-                    //currentWaypoint = patrolState.points[patrolState.randomPoint];
                 }
 
                 yield return wait;
@@ -88,12 +90,12 @@ namespace EnemyAI
             #endregion
         }
 
-        /*
+        
         #region Visualising the FOV
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.white;
-            UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, detectionRadius);
+            //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, detectionRadius);
 
             Vector3 angle01 = DirectionFromAngle(-transform.eulerAngles.z, -angle / 2 + 90);
             Vector3 angle02 = DirectionFromAngle(-transform.eulerAngles.z, angle / 2 + 90);
@@ -116,6 +118,6 @@ namespace EnemyAI
             return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
         }
         #endregion
-        */
+        
     }
 }
