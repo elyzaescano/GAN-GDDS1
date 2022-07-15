@@ -58,12 +58,14 @@ public class KeypadScreen : MonoBehaviour
             itemSpawn.enabled = true;
             itemSpawn.Spawn();
             itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
+            ClearNumber();
             
         }
         else
         {
             itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[0]);
             codeTextValue = "";
+            ClearNumber();
         }
     }
 }
