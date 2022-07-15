@@ -7,6 +7,7 @@ namespace EnemyAI
     public class EnemyAnimationHandler : MonoBehaviour
     {
         Animator anim;
+        AnimationState animationState;
         EnemyFieldOfView enemyFOV;
 
         void Awake()
@@ -51,6 +52,15 @@ namespace EnemyAI
                     enemyFOV.transform.eulerAngles = new Vector3(0, 0, 0);
                 }
             }
+        }
+
+        public IEnumerator SearchSpin()
+        {
+            anim.SetLayerWeight(1, 1);
+            anim.SetLayerWeight(0, 0);
+            yield return new WaitForSeconds (4);
+            anim.SetLayerWeight(1, 0);
+            anim.SetLayerWeight(0, 1);            
         }
 
         private int SortByWeight(AnimatorClipInfo x, AnimatorClipInfo y)
