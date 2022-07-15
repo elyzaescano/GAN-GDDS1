@@ -110,6 +110,7 @@ public class ItemUI : MonoBehaviour
 
     public void DropItemFromUI()
     {
+        if(spriteImage != null)
         playerInventory.DropItem(itemSlotID, pc.gameObject.transform.position, 0);
         buttonSound.Play();
 

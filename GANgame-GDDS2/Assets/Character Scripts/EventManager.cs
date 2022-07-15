@@ -5,6 +5,8 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager instance;
+
     public static event Action OpenInventory;
     public static event Action CloseInventory;
     public static event Action EquipItem;

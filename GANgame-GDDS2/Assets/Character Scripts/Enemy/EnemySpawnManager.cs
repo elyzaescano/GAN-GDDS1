@@ -31,10 +31,12 @@ namespace EnemyAI
 
         void SpawnEnemy()
         {
+            if (currentRoom != null) { 
             dialogBox.SetActive(true);
             dialogBox.GetComponentInChildren<DialogDisplay>().conversation = con_enemyspawn;
-            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);    
+            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
             canSpawn = false;
+            }
         }
 
         void DespawnEnemy()

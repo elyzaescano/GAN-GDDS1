@@ -18,15 +18,17 @@ public class EquippedItemUI : MonoBehaviour
 
     public void UpdateItemImage()
     {
-        if(playerInventory.equippedItem == null)
+        if (playerInventory.equippedItem != null)
         {
-            itemImage.sprite = null;
-            itemImage.color = Color.clear;
+            Sprite newImage = playerInventory.equippedItem.itemIcon;
+            if (itemImage != null) { 
+            itemImage.sprite = newImage;
+            itemImage.color = Color.white;
+            }
             return;
         }
-        Sprite newImage = playerInventory.equippedItem.itemIcon;
-        itemImage.sprite = newImage;
-        itemImage.color = Color.white;
+        itemImage.sprite = null;
+        itemImage.color = Color.clear;
     }
 
     // Update is called once per frame
