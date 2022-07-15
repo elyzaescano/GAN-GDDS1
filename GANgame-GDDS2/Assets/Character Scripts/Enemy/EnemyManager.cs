@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//Animation Handler for enemy needs to be added
 namespace EnemyAI
 {
     public class EnemyManager : MonoBehaviour
@@ -30,6 +29,7 @@ namespace EnemyAI
         {
             enemyrb = GetComponent<Rigidbody2D>();
             enemyFOV = FindObjectOfType<EnemyFieldOfView>();
+            enemyAnim = FindObjectOfType<EnemyAnimationHandler>();
             target = GameObject.FindGameObjectWithTag("Player");
             navAgent = GetComponentInParent<NavMeshAgent>();
             navAgent.updateRotation = false;
