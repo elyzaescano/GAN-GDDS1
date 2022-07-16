@@ -199,6 +199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621597030}
     m_Modifications:
+    - target: {fileID: 4264824256198282974, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4264824256737326131, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -570,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 5
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &120733213
 GameObject:
@@ -8517,7 +8521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 4
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &301946419
 GameObject:
@@ -10996,7 +11000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 2
-  timeToSpawn: 30000
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &595043672 stripped
 GameObject:
@@ -27514,7 +27518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 3000
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &665819327
 GameObject:
@@ -63553,7 +63557,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 690b6c3707130644f9a46847cd69ad65, type: 3}
   - {fileID: 8300000, guid: 603478e53c4778648a30bf3a4af0584f, type: 3}
   nope: {fileID: 8300000, guid: e2d4f212587fd4347a756d47f1df9058, type: 3}
-  usingKBM: 1
+  usingKBM: 0
 --- !u!114 &1590784685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64678,7 +64682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 6
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &1715331397
 GameObject:
@@ -65359,7 +65363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 3
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &1771853228
 GameObject:
@@ -68242,7 +68246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &2102839086
 GameObject:

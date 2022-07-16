@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
 {
     public ItemObject item;
 
-    GameObject dialog;
+    [SerializeField]GameObject dialog;
     public Conversation interactconvo;
     
     //Item hitbox variables
@@ -30,8 +30,8 @@ public class Item : MonoBehaviour
         var player = collision.GetComponent<PlayerController>();
         if(player && !isused)
         {
-            EventManager.InteractEvent += PlayDialog;
             EventManager.InteractEvent += player.startAddItemCoroutine;
+            EventManager.InteractEvent += PlayDialog;
             player._item = this.item;
             player.itemGO = this.gameObject;
             print("added");
@@ -53,7 +53,11 @@ public class Item : MonoBehaviour
     public void PlayDialog()
     {
         dialog.transform.GetChild(0).gameObject.SetActive(true);
+
         dialog.GetComponentInChildren<DialogDisplay>().conversation = interactconvo;
+        dialog.GetComponentInChildren<DialogDisplay>().AdvanceConversation();
+        EventManager.InteractEvent -= PlayDialog;
+        
     }
 
 }
