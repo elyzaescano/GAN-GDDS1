@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7e97af457c0db428e42f56331edfd9, type: 3}
   m_Name: DuctTapeObject
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 9172541465896140817, guid: 975bec5dc2a6115498005787a0d73f40, type: 3}
+  itemIcon: {fileID: 0}
   itemPrefab: {fileID: 0}
   type: 28
   itemName: DuctTape
