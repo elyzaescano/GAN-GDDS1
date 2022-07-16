@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 movement;
-
+    public GameObject dialog;
     public InventoryObject inventory;
     public ItemDatabaseObject database;
     public InventoryUI inventoryUI;

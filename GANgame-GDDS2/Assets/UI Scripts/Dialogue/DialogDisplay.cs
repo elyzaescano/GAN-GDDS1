@@ -33,7 +33,7 @@ namespace Dialogue
             {
                 AdvanceConversation();
             }
-            if (transform.parent.gameObject.active == true)
+            if (gameObject.activeInHierarchy == true)
             {
                 pause.isPaused = true;
             }

@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e6903db603ed7a247b4e3f65e9b8b20b, type: 2}
+  interactconvo: {fileID: 11400000, guid: 1ecb801d732f0a540a9048a5a74ed2d6, type: 2}
 --- !u!1 &6100264747170386728
 GameObject:
   m_ObjectHideFlags: 0

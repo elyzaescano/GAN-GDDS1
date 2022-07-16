@@ -11,7 +11,7 @@ public class SimonSays : MonoBehaviour
     bool pass = false;
     bool fail;
     bool win = false;
-
+    [SerializeField] AudioClip[] buttonSounds;
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject[] lightArray;
     [SerializeField] GameObject[] lightArraySpriteSwap;
@@ -114,6 +114,13 @@ public class SimonSays : MonoBehaviour
                 yield return new WaitForSeconds(lightSpeed);
                 lightArray[lightOrder[i]].GetComponent<Image>().color = white;
                 yield return new WaitForSeconds(lightSpeed);
+
+                AudioSource audios;
+                audios = GetComponent<AudioSource>();
+                AudioClip clip;
+                clip = buttonSounds[1];
+                audios.PlayOneShot(clip);
+
                 lightArray[lightOrder[i]].GetComponent<Image>().color = invisible;
                 yield return new WaitForSeconds(lightSpeed);
                 lightArray[lightOrder[i]].GetComponent<Image>().color = white;
@@ -121,6 +128,15 @@ public class SimonSays : MonoBehaviour
             }
         }
         EnableButtons();
+    }
+
+    public void PlaySound()
+    {
+        AudioSource audios;
+        audios = GetComponent<AudioSource>();
+        AudioClip clip;
+        clip = buttonSounds[0];
+        audios.PlayOneShot(clip);
     }
 
     //Disables the buttons lol

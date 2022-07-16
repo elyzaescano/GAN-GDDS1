@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Dialogue;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -7,6 +8,9 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public ItemObject item;
+
+    GameObject dialog;
+    public Conversation interactconvo;
     
     //Item hitbox variables
 
@@ -17,6 +21,7 @@ public class Item : MonoBehaviour
         // Retreive properties from ItemObject and populate it iinto this item.
         // E.g. populate sprite, as well as other item attributes.
         sr = GetComponent<SpriteRenderer>();
+        dialog = GameObject.FindGameObjectWithTag("Dialog");
         //sr.sprite = item.s
     }
     bool isused =false;
@@ -25,7 +30,7 @@ public class Item : MonoBehaviour
         var player = collision.GetComponent<PlayerController>();
         if(player && !isused)
         {
-            
+            EventManager.InteractEvent += PlayDialog;
             EventManager.InteractEvent += player.startAddItemCoroutine;
             player._item = this.item;
             player.itemGO = this.gameObject;
@@ -39,9 +44,16 @@ public class Item : MonoBehaviour
         var player = collision.GetComponent<PlayerController>();
         if (player)
         {
+            EventManager.InteractEvent -= PlayDialog;
             EventManager.InteractEvent -= player.startAddItemCoroutine;
             isused = false;
         }
+    }
+
+    public void PlayDialog()
+    {
+        dialog.transform.GetChild(0).gameObject.SetActive(true);
+        dialog.GetComponentInChildren<DialogDisplay>().conversation = interactconvo;
     }
 
 }

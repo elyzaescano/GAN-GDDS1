@@ -13,6 +13,7 @@ TagManager:
   - Room
   - InventoryButtons
   - Slot
+  - Dialog
   layers:
   - Default
   - TransparentFX

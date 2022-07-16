@@ -32,7 +32,7 @@ namespace EnemyAI
         void SpawnEnemy()
         {
             if (currentRoom != null) { 
-            dialogBox.SetActive(true);
+            dialogBox.transform.GetChild(0).gameObject.SetActive(true);
             dialogBox.GetComponentInChildren<DialogDisplay>().conversation = con_enemyspawn;
             Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
             canSpawn = false;
