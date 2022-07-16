@@ -14,6 +14,7 @@ public class SimonSays : MonoBehaviour
 
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject[] lightArray;
+    [SerializeField] GameObject[] lightArraySpriteSwap;
     [SerializeField] int[] lightOrder;
     [SerializeField] GameObject gamePanel;
 
@@ -116,6 +117,7 @@ public class SimonSays : MonoBehaviour
                 lightArray[lightOrder[i]].GetComponent<Image>().color = invisible;
                 yield return new WaitForSeconds(lightSpeed);
                 lightArray[lightOrder[i]].GetComponent<Image>().color = white;
+                
             }
         }
         EnableButtons();
