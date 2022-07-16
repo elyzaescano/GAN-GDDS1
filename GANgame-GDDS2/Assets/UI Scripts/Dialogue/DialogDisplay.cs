@@ -26,12 +26,15 @@ namespace Dialogue
 
 
         }
-        
+
+
         private void Update()
         {
-            if (Input.touchCount > 0) //|| Input.GetKeyDown(KeyCode.Space))
+            
+            if ( Input.touchCount > 0) //||Input.GetKeyDown(KeyCode.Space))
             {
                 AdvanceConversation();
+                EventManager.InteractEvent -= AdvanceConversation;
             }
             if (gameObject.activeInHierarchy == true)
             {
@@ -41,23 +44,28 @@ namespace Dialogue
 
 
 
-        void AdvanceConversation()
+        public void AdvanceConversation()
         {
-            if (activeLineIndex < conversation.lines.Length)
+            Debug.Log("MOVING TEXT");
+            if (activeLineIndex < conversation.lines.Length )
             {
                 DisplayLines();
                 activeLineIndex += 1;
             }
             else
             {
+                speakerUI.dialog.text = null;
                 pause.isPaused = false;
                 activeLineIndex = 0;
-                transform.parent.gameObject.SetActive(false);
+                conversation = null;
+                gameObject.SetActive(false);
             }
         }
 
         void DisplayLines()
         {
+
+
             Line line = conversation.lines[activeLineIndex];
             Character character = line.character;
 

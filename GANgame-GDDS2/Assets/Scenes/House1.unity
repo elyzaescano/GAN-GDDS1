@@ -199,9 +199,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621597030}
     m_Modifications:
+    - target: {fileID: 4264824256198282974, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4264824256737326131, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4264824256737326135, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: conversation
@@ -301,7 +305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537534624603884733, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537534624603884733, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
+      propertyPath: m_TagString
+      value: Dialog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
@@ -566,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 5
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &120733213
 GameObject:
@@ -8513,7 +8521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 4
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &301946419
 GameObject:
@@ -10568,7 +10576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755711, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_Pivot.x
@@ -10992,7 +11000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 2
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &595043672 stripped
 GameObject:
@@ -27510,7 +27518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &665819327
 GameObject:
@@ -61781,7 +61789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47, y: -53}
+  m_AnchoredPosition: {x: -63, y: -58}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388036711
@@ -63549,7 +63557,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 690b6c3707130644f9a46847cd69ad65, type: 3}
   - {fileID: 8300000, guid: 603478e53c4778648a30bf3a4af0584f, type: 3}
   nope: {fileID: 8300000, guid: e2d4f212587fd4347a756d47f1df9058, type: 3}
-  usingKBM: 1
+  usingKBM: 0
 --- !u!114 &1590784685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64674,7 +64682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 6
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &1715331397
 GameObject:
@@ -65355,7 +65363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 3
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &1771853228
 GameObject:
@@ -68238,7 +68246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 3
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
 --- !u!1 &2102839086
 GameObject:
@@ -69291,7 +69299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5683135074489889192, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.0716858
+      value: -3.0716553
       objectReference: {fileID: 0}
     - target: {fileID: 5978813903032350667, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: canvas
