@@ -26,9 +26,10 @@ namespace Dialogue
 
 
         }
+        
         private void Update()
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
             {
                 AdvanceConversation();
             }

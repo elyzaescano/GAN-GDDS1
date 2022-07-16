@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4264824256737326135, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
+      propertyPath: conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f3060dd70f38c745a620ce1d4133b9b, type: 2}
     - target: {fileID: 4264824257503709130, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
       value: 0
