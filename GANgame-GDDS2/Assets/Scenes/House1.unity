@@ -201,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4264824256737326131, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4264824256737326135, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: conversation
@@ -301,7 +301,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537534624603884733, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537534624603884733, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
+      propertyPath: m_TagString
+      value: Dialog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
@@ -10992,7 +10996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 2
-  timeToSpawn: 3
+  timeToSpawn: 30000
   spawnPoint: {fileID: 0}
 --- !u!1 &595043672 stripped
 GameObject:
@@ -27510,7 +27514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 3
+  timeToSpawn: 3000
   spawnPoint: {fileID: 0}
 --- !u!1 &665819327
 GameObject:
@@ -69291,7 +69295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5683135074489889192, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.0716858
+      value: -3.0716553
       objectReference: {fileID: 0}
     - target: {fileID: 5978813903032350667, guid: 22ec26f0a9497ca47b53becd597f0ce1, type: 3}
       propertyPath: canvas
