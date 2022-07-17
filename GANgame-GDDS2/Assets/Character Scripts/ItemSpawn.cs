@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemSpawn : MonoBehaviour
 {
 
-    public GameObject itemPrefab;
+    public GameObject[] itemPrefab;
     public Transform spawnPoint;
     bool canSpawn = false;
     public bool itemNeeded = false; //if we need any item to interact with 
@@ -47,7 +47,11 @@ public class ItemSpawn : MonoBehaviour
     {
         if (canSpawn && itemNeeded && this.enabled)
         {
-            Instantiate(itemPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+            for(int i = 0; i < itemPrefab.Length; i++)
+            {
+                Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            }
+            //Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             canSpawn = false;
             EventManager.InteractEvent -= this.Spawn;
             Destroy(GetComponent<ItemSpawn>());

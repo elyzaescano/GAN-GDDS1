@@ -1750,6 +1750,14 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 407912685381817693, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407912685381817693, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4265011030426074889, guid: 396b244e1fee2f14ebb600d9fe41c9e4, type: 3}
     - target: {fileID: 407912685600878771, guid: 82a3554292867244bbb86a2996038764, type: 3}
       propertyPath: m_LocalPosition.z
       value: 2
@@ -9937,6 +9945,14 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 407912685381817693, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407912685381817693, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 2017644858068294920, guid: 69ba63b7968d58d478a5969fe6433122, type: 3}
     - target: {fileID: 407912685381817694, guid: 82a3554292867244bbb86a2996038764, type: 3}
       propertyPath: m_Size.x
       value: 2.2244682
@@ -66110,7 +66126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9364accb6f6ac45469774cf30f0d8da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
+  itemPrefab:
+  - {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
   spawnPoint: {fileID: 1443358532}
   itemNeeded: 0
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
@@ -68151,6 +68168,14 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 407912685381817693, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407912685381817693, guid: 82a3554292867244bbb86a2996038764, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 2017644858068294920, guid: 69ba63b7968d58d478a5969fe6433122, type: 3}
     - target: {fileID: 407912685381817694, guid: 82a3554292867244bbb86a2996038764, type: 3}
       propertyPath: m_Size.x
       value: 2.1633377
@@ -68332,6 +68357,10 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 429398893590590270, guid: c6e0124751e3fe34284614f4a101a361, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8498575262531310586, guid: e2fb44813e42bba4ebb9ec0a35fbcbd0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e0124751e3fe34284614f4a101a361, type: 3}
 --- !u!1001 &972747853536617978
@@ -68401,6 +68430,10 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 972747853216301318, guid: 9ad41b87f5b87864e98c9a70ecbca6d6, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad41b87f5b87864e98c9a70ecbca6d6, type: 3}
 --- !u!1001 &1403231180315318755
@@ -68426,6 +68459,10 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 1403231180701662986, guid: e97b70ab34a56cf41844165332d00a60, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3674850820515912468, guid: d8da145aecda5094bb555b8bac7bb416, type: 3}
     - target: {fileID: 1403231180701662987, guid: e97b70ab34a56cf41844165332d00a60, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -68539,6 +68576,10 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 2006732232072437720, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3278199697063341321, guid: 47566e9449e72f74f82d44c02751a676, type: 3}
     - target: {fileID: 2006732233117932601, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.28
@@ -69056,7 +69097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9364accb6f6ac45469774cf30f0d8da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 5086239731914669939, guid: cffbb211d5354cd44bfab1afefc3ca10, type: 3}
+  itemPrefab:
+  - {fileID: 5086239731914669939, guid: cffbb211d5354cd44bfab1afefc3ca10, type: 3}
   spawnPoint: {fileID: 4264503867472720537}
   itemNeeded: 0
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
@@ -69243,6 +69285,14 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 4363321478222943221, guid: 0159dd624e7d3e0428f72153b168cf30, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363321478222943221, guid: 0159dd624e7d3e0428f72153b168cf30, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3030554014558180666, guid: d0fef50d8787eb34aad92296b76e8552, type: 3}
     - target: {fileID: 4363321479044448097, guid: 0159dd624e7d3e0428f72153b168cf30, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -69272,6 +69322,10 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+    - target: {fileID: 5822823758406038000, guid: b0833d1088d05a340a2271da12c5a925, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3278199697063341321, guid: 47566e9449e72f74f82d44c02751a676, type: 3}
     - target: {fileID: 5822823758406038001, guid: b0833d1088d05a340a2271da12c5a925, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -69381,6 +69435,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4222277581880711128, guid: 72dcb06af1afebf4184433a1d4b94264, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222277581880711128, guid: 72dcb06af1afebf4184433a1d4b94264, type: 3}
+      propertyPath: itemPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 5139995895177776049, guid: 0509877b2770d7a499bc066e8f2a89df, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72dcb06af1afebf4184433a1d4b94264, type: 3}
 --- !u!4 &6750829834258032492
@@ -69483,7 +69545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9364accb6f6ac45469774cf30f0d8da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
+  itemPrefab:
+  - {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
   spawnPoint: {fileID: 6750829835370374290}
   itemNeeded: 0
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
