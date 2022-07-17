@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource pickup;
     public AudioSource walking;
     public AudioSource craftSuccess;
+    public AudioSource craftFailure;
     
     [SerializeField] private AudioClip[] stepclips;
 
@@ -138,13 +139,13 @@ public class PlayerController : MonoBehaviour
         print("first = " + firstVariable);
         print("Second = " + secondVariable);
     }
-    [SerializeField] AudioClip nope;
+    
     IEnumerator UnCrafting( ItemObject crafting1, ItemObject crafting2, ItemUI ui1, ItemUI ui2)
     {
         firstVariable = null; secondVariable = null; firstItemUI = null; secondItemUI = null;
         yield return null;
         ui1.DeSelect(); ui2.DeSelect();
-        GetComponent<AudioSource>().PlayOneShot(nope,.5f);
+        craftFailure.Play();
     }
 
     //Crafting Coroutine
