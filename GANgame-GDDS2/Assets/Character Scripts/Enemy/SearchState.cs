@@ -9,8 +9,9 @@ namespace EnemyAI
         public GameObject enemyHolder;
         public ChaseState chaseState;
         public PatrolState patrolState;
+        [SerializeField] private Vector3 rotation;
         [Range(1, 200)] public float rotationSpeed;
-        public float timeToSearch = 5f;
+        public float timeToSearch = 10f;
 
         public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
@@ -18,10 +19,17 @@ namespace EnemyAI
             enemyManager.navAgent.SetDestination(enemyManager.playerPos);
 
             //Rotates on the spot of last known player position to look for the player
-            if (enemyManager.navAgent.remainingDistance < 1f)
+            float distanceFromTarget = Vector3.Distance(enemyFOV.player.transform.position, enemyManager.navAgent.transform.position);
+
+            if (distanceFromTarget < 0.5f)
             {
-                enemyFOV.transform.rotation = Quaternion.Euler(0, 0, 30);
+                enemyAnim.StartCoroutine(enemyAnim.SearchSpin());
             }
+            else
+            {
+                enemyAnim.StopCoroutine(enemyAnim.SearchSpin());
+            }
+            
             if (timeToSearch <= 0)
             {
                 EventManager.EnemyDied();

@@ -36,7 +36,6 @@ namespace Dialogue
         public void Hide()
         {
             gameObject.SetActive(false);
-
         }
     }
 }

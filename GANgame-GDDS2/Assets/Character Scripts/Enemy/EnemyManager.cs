@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//Animation Handler for enemy needs to be added
 namespace EnemyAI
 {
     public class EnemyManager : MonoBehaviour
@@ -11,6 +10,7 @@ namespace EnemyAI
         EnemyFieldOfView enemyFOV;
         EnemySpawnManager enemySpawn;
         EnemyAnimationHandler enemyAnim;
+        PauseScreen pause;
 
         public State currentState;
 
@@ -30,6 +30,7 @@ namespace EnemyAI
         {
             enemyrb = GetComponent<Rigidbody2D>();
             enemyFOV = FindObjectOfType<EnemyFieldOfView>();
+            enemyAnim = FindObjectOfType<EnemyAnimationHandler>();
             target = GameObject.FindGameObjectWithTag("Player");
             navAgent = GetComponentInParent<NavMeshAgent>();
             navAgent.updateRotation = false;
@@ -37,6 +38,9 @@ namespace EnemyAI
             navAgent.autoBraking = false;
 
             waitTime = startWaitTime;
+
+            pause = FindObjectOfType<PauseScreen>();
+
         }
 
         void FixedUpdate()
@@ -54,6 +58,18 @@ namespace EnemyAI
             else
             {
                 hasSwitched = false;
+            }
+        }
+
+        private void Update() 
+        {
+            if (pause.isPaused)
+            {
+                navAgent.isStopped = true;
+            }
+            else
+            {
+                navAgent.isStopped = false;
             }
         }
 

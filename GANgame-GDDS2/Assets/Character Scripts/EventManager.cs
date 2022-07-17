@@ -5,6 +5,8 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager instance;
+
     public static event Action OpenInventory;
     public static event Action CloseInventory;
     public static event Action EquipItem;
@@ -15,7 +17,8 @@ public class EventManager : MonoBehaviour
 
     public static event Action EnemyCanSpawn;
     public static event Action EnemyDeath;
-    public static event Action PauseScreen;
+    public static event Action GamePause;
+    public static event Action GameResume;
 
     public static void InventoryToggle()
     {
@@ -52,9 +55,14 @@ public class EventManager : MonoBehaviour
         EnemyDeath?.Invoke();
     }
 
-    public static void PauseMenu()
+    public static void PauseGame()
     {
-        PauseScreen?.Invoke();
+        GamePause?.Invoke();
+    }
+
+    public static void ResumeGame()
+    {
+        GameResume?.Invoke();
     }
    
 }

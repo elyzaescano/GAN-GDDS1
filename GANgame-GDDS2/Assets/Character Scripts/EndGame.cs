@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : LockDoor
 {
-    public Scene sceneToMoveTo;
-    private void Update()
+    public string sceneToMoveTo;
+
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         if (!isLocked)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneToMoveTo);
         }
     }
 }

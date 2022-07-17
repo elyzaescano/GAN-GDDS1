@@ -30,7 +30,7 @@ public class ItemUI : MonoBehaviour
         UIScript = FindObjectOfType<InventoryUI>();
         em = FindObjectOfType<EventManager>();
         UI = UIScript.GetComponent<Image>();
-        buttonSound = FindObjectOfType<AudioSource>();
+        buttonSound = GameObject.Find("Button Press").GetComponent<AudioSource>();
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
 
         inventoryButtonObject = GameObject.FindGameObjectsWithTag("InventoryButtons");
@@ -62,9 +62,10 @@ public class ItemUI : MonoBehaviour
         if (!selected)
         {
             spriteImage.color = Color.black;
-            inventoryButtons[0].onClick.AddListener(GiveItemObject);
+            GiveItemObject();
             inventoryButtons[2].onClick.AddListener(DropItemFromUI);
             inventoryButtons[1].onClick.AddListener(EquipItemFromUI);
+            descriptionText.text = item.description;
             selected = !selected;
         }
         else
@@ -77,22 +78,29 @@ public class ItemUI : MonoBehaviour
             selected = !selected;
         }
     }
+
+    CombineButton combineButton;
+
     public void GiveItemObject()
     {
+        //Aivated upon being selected. Gives the item and its ui to the combine button for it to be accessed.
         ItemObject item = playerInventory.Container[itemSlotID].item;
+        var combineVariables = FindObjectOfType<CombineButton>().GetComponent<CombineButton>();
+        combineVariables.UpdateItemVariables(item, this);
         buttonSound.Play();
-        descriptionText.text = item.description;
         //print(item);
-        pc.GetCraftingItems(item,this);
-        selected = true;    
     }
 
     public void DeSelect()
     {
-        spriteImage.color = Color.white;
+
         descriptionText.text = null;
         selected = false;
        
+        if(spriteImage.sprite != null)
+        {
+            spriteImage.color = Color.white;
+        }
     }
 
     public void EnableButtons()
@@ -102,11 +110,13 @@ public class ItemUI : MonoBehaviour
 
     public void DropItemFromUI()
     {
+        if(spriteImage != null)
         playerInventory.DropItem(itemSlotID, pc.gameObject.transform.position, 0);
         buttonSound.Play();
 
         //UpdateImage(null);
         UIScript.StartUICoroutine();
+        DeSelect();
         
     }
 

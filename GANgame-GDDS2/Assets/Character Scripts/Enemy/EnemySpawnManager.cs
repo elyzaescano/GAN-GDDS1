@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using Dialogue;
 using UnityEngine;
 
 namespace EnemyAI
@@ -8,10 +9,11 @@ namespace EnemyAI
     public class EnemySpawnManager : MonoBehaviour
     {
         public bool canSpawn;
-        public bool canStart;
         public GameObject enemy;
         public GameObject currentRoom;
         PlayerController player;
+        public GameObject dialogBox;
+        public Conversation con_enemyspawn;
 
         private void Start() 
         {
@@ -21,6 +23,7 @@ namespace EnemyAI
             EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
             EventManager.EnemyDeath += DespawnEnemy;
         }
+        
         private void Update()
         {
             currentRoom = FindRoom();
@@ -28,8 +31,12 @@ namespace EnemyAI
 
         void SpawnEnemy()
         {
-            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);    
+            if (currentRoom != null) { 
+            dialogBox.transform.GetChild(0).gameObject.SetActive(true);
+            dialogBox.GetComponentInChildren<DialogDisplay>().conversation = con_enemyspawn;
+            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
             canSpawn = false;
+            }
         }
 
         void DespawnEnemy()

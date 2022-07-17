@@ -59,7 +59,10 @@ public class InventoryUI : MonoBehaviour
 
     public void StartUICoroutine()
     {
-        StartCoroutine(UpdateUI());
+        if (this != null)
+        {
+            StartCoroutine(UpdateUI());
+        }
     }
 
     public IEnumerator UpdateUI()

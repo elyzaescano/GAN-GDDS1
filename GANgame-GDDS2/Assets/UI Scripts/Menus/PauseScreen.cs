@@ -6,35 +6,41 @@ using UnityEngine.Audio;
 
 public class PauseScreen : MonoBehaviour
 {
+    public bool isPaused;
     public GameObject background;
     public bool canMove;
-    
-
-    AudioManager audioManager;
+    public AudioSource menuButton;
 
     public void Resume()
     {
         Time.timeScale = 1f; //Resume game
         background.SetActive(false);
+        menuButton.Play();
         AudioManager.instance.UnPause("Level");
         canMove = true;
+        isPaused = false;
     }
 
    public void Pause()
     {
         Time.timeScale = 0f; //Freeze game
         background.SetActive(true);
+        menuButton.Play();
         AudioManager.instance.Pause("Level");
         canMove = false;
+        isPaused = true;
     }
 
    public void BacktoMenu()
     {
+        menuButton.Play();
         SceneManager.LoadScene("Menu");
+        Resume();
     }
 
     public void Quit()
     {
+        menuButton.Play();
         Application.Quit();
     }
 

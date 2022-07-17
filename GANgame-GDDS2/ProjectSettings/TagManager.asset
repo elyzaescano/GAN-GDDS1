@@ -12,6 +12,8 @@ TagManager:
   - Painting
   - Room
   - InventoryButtons
+  - Slot
+  - Dialog
   layers:
   - Default
   - TransparentFX

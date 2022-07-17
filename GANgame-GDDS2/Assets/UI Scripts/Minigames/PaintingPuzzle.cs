@@ -15,15 +15,12 @@ public class PaintingPuzzle : MonoBehaviour
 
     private void Update()
     {
-        if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform))
+        if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform)
+        && pieces[2].transform.IsChildOf(frames[2].transform))
         {
             print("Win");
             finalDoor.GetComponent<EndGame>().isLocked = false;
             paintingPanel.SetActive(false);
-        }
-        else
-        {
-            closeButton.SetActive(true);
         }
     }
 
