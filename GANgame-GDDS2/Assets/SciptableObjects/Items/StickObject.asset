@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StickObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 5761643246960107800, guid: 975bec5dc2a6115498005787a0d73f40, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 7377055610691455591, guid: 4672bab2c6add834e819274653b4788b, type: 3}
   type: 25
   itemName: Stick
   id: 27

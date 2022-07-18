@@ -25,12 +25,12 @@ public class ItemSpawn : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             EventManager.InteractEvent += this.Spawn;
             print("subscribed");
             ItemObject o = playerInventory.equippedItem;
-            if(o == itemRequired)
+            if (o == itemRequired || itemRequired == null)
             {
                 itemNeeded = true;
             }

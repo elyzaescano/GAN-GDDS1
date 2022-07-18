@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DuctTapeObject
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 155d41bc4943c3b41a7dfe798f5ee398, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 531655689575598842, guid: 63b528001506e6e4fb12dcc6b9d516d3, type: 3}
   type: 28
   itemName: DuctTape
   id: 9
