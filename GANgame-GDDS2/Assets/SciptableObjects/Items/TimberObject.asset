@@ -16,7 +16,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 4233179619701196984, guid: fc2c9cc839af5fe4da8bd14728efccf4, type: 3}
   type: 6
   itemName: Timber
-  id: 12
+  id: 28
   description: A piece of wood, not sure what I could do with this...
   recipes:
   - other: {fileID: 11400000}
