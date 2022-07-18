@@ -8023,7 +8023,7 @@ PrefabInstance:
       objectReference: {fileID: 180604510}
     - target: {fileID: 5822823758406038000, guid: b0833d1088d05a340a2271da12c5a925, type: 3}
       propertyPath: itemNeeded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5822823758406038000, guid: b0833d1088d05a340a2271da12c5a925, type: 3}
       propertyPath: itemPrefab
@@ -23162,7 +23162,7 @@ MonoBehaviour:
   itemPrefab:
   - {fileID: 6336555415564696135, guid: 23dc923a90938a54a82de241c706310c, type: 3}
   spawnPoint: {fileID: 1579322373}
-  itemNeeded: 1
+  itemNeeded: 0
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: b290f94bba4df4842b5a9642a2840ad5, type: 2}
   em: {fileID: 0}
@@ -44254,7 +44254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006732232072437720, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
       propertyPath: itemNeeded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2006732232072437720, guid: 59125d9fee2dfb246bc46a47f3914c21, type: 3}
       propertyPath: itemPrefab
