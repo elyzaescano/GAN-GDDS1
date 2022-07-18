@@ -534,7 +534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 831, y: -426}
+  m_AnchoredPosition: {x: 959.7999, y: -623.7}
   m_SizeDelta: {x: 192.705, y: 192.705}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7706325460091768378
@@ -828,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 406, y: -572}
+  m_AnchoredPosition: {x: 959.7999, y: -439}
   m_SizeDelta: {x: 192.705, y: 192.705}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7706325460882414562
@@ -1047,7 +1047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 203, y: -448}
+  m_AnchoredPosition: {x: 761, y: -439}
   m_SizeDelta: {x: 192.705, y: 192.705}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7706325461062255172
@@ -1253,7 +1253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSounds:
   - {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
-  - {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
+  - {fileID: 8300000, guid: 657578e4be6b64dbf9b09deada272e55, type: 3}
+  - {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   buttons:
   - {fileID: 7706325461062255192}
   - {fileID: 7706325460882414566}
@@ -1273,6 +1274,7 @@ MonoBehaviour:
   gamePanel: {fileID: 7706325461122294666}
   lightSpeed: 0.5
   closeSimon: {fileID: 8867243387906493236}
+  gameDoor: {fileID: 0}
 --- !u!82 &1024186000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1479,7 +1481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 638.29, y: -572}
+  m_AnchoredPosition: {x: 761, y: -623.7}
   m_SizeDelta: {x: 192.705, y: 192.705}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7706325461182734602
@@ -1709,8 +1711,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Painting, Assembly-CSharp
+      - m_Target: {fileID: 7706325461122294774}
+        m_TargetAssemblyTypeName: SimonSays, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:

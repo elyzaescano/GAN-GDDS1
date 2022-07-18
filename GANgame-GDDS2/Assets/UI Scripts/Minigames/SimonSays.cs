@@ -24,6 +24,7 @@ public class SimonSays : MonoBehaviour
     Color32 white = new Color32(255, 255, 255, 255);
 
     public GameObject closeSimon;
+    public GameObject gameDoor;
 
     // Update is called once per frame
     void Update()
@@ -31,7 +32,12 @@ public class SimonSays : MonoBehaviour
         if (win)
         {
             closeSimon.SetActive(true);
-            //gameDoor.GetComponent<RoomTeleporter>().isLocked = false; //make the door false
+            AudioSource audios;
+            audios = GetComponent<AudioSource>();
+            AudioClip clip;
+            clip = buttonSounds[2];
+            audios.PlayOneShot(clip);
+            if (gameDoor != null) {gameDoor.GetComponent<RoomTeleporter>().isLocked = false;} //make the door false
             Debug.Log("Yippee");
         }
 
@@ -155,5 +161,10 @@ public class SimonSays : MonoBehaviour
         {
             buttons[i].GetComponent<Button>().interactable = true;
         }
+    }
+
+    public void Close()
+    {
+        gameObject.SetActive(false);
     }
 }

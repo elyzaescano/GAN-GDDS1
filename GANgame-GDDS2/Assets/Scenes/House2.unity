@@ -43041,6 +43041,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997281925}
   m_CullTransparentMesh: 1
+--- !u!1 &1001385765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7706325461122294666, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
+  m_PrefabInstance: {fileID: 1156076494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1018309101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43956,41 +43961,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 981528958}
     m_Modifications:
-    - target: {fileID: 2132590776274309780, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132590776274309780, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Close
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132590776274309780, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: OpenSimon, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325460091768381, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 959.7999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325460091768381, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -623.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325460882414565, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 959.7999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325460882414565, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -439
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325461062255175, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 761
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325461062255175, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -439
+    - target: {fileID: 1024186000, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
+      propertyPath: m_Volume
+      value: 0.274
       objectReference: {fileID: 0}
     - target: {fileID: 7706325461122294665, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
       propertyPath: m_Pivot.x
@@ -44087,37 +44060,16 @@ PrefabInstance:
     - target: {fileID: 7706325461122294774, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
       propertyPath: gameDoor
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325461122294774, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: closeSimon
-      value: 
-      objectReference: {fileID: 1156076496}
+      objectReference: {fileID: 1927647085}
     - target: {fileID: 7706325461122294774, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
       propertyPath: lightOrder.Array.size
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325461182734605, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 761
-      objectReference: {fileID: 0}
-    - target: {fileID: 7706325461182734605, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -623.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8867243387906493236, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
 --- !u!224 &1156076495 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7706325461122294665, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
-  m_PrefabInstance: {fileID: 1156076494}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1156076496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8867243387906493236, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
   m_PrefabInstance: {fileID: 1156076494}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1160662739
@@ -45086,6 +45038,14 @@ PrefabInstance:
     - target: {fileID: 4734900753627120061, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
       propertyPath: m_Name
       value: doord
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734900753627120062, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
+      propertyPath: m_Size.y
+      value: 5.600903
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734900753627120062, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.8198497
       objectReference: {fileID: 0}
     - target: {fileID: 4734900753627120063, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
       propertyPath: doorID
@@ -47004,7 +46964,7 @@ MonoBehaviour:
   itemRequired: {fileID: 11400000, guid: 3bb30329194858d49aa0cb9c66f7b25a, type: 2}
   em: {fileID: 180604510}
   dialoguebox: {fileID: 0}
-  unlockMessage: {fileID: 0}
+  unlockMessage: {fileID: 11400000, guid: 0fcc0759d9266244ea13132f7741b903, type: 2}
 --- !u!61 &1708797250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47359,11 +47319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2050381237387870457, guid: 136ae0e6e7cd43d4e87e253fb40908e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60.4
+      value: 15.11
       objectReference: {fileID: 0}
     - target: {fileID: 2050381237387870457, guid: 136ae0e6e7cd43d4e87e253fb40908e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.7
+      value: 20.88
       objectReference: {fileID: 0}
     - target: {fileID: 2050381237387870457, guid: 136ae0e6e7cd43d4e87e253fb40908e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47426,6 +47386,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+--- !u!114 &1927647090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927647085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980dddda6a768674d830d21c3bd11203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simonGame: {fileID: 1001385765}
+  simonPanel: {fileID: 1001385765}
 --- !u!1 &1936962962
 GameObject:
   m_ObjectHideFlags: 0
