@@ -13,6 +13,18 @@ public class PauseScreen : MonoBehaviour
     public GameObject loseScreen;
     public bool youLost;
 
+    private void Update() 
+    {
+        if (loseScreen.activeInHierarchy == true)
+        {
+            isPaused = true;
+        }
+        else
+        {
+            isPaused = false;
+        }
+    }
+
     public void Resume()
     {
         Time.timeScale = 1f; //Resume game
