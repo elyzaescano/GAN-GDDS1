@@ -130,7 +130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1655544517
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1802895900847538661, guid: 85bfbbc7e2055f44bb8a900f6773a96d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,6 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88a8ee4c0b20924ba12e6f5475bc69b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 0}
+  enemyHolder: {fileID: 3137335781818844240}
+  playerReset: {fileID: 0}
   currentState: {fileID: 8860712836713831419}
   searchState: {fileID: 8860712836713831419}
   playerPos: {x: 0, y: 0, z: 0}
@@ -384,6 +387,7 @@ MonoBehaviour:
   enemyHolder: {fileID: 3137335781818844240}
   chaseState: {fileID: 5348747227304171849}
   patrolState: {fileID: 5010446474347724943}
+  rotation: {x: 0, y: 0, z: 0}
   rotationSpeed: 60
   timeToSearch: 10
 --- !u!1 &3137335781818844240
