@@ -62,6 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 3d405d2197777de4da364406b0bacb18, type: 2}
+  dialog: {fileID: 0}
+  interactconvo: {fileID: 11400000, guid: 3052cc873ab8d5d4b95d5374716d80c6, type: 2}
 --- !u!1 &5086239732698839730
 GameObject:
   m_ObjectHideFlags: 0

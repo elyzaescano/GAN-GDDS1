@@ -8278,7 +8278,7 @@ GameObject:
   - component: {fileID: 339094513}
   - component: {fileID: 339094512}
   - component: {fileID: 339094511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TilemapWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22962,6 +22962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383016472}
+  - component: {fileID: 383016473}
   m_Layer: 0
   m_Name: room (3)
   m_TagString: Room
@@ -22984,6 +22985,21 @@ Transform:
   m_Father: {fileID: 1723411017}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383016473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383016471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45892b1c8c054b7469b706ef1038bdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNo: 3
+  timeToSpawn: 120
+  spawnPoint: {fileID: 0}
 --- !u!1 &407946005
 GameObject:
   m_ObjectHideFlags: 0
@@ -39065,6 +39081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553292741}
+  - component: {fileID: 553292742}
   m_Layer: 0
   m_Name: room
   m_TagString: Room
@@ -39087,6 +39104,21 @@ Transform:
   m_Father: {fileID: 1723411017}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553292742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553292740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45892b1c8c054b7469b706ef1038bdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNo: 0
+  timeToSpawn: 120
+  spawnPoint: {fileID: 0}
 --- !u!4 &589581943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734900753627120060, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
@@ -43008,6 +43040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1038351726}
+  - component: {fileID: 1038351727}
   m_Layer: 0
   m_Name: room (1)
   m_TagString: Room
@@ -43030,6 +43063,21 @@ Transform:
   m_Father: {fileID: 1723411017}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038351727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038351725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45892b1c8c054b7469b706ef1038bdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNo: 1
+  timeToSpawn: 120
+  spawnPoint: {fileID: 0}
 --- !u!114 &1046388592 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7940945498160249799, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
@@ -43973,7 +44021,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6650981372463210428, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6650981372463210428, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44761,7 +44809,7 @@ Transform:
   - {fileID: 2103150042}
   - {fileID: 1018309102}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353421134
 GameObject:
@@ -46970,7 +47018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1723411016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46986,8 +47034,8 @@ MonoBehaviour:
   canSpawn: 0
   enemy: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
   currentRoom: {fileID: 553292740}
-  dialogBox: {fileID: 0}
-  con_enemyspawn: {fileID: 0}
+  dialogBox: {fileID: 1872512753}
+  con_enemyspawn: {fileID: 11400000, guid: 4fc8648708b8fc24a91ace9f3006bf9e, type: 2}
 --- !u!4 &1723411017
 Transform:
   m_ObjectHideFlags: 0
@@ -47048,6 +47096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1784459733}
+  - component: {fileID: 1784459734}
   m_Layer: 0
   m_Name: room (2)
   m_TagString: Room
@@ -47070,6 +47119,21 @@ Transform:
   m_Father: {fileID: 1723411017}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784459734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784459732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45892b1c8c054b7469b706ef1038bdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNo: 2
+  timeToSpawn: 120
+  spawnPoint: {fileID: 0}
 --- !u!1001 &1826022763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47163,6 +47227,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 904209332732251998, guid: cc01bad941a82e64a86cf9499f75759e, type: 3}
   m_PrefabInstance: {fileID: 1826022763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1872512753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8537534624603884733, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
+  m_PrefabInstance: {fileID: 1210544027}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1877393596
 PrefabInstance:
@@ -48414,6 +48483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102690394}
+  - component: {fileID: 2102690395}
   m_Layer: 0
   m_Name: room (4)
   m_TagString: Room
@@ -48436,6 +48506,21 @@ Transform:
   m_Father: {fileID: 1723411017}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102690395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102690393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45892b1c8c054b7469b706ef1038bdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNo: 4
+  timeToSpawn: 60
+  spawnPoint: {fileID: 0}
 --- !u!1 &2103150041
 GameObject:
   m_ObjectHideFlags: 0
