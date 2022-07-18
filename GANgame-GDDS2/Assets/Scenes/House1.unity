@@ -28269,7 +28269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018207c31d0dc404c9a66b4c3ce92621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 0
+  isLocked: 1
   destGO: {fileID: 2147027068}
   em: {fileID: 566766541}
   doorID: 9
@@ -28278,7 +28278,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
   itemNeeded: 0
-  conversation: {fileID: 0}
+  conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
 --- !u!1 &724591309
 GameObject:
   m_ObjectHideFlags: 0
@@ -64207,7 +64207,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
-  conversation: {fileID: 0}
+  conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
 --- !u!61 &1652560869
 BoxCollider2D:
   m_ObjectHideFlags: 0
