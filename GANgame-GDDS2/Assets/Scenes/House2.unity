@@ -47003,6 +47003,8 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 3bb30329194858d49aa0cb9c66f7b25a, type: 2}
   em: {fileID: 180604510}
+  dialoguebox: {fileID: 0}
+  unlockMessage: {fileID: 0}
 --- !u!61 &1708797250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47357,11 +47359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2050381237387870457, guid: 136ae0e6e7cd43d4e87e253fb40908e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8381653
+      value: -60.4
       objectReference: {fileID: 0}
     - target: {fileID: 2050381237387870457, guid: 136ae0e6e7cd43d4e87e253fb40908e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9935608
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 2050381237387870457, guid: 136ae0e6e7cd43d4e87e253fb40908e9, type: 3}
       propertyPath: m_LocalPosition.z
