@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 5
   itemName: Cable
   id: 3
-  description: Maybe I could connect this to something?
+  description: A power cable missing its plug...
   recipes:
   - other: {fileID: 11400000, guid: 3a0d7492d1bf93247b81b4f3ef003900, type: 2}
     result: {fileID: 11400000, guid: 3d405d2197777de4da364406b0bacb18, type: 2}

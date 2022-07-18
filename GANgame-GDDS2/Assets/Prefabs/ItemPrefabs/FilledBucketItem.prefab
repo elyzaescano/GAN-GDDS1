@@ -145,3 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 42463bcd993f76647aa27db6c3bb5aa0, type: 2}
+  dialog: {fileID: 0}
+  interactconvo: {fileID: 11400000, guid: a8f30e8cdf8c01c42a18cabcaced5f35, type: 2}
