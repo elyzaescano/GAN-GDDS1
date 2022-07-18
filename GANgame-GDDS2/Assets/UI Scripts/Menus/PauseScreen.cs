@@ -10,6 +10,8 @@ public class PauseScreen : MonoBehaviour
     public GameObject background;
     public bool canMove;
     public AudioSource menuButton;
+    public GameObject loseScreen;
+    public bool youLost;
 
     public void Resume()
     {
@@ -44,5 +46,11 @@ public class PauseScreen : MonoBehaviour
         Application.Quit();
     }
 
+    public void TryAgain()
+    {
+        loseScreen.SetActive(false);
+        menuButton.Play();
+        youLost = false;
+    }
     
 }
