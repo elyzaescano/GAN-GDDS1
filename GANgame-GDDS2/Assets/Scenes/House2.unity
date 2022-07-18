@@ -39326,11 +39326,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4734900753627120060, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
   m_PrefabInstance: {fileID: 641094595}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &651636044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6650981371351556974, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
-  m_PrefabInstance: {fileID: 1160662739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &651636046 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6650981371351556972, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
@@ -46345,7 +46340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  background: {fileID: 651636044}
+  background: {fileID: 154562269}
   canMove: 0
   menuButton: {fileID: 651636046}
   loseScreen: {fileID: 363558695}
