@@ -1058,6 +1058,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &127869571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8719,6 +8720,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &301946422
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10257,6 +10259,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &500634841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28032,6 +28035,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
   itemNeeded: 0
+  conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
 --- !u!61 &709077855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28274,6 +28278,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!1 &724591309
 GameObject:
   m_ObjectHideFlags: 0
@@ -28332,6 +28337,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}
   itemNeeded: 0
+  conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
 --- !u!61 &724591312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28449,6 +28455,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &762454470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62799,6 +62806,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &1572505803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64199,6 +64207,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &1652560869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65491,7 +65500,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1795754790
 RectTransform:
@@ -65916,6 +65925,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!114 &1840847902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66069,6 +66079,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &1855499191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66148,6 +66159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   sceneToMoveTo: 
+  _converse: {fileID: 11400000, guid: f00bce635cc1dfa4e9de055d81efba2b, type: 2}
 --- !u!61 &1884062060
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66234,6 +66246,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
   itemRequired: {fileID: 0}
   itemNeeded: 0
+  conversation: {fileID: 0}
 --- !u!61 &1884664950
 BoxCollider2D:
   m_ObjectHideFlags: 0
