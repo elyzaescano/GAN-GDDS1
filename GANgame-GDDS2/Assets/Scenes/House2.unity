@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 154818764}
   - component: {fileID: 154818766}
   - component: {fileID: 154818765}
+  - component: {fileID: 154818767}
   m_Layer: 0
   m_Name: TilemapDecor
   m_TagString: Untagged
@@ -858,7 +859,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154818763}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4558,6 +4559,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &154818767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154818763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &180604506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +5028,7 @@ GameObject:
   - component: {fileID: 339094508}
   - component: {fileID: 339094510}
   - component: {fileID: 339094509}
+  - component: {fileID: 339094511}
   m_Layer: 0
   m_Name: TilemapWall
   m_TagString: Untagged
@@ -5025,7 +5043,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339094507}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -19209,6 +19227,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &339094511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339094507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &359382488
 GameObject:
   m_ObjectHideFlags: 0
@@ -19813,13 +19847,13 @@ MonoBehaviour:
   pickup: {fileID: 0}
   walking: {fileID: 0}
   craftSuccess: {fileID: 0}
+  craftFailure: {fileID: 0}
   stepclips:
   - {fileID: 8300000, guid: a90164d7fae467d44b83f3de27eb3fb5, type: 3}
   - {fileID: 8300000, guid: 97798b1b38dd13f4fa55e60e9dcab780, type: 3}
   - {fileID: 8300000, guid: 5a00647d6d2570646a57292686487ac3, type: 3}
   - {fileID: 8300000, guid: 690b6c3707130644f9a46847cd69ad65, type: 3}
   - {fileID: 8300000, guid: 603478e53c4778648a30bf3a4af0584f, type: 3}
-  nope: {fileID: 8300000, guid: e2d4f212587fd4347a756d47f1df9058, type: 3}
   usingKBM: 1
 --- !u!114 &430688633
 MonoBehaviour:
@@ -20124,6 +20158,7 @@ GameObject:
   - component: {fileID: 532109540}
   - component: {fileID: 532109542}
   - component: {fileID: 532109541}
+  - component: {fileID: 532109543}
   m_Layer: 0
   m_Name: TilemapFloor
   m_TagString: Untagged
@@ -20138,7 +20173,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532109539}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -35084,6 +35119,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &532109543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532109539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &553292740
 GameObject:
   m_ObjectHideFlags: 0
@@ -35689,6 +35740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766734961}
   - component: {fileID: 766734960}
+  - component: {fileID: 766734962}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -35715,7 +35767,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766734959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35725,6 +35777,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &766734962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766734959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.1
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &799624510
 GameObject:
   m_ObjectHideFlags: 0
