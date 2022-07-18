@@ -64083,7 +64083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  sceneToMoveTo: 
+  sceneToMoveTo: House2
   _converse: {fileID: 11400000, guid: f00bce635cc1dfa4e9de055d81efba2b, type: 2}
 --- !u!61 &1884062060
 BoxCollider2D:
