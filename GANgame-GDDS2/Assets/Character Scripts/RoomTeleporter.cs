@@ -4,7 +4,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using EnemyAI;
+using Dialogue;
 
+
+
+[System.Serializable]
 public class RoomTeleporter : LockDoor
 {
     public GameObject destGO;   //Destination GameObject
@@ -25,23 +29,32 @@ public class RoomTeleporter : LockDoor
     public ItemObject itemRequired;
     public bool itemNeeded = false; //if we need any key
 
+    //Dialog variables
+    GameObject dialog;
+    public Conversation conversation;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
+        dialog = GameObject.FindGameObjectWithTag("Dialog");
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject == player)
         {
-            EventManager.InteractEvent += Teleport;
             ItemObject o = playerInventory.equippedItem;
             if (o == itemRequired || itemRequired == null)
             {
+                EventManager.InteractEvent += Teleport;
                 itemNeeded = true;
                 lockDoor.isLocked = false;
+            }
+            else
+            {
+                EventManager.InteractEvent += PlayDialog;
             }
 
             isTriggered = true;
@@ -52,6 +65,7 @@ public class RoomTeleporter : LockDoor
     void OnTriggerExit2D(Collider2D other)
     {
         EventManager.InteractEvent -= Teleport;
+        EventManager.InteractEvent -= PlayDialog;
         isTriggered = false;
     }
 
@@ -69,9 +83,20 @@ public class RoomTeleporter : LockDoor
         }
     }
 
+    public void PlayDialog()
+    {
+        dialog.transform.GetChild(0).gameObject.SetActive(true);
+
+        dialog.GetComponentInChildren<DialogDisplay>().conversation = conversation;
+        dialog.GetComponentInChildren<DialogDisplay>().AdvanceConversation();
+        EventManager.InteractEvent -= PlayDialog;
+
+    }
+
     private void OnDisable()
     {
         EventManager.InteractEvent -= Teleport;
+        EventManager.InteractEvent -= PlayDialog;
     }
 
 }
