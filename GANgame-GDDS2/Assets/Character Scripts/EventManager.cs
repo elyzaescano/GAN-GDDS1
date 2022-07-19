@@ -20,6 +20,9 @@ public class EventManager : MonoBehaviour
     public static event Action GamePause;
     public static event Action GameResume;
 
+    //Room 4 house 2 Only
+    public static event Action Room4DoorUnlock;
+
     public static void InventoryToggle()
     {
         OpenInventory?.Invoke();
@@ -63,6 +66,11 @@ public class EventManager : MonoBehaviour
     public static void ResumeGame()
     {
         GameResume?.Invoke();
+    }
+
+    public static void UnlockDoor4()
+    {
+        Room4DoorUnlock?.Invoke();
     }
    
 }

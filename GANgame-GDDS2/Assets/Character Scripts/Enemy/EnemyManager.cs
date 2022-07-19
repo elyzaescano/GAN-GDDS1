@@ -11,7 +11,9 @@ namespace EnemyAI
         EnemySpawnManager enemySpawn;
         EnemyAnimationHandler enemyAnim;
         PauseScreen pause;
-
+        public GameObject deathScreen;
+        public GameObject enemyHolder;
+        public Transform playerReset;
         public State currentState;
 
         public State searchState;
@@ -31,11 +33,15 @@ namespace EnemyAI
             enemyrb = GetComponent<Rigidbody2D>();
             enemyFOV = FindObjectOfType<EnemyFieldOfView>();
             enemyAnim = FindObjectOfType<EnemyAnimationHandler>();
+            enemySpawn = FindObjectOfType<EnemySpawnManager>();
             target = GameObject.FindGameObjectWithTag("Player");
             navAgent = GetComponentInParent<NavMeshAgent>();
             navAgent.updateRotation = false;
             navAgent.updateUpAxis = false;
             navAgent.autoBraking = false;
+            
+            deathScreen = GameObject.FindGameObjectWithTag("LoseScreen").transform.GetChild(0).gameObject;
+            playerReset = GameObject.FindGameObjectWithTag("Respawn").transform;
 
             waitTime = startWaitTime;
 
@@ -97,8 +103,10 @@ namespace EnemyAI
             {
                 if(enemyFOV.currentTarget != null)
                 {
-                    GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(3.2f, -6 ,0);
-                    print("Player killed");
+                    deathScreen.SetActive(true);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
+                    enemySpawn.canSpawn = true;
+                    Destroy(enemyHolder);
                 }
             }
         }

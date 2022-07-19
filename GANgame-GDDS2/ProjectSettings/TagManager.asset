@@ -14,6 +14,7 @@ TagManager:
   - InventoryButtons
   - Slot
   - Dialog
+  - LoseScreen
   layers:
   - Default
   - TransparentFX

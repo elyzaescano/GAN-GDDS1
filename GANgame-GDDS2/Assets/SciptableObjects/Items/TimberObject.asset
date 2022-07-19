@@ -16,8 +16,10 @@ MonoBehaviour:
   itemPrefab: {fileID: 4233179619701196984, guid: fc2c9cc839af5fe4da8bd14728efccf4, type: 3}
   type: 6
   itemName: Timber
-  id: 12
+  id: 28
   description: A piece of wood, not sure what I could do with this...
   recipes:
-  - other: {fileID: 11400000}
-    result: {fileID: 11400000, guid: 40dd029b59cb3f4449e196bce481cc26, type: 2}
+  - other: {fileID: 11400000, guid: 42215de1438c9a64db8a26a19ec9726f, type: 2}
+    result: {fileID: 11400000, guid: 4983ca4b85bb5714e89884b43b6367e0, type: 2}
+  - other: {fileID: 11400000, guid: aec0006605245f34893c66e28caead3c, type: 2}
+    result: {fileID: 11400000, guid: ab4ce9bccc11b674b97dbc8fefb1cc7e, type: 2}
