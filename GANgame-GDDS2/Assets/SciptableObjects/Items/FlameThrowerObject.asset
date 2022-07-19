@@ -18,4 +18,6 @@ MonoBehaviour:
   itemName: FlameThrower
   id: 11
   description: A pretty crude attempt at arson... As long as I can use it for soemthing...
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000, guid: b9568d204fd472c40a1c16bef2e00c90, type: 2}
+    result: {fileID: 11400000, guid: cd4801274d0f8dc45b51e1e182b3b1d9, type: 2}

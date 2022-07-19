@@ -18,4 +18,6 @@ MonoBehaviour:
   itemName: Lighter
   id: 0
   description: A lighter, kind of dangerous to leave it lying around
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000, guid: b36cb7a6a74f6e74a8acfb5c44988ee1, type: 2}
+    result: {fileID: 11400000, guid: c2e1f5fe2bc3be3459e92e39e68d56c4, type: 2}

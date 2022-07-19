@@ -18,4 +18,6 @@ MonoBehaviour:
   itemName: Stick
   id: 27
   description: GET STICKBUGGED LOLOLOLOL
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000, guid: cd4801274d0f8dc45b51e1e182b3b1d9, type: 2}
+    result: {fileID: 11400000, guid: d248f347e24b51849ad9493ed17f55d7, type: 2}

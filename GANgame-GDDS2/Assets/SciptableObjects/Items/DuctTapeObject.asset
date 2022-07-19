@@ -18,4 +18,6 @@ MonoBehaviour:
   itemName: DuctTape
   id: 9
   description: Pretty handy if I need to stick two things together
-  recipes: []
+  recipes:
+  - other: {fileID: 11400000, guid: 135d0186f1dae1f4eafa8e22128153fd, type: 2}
+    result: {fileID: 11400000, guid: 4983ca4b85bb5714e89884b43b6367e0, type: 2}
