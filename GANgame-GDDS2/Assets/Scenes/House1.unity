@@ -1527,6 +1527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPadUI: {fileID: 1958137909}
+  room4TP: {fileID: 0}
+  itemToBlockRoom4: {fileID: 0}
 --- !u!1 &202656595
 GameObject:
   m_ObjectHideFlags: 0
@@ -67605,6 +67607,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1441694203}
     m_Modifications:
+    - target: {fileID: 4734900753229500998, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734900753229500998, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 33.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4734900753627120060, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
       propertyPath: m_RootOrder
       value: 2
