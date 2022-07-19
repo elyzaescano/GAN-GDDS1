@@ -111,7 +111,7 @@ public class ItemUI : MonoBehaviour
     public void DropItemFromUI()
     {
         if(spriteImage != null)
-        playerInventory.DropItem(itemSlotID, pc.gameObject.transform.position, 0);
+        playerInventory.DropItem(itemSlotID,item, pc.gameObject.transform.position, 0);
         buttonSound.Play();
 
         //UpdateImage(null);
@@ -136,7 +136,7 @@ public class ItemUI : MonoBehaviour
 
     private void OnDisable()
     {
-
+        selected = false;
     }
 
     

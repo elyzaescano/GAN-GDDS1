@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             inventoryUI.RemoveItem(inventory.GetItemObject(0));
-            inventory.DropItem(0, this.transform.position,0);            
+            //inventory.DropItem(0, this.transform.position,0);            
             RefreshUI();
         }
 

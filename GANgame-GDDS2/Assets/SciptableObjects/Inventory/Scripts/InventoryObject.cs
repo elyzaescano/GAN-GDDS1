@@ -51,12 +51,12 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         
     }
 
-    public void DropItem(int _is, Vector2 pos, float displacement)  //elyza says Drops item at position. _is stands for inventory system rember plz.
+    public void DropItem(int _is,ItemObject io, Vector2 pos, float displacement)  //elyza says Drops item at position. _is stands for inventory system rember plz.
     {
         //Gets an ItemObject from GetItemObject(), Then drops the item.
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
-        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y + displacement), Quaternion.identity);  //elyza says Instantiates the called item at the Vector2 position
+        Instantiate(io.itemPrefab, new Vector2(pos.x, pos.y + displacement), Quaternion.identity);  //elyza says Instantiates the called item at the Vector2 position
         Container.RemoveAt(_is); //elyza says Removes item from the Container (i.e. the inventory slots)
         if(IO == equippedItem) { equippedItem = null; } //elyza says Ensures the equipped item resets
         EventManager.ItemEquip(); 

@@ -56,7 +56,9 @@ public class InventoryButton : MonoBehaviour
         foreach (ItemUI _im in inventoryPanel._itemUI)
         {
             Image spriteImage = _im.GetComponent<Image>();
-            spriteImage.color = Color.clear;        }
+            spriteImage.color = Color.clear;
+            _im.selected = false;
+        }
 
         foreach(Button butt in inventoryButtons)
         {
