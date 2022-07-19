@@ -23,6 +23,7 @@ public class KeyPadPuzzle : MonoBehaviour
         {
             room4TP.itemRequired = itemToBlockRoom4;
             keyPadUI.GetComponent<KeypadScreen>().RoomTPBlock = room4TP;
+            EventManager.Room4DoorUnlock += DestroyComponent;
         }
     }
 
@@ -46,6 +47,8 @@ public class KeyPadPuzzle : MonoBehaviour
         if (collision.tag == "Player")
         {
             EventManager.InteractEvent -= UnlockKey;
+            EventManager.Room4DoorUnlock -= DestroyComponent;
+
             inRange = false;
         }
     }
@@ -64,6 +67,19 @@ public class KeyPadPuzzle : MonoBehaviour
     {
         keyPadUI.SetActive(false);
         GetComponent<KeyPadPuzzle>().enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.InteractEvent -= UnlockKey;
+        EventManager.Room4DoorUnlock -= DestroyComponent;
+
+    }
+
+    public void DestroyComponent()
+    {
+        Destroy(GetComponent<KeyPadPuzzle>());
+        EventManager.Room4DoorUnlock -= DestroyComponent;
     }
 
 }

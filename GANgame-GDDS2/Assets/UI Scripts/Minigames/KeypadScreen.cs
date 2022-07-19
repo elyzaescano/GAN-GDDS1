@@ -56,10 +56,11 @@ public class KeypadScreen : MonoBehaviour
     {
         if (codeTextValue == passCode)
         {
-            if(itemSpawn != null) itemSpawn.enabled = true; itemSpawn.Spawn();
+            if (itemSpawn != null) { itemSpawn.enabled = true; itemSpawn.Spawn(); 
+                itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]); }
 
-            if (RoomTPBlock != null) RoomTPBlock.itemRequired = null;
-            itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
+            if (RoomTPBlock != null) { this.gameObject.SetActive(false); EventManager.UnlockDoor4(); RoomTPBlock.itemRequired = null; }
+            
             codeTextValue = "";
             
         }
