@@ -11,10 +11,19 @@ public class KeyPadPuzzle : MonoBehaviour
     bool inRange = false;
     EventManager em;
 
+    //For Door
+    public RoomTeleporter room4TP;
+    public ItemObject itemToBlockRoom4;
+
     // Start is called before the first frame update
     void Start()
     {
         em = FindObjectOfType<EventManager>();
+        if(room4TP != null)
+        {
+            room4TP.itemRequired = itemToBlockRoom4;
+            keyPadUI.GetComponent<KeypadScreen>().RoomTPBlock = room4TP;
+        }
     }
 
     // Update is called once per frame

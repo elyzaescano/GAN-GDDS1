@@ -15,6 +15,7 @@ public class KeypadScreen : MonoBehaviour
     public AudioClip[] feedback;
 
     public ItemSpawn itemSpawn; //refer from itemSpawn
+    public RoomTeleporter RoomTPBlock;
 
     private void Start()
     {
@@ -55,8 +56,9 @@ public class KeypadScreen : MonoBehaviour
     {
         if (codeTextValue == passCode)
         {
-            itemSpawn.enabled = true;
-            itemSpawn.Spawn();
+            if(itemSpawn != null) itemSpawn.enabled = true; itemSpawn.Spawn();
+
+            if (RoomTPBlock != null) RoomTPBlock.itemRequired = null;
             itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
             codeTextValue = "";
             
