@@ -18,9 +18,9 @@ public class ItemSpawn : MonoBehaviour
     public int spawnerID;
     int triggerID;
 
-    private void Start()
+    private void Awake()
     {
-        
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
     }
 
     void OnTriggerEnter2D(Collider2D other)

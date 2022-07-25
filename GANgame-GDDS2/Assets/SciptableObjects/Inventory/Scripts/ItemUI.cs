@@ -32,6 +32,7 @@ public class ItemUI : MonoBehaviour
         UI = UIScript.GetComponent<Image>();
         buttonSound = GameObject.Find("Button Press").GetComponent<AudioSource>();
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
 
         inventoryButtonObject = GameObject.FindGameObjectsWithTag("InventoryButtons");
         foreach(GameObject go in inventoryButtonObject)
@@ -61,6 +62,11 @@ public class ItemUI : MonoBehaviour
     {
         if (!selected)
         {
+            UIScript.UnselectItems(itemSlotID);
+            foreach (Button butt in inventoryButtons)
+            {
+                butt.onClick.RemoveAllListeners();
+            }
             spriteImage.color = Color.black;
             GiveItemObject();
             inventoryButtons[2].onClick.AddListener(DropItemFromUI);
@@ -111,7 +117,7 @@ public class ItemUI : MonoBehaviour
     public void DropItemFromUI()
     {
         if(spriteImage != null)
-        playerInventory.DropItem(itemSlotID,item, pc.gameObject.transform.position, 0);
+        playerInventory.Drop(itemSlotID, item);
         buttonSound.Play();
 
         //UpdateImage(null);

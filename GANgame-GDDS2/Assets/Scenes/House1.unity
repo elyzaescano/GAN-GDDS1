@@ -7985,7 +7985,7 @@ MonoBehaviour:
   doorID: 0
   spawnCountdown: 10
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 0}
@@ -9524,7 +9524,7 @@ MonoBehaviour:
   doorID: 8
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 0}
@@ -27146,7 +27146,7 @@ MonoBehaviour:
   doorID: 1
   spawnCountdown: 3
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
   itemNeeded: 0
   conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
@@ -27256,7 +27256,7 @@ MonoBehaviour:
   doorID: 9
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
   itemNeeded: 0
   conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
@@ -27315,7 +27315,7 @@ MonoBehaviour:
   doorID: 7
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}
   itemNeeded: 0
   conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
@@ -27438,7 +27438,7 @@ MonoBehaviour:
   doorID: 2
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 0}
@@ -60968,7 +60968,7 @@ MonoBehaviour:
   doorID: 3
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 0}
@@ -61344,6 +61344,7 @@ GameObject:
   - component: {fileID: 1590784680}
   - component: {fileID: 1590784685}
   - component: {fileID: 1590784684}
+  - component: {fileID: 1590784689}
   - component: {fileID: 1590784683}
   - component: {fileID: 1590784686}
   - component: {fileID: 1590784687}
@@ -61478,7 +61479,7 @@ MonoBehaviour:
   doorTriggerID: 0
   rb: {fileID: 1590784683}
   dialog: {fileID: 0}
-  inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  inventory: {fileID: 1590784689}
   database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}
   inventoryUI: {fileID: 1536558997}
   em: {fileID: 0}
@@ -61657,6 +61658,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1590784689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590784679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74057ba28f9827848beda81648709719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savePath: 
+  database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}
+  Container: []
+  equippedItem: {fileID: 0}
 --- !u!1001 &1612670315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62120,7 +62137,7 @@ MonoBehaviour:
   doorID: 9
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
@@ -62239,7 +62256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   em: {fileID: 566766541}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
 --- !u!1 &1662509439
 GameObject:
   m_ObjectHideFlags: 0
@@ -62892,7 +62909,7 @@ MonoBehaviour:
   noteText: {fileID: 411847381}
   note: 3636
   paperNote: {fileID: 1731543793}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: fbc80e14b7e1c9543a0d62365a36d209, type: 2}
   itemNeeded: 1
 --- !u!1 &1755629209
@@ -63719,7 +63736,7 @@ MonoBehaviour:
   doorID: 10
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 0}
@@ -63958,7 +63975,7 @@ MonoBehaviour:
   doorID: 9
   spawnCountdown: 0
   doorOpenClose: {fileID: 1021189977}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
   conversation: {fileID: 0}
@@ -64270,7 +64287,7 @@ MonoBehaviour:
   - {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
   spawnPoint: {fileID: 1443358532}
   itemNeeded: 0
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: e6903db603ed7a247b4e3f65e9b8b20b, type: 2}
   em: {fileID: 0}
   spawnerID: 0
@@ -67194,7 +67211,7 @@ MonoBehaviour:
   - {fileID: 5086239731914669939, guid: cffbb211d5354cd44bfab1afefc3ca10, type: 3}
   spawnPoint: {fileID: 4264503867472720537}
   itemNeeded: 0
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
   em: {fileID: 0}
   spawnerID: 0
@@ -67881,7 +67898,7 @@ MonoBehaviour:
   - {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
   spawnPoint: {fileID: 6750829835370374290}
   itemNeeded: 0
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: d248f347e24b51849ad9493ed17f55d7, type: 2}
   em: {fileID: 0}
   spawnerID: 0

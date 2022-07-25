@@ -36,6 +36,7 @@ public class RoomTeleporter : LockDoor
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+        playerInventory = player.GetComponent<InventoryObject>();
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
         dialog = GameObject.FindGameObjectWithTag("Dialog");

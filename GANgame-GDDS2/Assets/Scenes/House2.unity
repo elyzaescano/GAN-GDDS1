@@ -295,6 +295,14 @@ PrefabInstance:
       propertyPath: IB
       value: 
       objectReference: {fileID: 1526770039}
+    - target: {fileID: 8140239313647749592, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 430688637}
+    - target: {fileID: 8140239313647749592, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
+      propertyPath: numberOfSlots
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8140239313647749594, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -23344,7 +23352,7 @@ MonoBehaviour:
   - {fileID: 6336555415564696135, guid: 23dc923a90938a54a82de241c706310c, type: 3}
   spawnPoint: {fileID: 1579322373}
   itemNeeded: 0
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: b290f94bba4df4842b5a9642a2840ad5, type: 2}
   em: {fileID: 0}
   spawnerID: 0
@@ -23527,6 +23535,7 @@ GameObject:
   - component: {fileID: 430688634}
   - component: {fileID: 430688633}
   - component: {fileID: 430688632}
+  - component: {fileID: 430688637}
   - component: {fileID: 430688631}
   - component: {fileID: 430688630}
   - component: {fileID: 430688629}
@@ -23723,7 +23732,7 @@ MonoBehaviour:
   doorTriggerID: 0
   rb: {fileID: 430688631}
   dialog: {fileID: 0}
-  inventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  inventory: {fileID: 430688637}
   database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}
   inventoryUI: {fileID: 4385018}
   em: {fileID: 180604510}
@@ -23840,6 +23849,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &430688637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430688627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74057ba28f9827848beda81648709719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savePath: 
+  database: {fileID: 11400000, guid: 10d9add5f3cd9394db16c12391360d6f, type: 2}
+  Container: []
+  equippedItem: {fileID: 0}
 --- !u!1 &437021002
 GameObject:
   m_ObjectHideFlags: 0
@@ -39563,7 +39588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   em: {fileID: 0}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
 --- !u!114 &661869261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43561,7 +43586,7 @@ MonoBehaviour:
   noteText: {fileID: 883060587}
   note: 3675
   paperNote: {fileID: 1666775673}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: eefacea00fef9ff4a812a821575f442d, type: 2}
   itemNeeded: 1
 --- !u!61 &1073690191
@@ -47115,7 +47140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1186823861}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: 3bb30329194858d49aa0cb9c66f7b25a, type: 2}
   em: {fileID: 180604510}
   dialoguebox: {fileID: 0}
@@ -48921,7 +48946,7 @@ MonoBehaviour:
   noteText: {fileID: 883060587}
   note: 3rd June 1975
   paperNote: {fileID: 1666775673}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
   itemNeeded: 0
 --- !u!1001 &7572881452839500117

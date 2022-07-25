@@ -20,6 +20,7 @@ public class UnlockBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
         dialoguebox = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
         colliders = box.GetComponents<Collider2D>();
         foreach(Collider2D col in colliders)

@@ -14,6 +14,8 @@ public class EquippedItemUI : MonoBehaviour
     {
         itemImage = GetComponentInChildren<Image>();
         EventManager.EquipItem += UpdateItemImage;
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
+
     }
 
     public void UpdateItemImage()
