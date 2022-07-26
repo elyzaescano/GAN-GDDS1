@@ -8,11 +8,14 @@ public class PaintingPuzzle : MonoBehaviour
     public GameObject closeButton;
     [SerializeField] GameObject[] frames;
     [SerializeField] GameObject[] pieces;
+    PauseScreen pause;
 
     public GameObject finalDoor;
-    bool isNear = false;
     public bool piecesCollected;
-
+    private void Start() 
+    {
+        pause = FindObjectOfType<PauseScreen>();
+    }
     private void Update()
     {
         if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform)
@@ -28,16 +31,8 @@ public class PaintingPuzzle : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            isNear = true;
             OpenPuzzle();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            isNear = false;
+            pause.isPaused = true;
         }
     }
 
@@ -46,12 +41,14 @@ public class PaintingPuzzle : MonoBehaviour
         if (piecesCollected)
         {
             paintingPanel.SetActive(true);
+            
         }
     }
 
     public void Close()
     {
         paintingPanel.SetActive(false);
+        pause.isPaused = false;
         Destroy(paintingPanel);
     }
 }
