@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     public static event Action OpenInventory;
     public static event Action CloseInventory;
     public static event Action EquipItem;
+    public static event Action Crafting;
 
     public static event Action PaintingCompleted;
 
@@ -36,6 +37,12 @@ public class EventManager : MonoBehaviour
     public static void ItemEquip()
     {
         EquipItem?.Invoke();
+    }
+
+    public static void CraftingInvoke()
+    {
+        Crafting?.Invoke();
+
     }
 
     public static void CompletePainting() //UNUSED

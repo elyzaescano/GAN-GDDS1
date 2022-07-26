@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ItemUI : MonoBehaviour
 {
     public ItemObject item;
-    private Image spriteImage;
+    public Image spriteImage;
     public InventoryObject playerInventory;
     InventoryUI UIScript;
     public Image UI;
@@ -63,6 +63,10 @@ public class ItemUI : MonoBehaviour
         if (!selected)
         {
             UIScript.UnselectItems(itemSlotID);
+            foreach(Button butt in inventoryButtons)
+            {
+                butt.gameObject.SetActive(true);
+            }
             foreach (Button butt in inventoryButtons)
             {
                 butt.onClick.RemoveAllListeners();
@@ -81,6 +85,10 @@ public class ItemUI : MonoBehaviour
             {
                 butt.onClick.RemoveAllListeners();
             }
+            foreach (Button butt in inventoryButtons)
+            {
+                butt.gameObject.SetActive(false);
+            }
             selected = !selected;
         }
     }
@@ -91,8 +99,8 @@ public class ItemUI : MonoBehaviour
     {
         //Aivated upon being selected. Gives the item and its ui to the combine button for it to be accessed.
         ItemObject item = playerInventory.Container[itemSlotID].item;
-        var combineVariables = FindObjectOfType<CombineButton>().GetComponent<CombineButton>();
-        combineVariables.UpdateItemVariables(item, this);
+        var combineVariables = FindObjectOfType<CombineButton>();
+        combineVariables.UpdateItemVariables(item,this);
         buttonSound.Play();
         //print(item);
     }
@@ -100,6 +108,10 @@ public class ItemUI : MonoBehaviour
     public void DeSelect()
     {
 
+        foreach (Button butt in inventoryButtons)
+        {
+            butt.gameObject.SetActive(false);
+        }
         descriptionText.text = null;
         selected = false;
        
