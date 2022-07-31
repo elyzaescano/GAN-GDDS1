@@ -21,6 +21,7 @@ public class InventoryButton : MonoBehaviour
         {
             butt.gameObject.SetActive(false);
         }
+        inventoryPanel.gameObject.SetActive(false);
     }
     bool isActive = false;
 
@@ -28,16 +29,16 @@ public class InventoryButton : MonoBehaviour
     {
         if(inventoryPanel != null)
         {
+            if (isActive) StartCoroutine(SettingInventoryVisibilityOnStart()); else if (!isActive) StartCoroutine(MakingInventoryVisible()); //Activates the inventory UI
             isActive = !isActive; //Makes inventory UI toggleable
 
-            if (isActive) StartCoroutine(SettingInventoryVisibilityOnStart()); else if (!isActive) StartCoroutine(MakingInventoryVisible()); //Activates the inventory UI
         }
     }
 
     [SerializeField] Button[] e;
     public IEnumerator SettingInventoryVisibilityOnStart()
     {
-        
+
         panelImage.color = Color.clear;
 
         yield return 1;
@@ -71,10 +72,16 @@ public class InventoryButton : MonoBehaviour
 
         descriptiontText.GetComponent<Text>().enabled = false;
         playerImage.color = Color.clear;
+
+        yield return null;
+
+        inventoryPanel.gameObject.SetActive(false);
     }
 
     public IEnumerator MakingInventoryVisible()
     {
+        inventoryPanel.gameObject.SetActive(true);
+        yield return null;
         panelImage.color = Color.white;
 
         yield return 1;
