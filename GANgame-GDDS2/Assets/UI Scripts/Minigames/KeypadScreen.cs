@@ -9,6 +9,7 @@ public class KeypadScreen : MonoBehaviour
     TextMeshProUGUI codeText;
     string codeTextValue = "";
     public string passCode;
+    public int digitLimit;
     bool canAddDigit;
 
     AudioSource audioSource;
@@ -25,7 +26,7 @@ public class KeypadScreen : MonoBehaviour
     {
         codeText.text = codeTextValue;
 
-        if (codeTextValue.Length == 4)
+        if (codeTextValue.Length == digitLimit)
         {
             canAddDigit = false;
         }
