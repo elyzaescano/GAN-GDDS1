@@ -12,7 +12,7 @@ using Dialogue;
 public class RoomTeleporter : LockDoor
 {
     public GameObject destGO;   //Destination GameObject
-    private Vector2 destination;  //Destination location relative to worldpsace
+    private Vector3 destination;  //Destination location relative to worldpsace
     bool isTriggered = false;
     public EventManager em;
     public int doorID;
@@ -77,6 +77,7 @@ public class RoomTeleporter : LockDoor
             if (!lockDoor.isLocked && itemNeeded)
             {
                 doorOpenClose.Play();
+                destination.z = player.transform.position.z;
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
