@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuSwitching : MonoBehaviour
 {
-   
+    public string playScene;
+    public string loadGame;
+    public string creditsScene;
+    public string mainMenuScene;
 
     public void Start()
     {
@@ -14,7 +17,7 @@ public class MenuSwitching : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("House1");
+        SceneManager.LoadScene(playScene);
 
 
     }
@@ -34,7 +37,7 @@ public class MenuSwitching : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(mainMenuScene);
 
     }
 
