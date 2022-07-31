@@ -64,7 +64,10 @@ public class InventoryButton : MonoBehaviour
             _im.selected = false;
         }
 
-        
+        foreach (Button butt in inventoryButtons)
+        {
+            butt.gameObject.SetActive(false);
+        }
 
         descriptiontText.GetComponent<Text>().enabled = false;
         playerImage.color = Color.clear;

@@ -7,7 +7,7 @@ public class ItemSpawn : MonoBehaviour
 
     public GameObject[] itemPrefab;
     public Transform spawnPoint;
-    bool canSpawn = false;
+    public bool canSpawn = false;
     public bool itemNeeded = false; //if we need any item to interact with 
 
     //checks with inventory 
@@ -52,6 +52,7 @@ public class ItemSpawn : MonoBehaviour
                 Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             }
             //Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            print("Spawned");
             canSpawn = false;
             EventManager.InteractEvent -= this.Spawn;
             Destroy(GetComponent<ItemSpawn>());

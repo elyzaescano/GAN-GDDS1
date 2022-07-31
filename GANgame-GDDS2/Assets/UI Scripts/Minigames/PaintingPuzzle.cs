@@ -31,6 +31,7 @@ public class PaintingPuzzle : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Triggered");
             OpenPuzzle();
             pause.isPaused = true;
         }
