@@ -7,9 +7,9 @@ public class KeypadScreen : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI codeText;
-    string codeTextValue = "";
+    [SerializeField]string codeTextValue = "";
     public string passCode;
-    public int digitLimit;
+    int digitLimit;
     bool canAddDigit;
 
     AudioSource audioSource;
@@ -21,6 +21,7 @@ public class KeypadScreen : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        digitLimit = passCode.Length;
     }
     private void Update()
     {
@@ -57,6 +58,7 @@ public class KeypadScreen : MonoBehaviour
     {
         if (codeTextValue == passCode)
         {
+            print("Working");
             if (itemSpawn != null) { itemSpawn.enabled = true; itemSpawn.Spawn(); 
                 itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]); }
 
