@@ -24157,9 +24157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c5970ea13cfbf4fa73d6318a5ca825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   sceneToMoveTo: House1
   _converse: {fileID: 0}
+  itemRequired: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}
 --- !u!61 &2740724539003939443
 BoxCollider2D:
   m_ObjectHideFlags: 0
