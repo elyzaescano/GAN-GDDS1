@@ -4,12 +4,14 @@ using UnityEngine;
 using Dialogue;
 using UnityEngine.SceneManagement;
 
-public class EndGame : LockDoor
+public class NextScene : LockDoor
 {
     public string sceneToMoveTo;
 
     GameObject dialog;
     public Conversation _converse;
+
+    public ItemObject itemRequired;
 
     private void Start()
     {
@@ -18,7 +20,7 @@ public class EndGame : LockDoor
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (!isLocked)
+        if (!isLocked || other.GetComponent<InventoryObject>().equippedItem == itemRequired)
         {
             EventManager.InteractEvent += GoToNextScene;
         }

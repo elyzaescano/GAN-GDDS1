@@ -22,7 +22,7 @@ public class PaintingPuzzle : MonoBehaviour
         && pieces[2].transform.IsChildOf(frames[2].transform))
         {
             print("Win");
-            finalDoor.GetComponent<EndGame>().isLocked = false;
+            finalDoor.GetComponent<NextScene>().isLocked = false;
             paintingPanel.SetActive(false);
         }
     }
