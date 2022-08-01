@@ -18,8 +18,9 @@ public class PaintingPuzzle : MonoBehaviour
     public EventManager em;
     int triggerID;
 
-    public GameObject leftPanel;
-    public GameObject rightPanel;
+    public GameObject Panel;
+    public NextScene endDoor;
+    bool panelTrue; //if painting is completed, sets to true
 
 
 
@@ -34,17 +35,31 @@ public class PaintingPuzzle : MonoBehaviour
             if (o == itemRequired || itemRequired == null)
             {
                 canShow = true;
+                //print("Canshow = true");
+
             }
+
             
         }
     }
 
-    public void Show()
+    public void Show() 
     {
         if (canShow)
         {
-            leftPanel.SetActive(true);
+            Panel.SetActive(true);
+            panelTrue = true;
+            UnlockDoor();
         }
+    }
+
+    public void UnlockDoor()
+    {
+        if (panelTrue)
+        {
+            //endDoor.isLocked = false;
+        }
+        
     }
 
 
