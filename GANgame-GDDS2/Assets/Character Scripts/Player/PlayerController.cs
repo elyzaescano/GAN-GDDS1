@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {    
         playerAnim = GetComponent<Animator>();
+        EventManager.Crafting += GetCraftingItems;
     }
 
     // Update is called once per frame
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             inventoryUI.RemoveItem(inventory.GetItemObject(0));
-            inventory.DropItem(0, this.transform.position,0);            
+            //inventory.DropItem(0, this.transform.position,0);            
             RefreshUI();
         }
 
@@ -111,18 +112,13 @@ public class PlayerController : MonoBehaviour
 
     #region Other methods
     //Mobile code for crafting
-    ItemObject firstVariable;
-    ItemUI firstItemUI;
-    ItemObject secondVariable;
-    ItemUI secondItemUI;
-    public void GetCraftingItems(ItemObject firstCraftingItem, ItemObject secondCraftingItem, ItemUI firstItemIcon, ItemUI secondItemIcon)
+    public ItemObject firstVariable;
+    public ItemUI firstItemUI;
+    public ItemObject secondVariable;
+    public ItemUI secondItemUI;
+    public void GetCraftingItems()
     {
-
-        firstVariable = firstCraftingItem;
-        firstItemUI = firstItemIcon;
-
-        secondVariable = secondCraftingItem;
-        secondItemUI = secondItemIcon;
+    
         int i = firstVariable.Combine(secondVariable) ? 1 : 0;
             
         int o = secondVariable.Combine(firstVariable) ? 1 : 0;

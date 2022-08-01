@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ItemUI : MonoBehaviour
 {
     public ItemObject item;
-    private Image spriteImage;
+    public Image spriteImage;
     public InventoryObject playerInventory;
     InventoryUI UIScript;
     public Image UI;
@@ -32,6 +32,7 @@ public class ItemUI : MonoBehaviour
         UI = UIScript.GetComponent<Image>();
         buttonSound = GameObject.Find("Button Press").GetComponent<AudioSource>();
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
 
         inventoryButtonObject = GameObject.FindGameObjectsWithTag("InventoryButtons");
         foreach(GameObject go in inventoryButtonObject)
@@ -61,6 +62,15 @@ public class ItemUI : MonoBehaviour
     {
         if (!selected)
         {
+            UIScript.UnselectItems(itemSlotID);
+            foreach(Button butt in inventoryButtons)
+            {
+                butt.gameObject.SetActive(true);
+            }
+            foreach (Button butt in inventoryButtons)
+            {
+                butt.onClick.RemoveAllListeners();
+            }
             spriteImage.color = Color.black;
             GiveItemObject();
             inventoryButtons[2].onClick.AddListener(DropItemFromUI);
@@ -75,6 +85,10 @@ public class ItemUI : MonoBehaviour
             {
                 butt.onClick.RemoveAllListeners();
             }
+            foreach (Button butt in inventoryButtons)
+            {
+                butt.gameObject.SetActive(false);
+            }
             selected = !selected;
         }
     }
@@ -85,8 +99,8 @@ public class ItemUI : MonoBehaviour
     {
         //Aivated upon being selected. Gives the item and its ui to the combine button for it to be accessed.
         ItemObject item = playerInventory.Container[itemSlotID].item;
-        var combineVariables = FindObjectOfType<CombineButton>().GetComponent<CombineButton>();
-        combineVariables.UpdateItemVariables(item, this);
+        var combineVariables = FindObjectOfType<CombineButton>();
+        combineVariables.UpdateItemVariables(item,this);
         buttonSound.Play();
         //print(item);
     }
@@ -94,6 +108,10 @@ public class ItemUI : MonoBehaviour
     public void DeSelect()
     {
 
+        foreach (Button butt in inventoryButtons)
+        {
+            butt.gameObject.SetActive(false);
+        }
         descriptionText.text = null;
         selected = false;
        
@@ -111,7 +129,7 @@ public class ItemUI : MonoBehaviour
     public void DropItemFromUI()
     {
         if(spriteImage != null)
-        playerInventory.DropItem(itemSlotID, pc.gameObject.transform.position, 0);
+        playerInventory.Drop(itemSlotID, item);
         buttonSound.Play();
 
         //UpdateImage(null);
@@ -136,7 +154,7 @@ public class ItemUI : MonoBehaviour
 
     private void OnDisable()
     {
-
+        selected = false;
     }
 
     

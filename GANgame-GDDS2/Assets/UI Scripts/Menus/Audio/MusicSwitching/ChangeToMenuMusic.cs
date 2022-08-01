@@ -9,6 +9,8 @@ public class ChangeToMenuMusic : MonoBehaviour
     {
         AudioManager.instance.Play("Menu");
         AudioManager.instance.Stop("Level");
+        AudioManager.instance.Stop("Rain");
+
     }
 
     // Update is called once per frame

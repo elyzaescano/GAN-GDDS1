@@ -6,59 +6,82 @@ using System;
 
 public class CombineButton : MonoBehaviour
 {
-    public ItemObject[] itemObjects;
+    public ItemObject tempItem;
+    public ItemObject[] itemObjectsToCraft;
 
     public ItemUI[] uiVariables;
 
-
+    bool readyToCraft = false;
     private static PlayerController pc;
+    public EventManager em;
 
-    private void Start()
+    private void Awake()
     {
-        pc = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
-        EventManager.OpenInventory += ResetVariables;
-
+        em = FindObjectOfType<EventManager>();
+        pc = FindObjectOfType<PlayerController>();
+        //EventManager.OpenInventory += ResetVariables;
     }
+
 
     public void UpdateItemVariables(ItemObject obj, ItemUI ui)
     {
-        if (itemObjects[0] == null)
+        if(pc.firstVariable != null && readyToCraft)
         {
-            itemObjects[0] = obj;
-            uiVariables[0] = ui;
+            pc.secondVariable = obj;
+            pc.secondItemUI = ui;
+            StartCoroutine(CraftingCoroutine());
         }
         else
         {
-            itemObjects[1] = obj;
-            uiVariables[1] = ui;
+            pc.firstVariable = obj;
+            pc.firstItemUI = ui;
+            //EventManager.Crafting += pc.GetCraftingItems;
+            //EventManager.Crafting += ResetVariables;
         }
-    }
 
+
+
+        //if (itemObjectsToCraft[0] == null)
+        //{
+        //    itemObjectsToCraft[0] = obj;
+        //    uiVariables[0] = ui;
+        //}
+        //else
+        //{
+        //    itemObjectsToCraft[1] = obj;
+        //    uiVariables[1] = ui;
+        //}
+    }
+    IEnumerator CraftingCoroutine()
+    {
+        yield return new WaitForFixedUpdate();
+        pc.GetCraftingItems();
+
+    }
     public void ResetVariables()
     {
-        for (int i = 0; i < itemObjects.Length; i++)
+        for (int i = 0; i < itemObjectsToCraft.Length; i++)
         {
-            itemObjects[i] = null;
-        }
-        for (int i = 0; i < uiVariables.Length; i++)
-        {
-            uiVariables[i] = null;
-        }
-    }
-
-    public void CombineButtonMethod()
-    {
-        pc.GetCraftingItems(itemObjects[0], itemObjects[1], uiVariables[0], uiVariables[1]);
-
-        for(int i = 0; i < itemObjects.Length; i++)
-        {
-            itemObjects[i] = null;
+            itemObjectsToCraft[i] = null;
         }
         for (int i = 0; i < uiVariables.Length; i++)
         {
             uiVariables[i].selected = false;
             uiVariables[i] = null;
         }
+    }
+
+    public void CombineButtonMethod()
+    {
+        readyToCraft = true;
+     
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Crafting -= pc.GetCraftingItems;
+        EventManager.Crafting -= ResetVariables;
+
     }
 
 }

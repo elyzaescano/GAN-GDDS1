@@ -8,15 +8,15 @@ using UnityEditor;
 
 
 
-//Creates and handles item management in the player's inventory.
-[CreateAssetMenu(fileName = "New Inventory", menuName = "InventorySystem/Inventory")]
 
-public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
+
+
+public class InventoryObject : MonoBehaviour
 {
     public string savePath;
     [SerializeField]
     private ItemDatabaseObject database;
-    public List<InventorySlot> Container = new List<InventorySlot>(9); 
+    public List<InventorySlot> Container = new List<InventorySlot>(9);
     public ItemObject equippedItem = null;
 
     private void OnEnable()
@@ -30,36 +30,33 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
     public void AddItem(ItemObject _item, int _amount) //Adds item to player inventory
     {
-        //For loop that checks if item already exists in inventory,
-        //Then adds to amount if item is already in inventory. NOT CURRENTLY IN USE
-        //for (int i = 0; i < Container.Count; i++) 
-        //{
-        //    if (Container[i].item == _item)
-        //    {
-        //        Container[i].AddAmount(_amount); //If item already exists, adds to the amount 
-        //        return;
-        //    }
-        //}
-        //If item is not already in inventory
         //Adds an inventory slot and passes item variables to constructor
-        if (Container.Count > 10) 
+        if (Container.Count > 10)
         {
             Container.RemoveAt(10); return; //elyza says This is to NOT pick up any inventory item if maximum slots has been reached
         }
-        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount)); 
+        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount));
         Debug.Log("added " + _item);
-        
+
     }
 
-    public void DropItem(int _is, Vector2 pos, float displacement)  //elyza says Drops item at position. _is stands for inventory system rember plz.
+    public void DropItem(int _is, ItemObject io, Vector2 pos, float displacement)  //elyza says Drops item at position. _is stands for inventory system rember plz.
     {
         //Gets an ItemObject from GetItemObject(), Then drops the item.
         ItemObject IO = GetItemObject(_is);
         Debug.Log(Container[_is].amount);
-        Instantiate(IO.itemPrefab, new Vector2(pos.x, pos.y + displacement), Quaternion.identity);  //elyza says Instantiates the called item at the Vector2 position
+        Instantiate(io.itemPrefab, new Vector2(pos.x, pos.y + displacement), Quaternion.identity);  //elyza says Instantiates the called item at the Vector2 position
         Container.RemoveAt(_is); //elyza says Removes item from the Container (i.e. the inventory slots)
-        if(IO == equippedItem) { equippedItem = null; } //elyza says Ensures the equipped item resets
-        EventManager.ItemEquip(); 
+        if (IO == equippedItem) { equippedItem = null; } //elyza says Ensures the equipped item resets
+        EventManager.ItemEquip();
+    }
+
+    public void Drop(int i, ItemObject io)
+    {
+        Instantiate(io.itemPrefab, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+        if (io == equippedItem) equippedItem = null;
+        Container.RemoveAt(i);
+        EventManager.ItemEquip();
     }
 
     public ItemObject GetItemObject(int i)//gets item id in inventory and returns it

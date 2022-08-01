@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Dialogue;
 using UnityEngine;
 
 public class UnlockBox : MonoBehaviour
@@ -11,10 +12,21 @@ public class UnlockBox : MonoBehaviour
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
     public EventManager em;
+
+    public GameObject dialoguebox;
+    public Conversation unlockMessage;
+
+    Collider2D[] colliders;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
+        dialoguebox = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
+        colliders = box.GetComponents<Collider2D>();
+        foreach(Collider2D col in colliders)
+        {
+            col.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -40,9 +52,14 @@ public class UnlockBox : MonoBehaviour
     {
         if (canSpawn && this.enabled)
         {
+            if (unlockMessage != null) {dialoguebox.SetActive(true); 
+            dialoguebox.GetComponent<DialogDisplay>().conversation = unlockMessage;}
+            foreach (Collider2D col in colliders)
+            {
+                col.enabled = true;
+            }
             box.itemNeeded = false;
-            Destroy(GetComponent<UnlockBox>());
-            Destroy(GetComponent<ItemSpawn>());
+            EventManager.InteractEvent -= this.Unlock;
         }
     }
 }

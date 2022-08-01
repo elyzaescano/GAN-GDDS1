@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 99ccfa67751012c46b9d4379b483cd41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,4 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 434920a8d36fa9d429c059ff325afb3c, type: 2}
+  dialog: {fileID: 0}
   interactconvo: {fileID: 11400000, guid: 1a475b91c7371bf4d8f75bd9d2bb811b, type: 2}

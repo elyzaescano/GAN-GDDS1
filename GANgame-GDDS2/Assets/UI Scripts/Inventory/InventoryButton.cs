@@ -17,6 +17,11 @@ public class InventoryButton : MonoBehaviour
     {
         panelImage = inventoryPanel.gameObject.GetComponent<Image>();
         StartCoroutine(SettingInventoryVisibilityOnStart());
+        foreach (Button butt in inventoryButtons)
+        {
+            butt.gameObject.SetActive(false);
+        }
+        inventoryPanel.gameObject.SetActive(false);
     }
     bool isActive = false;
 
@@ -24,16 +29,16 @@ public class InventoryButton : MonoBehaviour
     {
         if(inventoryPanel != null)
         {
+            if (isActive) StartCoroutine(SettingInventoryVisibilityOnStart()); else if (!isActive) StartCoroutine(MakingInventoryVisible()); //Activates the inventory UI
             isActive = !isActive; //Makes inventory UI toggleable
 
-            if (isActive) StartCoroutine(SettingInventoryVisibilityOnStart()); else if (!isActive) StartCoroutine(MakingInventoryVisible()); //Activates the inventory UI
         }
     }
 
     [SerializeField] Button[] e;
     public IEnumerator SettingInventoryVisibilityOnStart()
     {
-        
+
         panelImage.color = Color.clear;
 
         yield return 1;
@@ -56,19 +61,27 @@ public class InventoryButton : MonoBehaviour
         foreach (ItemUI _im in inventoryPanel._itemUI)
         {
             Image spriteImage = _im.GetComponent<Image>();
-            spriteImage.color = Color.clear;        }
+            spriteImage.color = Color.clear;
+            _im.selected = false;
+        }
 
-        foreach(Button butt in inventoryButtons)
+        foreach (Button butt in inventoryButtons)
         {
             butt.gameObject.SetActive(false);
         }
 
         descriptiontText.GetComponent<Text>().enabled = false;
         playerImage.color = Color.clear;
+
+        yield return null;
+
+        inventoryPanel.gameObject.SetActive(false);
     }
 
     public IEnumerator MakingInventoryVisible()
     {
+        inventoryPanel.gameObject.SetActive(true);
+        yield return null;
         panelImage.color = Color.white;
 
         yield return 1;
@@ -98,11 +111,12 @@ public class InventoryButton : MonoBehaviour
 
         foreach (Button butt in inventoryButtons)
         {
-            butt.gameObject.SetActive(true);
+            butt.gameObject.SetActive(false);
         }
 
         descriptiontText.GetComponent<Text>().enabled = true;
         playerImage.color = Color.white;
     }
+
 
 }

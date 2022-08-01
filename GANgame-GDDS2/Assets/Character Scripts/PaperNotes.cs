@@ -20,6 +20,7 @@ public class PaperNotes : MonoBehaviour
     {
         //noteText.text = note;
         em = FindObjectOfType<EventManager>();
+        playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
     }
 
     // Update is called once per frame

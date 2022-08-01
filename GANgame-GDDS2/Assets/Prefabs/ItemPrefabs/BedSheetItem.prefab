@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 8c5f7a2a04fe01c41b6b7e97bcd16cdb, type: 2}
+  dialog: {fileID: 0}
   interactconvo: {fileID: 11400000, guid: 7895ea881c9592e46be074aca6717e7e, type: 2}
 --- !u!1 &8709238667162773875
 GameObject:
@@ -114,7 +115,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 99ccfa67751012c46b9d4379b483cd41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

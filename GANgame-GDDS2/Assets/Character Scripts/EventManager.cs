@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     public static event Action OpenInventory;
     public static event Action CloseInventory;
     public static event Action EquipItem;
+    public static event Action Crafting;
 
     public static event Action PaintingCompleted;
 
@@ -19,6 +20,9 @@ public class EventManager : MonoBehaviour
     public static event Action EnemyDeath;
     public static event Action GamePause;
     public static event Action GameResume;
+
+    //Room 4 house 2 Only
+    public static event Action Room4DoorUnlock;
 
     public static void InventoryToggle()
     {
@@ -33,6 +37,12 @@ public class EventManager : MonoBehaviour
     public static void ItemEquip()
     {
         EquipItem?.Invoke();
+    }
+
+    public static void CraftingInvoke()
+    {
+        Crafting?.Invoke();
+
     }
 
     public static void CompletePainting() //UNUSED
@@ -63,6 +73,11 @@ public class EventManager : MonoBehaviour
     public static void ResumeGame()
     {
         GameResume?.Invoke();
+    }
+
+    public static void UnlockDoor4()
+    {
+        Room4DoorUnlock?.Invoke();
     }
    
 }

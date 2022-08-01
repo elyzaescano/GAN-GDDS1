@@ -21,6 +21,7 @@ public class InventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        inventory = GameObject.Find("Player").GetComponent<InventoryObject>();
         em = FindObjectOfType<EventManager>();
         EventManager.OpenInventory += StartUICoroutine;
         numberOfSlots = _itemUI.Capacity;
@@ -52,6 +53,17 @@ public class InventoryUI : MonoBehaviour
     {
         UpdateSlot(_itemUI.FindIndex(i => i.item == _item), null);
         print("removed" + _item);
+    }
+
+    public void UnselectItems(int i)
+    {
+        foreach(ItemUI ui in _itemUI)
+        {
+            if(ui.itemSlotID != i)
+            {
+                ui.DeSelect();
+            }
+        }
     }
 
     //Ok. I spent like 3 hours figuring out how to reload the UI. This was the only way that worked from the POV of a beginner programmer, thank you.

@@ -8,6 +8,7 @@ public class ChangeToLevelMusic : MonoBehaviour
     void Start()
     {
         AudioManager.instance.Play("Level");
+        AudioManager.instance.Play("Rain");
         AudioManager.instance.Stop("Menu");
     }
 
