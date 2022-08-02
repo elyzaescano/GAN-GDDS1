@@ -54,8 +54,11 @@ public class Item : MonoBehaviour
     {
         dialog.transform.GetChild(0).gameObject.SetActive(true);
 
-        dialog.GetComponentInChildren<DialogDisplay>().conversation = interactconvo;
-        dialog.GetComponentInChildren<DialogDisplay>().AdvanceConversation();
+        DialogDisplay dd = dialog.GetComponentInChildren<DialogDisplay>();
+
+        dd.conversation = interactconvo;
+        dd.AdvanceConversation();
+        dd.simulateClick = true;
         EventManager.InteractEvent -= PlayDialog;
         
     }
