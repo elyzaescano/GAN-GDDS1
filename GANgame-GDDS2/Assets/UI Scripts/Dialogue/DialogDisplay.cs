@@ -15,30 +15,32 @@ namespace Dialogue
         public float typeSpeed;
         int activeLineIndex = 0;
 
+        [HideInInspector] public bool simulateClick = false;
+
         private void Start()
         {
             speakerUI = speaker.GetComponent<SpeakerUI>();
             speakerUI.Speaker = conversation.speaker;
 
             pause = FindObjectOfType<PauseScreen>();
-
-            AdvanceConversation();
+            //AdvanceConversation();
 
 
         }
 
-
         private void Update()
-        {
-            
-            if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0) 
+        {            
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || simulateClick) 
             {
+                if(isTyping) return;
+            
                 AdvanceConversation();
                 EventManager.InteractEvent -= AdvanceConversation;
-            }
+                simulateClick = false;
+            } 
             if (gameObject.activeInHierarchy == true)
             {
-                pause.isPaused = true;
+                pause.isPaused = true; //pauses the game during dialog
             }
         }
 
@@ -46,17 +48,19 @@ namespace Dialogue
 
         public void AdvanceConversation()
         {
-            Debug.Log("MOVING TEXT");
+            print("Advance conversation:");
             if (activeLineIndex < conversation.lines.Length )
             {
+                print("Liens displayed");
                 DisplayLines();
                 activeLineIndex += 1;
             }
             else
             {
+                print("lines not displayed");
+                activeLineIndex = 0;
                 speakerUI.dialog.text = null;
                 pause.isPaused = false;
-                activeLineIndex = 0;
                 conversation = null;
                 gameObject.SetActive(false);
             }
@@ -64,8 +68,6 @@ namespace Dialogue
 
         void DisplayLines()
         {
-
-
             Line line = conversation.lines[activeLineIndex];
             Character character = line.character;
 
@@ -81,8 +83,10 @@ namespace Dialogue
             StartCoroutine(Typing(text, activeSpeakerUI));
         }
 
+        bool isTyping = false;
         IEnumerator Typing(string text, SpeakerUI speaker)
         {
+            isTyping = true;
             foreach (char c in text.ToCharArray())
             {
                 speaker.Dialog += c;
@@ -90,9 +94,10 @@ namespace Dialogue
                 
                 if (GetComponent<AudioSource>())
                 {
-                    GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().Play(); //plays the typing sound
                 }
             }
+            isTyping = false;
         }
     }
 }

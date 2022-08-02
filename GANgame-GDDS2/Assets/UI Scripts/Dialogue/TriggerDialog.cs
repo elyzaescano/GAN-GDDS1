@@ -50,6 +50,10 @@ public class TriggerDialog : MonoBehaviour
     private void PlayDialog()
     {
         dialogBox.SetActive(true);
-        dialogBox.GetComponent<DialogDisplay>().conversation = convoToPlay;                  
+        DialogDisplay dd = dialogBox.GetComponent<DialogDisplay>();
+        
+        dd.conversation = convoToPlay;
+        dd.simulateClick = true;
+        //dd.AdvanceConversation();                  
     }
 }
