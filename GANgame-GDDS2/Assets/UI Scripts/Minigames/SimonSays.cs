@@ -11,6 +11,7 @@ public class SimonSays : MonoBehaviour
     bool pass = false;
     bool fail;
     bool win = false;
+    AudioSource audios;
     [SerializeField] AudioClip[] buttonSounds;
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject[] lightArray;
@@ -32,13 +33,8 @@ public class SimonSays : MonoBehaviour
         if (win)
         {
             closeSimon.SetActive(true);
-            AudioSource audios;
-            audios = GetComponent<AudioSource>();
-            AudioClip clip;
-            clip = buttonSounds[2];
-            audios.PlayOneShot(clip);
+            EventManager.WinSimon();
             if (gameDoor != null) {gameDoor.GetComponent<RoomTeleporter>().isLocked = false;} //make the door false
-            Debug.Log("Yippee");
         }
 
         if (fail)
@@ -48,6 +44,7 @@ public class SimonSays : MonoBehaviour
             colourOrderRunCount = -1;
             level = 1;
 
+            EventManager.FailSimon();
             GenerateCode();
             StartCoroutine(ColourOrder());
 
@@ -65,6 +62,10 @@ public class SimonSays : MonoBehaviour
         level = 1;
         GenerateCode();
         StartCoroutine(ColourOrder());
+
+        audios = GetComponent<AudioSource>();
+        EventManager.SimonWon += PlayWinAudio;
+        EventManager.SimonFailed += PlayFailAudio;
     }
 
     void GenerateCode() //Generates a random sequence
@@ -121,8 +122,6 @@ public class SimonSays : MonoBehaviour
                 lightArray[lightOrder[i]].GetComponent<Image>().color = white;
                 yield return new WaitForSeconds(lightSpeed);
 
-                AudioSource audios;
-                audios = GetComponent<AudioSource>();
                 AudioClip clip;
                 clip = buttonSounds[1];
                 audios.PlayOneShot(clip);
@@ -136,10 +135,8 @@ public class SimonSays : MonoBehaviour
         EnableButtons();
     }
 
-    public void PlaySound()
+    public void PlayButtonSound()
     {
-        AudioSource audios;
-        audios = GetComponent<AudioSource>();
         AudioClip clip;
         clip = buttonSounds[0];
         audios.PlayOneShot(clip);
@@ -151,6 +148,7 @@ public class SimonSays : MonoBehaviour
          for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = false;
+            buttons[i].GetComponent<Image>().color = new Color32(255, 255, 255, 90);
         }
     }
 
@@ -160,11 +158,31 @@ public class SimonSays : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = true;
+            buttons[i].GetComponent<Image>().color = white;
         }
+    }
+
+    void PlayWinAudio()
+    {
+        AudioClip clip;
+        clip = buttonSounds[2];
+        audios.PlayOneShot(clip);
+
+        EventManager.SimonWon -= PlayWinAudio;
+    }
+
+    void PlayFailAudio()
+    {
+        AudioClip clip;
+        clip = buttonSounds[3];
+        audios.PlayOneShot(clip);
+
+        EventManager.SimonFailed -= PlayFailAudio;
     }
 
     public void Close()
     {
         gameObject.SetActive(false);
     }
+
 }

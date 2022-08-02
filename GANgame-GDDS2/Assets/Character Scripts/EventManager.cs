@@ -12,7 +12,9 @@ public class EventManager : MonoBehaviour
     public static event Action EquipItem;
     public static event Action Crafting;
 
-    public static event Action PaintingCompleted;
+    public static event Action MinigameCompleted;
+    public static event Action SimonWon;
+    public static event Action SimonFailed;
 
     public static event Action InteractEvent;
 
@@ -45,9 +47,9 @@ public class EventManager : MonoBehaviour
 
     }
 
-    public static void CompletePainting() //UNUSED
+    public static void ConquerMinigame()
     {
-        PaintingCompleted?.Invoke();
+        MinigameCompleted?.Invoke();
     }
 
     public static void Interact()
@@ -79,5 +81,13 @@ public class EventManager : MonoBehaviour
     {
         Room4DoorUnlock?.Invoke();
     }
-   
+
+    public static void WinSimon()
+    {
+        SimonWon?.Invoke();
+    }
+    public static void FailSimon()
+    {
+        SimonFailed?.Invoke();
+    }
 }

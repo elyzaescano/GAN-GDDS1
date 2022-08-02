@@ -26,11 +26,11 @@ public class PaintingPuzzle : MonoBehaviour
     bool canShow;
     public static int count;
 
-    private void Start()
+    private void OnEnable()
     {
         pause = FindObjectOfType<PauseScreen>();
         
-        EventManager.PaintingCompleted += Close;
+        EventManager.MinigameCompleted += Close;
         activePanelIndex = -1;
     }
 
@@ -93,7 +93,7 @@ public class PaintingPuzzle : MonoBehaviour
         if (panelTrue)
         {
             UnlockDoor();
-            EventManager.CompletePainting();
+            EventManager.ConquerMinigame();
         }
         
     }
@@ -104,7 +104,7 @@ public class PaintingPuzzle : MonoBehaviour
 
         GetComponent<AudioSource>().PlayOneShot(winSound, 0.3f);
         paintingPanel.SetActive(false);
-        EventManager.PaintingCompleted -= Close;
+        EventManager.MinigameCompleted -= Close;
     }
 
 }
