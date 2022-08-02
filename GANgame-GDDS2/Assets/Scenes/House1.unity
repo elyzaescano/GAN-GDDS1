@@ -26706,6 +26706,7 @@ MonoBehaviour:
   itemRequired: {fileID: 11400000, guid: 2f4df138a1ddd324e8aa7bad58389843, type: 2}
   em: {fileID: 566766541}
   Panel: {fileID: 428167415}
+  endDoor: {fileID: 0}
 --- !u!1001 &693248999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28655,6 +28656,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1795754790}
     m_Modifications:
+    - target: {fileID: 3384278612150584396, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: db7fe6c97a6b2c74d890017102621e6e, type: 3}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584397, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
@@ -29105,11 +29126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584398, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 250.0319
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584398, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 243.1309
       objectReference: {fileID: 0}
     - target: {fileID: 3384278612150584398, guid: c66045f9a0c2eea4eb170b4fa8012ae1, type: 3}
       propertyPath: m_LocalPosition.x
