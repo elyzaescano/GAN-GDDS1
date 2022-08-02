@@ -21,7 +21,7 @@ public class Item : MonoBehaviour
         // Retreive properties from ItemObject and populate it iinto this item.
         // E.g. populate sprite, as well as other item attributes.
         sr = GetComponent<SpriteRenderer>();
-        dialog = GameObject.FindGameObjectWithTag("Dialog");
+        dialog = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
         //sr.sprite = item.s
     }
     bool isused =false;
@@ -52,12 +52,12 @@ public class Item : MonoBehaviour
 
     public void PlayDialog()
     {
-        dialog.transform.GetChild(0).gameObject.SetActive(true);
+        dialog.SetActive(true);
 
-        dialog.GetComponentInChildren<DialogDisplay>().conversation = interactconvo;
-        dialog.GetComponentInChildren<DialogDisplay>().AdvanceConversation();
-        EventManager.InteractEvent -= PlayDialog;
-        
+        DialogDisplay dd = dialog.GetComponent<DialogDisplay>();
+
+        dd.conversation = interactconvo;
+        dd.simulateClick = true;      
     }
 
 }
