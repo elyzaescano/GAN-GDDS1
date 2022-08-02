@@ -258,7 +258,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
   - name: Rain
     clip: {fileID: 8300000, guid: 5cddd6d5a3f455246a67ac9ff8af53aa, type: 3}
-    volume: 0.15
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
