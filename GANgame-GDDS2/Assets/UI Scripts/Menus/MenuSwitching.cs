@@ -24,14 +24,14 @@ public class MenuSwitching : MonoBehaviour
 
     public void LoadSaves()
     {
-        SceneManager.LoadScene("LoadGame");
+        SceneManager.LoadScene(loadGame);
     }
 
     
 
     public void Credits()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene(creditsScene);
 
     }
 
