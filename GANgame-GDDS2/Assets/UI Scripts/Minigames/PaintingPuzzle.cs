@@ -22,11 +22,16 @@ public class PaintingPuzzle : MonoBehaviour
     public NextScene endDoor;
     bool panelTrue; //if painting is completed, sets to true
 
+    public static int count;
 
-
+    private void Start()
+    {
+        count++;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.tag == "Player")
         {
             EventManager.InteractEvent += this.Show;
@@ -49,18 +54,20 @@ public class PaintingPuzzle : MonoBehaviour
         if (canShow)
         {
             Panel.SetActive(true);
-            panelTrue = true;
-            UnlockDoor();
+            //panelTrue = true;
+
+            count--;
+            if(count <= 0)
+            {
+                UnlockDoor();
+            }
+
         }
     }
 
     public void UnlockDoor()
     {
-        if (panelTrue)
-        {
-            //endDoor.isLocked = false;
-        }
-        
+        endDoor.isLocked = false;
     }
 
 
