@@ -263,6 +263,27 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
     audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
+  - name: CreakingAmbience
+    clip: {fileID: 8300000, guid: eb4d5a7cc1e702a40973113a1555cd6b, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
+  - name: WaterDrip
+    clip: {fileID: 8300000, guid: 6e5e47e61f528634faba9df376ace4d3, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
+  - name: Whisper
+    clip: {fileID: 8300000, guid: 90c5b401d479b5e4697e174965d14e93, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
 --- !u!1 &301154952
 GameObject:
   m_ObjectHideFlags: 0
