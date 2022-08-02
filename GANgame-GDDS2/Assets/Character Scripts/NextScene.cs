@@ -15,12 +15,12 @@ public class NextScene : LockDoor
 
     private void Start()
     {
-        dialog = GameObject.FindGameObjectWithTag("Dialog");
+        dialog = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (!isLocked || other.GetComponent<InventoryObject>().equippedItem == itemRequired)
+        if (!isLocked)
         {
             EventManager.InteractEvent += GoToNextScene;
         }
@@ -44,12 +44,12 @@ public class NextScene : LockDoor
 
     public void PlayDialog()
     {
-        dialog.transform.GetChild(0).gameObject.SetActive(true);
+        dialog.SetActive(true);
 
-        dialog.GetComponentInChildren<DialogDisplay>().conversation = _converse;
-        dialog.GetComponentInChildren<DialogDisplay>().AdvanceConversation();
-        EventManager.InteractEvent -= PlayDialog;
-
+        DialogDisplay dd = dialog.GetComponent<DialogDisplay>();
+        
+        dd.conversation = _converse;
+        dd.simulateClick = true;
     }
 
     private void OnDisable()
