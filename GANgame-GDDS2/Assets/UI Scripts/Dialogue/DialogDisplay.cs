@@ -23,9 +23,6 @@ namespace Dialogue
             speakerUI.Speaker = conversation.speaker;
 
             pause = FindObjectOfType<PauseScreen>();
-            //AdvanceConversation();
-
-
         }
 
         private void Update()
@@ -48,16 +45,13 @@ namespace Dialogue
 
         public void AdvanceConversation()
         {
-            print("Advance conversation:");
             if (activeLineIndex < conversation.lines.Length )
             {
-                print("Liens displayed");
                 DisplayLines();
                 activeLineIndex += 1;
             }
             else
             {
-                print("lines not displayed");
                 activeLineIndex = 0;
                 speakerUI.dialog.text = null;
                 pause.isPaused = false;

@@ -54,6 +54,5 @@ public class TriggerDialog : MonoBehaviour
         
         dd.conversation = convoToPlay;
         dd.simulateClick = true;
-        //dd.AdvanceConversation();                  
     }
 }
