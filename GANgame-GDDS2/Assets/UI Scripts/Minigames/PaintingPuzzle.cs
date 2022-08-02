@@ -35,6 +35,7 @@ public class PaintingPuzzle : MonoBehaviour
             if (o == itemRequired || itemRequired == null)
             {
                 canShow = true;
+                playerInventory.RemoveItem(o);
                 //print("Canshow = true");
 
             }
