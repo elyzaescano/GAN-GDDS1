@@ -9,6 +9,7 @@ public class PaintingPuzzle : MonoBehaviour
     public GameObject closeButton;
     [SerializeField] GameObject[] frames;
     [SerializeField] GameObject[] pieces;
+    public AudioClip winSound;
     PauseScreen pause;
 
     [Header("Painting In Game")]
@@ -22,25 +23,26 @@ public class PaintingPuzzle : MonoBehaviour
     [SerializeField] private int activePanelIndex;
     public NextScene endDoor;
     bool panelTrue; //if painting is completed, sets to true
-
+    bool canShow;
     public static int count;
 
     private void Start()
     {
         pause = FindObjectOfType<PauseScreen>();
         
-        activePanelIndex = 2;
+        EventManager.PaintingCompleted += Close;
+        activePanelIndex = -1;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.tag == "Player")
         {
             print("subscribed");
             ItemObject o = playerInventory.equippedItem;
             if (o == itemRequired || itemRequired == null)
             {
+                canShow = true;
                 EventManager.InteractEvent += Show;
                 
             }
@@ -49,19 +51,22 @@ public class PaintingPuzzle : MonoBehaviour
 
     public void Show() 
     {
-        activePanelIndex--;
-        SetPanelActive(activePanelIndex);
-        
-        playerInventory.RemoveItem(playerInventory.equippedItem); //removes painting from inventory
-        playerInventory.equippedItem = null;    //removes painting from equipped item slot
-        EventManager.ItemEquip();   // updates the UI
-
-        if(activePanelIndex == 0)
+        if (canShow)
         {
-            paintingPanel.SetActive(true);
-        }
+            activePanelIndex++;
+            SetPanelActive(activePanelIndex);
+            
+            playerInventory.RemoveItem(playerInventory.equippedItem); //removes painting from inventory
+            playerInventory.equippedItem = null;    //removes painting from equipped item slot
+            EventManager.ItemEquip();   // updates the UI
 
-        
+            if(activePanelIndex == 1)
+            {
+                paintingPanel.SetActive(true);
+            }    
+            canShow = false;
+            EventManager.InteractEvent -= Show;
+        }
     }
 
     void SetPanelActive(int panelIndex)
@@ -82,23 +87,24 @@ public class PaintingPuzzle : MonoBehaviour
             && pieces[2].transform.IsChildOf(frames[2].transform))
             {
                 panelTrue = true;
-                paintingPanel.SetActive(false);
             }
         }
 
         if (panelTrue)
         {
             UnlockDoor();
+            EventManager.CompletePainting();
         }
-        if (activePanelIndex < 0)
-            activePanelIndex = 0;        
+        
     }
 
     public void Close()
     {
-        paintingPanel.SetActive(false);
         pause.isPaused = false;
-        Destroy(paintingPanel);
+
+        GetComponent<AudioSource>().PlayOneShot(winSound, 0.3f);
+        paintingPanel.SetActive(false);
+        EventManager.PaintingCompleted -= Close;
     }
 
 }
