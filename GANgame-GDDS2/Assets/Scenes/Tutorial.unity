@@ -28887,6 +28887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2740724539003939441}
   - component: {fileID: 2740724539003939443}
+  - component: {fileID: 2740724539003939444}
   - component: {fileID: 2740724539003939442}
   m_Layer: 0
   m_Name: doorwhite
@@ -28930,7 +28931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   sceneToMoveTo: House1
-  _converse: {fileID: 0}
+  _converse: {fileID: 11400000, guid: a118665a2584f234388acadad5da508d, type: 2}
   itemRequired: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}
 --- !u!61 &2740724539003939443
 BoxCollider2D:
@@ -28957,6 +28958,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.7111244, y: 2.5074615}
+  m_EdgeRadius: 0
+--- !u!61 &2740724539003939444
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740724539003939440}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.0207806, y: -1.1727427}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7098904, y: 3.3454854}
   m_EdgeRadius: 0
 --- !u!61 &6429848185422367776
 BoxCollider2D:

@@ -20,7 +20,8 @@ public class NextScene : LockDoor
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (!isLocked)
+        other.TryGetComponent<InventoryObject>(out InventoryObject inventory);
+        if (inventory.equippedItem == itemRequired)
         {
             EventManager.InteractEvent += GoToNextScene;
         }
