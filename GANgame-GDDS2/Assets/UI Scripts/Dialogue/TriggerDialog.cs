@@ -38,6 +38,7 @@ public class TriggerDialog : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) 
     {
+        EventManager.InteractEvent -= PlayDialog;
         if (other.tag == "Player")
         {
             if (playOnce)
@@ -55,4 +56,6 @@ public class TriggerDialog : MonoBehaviour
         dd.conversation = convoToPlay;
         dd.simulateClick = true;
     }
+
+
 }

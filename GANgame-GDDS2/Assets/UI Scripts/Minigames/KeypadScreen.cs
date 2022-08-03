@@ -65,7 +65,10 @@ public class KeypadScreen : MonoBehaviour
             if (RoomTPBlock != null) { this.gameObject.SetActive(false); EventManager.UnlockDoor4(); RoomTPBlock.itemRequired = null; }
             
             codeTextValue = "";
-            
+            //Disables interaction with keypad
+            itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad);
+            keyPad.completed = true;
+
         }
         else
         {

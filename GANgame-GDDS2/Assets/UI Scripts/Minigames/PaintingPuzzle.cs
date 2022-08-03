@@ -15,6 +15,7 @@ public class PaintingPuzzle : MonoBehaviour
     [Header("Painting In Game")]
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
+    [SerializeField] AudioSource au;
 
     public EventManager em;
     int triggerID;
@@ -26,10 +27,10 @@ public class PaintingPuzzle : MonoBehaviour
     bool canShow;
     public static int count;
 
-    private void OnEnable()
+    private void Start()
     {
         pause = FindObjectOfType<PauseScreen>();
-        
+        au = GetComponent<AudioSource>();
         EventManager.MinigameCompleted += Close;
         activePanelIndex = -1;
     }
@@ -86,23 +87,17 @@ public class PaintingPuzzle : MonoBehaviour
             if (pieces[0].transform.IsChildOf(frames[0].transform) && pieces[1].transform.IsChildOf(frames[1].transform)
             && pieces[2].transform.IsChildOf(frames[2].transform))
             {
-                panelTrue = true;
+                UnlockDoor();
+                EventManager.ConquerMinigame();
             }
         }
-
-        if (panelTrue)
-        {
-            UnlockDoor();
-            EventManager.ConquerMinigame();
-        }
-        
     }
 
     public void Close()
     {
         pause.isPaused = false;
 
-        GetComponent<AudioSource>().PlayOneShot(winSound, 0.3f);
+        au.PlayOneShot(winSound, 0.3f);
         paintingPanel.SetActive(false);
         EventManager.MinigameCompleted -= Close;
     }

@@ -9,6 +9,7 @@ public class KeyPadPuzzle : MonoBehaviour
     public GameObject keyPadUI;
 
     bool inRange = false;
+    public bool completed = false;
     EventManager em;
 
     //For Door
@@ -35,7 +36,7 @@ public class KeyPadPuzzle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Player" && !completed)
         {
             EventManager.InteractEvent += UnlockKey;
             inRange = true;
