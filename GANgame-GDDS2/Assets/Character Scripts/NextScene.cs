@@ -40,6 +40,8 @@ public class NextScene : LockDoor
 
     void GoToNextScene()
     {
+        EventManager.InteractEvent -= GoToNextScene;
+
         SceneManager.LoadScene(sceneToMoveTo);
     }
 
