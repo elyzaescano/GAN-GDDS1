@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
+  - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     text: Door's locked.

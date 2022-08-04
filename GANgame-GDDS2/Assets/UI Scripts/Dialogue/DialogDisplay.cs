@@ -52,10 +52,11 @@ namespace Dialogue
             }
             else
             {
+                pause.isPaused = false;
                 activeLineIndex = 0;
                 speakerUI.dialog.text = null;
-                pause.isPaused = false;
                 conversation = null;
+                //speakerUI.portrait.sprite = null;
                 gameObject.SetActive(false);
             }
         }
@@ -64,15 +65,15 @@ namespace Dialogue
         {
             Line line = conversation.lines[activeLineIndex];
             Character character = line.character;
-
-             SetDialog(speakerUI, line.text);
-           
+                        
+            SetDialog(speakerUI, line.text, character);
         }
 
-        void SetDialog(SpeakerUI activeSpeakerUI, string text)
+        void SetDialog(SpeakerUI activeSpeakerUI, string text, Character speaker)
         {
             activeSpeakerUI.Show();
             activeSpeakerUI.Dialog = "";
+            activeSpeakerUI.portrait.sprite = speaker.portrait;
             StopAllCoroutines();
             StartCoroutine(Typing(text, activeSpeakerUI));
         }
