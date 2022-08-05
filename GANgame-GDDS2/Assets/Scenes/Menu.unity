@@ -258,7 +258,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
   - name: Rain
     clip: {fileID: 8300000, guid: 5cddd6d5a3f455246a67ac9ff8af53aa, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &731203989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1188,6 +1188,63 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &1274799851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 746673190091311018, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_Name
+      value: Rain
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 746673190091311019, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bd4fb31851ba224abe28df95f67626f, type: 3}
 --- !u!1 &1283105741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1283105742
 SpriteRenderer:
   m_ObjectHideFlags: 0
