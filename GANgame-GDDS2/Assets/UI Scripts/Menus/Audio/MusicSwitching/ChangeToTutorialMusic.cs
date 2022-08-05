@@ -8,7 +8,6 @@ public class ChangeToTutorialMusic : MonoBehaviour
     void Start()
     {
         AudioManager.instance.Play("Tutorial");
-     
         AudioManager.instance.Stop("Menu");
     }
 
