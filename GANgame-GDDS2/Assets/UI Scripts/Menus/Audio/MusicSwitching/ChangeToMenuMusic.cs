@@ -8,7 +8,7 @@ public class ChangeToMenuMusic : MonoBehaviour
     void Start()
     {
         AudioManager.instance.Play("Menu");
-        AudioManager.instance.Stop("Level");
+        AudioManager.instance.Stop("Tutorial");
         AudioManager.instance.Stop("Rain");
 
     }

@@ -7,8 +7,8 @@ public class LevelBGM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.Stop("Menu");
-        AudioManager.instance.Stop("Level");
+        AudioManager.instance.Play("Level");
+        AudioManager.instance.Stop("Tutorial");
         AudioManager.instance.Stop("Rain");
     }
 
