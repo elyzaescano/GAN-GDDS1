@@ -31,11 +31,11 @@ public class InventoryObject : MonoBehaviour
     public void AddItem(ItemObject _item, int _amount) //Adds item to player inventory
     {
         //Adds an inventory slot and passes item variables to constructor
-        if (Container.Count > 10)
+        if (Container.Count == 9)
         {
-            Container.RemoveAt(10); return; //elyza says This is to NOT pick up any inventory item if maximum slots has been reached
+            return; //elyza says This is to NOT pick up any inventory item if maximum slots has been reached
         }
-        Container.Add(new InventorySlot(database.GetID[_item], _item, _amount));
+        else Container.Add(new InventorySlot(database.GetID[_item], _item, _amount));
         Debug.Log("added " + _item);
 
     }

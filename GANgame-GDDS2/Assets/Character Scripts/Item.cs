@@ -31,7 +31,7 @@ public class Item : MonoBehaviour
         if(player && !isused)
         {
             EventManager.InteractEvent += player.startAddItemCoroutine;
-            EventManager.InteractEvent += PlayDialog;
+            if(player.inventory.Container.Count < 9) EventManager.InteractEvent += PlayDialog;
             player._item = this.item;
             player.itemGO = this.gameObject;
             print("added");
