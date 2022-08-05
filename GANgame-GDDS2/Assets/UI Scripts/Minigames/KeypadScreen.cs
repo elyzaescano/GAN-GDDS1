@@ -66,8 +66,7 @@ public class KeypadScreen : MonoBehaviour
             
             codeTextValue = "";
             //Disables interaction with keypad
-            itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad);
-            keyPad.completed = true;
+            if (!itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad)) return; else keyPad.completed = true;
 
         }
         else
