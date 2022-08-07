@@ -7,8 +7,7 @@ public class ChangeToTutorialMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.Play("Level");
-        AudioManager.instance.Play("Rain");
+        AudioManager.instance.Play("Tutorial");
         AudioManager.instance.Stop("Menu");
     }
 
