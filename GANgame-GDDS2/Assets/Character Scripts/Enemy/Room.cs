@@ -40,5 +40,11 @@ namespace EnemyAI
                 //print("fn check");
             }
         }
+
+        public void setTimeToSpawn(float f)
+        {
+            timeToSpawn = f;
+            originalTime = timeToSpawn;
+        }
     }
 }

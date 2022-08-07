@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LampScript : ItemSpawn
 {
     public float timeToBurn;
     float currentBurnTime;
     bool isBurning = false;
+    public UnityEvent LampBurnEvent;
 
     public Light candleLight;
 
@@ -28,7 +30,7 @@ public class LampScript : ItemSpawn
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var playerInv = collision.GetComponent<InventoryObject>();
-        if(playerInv.equippedItem = itemRequired)
+        if(playerInv.equippedItem == itemRequired)
         {
             EventManager.InteractEvent += startTheBurn;
         }
@@ -42,6 +44,7 @@ public class LampScript : ItemSpawn
     public void startTheBurn()
     {
         isBurning = true;
+        LampBurnEvent?.Invoke();
         currentBurnTime = timeToBurn;
         candleLight.intensity = 4f;
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemSpawn : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class ItemSpawn : MonoBehaviour
     public ItemObject itemRequired;
 
     public EventManager em;
+    public UnityEvent ItemSpawnedEvent;
+    public UnityEvent InteractWithoutItemSpawn;
     public int spawnerID;
     int triggerID;
 
@@ -54,8 +57,13 @@ public class ItemSpawn : MonoBehaviour
             //Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             print("Spawned");
             canSpawn = false;
+            ItemSpawnedEvent?.Invoke();
             EventManager.InteractEvent -= this.Spawn;
             Destroy(GetComponent<ItemSpawn>());
+        }
+        else if(!itemNeeded)
+        {
+            InteractWithoutItemSpawn?.Invoke();
         }
     }
 }

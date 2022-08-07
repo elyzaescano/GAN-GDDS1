@@ -48,7 +48,7 @@ public class TriggerDialog : MonoBehaviour
         }
     }
 
-    private void PlayDialog()
+    public void PlayDialog()
     {
         dialogBox.SetActive(true);
         DialogDisplay dd = dialogBox.GetComponent<DialogDisplay>();
