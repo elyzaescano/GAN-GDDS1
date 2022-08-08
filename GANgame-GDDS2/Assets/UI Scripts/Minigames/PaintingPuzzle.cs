@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PaintingPuzzle : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class PaintingPuzzle : MonoBehaviour
     public GameObject closeButton;
     [SerializeField] GameObject[] frames;
     [SerializeField] GameObject[] pieces;
+    [SerializeField] List<Dialogue.Conversation> fillPuzzleDialogues;
     public AudioClip winSound;
     PauseScreen pause;
 
@@ -27,11 +30,17 @@ public class PaintingPuzzle : MonoBehaviour
     bool canShow;
     public static int count;
 
+    GameObject dialogBox;
+    public UnityEvent DialogWithoutPaintingEquipped;
+    public UnityEvent OnPuzzleOpenEvent;
+    public UnityEvent OnPuzzleCloseEvent;
+
     private void Start()
     {
         pause = FindObjectOfType<PauseScreen>();
         au = GetComponent<AudioSource>();
         EventManager.MinigameCompleted += Close;
+        dialogBox = EventManager.dialogBox;
         activePanelIndex = -1;
     }
 
@@ -45,13 +54,21 @@ public class PaintingPuzzle : MonoBehaviour
             {
                 canShow = true;
                 EventManager.InteractEvent += Show;
-                
+
             }
+            else EventManager.InteractEvent += PlayDialogOnTap;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        EventManager.InteractEvent -= PlayDialogOnTap;
+        EventManager.InteractEvent -= Show;
     }
 
     public void Show() 
     {
+        if(activePanelIndex == 2) EventManager.Interact();
         if (canShow)
         {
             activePanelIndex++;
@@ -61,9 +78,15 @@ public class PaintingPuzzle : MonoBehaviour
             playerInventory.equippedItem = null;    //removes painting from equipped item slot
             EventManager.ItemEquip();   // updates the UI
 
+            PlayDialog(fillPuzzleDialogues[0]);
+
+
+
             if(activePanelIndex == 1)
             {
-                paintingPanel.SetActive(true);
+                PlayDialog(fillPuzzleDialogues[1]);
+                EventManager.InteractEvent += OpenPuzzle;
+
             }    
             canShow = false;
             EventManager.InteractEvent -= Show;
@@ -73,6 +96,12 @@ public class PaintingPuzzle : MonoBehaviour
     void SetPanelActive(int panelIndex)
     {
         panels[panelIndex].SetActive(true);
+    }
+
+    void OpenPuzzle()
+    {
+        paintingPanel.SetActive(true);
+        OnPuzzleOpenEvent?.Invoke();
     }
 
     public void UnlockDoor()
@@ -96,10 +125,34 @@ public class PaintingPuzzle : MonoBehaviour
     public void Close()
     {
         pause.isPaused = false;
-
+        OnPuzzleCloseEvent?.Invoke();
         au.PlayOneShot(winSound, 0.3f);
         paintingPanel.SetActive(false);
         EventManager.MinigameCompleted -= Close;
+        EventManager.InteractEvent -= PlayDialogOnTap;
+        EventManager.InteractEvent -= Show;
+    }
+
+    void PlayDialogOnTap()
+    {
+        DialogWithoutPaintingEquipped?.Invoke();
+    }
+
+    public void PlayDialog(Dialogue.Conversation convo)
+    {
+        dialogBox.SetActive(true);
+        Dialogue.DialogDisplay dd = dialogBox.GetComponent<Dialogue.DialogDisplay>();
+
+        dd.conversation = convo;
+        dd.simulateClick = true;
+
+
+    }
+
+    private void OnDisable()
+    {
+        EventManager.InteractEvent -= PlayDialogOnTap;
+        EventManager.InteractEvent -= Show;
     }
 
 }

@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e730679dae0477a4d889d2c0d9db1bb4, type: 3}
-  m_Name: Bed
+  m_Name: PaintingUsedOnPuzzle
   m_EditorClassIdentifier: 
-  speaker: {fileID: 11400000, guid: 0510bf4face0e60478b84294b62e0079, type: 2}
+  speaker: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: 0510bf4face0e60478b84294b62e0079, type: 2}
-    text: Comfy, but there's no time to rest. But maybe the sheets could come in
-      useful.
+  - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
+    text: That's one half!
