@@ -12,9 +12,9 @@ public class TriggerDialog : MonoBehaviour
     public bool playOnce; //should the conversation play only once?
     public bool mustInteract; //must the player interact for the conversation to play? btw if it's MUST INTERACT then DO NOT CLICK PLAY ONCE
 
-    private void Awake() 
+    private void Start() 
     {
-        dialogBox = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
+        dialogBox = EventManager.dialogBox;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
