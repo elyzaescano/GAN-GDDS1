@@ -88,6 +88,7 @@ public class RoomTeleporter : LockDoor
                     playerInventory.RemoveItem(playerInventory.equippedItem);
                     playerInventory.equippedItem = null;
                     EventManager.ItemEquip();
+                    itemRequired = null;
                 }
             }
         }
