@@ -552,6 +552,7 @@ MonoBehaviour:
   conversation: {fileID: 11400000, guid: 635c212e7b7f1504284feed9b99f160c, type: 2}
   speaker: {fileID: 4264824257503709130}
   typeSpeed: 0.05
+  simulateClick: 0
 --- !u!82 &4264824256737326134
 AudioSource:
   m_ObjectHideFlags: 0
@@ -564,8 +565,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.401
-  m_Pitch: 1
+  m_Volume: 0.153
+  m_Pitch: 0.75
   Loop: 0
   Mute: 0
   Spatialize: 0
