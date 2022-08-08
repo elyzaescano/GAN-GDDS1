@@ -7,6 +7,8 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
 
+    public static GameObject dialogBox;
+
     public static event Action OpenInventory;
     public static event Action CloseInventory;
     public static event Action EquipItem;
@@ -25,6 +27,11 @@ public class EventManager : MonoBehaviour
 
     //Room 4 house 2 Only
     public static event Action Room4DoorUnlock;
+
+    private void Awake()
+    {
+        dialogBox = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
+    }
 
     public static void InventoryToggle()
     {

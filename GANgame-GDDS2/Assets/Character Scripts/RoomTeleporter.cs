@@ -28,6 +28,7 @@ public class RoomTeleporter : LockDoor
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
     public bool itemNeeded = false; //if we need any key
+    [SerializeField]bool useKey;
 
     //Dialog variables
     GameObject dialog;
@@ -39,7 +40,8 @@ public class RoomTeleporter : LockDoor
         playerInventory = player.GetComponent<InventoryObject>();
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
-        dialog = GameObject.FindGameObjectWithTag("Dialog");
+        dialog = EventManager.dialogBox;
+        if(itemRequired !=null)useKey = itemRequired.type == ItemObject.Type.Key;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -81,16 +83,25 @@ public class RoomTeleporter : LockDoor
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
+                if (useKey)
+                {
+                    playerInventory.RemoveItem(playerInventory.equippedItem);
+                    playerInventory.equippedItem = null;
+                    EventManager.ItemEquip();
+                    itemRequired = null;
+                }
             }
         }
     }
 
     public void PlayDialog()
     {
-        dialog.transform.GetChild(0).gameObject.SetActive(true);
+        dialog.SetActive(true);
+        DialogDisplay dd = dialog.GetComponent<DialogDisplay>();
 
-        dialog.GetComponentInChildren<DialogDisplay>().conversation = conversation;
-        dialog.GetComponentInChildren<DialogDisplay>().AdvanceConversation();
+        dd.conversation = conversation;
+        dd.simulateClick = true;
+
         EventManager.InteractEvent -= PlayDialog;
 
     }

@@ -12,9 +12,9 @@ public class TriggerDialog : MonoBehaviour
     public bool playOnce; //should the conversation play only once?
     public bool mustInteract; //must the player interact for the conversation to play? btw if it's MUST INTERACT then DO NOT CLICK PLAY ONCE
 
-    private void Awake() 
+    private void Start() 
     {
-        dialogBox = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
+        dialogBox = EventManager.dialogBox;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -30,7 +30,8 @@ public class TriggerDialog : MonoBehaviour
                 else
                 {
                     dialogBox.SetActive(true);
-                    dialogBox.GetComponent<DialogDisplay>().conversation = convoToPlay;                  
+                    dialogBox.GetComponent<DialogDisplay>().conversation = convoToPlay;
+                    PlayDialog();
                 }
             }
         }   
@@ -38,6 +39,7 @@ public class TriggerDialog : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) 
     {
+        EventManager.InteractEvent -= PlayDialog;
         if (other.tag == "Player")
         {
             if (playOnce)
@@ -47,7 +49,7 @@ public class TriggerDialog : MonoBehaviour
         }
     }
 
-    private void PlayDialog()
+    public void PlayDialog()
     {
         dialogBox.SetActive(true);
         DialogDisplay dd = dialogBox.GetComponent<DialogDisplay>();
@@ -55,4 +57,6 @@ public class TriggerDialog : MonoBehaviour
         dd.conversation = convoToPlay;
         dd.simulateClick = true;
     }
+
+
 }
