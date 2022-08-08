@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e730679dae0477a4d889d2c0d9db1bb4, type: 3}
-  m_Name: FirePlaceLit
+  m_Name: BathtubInteract_1
   m_EditorClassIdentifier: 
-  speaker: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
-  lines:
-  - character: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
-    text: There's something in the flames.
+  speaker: {fileID: 0}
+  lines: []

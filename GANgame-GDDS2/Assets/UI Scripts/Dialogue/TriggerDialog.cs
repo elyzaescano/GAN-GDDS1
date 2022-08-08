@@ -30,7 +30,8 @@ public class TriggerDialog : MonoBehaviour
                 else
                 {
                     dialogBox.SetActive(true);
-                    dialogBox.GetComponent<DialogDisplay>().conversation = convoToPlay;                  
+                    dialogBox.GetComponent<DialogDisplay>().conversation = convoToPlay;
+                    PlayDialog();
                 }
             }
         }   

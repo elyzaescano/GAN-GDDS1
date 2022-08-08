@@ -28,6 +28,7 @@ public class RoomTeleporter : LockDoor
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
     public bool itemNeeded = false; //if we need any key
+    [SerializeField]bool useKey;
 
     //Dialog variables
     GameObject dialog;
@@ -40,6 +41,7 @@ public class RoomTeleporter : LockDoor
         destination = destGO.transform.position;
         lockDoor = FindObjectOfType<LockDoor>();
         dialog = GameObject.FindGameObjectWithTag("Dialog");
+        useKey = itemRequired.type == ItemObject.Type.Key;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -81,6 +83,10 @@ public class RoomTeleporter : LockDoor
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
+                if (useKey)
+                {
+                    playerInventory.RemoveItem(playerInventory.equippedItem);
+                }
             }
         }
     }
