@@ -14,6 +14,8 @@ public class ItemSpawn : MonoBehaviour
     //checks with inventory 
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
+    [SerializeField]bool usekey;
+    ItemObject.Type Keytype = ItemObject.Type.Key;
 
     public EventManager em;
     public UnityEvent ItemSpawnedEvent;
@@ -23,12 +25,19 @@ public class ItemSpawn : MonoBehaviour
 
     private void Awake()
     {
+
         playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
+        if(itemRequired !=null) usekey = itemRequired.type == Keytype ? true : false;
+
+    }
+    private void OnEnable()
+    {
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && this.enabled)
         {
             EventManager.InteractEvent += this.Spawn;
             print("subscribed");
@@ -48,7 +57,7 @@ public class ItemSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        if (canSpawn && itemNeeded && this.enabled)
+        if (canSpawn && itemNeeded)
         {
             for(int i = 0; i < itemPrefab.Length; i++)
             {
@@ -58,12 +67,20 @@ public class ItemSpawn : MonoBehaviour
             print("Spawned");
             canSpawn = false;
             ItemSpawnedEvent?.Invoke();
-            EventManager.InteractEvent -= this.Spawn;
-            Destroy(GetComponent<ItemSpawn>());
+            if (usekey)
+            {
+                playerInventory.RemoveItem(playerInventory.equippedItem);
+                playerInventory.equippedItem = null;
+                EventManager.ItemEquip();
+
+            }
         }
         else if(!itemNeeded)
         {
             InteractWithoutItemSpawn?.Invoke();
         }
+
+        EventManager.InteractEvent -= this.Spawn;
+        Destroy(GetComponent<ItemSpawn>());
     }
 }

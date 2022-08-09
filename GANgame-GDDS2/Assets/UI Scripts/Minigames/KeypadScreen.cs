@@ -12,7 +12,7 @@ public class KeypadScreen : MonoBehaviour
     int digitLimit;
     bool canAddDigit;
 
-    AudioSource audioSource;
+    [SerializeField]AudioSource audioSource;
     public AudioClip[] feedback;
 
     public ItemSpawn itemSpawn; //refer from itemSpawn
@@ -59,14 +59,18 @@ public class KeypadScreen : MonoBehaviour
         if (codeTextValue == passCode)
         {
             print("Working");
-            if (itemSpawn != null) { itemSpawn.enabled = true; itemSpawn.Spawn(); 
-                itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]); }
+            //Disables interaction with keypad
+            if (itemSpawn != null) {
+                itemSpawn.canSpawn = true;
+                itemSpawn.itemNeeded = true;
+                itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
+                if (!itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad)) { return; } else {keyPad.completed = true; }
+                itemSpawn.Spawn();
+            }
 
             if (RoomTPBlock != null) { this.gameObject.SetActive(false); EventManager.UnlockDoor4(); RoomTPBlock.itemRequired = null; }
             
             codeTextValue = "";
-            //Disables interaction with keypad
-            if (!itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad)) return; else keyPad.completed = true;
 
         }
         else

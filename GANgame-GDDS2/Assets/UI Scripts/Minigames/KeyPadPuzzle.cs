@@ -68,6 +68,7 @@ public class KeyPadPuzzle : MonoBehaviour
     {
         keyPadUI.SetActive(false);
         GetComponent<KeyPadPuzzle>().enabled = false;
+
     }
 
     private void OnDisable()
