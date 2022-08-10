@@ -22,8 +22,7 @@ public class LampScript : ItemSpawn
     {
         if (isBurning) {
             currentBurnTime -= Time.deltaTime;
-            Invoke("SpawnAfterBurn", timeToBurn);
-            candleLight.intensity -= Time.deltaTime / (timeToBurn);
+            candleLight.intensity -= Time.deltaTime / (timeToBurn/2);
                 }
     }
 
@@ -44,6 +43,7 @@ public class LampScript : ItemSpawn
     public void startTheBurn()
     {
         isBurning = true;
+        Invoke("SpawnAfterBurn", timeToBurn);
         LampBurnEvent?.Invoke();
         currentBurnTime = timeToBurn;
         candleLight.intensity = 4f;
@@ -54,7 +54,7 @@ public class LampScript : ItemSpawn
         itemNeeded = true;
         canSpawn = true;
         Spawn();
-        
+        isBurning = false;
     }
 
 }

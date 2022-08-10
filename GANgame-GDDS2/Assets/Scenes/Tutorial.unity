@@ -8958,6 +8958,8 @@ MonoBehaviour:
   itemNeeded: 0
   playerInventory: {fileID: 1756001985}
   itemRequired: {fileID: 11400000, guid: ab4ce9bccc11b674b97dbc8fefb1cc7e, type: 2}
+  usekey: 0
+  Keytype: 25
   em: {fileID: 419880296}
   ItemSpawnedEvent:
     m_PersistentCalls:
@@ -24626,6 +24628,8 @@ MonoBehaviour:
   itemNeeded: 0
   playerInventory: {fileID: 0}
   itemRequired: {fileID: 0}
+  usekey: 0
+  Keytype: 0
   em: {fileID: 0}
   ItemSpawnedEvent:
     m_PersistentCalls:

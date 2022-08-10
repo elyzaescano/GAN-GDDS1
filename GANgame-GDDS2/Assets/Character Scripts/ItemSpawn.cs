@@ -15,7 +15,7 @@ public class ItemSpawn : MonoBehaviour
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
     [SerializeField]bool usekey;
-    ItemObject.Type Keytype = ItemObject.Type.Key;
+    [SerializeField]ItemObject.Type Keytype;
 
     public EventManager em;
     public UnityEvent ItemSpawnedEvent;
@@ -74,6 +74,7 @@ public class ItemSpawn : MonoBehaviour
                 EventManager.ItemEquip();
 
             }
+            Destroy(GetComponent<ItemSpawn>());
         }
         else if(!itemNeeded)
         {
@@ -81,6 +82,5 @@ public class ItemSpawn : MonoBehaviour
         }
 
         EventManager.InteractEvent -= this.Spawn;
-        Destroy(GetComponent<ItemSpawn>());
     }
 }
