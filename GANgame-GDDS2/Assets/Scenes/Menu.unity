@@ -265,7 +265,14 @@ MonoBehaviour:
     audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
   - name: Level
     clip: {fileID: 8300000, guid: f83ac7820e6daf647b1017eac468ba8e, type: 3}
-    volume: 0.2
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    audioMixer: {fileID: 24300002, guid: 49be5f6d649ef214689b3008b57270ce, type: 2}
+  - name: Monster
+    clip: {fileID: 8300000, guid: 5f2be96f929cf9f4c83d4221faa7c771, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -418,18 +425,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1014201664}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 438008174}
         m_TargetAssemblyTypeName: MenuSwitching, Assembly-CSharp
         m_MethodName: Credits
@@ -531,10 +526,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb28300795c641740b0c396229a5f32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playScene: Tutorial
-  loadGame: House1
+  playScene: House1
   creditsScene: Credits
   mainMenuScene: Menu
+  buttonSound: {fileID: 1014201664}
 --- !u!1 &506227744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,18 +1425,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1014201664}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1695685304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1565,18 +1548,6 @@ MonoBehaviour:
       - m_Target: {fileID: 438008174}
         m_TargetAssemblyTypeName: MenuSwitching, Assembly-CSharp
         m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1014201664}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -6,43 +6,44 @@ using UnityEngine.SceneManagement;
 public class MenuSwitching : MonoBehaviour
 {
     public string playScene;
-    public string loadGame;
     public string creditsScene;
     public string mainMenuScene;
+    public AudioSource buttonSound;
 
     public void Start()
     {
-       
+
 
     }
     public void PlayGame()
     {
+        buttonSound.Play();
         SceneManager.LoadScene(playScene);
 
-
     }
 
-    public void LoadSaves()
-    {
-        SceneManager.LoadScene(loadGame);
-    }
 
-    
+
+
 
     public void Credits()
     {
+        buttonSound.Play();
         SceneManager.LoadScene(creditsScene);
 
     }
 
     public void ReturnToMainMenu()
     {
+        buttonSound.Play();
         SceneManager.LoadScene(mainMenuScene);
 
     }
 
     public void Quit()
     {
+        buttonSound.Play();
         Application.Quit();
     }
+
 }

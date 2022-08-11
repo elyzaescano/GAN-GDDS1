@@ -40,6 +40,8 @@ namespace EnemyAI
             
             Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
             canSpawn = false;
+                
+                AudioManager.instance.Play("Monster");
             }
         }
 
@@ -48,6 +50,9 @@ namespace EnemyAI
             canSpawn = true;
             EventManager.EnemyCanSpawn -= SpawnEnemy;
             EventManager.EnemyCanSpawn += SpawnEnemy;
+            AudioManager.instance.Stop("Monster");
+            
+
         }
 
         public GameObject FindRoom()

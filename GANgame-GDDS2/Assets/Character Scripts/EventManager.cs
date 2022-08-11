@@ -75,12 +75,12 @@ public class EventManager : MonoBehaviour
         EnemyDeath?.Invoke();
     }
 
-    public static void PauseGame()
+    public static void PauseGame()//UNUSED
     {
         GamePause?.Invoke();
     }
 
-    public static void ResumeGame()
+    public static void ResumeGame()//UNUSED
     {
         GameResume?.Invoke();
     }
@@ -99,7 +99,7 @@ public class EventManager : MonoBehaviour
         SimonFailed?.Invoke();
     }
 
-    public static void Warning()
+    public static void Warning() //UNUSED
     {
         EnemyWarning?.Invoke();
     }

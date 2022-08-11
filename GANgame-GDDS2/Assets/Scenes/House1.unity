@@ -988,7 +988,7 @@ MonoBehaviour:
   roomNo: 5
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &119752749
 GameObject:
   m_ObjectHideFlags: 0
@@ -8444,7 +8444,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &300416918
 GameObject:
   m_ObjectHideFlags: 0
@@ -11268,7 +11268,7 @@ MonoBehaviour:
   roomNo: 2
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &595043672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3771250751459889760, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
@@ -27289,9 +27289,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 2
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &665819327
 GameObject:
   m_ObjectHideFlags: 0
@@ -28906,6 +28906,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9961853, y: 1.6255112}
   m_EdgeRadius: 0
+--- !u!82 &822178057 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2786395116316170326, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
+  m_PrefabInstance: {fileID: 6650981372588862419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &825503959
 GameObject:
   m_ObjectHideFlags: 0
@@ -65023,7 +65028,7 @@ MonoBehaviour:
   roomNo: 6
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &1689457533
 GameObject:
   m_ObjectHideFlags: 0
@@ -65954,7 +65959,7 @@ MonoBehaviour:
   roomNo: 3
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &1767706737
 GameObject:
   m_ObjectHideFlags: 0
@@ -69581,7 +69586,7 @@ MonoBehaviour:
   roomNo: 0
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 6650981372588862420}
+  warning: {fileID: 822178057}
 --- !u!1 &2043256651
 GameObject:
   m_ObjectHideFlags: 0
@@ -72661,13 +72666,12 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7935711091236846182, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
---- !u!82 &6650981372588862420 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7806384192761486349, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
-  m_PrefabInstance: {fileID: 6650981372588862419}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6750829834258032492
 Transform:
   m_ObjectHideFlags: 0

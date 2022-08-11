@@ -15,10 +15,13 @@ namespace EnemyAI
         PauseScreen pause;
         EnemySpawnManager esm;
         public AudioSource warning;
+       
+        
         
         private void Start() 
         {
             esm = FindObjectOfType<EnemySpawnManager>();
+         
             spawnPoint = transform.GetChild(0).transform;
             originalTime = timeToSpawn;
             //EventManager.EnemyWarning += EWarning;
@@ -26,27 +29,24 @@ namespace EnemyAI
         }
         void Update()
         {
-            if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn && !pause.isPaused)
+            if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn && !pause.isPaused) //roomNo. value + enemy can spawn + is not paused
             {
-                timeToSpawn -= Time.deltaTime;
+                timeToSpawn -= Time.deltaTime; //timetospawn = ~ - time.deltatime
             }
             else
             {
                 timeToSpawn -= 0;
             }
 
-            if (timeToSpawn <= 0)
+            if (timeToSpawn <= 0) //TimetoSpawn resets when <=0
             {
                 timeToSpawn = originalTime;
                 EventManager.SpawnChecker();
                 //print("fn check");
             }
 
-            if(timeToSpawn <= 20)
-            {
-                warning.Play();
-                print ("yahoo");
-            }
+          
+
         }
 
         public void setTimeToSpawn(float f)
@@ -56,7 +56,14 @@ namespace EnemyAI
         }
 
 
-        
+        /*public void EWarning()
+        {
+            if (timeToSpawn <= 20)
+            {
+                warning.Play();
+                print("help");
+            }
+        }*/
         
     }
 }

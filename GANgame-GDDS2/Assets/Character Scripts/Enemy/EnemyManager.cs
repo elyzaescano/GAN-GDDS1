@@ -103,6 +103,8 @@ namespace EnemyAI
             {
                 if(enemyFOV.currentTarget != null)
                 {
+                    AudioManager.instance.Stop("Monster");
+                    AudioManager.instance.Stop("Level");
                     deathScreen.SetActive(true);
                     GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
                     enemySpawn.canSpawn = true;

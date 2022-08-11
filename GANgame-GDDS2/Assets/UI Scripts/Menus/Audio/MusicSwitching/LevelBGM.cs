@@ -10,6 +10,7 @@ public class LevelBGM : MonoBehaviour
         AudioManager.instance.Play("Level");
         AudioManager.instance.Stop("Tutorial");
         AudioManager.instance.Stop("Rain");
+        AudioManager.instance.Stop("Menu");
     }
 
     // Update is called once per frame
