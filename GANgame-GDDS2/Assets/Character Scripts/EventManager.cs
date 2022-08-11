@@ -24,6 +24,7 @@ public class EventManager : MonoBehaviour
     public static event Action EnemyDeath;
     public static event Action GamePause;
     public static event Action GameResume;
+    public static event Action EnemyWarning;
 
     //Room 4 house 2 Only
     public static event Action Room4DoorUnlock;
@@ -96,5 +97,10 @@ public class EventManager : MonoBehaviour
     public static void FailSimon()
     {
         SimonFailed?.Invoke();
+    }
+
+    public static void Warning()
+    {
+        EnemyWarning?.Invoke();
     }
 }

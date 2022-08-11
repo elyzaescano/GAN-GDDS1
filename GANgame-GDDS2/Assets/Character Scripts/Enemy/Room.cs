@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace EnemyAI
 {
@@ -13,13 +14,14 @@ namespace EnemyAI
         public Transform spawnPoint;
         PauseScreen pause;
         EnemySpawnManager esm;
+        public AudioSource warning;
         
         private void Start() 
         {
             esm = FindObjectOfType<EnemySpawnManager>();
             spawnPoint = transform.GetChild(0).transform;
             originalTime = timeToSpawn;
-
+            //EventManager.EnemyWarning += EWarning;
             pause = FindObjectOfType<PauseScreen>();
         }
         void Update()
@@ -39,6 +41,12 @@ namespace EnemyAI
                 EventManager.SpawnChecker();
                 //print("fn check");
             }
+
+            if(timeToSpawn <= 20)
+            {
+                warning.Play();
+                print ("yahoo");
+            }
         }
 
         public void setTimeToSpawn(float f)
@@ -46,5 +54,9 @@ namespace EnemyAI
             timeToSpawn = f;
             originalTime = timeToSpawn;
         }
+
+
+        
+        
     }
 }
