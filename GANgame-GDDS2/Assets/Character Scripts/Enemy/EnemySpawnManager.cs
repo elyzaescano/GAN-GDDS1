@@ -20,6 +20,7 @@ namespace EnemyAI
             player = FindObjectOfType<PlayerController>();
             canSpawn = true;
 
+            dialogBox = EventManager.dialogBox;
             EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
             EventManager.EnemyDeath += DespawnEnemy;
         }
@@ -32,8 +33,11 @@ namespace EnemyAI
         void SpawnEnemy()
         {
             if (currentRoom != null) { 
-            dialogBox.transform.GetChild(0).gameObject.SetActive(true);
-            dialogBox.GetComponentInChildren<DialogDisplay>().conversation = con_enemyspawn;
+            dialogBox.SetActive(true);
+            DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
+            dd.conversation = con_enemyspawn;
+            dd.simulateClick = true;
+            
             Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
             canSpawn = false;
             }
