@@ -27533,7 +27533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 20
+  timeToSpawn: 120
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &665819327
