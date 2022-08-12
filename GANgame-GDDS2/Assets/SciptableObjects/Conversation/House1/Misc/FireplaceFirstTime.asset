@@ -15,8 +15,8 @@ MonoBehaviour:
   speaker: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
   lines:
   - character: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
-    text: "A lit fire? Is someone living here? \n"
+    text: 'A lit fire? Is someone living here? '
   - character: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
-    text: "Squatters? \n"
+    text: 'Squatters? '
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
-    text: "I really shouldn't be here.... \n"
+    text: I really shouldn't be here...

@@ -52,7 +52,7 @@ namespace EnemyAI
             EventManager.EnemyCanSpawn += SpawnEnemy;
             AudioManager.instance.Stop("Monster");
             
-
+            Destroy(gameObject);
         }
 
         public GameObject FindRoom()
