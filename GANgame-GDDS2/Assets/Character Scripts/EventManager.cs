@@ -26,6 +26,8 @@ public class EventManager : MonoBehaviour
     public static event Action GameResume;
     public static event Action EnemyWarning;
 
+    public static event Action TrapTriggered;
+
     //Room 4 house 2 Only
     public static event Action Room4DoorUnlock;
 
@@ -102,5 +104,10 @@ public class EventManager : MonoBehaviour
     public static void Warning() //UNUSED
     {
         EnemyWarning?.Invoke();
+    }
+
+    public static void TriggerTrap()
+    {
+        TrapTriggered?.Invoke();
     }
 }

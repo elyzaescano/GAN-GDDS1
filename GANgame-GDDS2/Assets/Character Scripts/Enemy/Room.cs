@@ -9,8 +9,8 @@ namespace EnemyAI
     public class Room : MonoBehaviour 
     {
         public int roomNo;
-        public float timeToSpawn;
-        float originalTime;
+        public float timeToSpawn; //the countdown timer
+        float originalTime; //the static initial time set for spawn
         public Transform spawnPoint;
         PauseScreen pause;
         EnemySpawnManager esm;
@@ -27,15 +27,15 @@ namespace EnemyAI
             //EventManager.EnemyWarning += EWarning;
             pause = FindObjectOfType<PauseScreen>();
         }
-        void Update()
+        void FixedUpdate()
         {
             if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn && !pause.isPaused) //roomNo. value + enemy can spawn + is not paused
             {
-                timeToSpawn -= Time.deltaTime; //timetospawn = ~ - time.deltatime
+                timeToSpawn -= Time.deltaTime; //timetospawn = ~ - time.deltatime //then count down from timer
             }
             else
             {
-                timeToSpawn -= 0;
+                timeToSpawn -= 0; //else please do not count down please please pllease
             }
 
             if (timeToSpawn <= 0) //TimetoSpawn resets when <=0
@@ -52,7 +52,7 @@ namespace EnemyAI
         public void setTimeToSpawn(float f)
         {
             timeToSpawn = f;
-            originalTime = timeToSpawn;
+            //timeToSpawn = originalTime;
         }
 
 
