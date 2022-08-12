@@ -15,8 +15,8 @@ MonoBehaviour:
   speaker: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
   lines:
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
-    text: Nothing happens when I press on the keyboard.
+    text: Doesn't seem to work...
   - character: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
     text: Oh?
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
-    text: It's connected to a printer. Aaand it doesn't have any ink.
+    text: It's making noise. Is it missing something?
