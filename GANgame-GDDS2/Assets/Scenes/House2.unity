@@ -23471,7 +23471,7 @@ MonoBehaviour:
   roomNo: 3
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 0}
+  warning: {fileID: 1160662744}
 --- !u!1 &401385339
 GameObject:
   m_ObjectHideFlags: 0
@@ -39632,7 +39632,7 @@ MonoBehaviour:
   roomNo: 0
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 0}
+  warning: {fileID: 1160662744}
 --- !u!4 &589581943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734900753627120060, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
@@ -44800,7 +44800,7 @@ MonoBehaviour:
   roomNo: 1
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 0}
+  warning: {fileID: 1160662744}
 --- !u!114 &1046388592 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7940945498160249799, guid: 6c7fb11d9542fca4b99964759b3e596a, type: 3}
@@ -46078,6 +46078,11 @@ AudioSource:
 --- !u!82 &1160662743 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6650981372178809583, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
+  m_PrefabInstance: {fileID: 1160662739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1160662744 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2786395116316170326, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
   m_PrefabInstance: {fileID: 1160662739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1186823859
@@ -50619,7 +50624,7 @@ MonoBehaviour:
   roomNo: 2
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 0}
+  warning: {fileID: 1160662744}
 --- !u!1001 &1826022763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52589,7 +52594,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 60
   spawnPoint: {fileID: 0}
-  warning: {fileID: 0}
+  warning: {fileID: 1160662744}
 --- !u!1 &2103150041
 GameObject:
   m_ObjectHideFlags: 0
@@ -52748,7 +52753,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 60
   spawnPoint: {fileID: 0}
-  warning: {fileID: 0}
+  warning: {fileID: 1160662744}
 --- !u!4 &904209332718064400
 Transform:
   m_ObjectHideFlags: 0
