@@ -17,7 +17,8 @@ MonoBehaviour:
   type: 6
   itemName: Timber
   id: 28
-  description: A piece of wood, not sure what I could do with this...
+  description: 'Wood: Not thin enough to be conisdered a stick, but a piece of wood,
+    not sure what I could do with this...'
   recipes:
   - other: {fileID: 11400000, guid: 42215de1438c9a64db8a26a19ec9726f, type: 2}
     result: {fileID: 11400000, guid: 4983ca4b85bb5714e89884b43b6367e0, type: 2}

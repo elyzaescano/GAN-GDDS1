@@ -17,8 +17,8 @@ MonoBehaviour:
   type: 1
   itemName: Bedsheet
   id: 3
-  description: A big piece of cloth, maybe I could find more to make something to
-    get out of here.
+  description: 'Bedsheet: A big piece of cloth, maybe I could find more to make something
+    to get out of here.'
   recipes:
   - other: {fileID: 11400000}
     result: {fileID: 11400000, guid: 21440597967a71043a63ee36eddc08fd, type: 2}
