@@ -40,7 +40,7 @@ namespace Dialogue
                     canAdvance = false;
                     StartCoroutine(CutsceneTransition());
                 }
-                
+
                 if(canAdvance)
                 {
                     AdvanceConversation();
@@ -105,7 +105,7 @@ namespace Dialogue
         IEnumerator CutsceneTransition()
         {
             triggerTransition?.Invoke();
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(5);
             SceneManager.LoadScene("Tutorial");
         }
     }
