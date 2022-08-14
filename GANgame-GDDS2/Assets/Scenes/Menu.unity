@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb28300795c641740b0c396229a5f32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playScene: House1
+  playScene: Tutorial
   creditsScene: Credits
   mainMenuScene: Menu
   buttonSound: {fileID: 1014201664}
