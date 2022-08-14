@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeToTutorialMusic : MonoBehaviour
+public class PrologueAudio : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.Play("Tutorial");
-        AudioManager.instance.Play("Rain");
         AudioManager.instance.Stop("Menu");
+        AudioManager.instance.Stop("Rain");
     }
 
     // Update is called once per frame
