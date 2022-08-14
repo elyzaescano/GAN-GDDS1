@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Dialogue
 {
-    public class DialogDisplay : MonoBehaviour
+    public class PrologueDialogDisplay : MonoBehaviour
     {
-        public Conversation conversation;
+        public PrologueConversation conversation;
         public GameObject speaker;
+        [SerializeField] bool transitionToggle;
+        [SerializeField] bool canAdvance;
+        public UnityEvent triggerTransition;
 
         SpeakerUI speakerUI;
-        PauseScreen pause;
 
         public float typeSpeed;
         int activeLineIndex = 0;
@@ -21,31 +25,28 @@ namespace Dialogue
         {
             speakerUI = speaker.GetComponent<SpeakerUI>();
             speakerUI.Speaker = conversation.speaker;
-
-            pause = FindObjectOfType<PauseScreen>();
-
-            simulateClick = true;
-            simulateClick = false;
+            canAdvance = true;
         }
 
         private void Update()
-        {            
+        {   
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || simulateClick) 
             {
                 if(isTyping) return;
-            
-                AdvanceConversation();
-                EventManager.InteractEvent -= AdvanceConversation;
                 simulateClick = false;
-            } 
-            if (gameObject.activeInHierarchy == true)
-            {
-                pause.isPaused = true; //pauses the game during dialog
+                
+                if(transitionToggle)
+                {
+                    canAdvance = false;
+                    StartCoroutine(CutsceneTransition());
+                }
+                
+                if(canAdvance)
+                {
+                    AdvanceConversation();
+                }
             }
         }
-
-
-
         public void AdvanceConversation()
         {
             if (activeLineIndex < conversation.lines.Length )
@@ -55,30 +56,31 @@ namespace Dialogue
             }
             else
             {
-                pause.isPaused = false;
                 activeLineIndex = 0;
                 speakerUI.dialog.text = null;
                 conversation = null;
-                //speakerUI.portrait.sprite = null;
                 gameObject.SetActive(false);
             }
         }
 
         void DisplayLines()
         {
-            Line line = conversation.lines[activeLineIndex];
+            PrologueLine line = conversation.lines[activeLineIndex];
             Character character = line.character;
+            transitionToggle = line.transition;
                         
-            SetDialog(speakerUI, line.text, character);
+            SetDialog(speakerUI, line.text, character, transitionToggle);
         }
 
-        void SetDialog(SpeakerUI activeSpeakerUI, string text, Character speaker)
+        void SetDialog(SpeakerUI activeSpeakerUI, string text, Character speaker, bool ToggleDirector)
         {
             activeSpeakerUI.Show();
             activeSpeakerUI.Dialog = "";
             activeSpeakerUI.portrait.sprite = speaker.portrait;
+            activeSpeakerUI.charName.text = speaker.charName;
             StopAllCoroutines();
             StartCoroutine(Typing(text, activeSpeakerUI));
+
         }
 
         bool isTyping = false;
@@ -96,6 +98,15 @@ namespace Dialogue
                 }
             }
             isTyping = false;
+
+            
+        }
+        
+        IEnumerator CutsceneTransition()
+        {
+            triggerTransition?.Invoke();
+            yield return new WaitForSeconds(7);
+            SceneManager.LoadScene("Tutorial");
         }
     }
 }
