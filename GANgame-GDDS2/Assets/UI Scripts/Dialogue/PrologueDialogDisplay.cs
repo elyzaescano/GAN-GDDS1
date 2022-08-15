@@ -48,7 +48,6 @@ namespace Dialogue
                 {
                     AdvanceConversation();
                 }
-                if (!directorToggle) directorResume?.Invoke();
             }
 
             if(directorToggle) directorPause?.Invoke();
@@ -67,7 +66,12 @@ namespace Dialogue
                 speakerUI.dialog.text = null;
                 conversation = null;
                 gameObject.SetActive(false);
+
+                if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || simulateClick) if (!directorToggle) directorResume?.Invoke();
             }
+
+            
+
         }
 
         void DisplayLines()
