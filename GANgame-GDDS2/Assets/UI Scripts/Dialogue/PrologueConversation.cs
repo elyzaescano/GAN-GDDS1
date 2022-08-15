@@ -8,6 +8,7 @@ namespace Dialogue
     {
         public Character character;
         public bool transition;
+        public bool directorToggler;
 
         [TextArea(2, 5)]
         public string text;

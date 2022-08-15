@@ -11,8 +11,11 @@ namespace Dialogue
         public PrologueConversation conversation;
         public GameObject speaker;
         [SerializeField] bool transitionToggle;
+        [SerializeField] bool directorToggle;
         [SerializeField] bool canAdvance;
         public UnityEvent triggerTransition;
+        public UnityEvent directorPause;
+        public UnityEvent directorResume;
 
         SpeakerUI speakerUI;
 
@@ -45,7 +48,11 @@ namespace Dialogue
                 {
                     AdvanceConversation();
                 }
+                if (!directorToggle) directorResume?.Invoke();
             }
+
+            if(directorToggle) directorPause?.Invoke();
+            
         }
         public void AdvanceConversation()
         {
@@ -68,11 +75,13 @@ namespace Dialogue
             PrologueLine line = conversation.lines[activeLineIndex];
             Character character = line.character;
             transitionToggle = line.transition;
+            directorToggle = line.directorToggler;
+
                         
-            SetDialog(speakerUI, line.text, character, transitionToggle);
+            SetDialog(speakerUI, line.text, character, transitionToggle, directorToggle);
         }
 
-        void SetDialog(SpeakerUI activeSpeakerUI, string text, Character speaker, bool ToggleDirector)
+        void SetDialog(SpeakerUI activeSpeakerUI, string text, Character speaker, bool ToggleTransition, bool ToggleDirector)
         {
             activeSpeakerUI.Show();
             activeSpeakerUI.Dialog = "";
@@ -98,8 +107,6 @@ namespace Dialogue
                 }
             }
             isTyping = false;
-
-            
         }
         
         IEnumerator CutsceneTransition()
