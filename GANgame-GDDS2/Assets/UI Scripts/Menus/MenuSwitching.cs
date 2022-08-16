@@ -43,6 +43,7 @@ public class MenuSwitching : MonoBehaviour
     public void Quit()
     {
         buttonSound.Play();
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 

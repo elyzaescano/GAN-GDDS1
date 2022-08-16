@@ -23362,7 +23362,7 @@ MonoBehaviour:
   roomNo: 3
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662744}
+  warning: {fileID: 0}
 --- !u!1 &401385339
 GameObject:
   m_ObjectHideFlags: 0
@@ -39357,7 +39357,7 @@ MonoBehaviour:
   roomNo: 0
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662744}
+  warning: {fileID: 0}
 --- !u!4 &589581943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734900753627120060, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
@@ -40915,6 +40915,35 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 61fe7c2f90b045a44bb5bf6cd834aa54, type: 2}
+--- !u!1 &788102440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 149593500058772786, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+  m_PrefabInstance: {fileID: 1061194221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &788102441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788102440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059d80c6c81d6ed43a7d2807e5baaa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 788102442}
+--- !u!114 &788102442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+  m_PrefabInstance: {fileID: 1061194221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788102440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &799624510
 GameObject:
   m_ObjectHideFlags: 0
@@ -42269,6 +42298,35 @@ RectTransform:
   m_AnchoredPosition: {x: -485.9975, y: -48.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &924099971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 149593500058772786, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+  m_PrefabInstance: {fileID: 1968452143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924099972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924099971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90b6af0034da584097d2cf148052634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 924099973}
+--- !u!114 &924099973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+  m_PrefabInstance: {fileID: 1968452143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924099971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &935783497
 GameObject:
   m_ObjectHideFlags: 0
@@ -44198,7 +44256,7 @@ MonoBehaviour:
   roomNo: 1
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662744}
+  warning: {fileID: 0}
 --- !u!4 &1046623100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2125875187787803732, guid: 104a0f0f299f2e54f9ea7248117390a3, type: 3}
@@ -44211,25 +44269,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 154562270}
     m_Modifications:
+    - target: {fileID: 149593498352954061, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593498824256855, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593499228139335, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 149593500058772786, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_Name
       value: 'SFXSlider '
       objectReference: {fileID: 0}
     - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 788102441}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SoundEffects
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnSliderChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderPrefsSFX, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 149593500058772789, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_Pivot.x
@@ -45294,11 +45400,6 @@ AudioSource:
 --- !u!82 &1160662743 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6650981372178809583, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
-  m_PrefabInstance: {fileID: 1160662739}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1160662744 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2786395116316170326, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
   m_PrefabInstance: {fileID: 1160662739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1186823859
@@ -49474,7 +49575,7 @@ MonoBehaviour:
   roomNo: 2
   timeToSpawn: 120
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662744}
+  warning: {fileID: 0}
 --- !u!1001 &1826022763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50068,25 +50169,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 154562270}
     m_Modifications:
+    - target: {fileID: 149593498352954061, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593498600098738, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 149593498600098741, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c5358f4a4d3231147a431c8d5f4c2fad, type: 3}
+    - target: {fileID: 149593498824256855, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593499228139335, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 149593500058772786, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_Name
       value: BGMSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 924099972}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnSliderChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderPrefsBGM, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 149593500058772788, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 149593500058772789, guid: c7ff7a44766bc734cbd8a08b61397e43, type: 3}
       propertyPath: m_Pivot.x
@@ -51091,7 +51240,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 60
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662744}
+  warning: {fileID: 0}
 --- !u!1 &2103150041
 GameObject:
   m_ObjectHideFlags: 0
@@ -51250,7 +51399,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 60
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662744}
+  warning: {fileID: 0}
 --- !u!4 &904209332718064400
 Transform:
   m_ObjectHideFlags: 0
