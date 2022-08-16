@@ -15,6 +15,7 @@ namespace EnemyAI
         PauseScreen pause;
         EnemySpawnManager esm;
         public AudioSource warning;
+        bool isWarned = false;
        
         
         
@@ -27,7 +28,7 @@ namespace EnemyAI
             //EventManager.EnemyWarning += EWarning;
             pause = FindObjectOfType<PauseScreen>();
         }
-        void FixedUpdate()
+        void Update()
         {
             if (esm.currentRoom.GetComponent<Room>().roomNo == roomNo && esm.canSpawn && !pause.isPaused) //roomNo. value + enemy can spawn + is not paused
             {
@@ -45,7 +46,7 @@ namespace EnemyAI
                 //print("fn check");
             }
 
-          
+            EWarning();
 
         }
 
@@ -56,14 +57,15 @@ namespace EnemyAI
         }
 
 
-        /*public void EWarning()
+        public void EWarning()
         {
-            if (timeToSpawn <= 20)
+            if (!isWarned && timeToSpawn <=20)
             {
                 warning.Play();
                 print("help");
+                isWarned = true;
             }
-        }*/
+        }
         
     }
 }
