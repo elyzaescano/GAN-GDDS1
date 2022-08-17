@@ -148,6 +148,7 @@ MonoBehaviour:
   conversation: {fileID: 11400000, guid: 7fda299d158c4454ba3b6a5d765c79ff, type: 2}
   speaker: {fileID: 282297306}
   transitionToggle: 0
+  directorToggle: 0
   canAdvance: 0
   triggerTransition:
     m_PersistentCalls:
@@ -176,6 +177,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  directorPause:
+    m_PersistentCalls:
+      m_Calls: []
+  directorResume:
+    m_PersistentCalls:
+      m_Calls: []
   typeSpeed: 0.05
   simulateClick: 0
 --- !u!114 &19517695
@@ -395,7 +402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4264824256737326131, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4264824256946102838, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
@@ -403,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4264824257503709130, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4639316504670009972, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_Pivot.x
@@ -475,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639316504670009972, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -37
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4639316504670009972, guid: 9de2eed96ca0f644bbd50385815bec24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
