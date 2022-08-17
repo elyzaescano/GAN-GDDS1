@@ -7,13 +7,17 @@ public class SliderPrefsBGM : MonoBehaviour
 {
     public Slider slider;
 
+    float sliderValueBGM = 1;
+
     private void Awake()
     {
-        slider.value = PlayerPrefs.GetFloat("Slider value");
+        
+        slider.value = PlayerPrefs.GetFloat("SliderValueBGM",sliderValueBGM);
     }
 
-    public void OnSliderChange(float newValue)
+    public void OnSliderChange(float newValueBGM)
     {
-        PlayerPrefs.SetFloat("Slider value", newValue);
+        sliderValueBGM = newValueBGM;
+        PlayerPrefs.SetFloat("SliderValueBGM", sliderValueBGM);
     }
 }

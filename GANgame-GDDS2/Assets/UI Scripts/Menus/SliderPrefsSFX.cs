@@ -7,13 +7,15 @@ public class SliderPrefsSFX : MonoBehaviour
 {
     public Slider slider;
 
+     float sliderValueSFX = 1;
     private void Awake()
     {
-        slider.value = PlayerPrefs.GetFloat("Slider value");
+        slider.value = PlayerPrefs.GetFloat("SliderValueSFX",sliderValueSFX);
     }
 
-    public void OnSliderChange(float newValue)
+    public void OnSliderChange(float newValueSFX)
     {
-        PlayerPrefs.SetFloat("Slider value", newValue);
+        sliderValueSFX = newValueSFX;
+        PlayerPrefs.SetFloat("SliderValueSFX", sliderValueSFX);
     }
 }
