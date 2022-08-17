@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 5
-  timeToSpawn: 120
+  timeToSpawn: 50
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &120733213
@@ -8050,7 +8050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299290914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1899962, y: -9.13, z: 0}
+  m_LocalPosition: {x: 106.99, y: 6.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285860641}
@@ -10804,7 +10804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 2
-  timeToSpawn: 120
+  timeToSpawn: 50
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &595043672 stripped
@@ -25698,7 +25698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 120
+  timeToSpawn: 140
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &665819327
@@ -56469,7 +56469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 6
-  timeToSpawn: 120
+  timeToSpawn: 60
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &1689457533
@@ -57400,7 +57400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 3
-  timeToSpawn: 120
+  timeToSpawn: 30
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &1767706737
@@ -60770,7 +60770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 120
+  timeToSpawn: 40
   spawnPoint: {fileID: 0}
   warning: {fileID: 6650981372588862420}
 --- !u!1 &2043256651

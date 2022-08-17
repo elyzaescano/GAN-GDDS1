@@ -60,4 +60,10 @@ public class NextScene : LockDoor
         EventManager.InteractEvent -= GoToNextScene;
         EventManager.InteractEvent -= PlayDialog;
     }
+
+
+    public void ChangeLockStatus(bool lockStatus)
+    {
+        isLocked = lockStatus;
+    }
 }
