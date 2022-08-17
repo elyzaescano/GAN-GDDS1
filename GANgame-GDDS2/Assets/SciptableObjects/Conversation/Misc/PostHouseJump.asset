@@ -21,8 +21,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 152229c6ff123b84bae51da36d27cec3, type: 2}
     transition: 0
     directorToggler: 1
-    text: (Gotta let him go. There's no time to chase him and leave before the cops
-      come.)
+    text: (No point chasing him. Cops could be here any moment.)
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
     directorToggler: 0
