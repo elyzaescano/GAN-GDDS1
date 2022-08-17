@@ -49,6 +49,7 @@ public class PaintingPuzzle : MonoBehaviour
         if (other.tag == "Player")
         {
             print("subscribed");
+            EventManager.EquipItem += RefreshColliders;
             ItemObject o = playerInventory.equippedItem;
             if (o == itemRequired || itemRequired == null)
             {
@@ -64,6 +65,7 @@ public class PaintingPuzzle : MonoBehaviour
     {
         EventManager.InteractEvent -= PlayDialogOnTap;
         EventManager.InteractEvent -= Show;
+        EventManager.EquipItem -= RefreshColliders;
     }
 
     public void Show() 
@@ -149,10 +151,30 @@ public class PaintingPuzzle : MonoBehaviour
 
     }
 
+    void RefreshColliders()
+    {
+        Collider2D[] col = GetComponents<Collider2D>();
+        StartCoroutine(RefreshColliderRoutine(col));
+    }
+
+    IEnumerator RefreshColliderRoutine(Collider2D[] cols)
+    {
+        foreach (Collider2D co in cols)
+        {
+            co.enabled = false;
+        }
+        yield return null;
+        foreach (Collider2D co in cols)
+        {
+            co.enabled = true;
+        }
+    }
+
     private void OnDisable()
     {
         EventManager.InteractEvent -= PlayDialogOnTap;
         EventManager.InteractEvent -= Show;
+        EventManager.EquipItem -= RefreshColliders;
     }
 
 }

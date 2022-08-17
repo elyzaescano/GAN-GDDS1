@@ -58,5 +58,13 @@ public class TriggerDialog : MonoBehaviour
         dd.simulateClick = true;
     }
 
+    public void PlayDialogFromEvent(Conversation convoToPlay)
+    {
+        dialogBox.SetActive(true);
+        DialogDisplay dd = dialogBox.GetComponent<DialogDisplay>();
+
+        dd.conversation = convoToPlay;
+        dd.simulateClick = true;
+    }
 
 }
