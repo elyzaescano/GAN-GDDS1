@@ -26150,6 +26150,10 @@ PrefabInstance:
       propertyPath: gameDoor
       value: 
       objectReference: {fileID: 1840847898}
+    - target: {fileID: 8575197533668067192, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
 --- !u!224 &693249000 stripped
@@ -58277,7 +58281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018207c31d0dc404c9a66b4c3ce92621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 0
+  isLocked: 1
   destGO: {fileID: 221428217}
   em: {fileID: 566766541}
   doorID: 10
@@ -63364,11 +63368,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252837322048289480, guid: 96728e65608c4bb43ae3c5e15258ef59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 5252837322048289480, guid: 96728e65608c4bb43ae3c5e15258ef59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.25
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 5252837322048289480, guid: 96728e65608c4bb43ae3c5e15258ef59, type: 3}
       propertyPath: m_LocalPosition.z

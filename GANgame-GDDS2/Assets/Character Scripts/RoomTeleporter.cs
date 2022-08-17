@@ -54,7 +54,7 @@ public class RoomTeleporter : LockDoor
             {
                 EventManager.InteractEvent += Teleport;
                 itemNeeded = true;
-                lockDoor.isLocked = false;
+                isLocked = false;
             }
             else
             {
