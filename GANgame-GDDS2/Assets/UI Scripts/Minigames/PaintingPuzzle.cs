@@ -70,7 +70,7 @@ public class PaintingPuzzle : MonoBehaviour
 
     public void Show() 
     {
-        if(activePanelIndex == 2) EventManager.Interact();
+        if (activePanelIndex == 2) EventManager.Interact();
         if (canShow)
         {
             activePanelIndex++;
@@ -88,7 +88,7 @@ public class PaintingPuzzle : MonoBehaviour
             {
                 PlayDialog(fillPuzzleDialogues[1]);
                 EventManager.InteractEvent += OpenPuzzle;
-
+                itemRequired = null;
             }    
             canShow = false;
             EventManager.InteractEvent -= Show;
@@ -174,6 +174,8 @@ public class PaintingPuzzle : MonoBehaviour
     {
         EventManager.InteractEvent -= PlayDialogOnTap;
         EventManager.InteractEvent -= Show;
+        EventManager.InteractEvent -= OpenPuzzle;
+
         EventManager.EquipItem -= RefreshColliders;
     }
 
