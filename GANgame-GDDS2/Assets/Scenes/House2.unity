@@ -23898,7 +23898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 3
-  timeToSpawn: 120
+  timeToSpawn: 40
   spawnPoint: {fileID: 0}
   warning: {fileID: 0}
 --- !u!1 &401385339
@@ -39893,7 +39893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 0
-  timeToSpawn: 120
+  timeToSpawn: 90
   spawnPoint: {fileID: 0}
   warning: {fileID: 0}
 --- !u!4 &589581943 stripped
@@ -45031,7 +45031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 1
-  timeToSpawn: 120
+  timeToSpawn: 60
   spawnPoint: {fileID: 0}
   warning: {fileID: 0}
 --- !u!4 &1046623100 stripped
@@ -51538,7 +51538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 2
-  timeToSpawn: 120
+  timeToSpawn: 50
   spawnPoint: {fileID: 0}
   warning: {fileID: 0}
 --- !u!1001 &1826022763
@@ -53374,7 +53374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 4
-  timeToSpawn: 60
+  timeToSpawn: 40
   spawnPoint: {fileID: 0}
   warning: {fileID: 0}
 --- !u!1 &2103150041
@@ -53533,7 +53533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNo: 4
-  timeToSpawn: 60
+  timeToSpawn: 70
   spawnPoint: {fileID: 0}
   warning: {fileID: 0}
 --- !u!4 &904209332718064400
