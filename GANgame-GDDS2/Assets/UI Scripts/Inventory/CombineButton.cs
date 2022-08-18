@@ -11,7 +11,7 @@ public class CombineButton : MonoBehaviour
 
     public ItemUI[] uiVariables;
 
-    bool readyToCraft = false;
+    public static bool readyToCraft = false;
     private static PlayerController pc;
     public EventManager em;
 
@@ -25,37 +25,31 @@ public class CombineButton : MonoBehaviour
 
     public void UpdateItemVariables(ItemObject obj, ItemUI ui)
     {
-        if(pc.firstVariable != null && readyToCraft)
+        if(readyToCraft && itemObjectsToCraft[0]!=null)
         {
-            pc.secondVariable = obj;
-            pc.secondItemUI = ui;
+            itemObjectsToCraft[1] = obj;
+            uiVariables[1] = ui;
             StartCoroutine(CraftingCoroutine());
         }
         else
         {
-            pc.firstVariable = obj;
-            pc.firstItemUI = ui;
+            itemObjectsToCraft[0] = obj;
+            uiVariables[0] = ui;
             //EventManager.Crafting += pc.GetCraftingItems;
             //EventManager.Crafting += ResetVariables;
         }
 
-
-
-        //if (itemObjectsToCraft[0] == null)
-        //{
-        //    itemObjectsToCraft[0] = obj;
-        //    uiVariables[0] = ui;
-        //}
-        //else
-        //{
-        //    itemObjectsToCraft[1] = obj;
-        //    uiVariables[1] = ui;
-        //}
     }
     IEnumerator CraftingCoroutine()
     {
+        pc.firstVariable = itemObjectsToCraft[0];
+        pc.secondVariable = itemObjectsToCraft[1];
+        pc.firstItemUI = uiVariables[0];
+        pc.secondItemUI = uiVariables[1];
         yield return new WaitForFixedUpdate();
         pc.GetCraftingItems();
+        yield return null;
+        ResetVariables();
 
     }
     public void ResetVariables()
@@ -77,11 +71,19 @@ public class CombineButton : MonoBehaviour
      
     }
 
+
     private void OnDisable()
     {
         EventManager.Crafting -= pc.GetCraftingItems;
         EventManager.Crafting -= ResetVariables;
-
+        for(int i = 0; i<itemObjectsToCraft.Length; i++)
+        {
+            itemObjectsToCraft[i] = null;
+        }
+        for(int i = 0; i<uiVariables.Length; i++)
+        {
+            uiVariables[i] = null;
+        }
     }
 
 }

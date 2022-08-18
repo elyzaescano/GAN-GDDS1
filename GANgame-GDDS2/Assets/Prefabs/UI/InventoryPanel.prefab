@@ -147,7 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempItem: {fileID: 0}
-  itemObjectsToCraft: []
+  itemObjectsToCraft:
+  - {fileID: 0}
+  - {fileID: 0}
   uiVariables:
   - {fileID: 0}
   - {fileID: 0}

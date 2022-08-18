@@ -63,6 +63,7 @@ public class ItemUI : MonoBehaviour
         if (item == null) return;
         if (!selected)
         {
+            if (CombineButton.readyToCraft) { GiveItemObject(); return; }
             UIScript.UnselectItems(itemSlotID);
             foreach(Button butt in inventoryButtons)
             {
@@ -94,7 +95,6 @@ public class ItemUI : MonoBehaviour
         }
     }
 
-    CombineButton combineButton;
 
     public void GiveItemObject()
     {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -116,6 +117,12 @@ public class PlayerController : MonoBehaviour
     public ItemUI firstItemUI;
     public ItemObject secondVariable;
     public ItemUI secondItemUI;
+
+    public void ResetCraftingVariables()
+    {
+        firstVariable = null; secondVariable = null; firstItemUI = null; secondItemUI = null;
+    }
+
     public void GetCraftingItems()
     {
     
@@ -128,20 +135,22 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Crafting(firstVariable, secondVariable));           
         }else
         {
-            StartCoroutine(UnCrafting(firstVariable,secondVariable,firstItemUI,secondItemUI));
+            StartCoroutine(UnCrafting(firstItemUI,secondItemUI));
         }
         
            
         print("first = " + firstVariable);
         print("Second = " + secondVariable);
     }
-    
-    IEnumerator UnCrafting( ItemObject crafting1, ItemObject crafting2, ItemUI ui1, ItemUI ui2)
+
+    public UnityEvent CraftingFailedEvent;
+    IEnumerator UnCrafting( ItemUI ui1, ItemUI ui2)
     {
-        firstVariable = null; secondVariable = null; firstItemUI = null; secondItemUI = null;
+        ResetCraftingVariables();
         yield return null;
         ui1.DeSelect(); ui2.DeSelect();
         craftFailure.Play();
+        CraftingFailedEvent?.Invoke();
     }
 
     //Crafting Coroutine
@@ -163,10 +172,9 @@ public class PlayerController : MonoBehaviour
         inventoryUI.RemoveItem(reactor); inventoryUI.RemoveItem(reagent);
         inventoryUI.StartUICoroutine();
         EventManager.ItemEquip();
+        CombineButton.readyToCraft = false;
         CraftingSound();
-        firstVariable = null;
-        secondVariable = null;
-        
+        ResetCraftingVariables();
     }
 
     public void RefreshUI()

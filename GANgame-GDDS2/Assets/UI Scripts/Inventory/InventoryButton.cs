@@ -10,11 +10,13 @@ public class InventoryButton : MonoBehaviour
     public GameObject descriptiontText;
     public Image playerImage;
     public Button[] inventoryButtons;
+    PlayerController pc;
 
     Image panelImage;
 
     public void Start()
     {
+        pc = FindObjectOfType<PlayerController>();
         panelImage = inventoryPanel.gameObject.GetComponent<Image>();
         StartCoroutine(SettingInventoryVisibilityOnStart());
         foreach (Button butt in inventoryButtons)
@@ -116,6 +118,7 @@ public class InventoryButton : MonoBehaviour
 
         descriptiontText.GetComponent<Text>().enabled = true;
         playerImage.color = Color.white;
+        pc.ResetCraftingVariables();
     }
 
 
