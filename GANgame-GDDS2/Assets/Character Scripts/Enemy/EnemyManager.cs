@@ -65,6 +65,9 @@ namespace EnemyAI
             {
                 hasSwitched = false;
             }
+
+            if (enemyFOV.player.transform.position.y > transform.position.y) GetComponent<SpriteRenderer>().sortingOrder = 2;
+            else GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
 
         private void Update() 
@@ -105,12 +108,19 @@ namespace EnemyAI
                 {
                     AudioManager.instance.Stop("Monster");
                     AudioManager.instance.Stop("Level");
-                    deathScreen.SetActive(true);
-                    GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
-                    enemySpawn.canSpawn = true;
-                    Destroy(enemyHolder);
+
+                    KillPlayer();
                 }
             }
+        }
+
+        public void KillPlayer()
+        {
+            print("KillPlayerCode reached");
+            deathScreen.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
+            enemySpawn.canSpawn = true;
+            Destroy(enemyHolder);
         }
     }
 }
