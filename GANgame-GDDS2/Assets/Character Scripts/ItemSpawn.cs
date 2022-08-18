@@ -61,7 +61,7 @@ public class ItemSpawn : MonoBehaviour
         {
             for(int i = 0; i < itemPrefab.Length; i++)
             {
-                Instantiate(itemPrefab[i], spawnPoint.transform.position+(Vector3.right*(i+.5f)), spawnPoint.transform.rotation);
+                Instantiate(itemPrefab[i], spawnPoint.transform.position+(Vector3.right*(i*(i+.5f))), spawnPoint.transform.rotation);
             }
             //Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             print("Spawned");
