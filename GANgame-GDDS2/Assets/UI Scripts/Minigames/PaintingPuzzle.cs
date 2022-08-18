@@ -65,12 +65,13 @@ public class PaintingPuzzle : MonoBehaviour
     {
         EventManager.InteractEvent -= PlayDialogOnTap;
         EventManager.InteractEvent -= Show;
+        EventManager.InteractEvent -= OpenPuzzle;
+
         EventManager.EquipItem -= RefreshColliders;
     }
 
     public void Show() 
     {
-        if (activePanelIndex == 2) EventManager.Interact();
         if (canShow)
         {
             activePanelIndex++;
@@ -87,7 +88,6 @@ public class PaintingPuzzle : MonoBehaviour
             if(activePanelIndex == 1)
             {
                 PlayDialog(fillPuzzleDialogues[1]);
-                EventManager.InteractEvent += OpenPuzzle;
                 itemRequired = null;
             }    
             canShow = false;
@@ -97,7 +97,7 @@ public class PaintingPuzzle : MonoBehaviour
 
     void SetPanelActive(int panelIndex)
     {
-        panels[panelIndex].SetActive(true);
+        if (panelIndex == 2) OpenPuzzle();else panels[panelIndex].SetActive(true);
     }
 
     void OpenPuzzle()
@@ -109,6 +109,10 @@ public class PaintingPuzzle : MonoBehaviour
     public void UnlockDoor()
     {
         endDoor.isLocked = false;
+        foreach (Collider2D col in this.gameObject.GetComponents<Collider2D>())
+        {
+            col.enabled = false;
+        }
     }
 
     private void Update()
