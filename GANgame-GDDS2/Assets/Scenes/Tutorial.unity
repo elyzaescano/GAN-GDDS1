@@ -14457,7 +14457,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &905103125
 RectTransform:
@@ -18336,6 +18336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7377055610691455589, guid: 4672bab2c6add834e819274653b4788b, type: 3}
+      propertyPath: interactconvo
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e0fcd7d3a15c974f991916d4c8bba32, type: 2}
     - target: {fileID: 7377055610691455591, guid: 4672bab2c6add834e819274653b4788b, type: 3}
       propertyPath: m_Name
       value: StickItem
