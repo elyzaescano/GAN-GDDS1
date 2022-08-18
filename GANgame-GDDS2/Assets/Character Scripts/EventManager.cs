@@ -24,6 +24,9 @@ public class EventManager : MonoBehaviour
     public static event Action EnemyDeath;
     public static event Action GamePause;
     public static event Action GameResume;
+    public static event Action EnemyWarning;
+
+    public static event Action TrapTriggered;
 
     //Room 4 house 2 Only
     public static event Action Room4DoorUnlock;
@@ -74,12 +77,12 @@ public class EventManager : MonoBehaviour
         EnemyDeath?.Invoke();
     }
 
-    public static void PauseGame()
+    public static void PauseGame()//UNUSED
     {
         GamePause?.Invoke();
     }
 
-    public static void ResumeGame()
+    public static void ResumeGame()//UNUSED
     {
         GameResume?.Invoke();
     }
@@ -96,5 +99,15 @@ public class EventManager : MonoBehaviour
     public static void FailSimon()
     {
         SimonFailed?.Invoke();
+    }
+
+    public static void Warning() //UNUSED
+    {
+        EnemyWarning?.Invoke();
+    }
+
+    public static void TriggerTrap()
+    {
+        TrapTriggered?.Invoke();
     }
 }

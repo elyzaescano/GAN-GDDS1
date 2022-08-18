@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d35c55b1e638f440b189597946b8819, type: 3}
+  m_Name: CarEnter
+  m_EditorClassIdentifier: 
+  speaker: {fileID: 11400000, guid: 0daaacc950e4b7e4f866fb845621ec25, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 0daaacc950e4b7e4f866fb845621ec25, type: 2}
+    transition: 0
+    directorToggler: 1
+    text: Hey, you haven't been picking up my calls!
+  - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
+    transition: 0
+    directorToggler: 1
+    text: What the hell happened?
+  - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
+    transition: 0
+    directorToggler: 1
+    text: I'll explain in the car. *cough*
+  - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
+    transition: 0
+    directorToggler: 1
+    text: But right now, we have to get out of here.
+  - character: {fileID: 11400000, guid: 69665f4e96096c04c9a2c79b2c34b453, type: 2}
+    transition: 0
+    directorToggler: 0
+    text: Got it.

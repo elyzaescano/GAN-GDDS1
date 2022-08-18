@@ -17,8 +17,7 @@ MonoBehaviour:
   type: 4
   itemName: Adapter
   id: 0
-  description: It's still in good condition... Maybe I can still charge something
-    with this...
+  description: 
   recipes:
   - other: {fileID: 11400000, guid: e102fb929f6f47f448d0fde7868b6c2d, type: 2}
     result: {fileID: 11400000, guid: 3d405d2197777de4da364406b0bacb18, type: 2}

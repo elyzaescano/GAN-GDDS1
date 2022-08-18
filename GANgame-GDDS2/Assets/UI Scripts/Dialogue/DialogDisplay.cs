@@ -23,6 +23,9 @@ namespace Dialogue
             speakerUI.Speaker = conversation.speaker;
 
             pause = FindObjectOfType<PauseScreen>();
+
+            simulateClick = true;
+            simulateClick = false;
         }
 
         private void Update()

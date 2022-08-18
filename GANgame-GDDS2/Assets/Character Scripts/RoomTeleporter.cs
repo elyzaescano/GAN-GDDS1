@@ -22,13 +22,13 @@ public class RoomTeleporter : LockDoor
 
     public AudioSource doorOpenClose;
     EnemySpawnManager esm;
-    LockDoor lockDoor;
 
     //checks if player has the item 
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
     public bool itemNeeded = false; //if we need any key
-    [SerializeField]bool useKey;
+    [SerializeField]bool _useKey;
+    [SerializeField] ItemObject.Type type;
 
     //Dialog variables
     GameObject dialog;
@@ -39,9 +39,8 @@ public class RoomTeleporter : LockDoor
         player = GameObject.FindWithTag("Player");
         playerInventory = player.GetComponent<InventoryObject>();
         destination = destGO.transform.position;
-        lockDoor = FindObjectOfType<LockDoor>();
         dialog = EventManager.dialogBox;
-        if(itemRequired !=null)useKey = itemRequired.type == ItemObject.Type.Key;
+        if(itemRequired !=null)_useKey = itemRequired.type == type;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -53,7 +52,7 @@ public class RoomTeleporter : LockDoor
             {
                 EventManager.InteractEvent += Teleport;
                 itemNeeded = true;
-                lockDoor.isLocked = false;
+                isLocked = false;
             }
             else
             {
@@ -76,19 +75,21 @@ public class RoomTeleporter : LockDoor
     {
         if (isTriggered && triggerID == doorID)
         {
-            if (!lockDoor.isLocked && itemNeeded)
+            if (!isLocked && itemNeeded)
             {
                 doorOpenClose.Play();
                 destination.z = player.transform.position.z;
                 player.transform.position = destination;
                 print("Teleported to " + destination);
                 isTriggered = false;
-                if (useKey)
+                if (_useKey)
                 {
                     playerInventory.RemoveItem(playerInventory.equippedItem);
                     playerInventory.equippedItem = null;
                     EventManager.ItemEquip();
                     itemRequired = null;
+                    _useKey = false;
+                    //Trigger feedback of item break here
                 }
             }
         }

@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 20
   itemName: HairSpray
   id: 15
-  description: A can of hairspray. It's practically full.
+  description: 'Hairspray: A can of hairspray. It''s practically full.'
   recipes:
   - other: {fileID: 11400000, guid: aee069282e4e0fd438e51e2f0848cc43, type: 2}
     result: {fileID: 11400000, guid: c2e1f5fe2bc3be3459e92e39e68d56c4, type: 2}

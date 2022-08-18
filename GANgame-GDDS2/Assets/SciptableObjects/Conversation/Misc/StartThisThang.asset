@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d35c55b1e638f440b189597946b8819, type: 3}
+  m_Name: StartThisThang
+  m_EditorClassIdentifier: 
+  speaker: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
+    transition: 0
+    text: What's up?
+  - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
+    transition: 0
+    text: Well...
+  - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
+    transition: 0
+    text: It's the family.
+  - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
+    transition: 0
+    text: Ever since my business failed, my wife chews my ear off about money.
+  - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
+    transition: 0
+    text: It's bad. I have to eat once a day to keep my kids from gettin' hungry.
+  - character: {fileID: 11400000, guid: 1796a3c49d2549742ade56925184a694, type: 2}
+    transition: 0
+    text: These "inspection" jobs have really been helping me out.
+  - character: {fileID: 11400000, guid: 45c3267f0360e464d9c4f77ba9ff738e, type: 2}
+    transition: 0
+    text: Glad to hear.
+  - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
+    transition: 0
+    text: While I can't exactly give you a job at the agency, you've been filling
+      up a lot of gaps.
+  - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
+    transition: 0
+    text: You've done a lot for us.
+  - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
+    transition: 0
+    text: It's nothing.
+  - character: {fileID: 11400000, guid: 45c3267f0360e464d9c4f77ba9ff738e, type: 2}
+    transition: 0
+    text: No, really. The bosses have noticed the extra help.
+  - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
+    transition: 0
+    text: In fact, they're ready to offer you a permanent position here.
+  - character: {fileID: 11400000, guid: 31eadbe5f919ee54da7c9cbe56e9b85e, type: 2}
+    transition: 0
+    text: You just have to do one more job for us.
+  - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
+    transition: 0
+    text: Consider it done. What is it?
+  - character: {fileID: 11400000, guid: 31eadbe5f919ee54da7c9cbe56e9b85e, type: 2}
+    transition: 1
+    text: It'll be the toughest one yet.

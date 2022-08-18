@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 23
   itemName: MoltenMetal
   id: 19
-  description: How am I holding this?
+  description: 'Metal: Warm, still malleable.'
   recipes:
   - other: {fileID: 11400000, guid: ab4ce9bccc11b674b97dbc8fefb1cc7e, type: 2}
     result: {fileID: 11400000, guid: d248f347e24b51849ad9493ed17f55d7, type: 2}

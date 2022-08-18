@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 3
   itemName: ScrapMetal
   id: 26
-  description: Just a piece of metal.
+  description: 'Scrap Metal: Just a piece of metal.'
   recipes:
   - other: {fileID: 11400000, guid: 0139053854af72e46a340926aa1bbe2e, type: 2}
     result: {fileID: 11400000, guid: 214099c8061a2bf418ba16e25497fdf7, type: 2}

@@ -19,6 +19,8 @@ namespace EnemyAI
         public State searchState;
         public GameObject target {get ; private set;}
         public Vector3 playerPos;
+        [SerializeField]float difference;
+        public float deathreshold = 1;
 
         public NavMeshAgent navAgent; //Think of the NavMeshAgent as a rigidbody that can detect walls
         public Rigidbody2D enemyrb;
@@ -65,6 +67,9 @@ namespace EnemyAI
             {
                 hasSwitched = false;
             }
+
+            if (enemyFOV.player.transform.position.y >= transform.position.y) GetComponent<SpriteRenderer>().sortingOrder = 2;
+            else GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
 
         private void Update() 
@@ -76,6 +81,16 @@ namespace EnemyAI
             else
             {
                 navAgent.isStopped = false;
+            }
+
+            difference = Vector3.Distance(transform.position, enemyFOV.player.transform.position);
+
+            if (difference < deathreshold && enemyFOV.currentTarget != null)
+            {
+                print (difference);
+                KillPlayer();
+                AudioManager.instance.Stop("Monster");
+                AudioManager.instance.Stop("Level");
             }
         }
 
@@ -97,18 +112,13 @@ namespace EnemyAI
             currentState = state;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void KillPlayer()
         {
-            if (collision.CompareTag("Player"))
-            {
-                if(enemyFOV.currentTarget != null)
-                {
-                    deathScreen.SetActive(true);
-                    GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
-                    enemySpawn.canSpawn = true;
-                    Destroy(enemyHolder);
-                }
-            }
+            print("KillPlayerCode reached");
+            deathScreen.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
+            enemySpawn.canSpawn = true;
+            Destroy(enemyHolder);
         }
     }
 }

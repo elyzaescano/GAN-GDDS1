@@ -14,6 +14,8 @@ public class ItemSpawn : MonoBehaviour
     //checks with inventory 
     public InventoryObject playerInventory;
     public ItemObject itemRequired;
+    [SerializeField]bool usekey;
+    [SerializeField]ItemObject.Type Keytype;
 
     public EventManager em;
     public UnityEvent ItemSpawnedEvent;
@@ -23,12 +25,19 @@ public class ItemSpawn : MonoBehaviour
 
     private void Awake()
     {
+
         playerInventory = GameObject.Find("Player").GetComponent<InventoryObject>();
+        if(itemRequired !=null) usekey = itemRequired.type == Keytype ? true : false;
+
+    }
+    private void OnEnable()
+    {
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && this.enabled)
         {
             EventManager.InteractEvent += this.Spawn;
             print("subscribed");
@@ -48,22 +57,30 @@ public class ItemSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        if (canSpawn && itemNeeded && this.enabled)
+        if (canSpawn && itemNeeded)
         {
             for(int i = 0; i < itemPrefab.Length; i++)
             {
-                Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                Instantiate(itemPrefab[i], spawnPoint.transform.position+(Vector3.right*(i*(i+.5f))), spawnPoint.transform.rotation);
             }
             //Instantiate(itemPrefab[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             print("Spawned");
             canSpawn = false;
             ItemSpawnedEvent?.Invoke();
-            EventManager.InteractEvent -= this.Spawn;
+            if (usekey)
+            {
+                playerInventory.RemoveItem(playerInventory.equippedItem);
+                playerInventory.equippedItem = null;
+                EventManager.ItemEquip();
+
+            }
             Destroy(GetComponent<ItemSpawn>());
         }
         else if(!itemNeeded)
         {
             InteractWithoutItemSpawn?.Invoke();
         }
+
+        EventManager.InteractEvent -= this.Spawn;
     }
 }

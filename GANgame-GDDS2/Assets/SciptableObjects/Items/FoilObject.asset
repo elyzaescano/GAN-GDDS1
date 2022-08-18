@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 22
   itemName: Foil
   id: 13
-  description: A roll of foil, usually used in keeping food warm.
+  description: 'Aluminum Foil: A roll of foil, usually used in keeping food warm.'
   recipes:
   - other: {fileID: 11400000, guid: c2e1f5fe2bc3be3459e92e39e68d56c4, type: 2}
     result: {fileID: 11400000, guid: cd4801274d0f8dc45b51e1e182b3b1d9, type: 2}

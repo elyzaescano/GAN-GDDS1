@@ -15,6 +15,6 @@ MonoBehaviour:
   speaker: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
   lines:
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
-    text: '*Collected a bedsheet'
+    text: '*Picked up a bedsheet'
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
-    text: Hopefully no one needed it
+    text: Hopefully no one needed it.

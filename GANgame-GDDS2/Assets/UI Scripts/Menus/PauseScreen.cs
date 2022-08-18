@@ -63,6 +63,7 @@ public class PauseScreen : MonoBehaviour
         loseScreen.SetActive(false);
         menuButton.Play();
         youLost = false;
+        AudioManager.instance.Play("Level");
     }
     
 }
