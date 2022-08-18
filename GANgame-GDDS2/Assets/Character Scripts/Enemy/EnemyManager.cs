@@ -19,6 +19,8 @@ namespace EnemyAI
         public State searchState;
         public GameObject target {get ; private set;}
         public Vector3 playerPos;
+        [SerializeField]float difference;
+        public float deathreshold = 1;
 
         public NavMeshAgent navAgent; //Think of the NavMeshAgent as a rigidbody that can detect walls
         public Rigidbody2D enemyrb;
@@ -80,6 +82,16 @@ namespace EnemyAI
             {
                 navAgent.isStopped = false;
             }
+
+            difference = Vector3.Distance(transform.position, enemyFOV.player.transform.position);
+
+            if (difference < deathreshold && enemyFOV.currentTarget != null)
+            {
+                print (difference);
+                KillPlayer();
+                AudioManager.instance.Stop("Monster");
+                AudioManager.instance.Stop("Level");
+            }
         }
 
         private void HandleStateMachine()
@@ -98,20 +110,6 @@ namespace EnemyAI
         private void SwitchToNextState(State state)
         {
             currentState = state;
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                if(enemyFOV.currentTarget != null)
-                {
-                    AudioManager.instance.Stop("Monster");
-                    AudioManager.instance.Stop("Level");
-
-                    KillPlayer();
-                }
-            }
         }
 
         public void KillPlayer()
