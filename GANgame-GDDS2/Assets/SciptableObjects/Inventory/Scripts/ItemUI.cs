@@ -60,6 +60,7 @@ public class ItemUI : MonoBehaviour
 
     public void Select()
     {
+        if (item == null) return;
         if (!selected)
         {
             UIScript.UnselectItems(itemSlotID);
