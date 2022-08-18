@@ -22,7 +22,6 @@ public class RoomTeleporter : LockDoor
 
     public AudioSource doorOpenClose;
     EnemySpawnManager esm;
-    LockDoor lockDoor;
 
     //checks if player has the item 
     public InventoryObject playerInventory;
@@ -40,7 +39,6 @@ public class RoomTeleporter : LockDoor
         player = GameObject.FindWithTag("Player");
         playerInventory = player.GetComponent<InventoryObject>();
         destination = destGO.transform.position;
-        lockDoor = FindObjectOfType<LockDoor>();
         dialog = EventManager.dialogBox;
         if(itemRequired !=null)_useKey = itemRequired.type == type;
     }
@@ -77,7 +75,7 @@ public class RoomTeleporter : LockDoor
     {
         if (isTriggered && triggerID == doorID)
         {
-            if (!lockDoor.isLocked && itemNeeded)
+            if (!isLocked && itemNeeded)
             {
                 doorOpenClose.Play();
                 destination.z = player.transform.position.z;
