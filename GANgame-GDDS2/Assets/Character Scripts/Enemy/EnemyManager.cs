@@ -66,7 +66,7 @@ namespace EnemyAI
                 hasSwitched = false;
             }
 
-            if (enemyFOV.player.transform.position.y > transform.position.y) GetComponent<SpriteRenderer>().sortingOrder = 2;
+            if (enemyFOV.player.transform.position.y >= transform.position.y) GetComponent<SpriteRenderer>().sortingOrder = 2;
             else GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
 
