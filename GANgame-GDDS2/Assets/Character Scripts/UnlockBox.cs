@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Dialogue;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UnlockBox : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class UnlockBox : MonoBehaviour
 
     public GameObject dialoguebox;
     public Conversation unlockMessage;
+    public UnityEvent UnlockEvent;
 
     Collider2D[] colliders;
     // Start is called before the first frame update
