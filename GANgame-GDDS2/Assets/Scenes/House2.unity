@@ -1023,7 +1023,7 @@ PrefabInstance:
     - target: {fileID: 4734900753627120063, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
       propertyPath: itemRequired
       value: 
-      objectReference: {fileID: 11400000, guid: 91cdeb6b32f61aa4e89e3878fa6ecfb0, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4734900753627120063, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
       propertyPath: doorOpenClose
       value: 
