@@ -8,8 +8,6 @@ public class KeyPadPuzzle : MonoBehaviour
     //public ItemSpawn itemSpawn;
     public GameObject keyPadUI;
 
-    public GameObject circumventDoor;
-
     bool inRange = false;
     public bool completed = false;
     EventManager em;
@@ -17,11 +15,12 @@ public class KeyPadPuzzle : MonoBehaviour
     //For Door
     public RoomTeleporter room4TP;
     public ItemObject itemToBlockRoom4;
+
     // Start is called before the first frame update
     void Start()
     {
         em = FindObjectOfType<EventManager>();
-        if(room4TP != null)
+        if (room4TP != null)
         {
             room4TP.itemRequired = itemToBlockRoom4;
             keyPadUI.GetComponent<KeypadScreen>().RoomTPBlock = room4TP;
@@ -33,16 +32,15 @@ public class KeyPadPuzzle : MonoBehaviour
     void Update()
     {
 
-        if(completed && room4TP != null)
-        {room4TP.isLocked = false; print("completed");}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && !completed)
+        if (collision.tag == "Player" && !completed)
         {
             EventManager.InteractEvent += UnlockKey;
-            circumventDoor.SetActive(true);
+            EventManager.Room4DoorUnlock += DestroyComponent;
+
             inRange = true;
         }
     }
@@ -53,8 +51,6 @@ public class KeyPadPuzzle : MonoBehaviour
         {
             EventManager.InteractEvent -= UnlockKey;
             EventManager.Room4DoorUnlock -= DestroyComponent;
-
-            circumventDoor.SetActive(false);
 
             inRange = false;
         }
@@ -87,8 +83,13 @@ public class KeyPadPuzzle : MonoBehaviour
     public void DestroyComponent()
     {
         Destroy(GetComponent<KeyPadPuzzle>());
-        EventManager.Room4DoorUnlock -= DestroyComponent;
     }
 
+    private void OnDestroy()
+    {
+        print("Working Destroy");
+        EventManager.InteractEvent -= UnlockKey;
+        EventManager.Room4DoorUnlock -= DestroyComponent;
+    }
 
 }
