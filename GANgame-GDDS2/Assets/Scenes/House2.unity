@@ -23691,7 +23691,7 @@ MonoBehaviour:
   roomNo: 3
   timeToSpawn: 40
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662740}
+  warning: {fileID: 0}
 --- !u!1 &401385339
 GameObject:
   m_ObjectHideFlags: 0
@@ -39829,7 +39829,7 @@ MonoBehaviour:
   roomNo: 0
   timeToSpawn: 90
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662740}
+  warning: {fileID: 0}
 --- !u!4 &589581943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734900753627120060, guid: 2b9c87964c85bfa488fccdc88d41a1ab, type: 3}
@@ -45308,7 +45308,7 @@ MonoBehaviour:
   roomNo: 1
   timeToSpawn: 60
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662740}
+  warning: {fileID: 0}
 --- !u!4 &1046623100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2125875187787803732, guid: 104a0f0f299f2e54f9ea7248117390a3, type: 3}
@@ -46516,11 +46516,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
---- !u!82 &1160662740 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3481264460578023784, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
-  m_PrefabInstance: {fileID: 1160662739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1160662741 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6650981372619379110, guid: f7acbd5b61cb7154f93fc42b8e97b95b, type: 3}
@@ -48006,7 +48001,6 @@ GameObject:
   - component: {fileID: 1368047281}
   - component: {fileID: 1368047282}
   - component: {fileID: 1368047283}
-  - component: {fileID: 1368047284}
   m_Layer: 0
   m_Name: Room3ItemSpawnWorkAround
   m_TagString: Untagged
@@ -48153,22 +48147,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1368047284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368047280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63afb419afcaa1844a3b9cecbbb63d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyPadUI: {fileID: 1109510189}
-  completed: 0
-  room4TP: {fileID: 1489991883}
-  itemToBlockRoom4: {fileID: 11400000, guid: 3a0d7492d1bf93247b81b4f3ef003900, type: 2}
 --- !u!1 &1379748363
 GameObject:
   m_ObjectHideFlags: 0
@@ -48883,12 +48861,20 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 999588488, guid: f106bee5766e6774eab88182f091f98c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 999588488, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1489991886}
+      objectReference: {fileID: 1109510189}
     - target: {fileID: 999588488, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseKey
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 999588488, guid: f106bee5766e6774eab88182f091f98c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7444564138308104468, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_LocalScale.x
@@ -49164,7 +49150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755710, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755711, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: m_Pivot.x
@@ -51774,7 +51760,7 @@ MonoBehaviour:
   roomNo: 2
   timeToSpawn: 50
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662740}
+  warning: {fileID: 0}
 --- !u!1001 &1826022763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53638,7 +53624,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 40
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662740}
+  warning: {fileID: 0}
 --- !u!1 &2103150041
 GameObject:
   m_ObjectHideFlags: 0
@@ -53797,7 +53783,7 @@ MonoBehaviour:
   roomNo: 4
   timeToSpawn: 70
   spawnPoint: {fileID: 0}
-  warning: {fileID: 1160662740}
+  warning: {fileID: 0}
 --- !u!4 &904209332718064400
 Transform:
   m_ObjectHideFlags: 0
