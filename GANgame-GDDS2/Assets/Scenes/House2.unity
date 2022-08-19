@@ -52043,6 +52043,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 8260765251399846357, guid: f5d3926b108556e468700bb9a8d803cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8260765252394754850, guid: f5d3926b108556e468700bb9a8d803cf, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -14,7 +14,7 @@ namespace EnemyAI
         PlayerController player;
         public GameObject dialogBox;
         public Conversation con_enemyspawn;
-
+        public Conversation con_enemydeath;
         private void Start() 
         {
             player = FindObjectOfType<PlayerController>();
@@ -23,6 +23,7 @@ namespace EnemyAI
             dialogBox = EventManager.dialogBox;
             EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
             EventManager.EnemyDeath += DespawnEnemy;
+
         }
         
         private void Update()
@@ -35,26 +36,27 @@ namespace EnemyAI
             if (currentRoom != null) 
             {
              
-            dialogBox.SetActive(true);
-            DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
-            dd.conversation = con_enemyspawn;
-            dd.simulateClick = true;
-            
-            Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
-            canSpawn = false;
+                dialogBox.SetActive(true);
+                DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
+                dd.conversation = con_enemyspawn;
+                dd.simulateClick = true;
                 
-            AudioManager.instance.Play("Monster");
+                Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
+                canSpawn = false;
+                    
+                AudioManager.instance.Play("Monster");
+
             }
         }
 
-        void DespawnEnemy()
+        public void DespawnEnemy()
         {
+            print("Stop audio");
             canSpawn = true;
             EventManager.EnemyCanSpawn -= SpawnEnemy;
-            EventManager.EnemyCanSpawn += SpawnEnemy;
-            AudioManager.instance.Stop("Monster");
+            EventManager.EnemyCanSpawn += SpawnEnemy;                
             
-            Destroy(gameObject);
+            AudioManager.instance.Stop("Monster");
         }
 
         public GameObject FindRoom()

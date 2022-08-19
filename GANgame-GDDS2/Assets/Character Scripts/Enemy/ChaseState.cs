@@ -9,11 +9,15 @@ namespace EnemyAI
     {
         public SearchState searchState;
 
+        public GameObject enemyHolder;
+        public float timeToChase = 10f;
+
         public float distanceFromTarget;
         public float stoppingDistance;
 
         public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
+            timeToChase -= Time.deltaTime;
             if (enemyFOV.currentTarget != null)
             {
                 //Resets the time to search for the Search State
@@ -31,6 +35,13 @@ namespace EnemyAI
                     enemyManager.navAgent.SetDestination(enemyFOV.currentTarget.transform.position);
                 }
 
+            if (timeToChase <= 0)
+            {
+                EventManager.EnemyDied();
+                EventManager.EnemyDeath += enemySpawn.DespawnEnemy;
+
+                Destroy(enemyHolder);
+            }
 
                 return this;
             }

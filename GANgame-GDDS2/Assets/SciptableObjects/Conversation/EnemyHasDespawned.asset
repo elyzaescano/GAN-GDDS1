@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e730679dae0477a4d889d2c0d9db1bb4, type: 3}
   m_Name: EnemyHasDespawned
   m_EditorClassIdentifier: 
-  speaker: {fileID: 11400000, guid: 158092f7c27688c448460c58af7c4730, type: 2}
+  speaker: {fileID: 11400000, guid: 62555fcb247fe674b8ab5ff6b062dacc, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: 158092f7c27688c448460c58af7c4730, type: 2}
-    text: AAAAAAAAAAAAAAAAAAAAAA
+  - character: {fileID: 11400000, guid: 62555fcb247fe674b8ab5ff6b062dacc, type: 2}
+    text: Can't... move...
