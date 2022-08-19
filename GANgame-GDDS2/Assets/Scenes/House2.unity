@@ -44742,10 +44742,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338944542}
-        m_TargetAssemblyTypeName: PaperNotes, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 1
+      - m_Target: {fileID: 1734718844}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -51446,6 +51446,7 @@ MonoBehaviour:
   currentRoom: {fileID: 553292740}
   dialogBox: {fileID: 1872512753}
   con_enemyspawn: {fileID: 11400000, guid: 4fc8648708b8fc24a91ace9f3006bf9e, type: 2}
+  con_enemydeath: {fileID: 0}
 --- !u!4 &1723411017
 Transform:
   m_ObjectHideFlags: 0
