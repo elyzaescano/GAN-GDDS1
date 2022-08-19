@@ -31,7 +31,7 @@ public class KeyPadPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(completed)room4TP.isLocked = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

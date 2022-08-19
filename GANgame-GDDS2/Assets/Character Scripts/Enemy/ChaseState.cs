@@ -38,9 +38,9 @@ namespace EnemyAI
             if (timeToChase <= 0)
             {
                 EventManager.EnemyDied();
+                Destroy(enemyHolder);
                 EventManager.EnemyDeath += enemySpawn.DespawnEnemy;
 
-                Destroy(enemyHolder);
             }
 
                 return this;
