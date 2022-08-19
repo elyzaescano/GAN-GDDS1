@@ -8,6 +8,8 @@ public class KeyPadPuzzle : MonoBehaviour
     //public ItemSpawn itemSpawn;
     public GameObject keyPadUI;
 
+    public GameObject circumventDoor;
+
     bool inRange = false;
     public bool completed = false;
     EventManager em;
@@ -40,6 +42,7 @@ public class KeyPadPuzzle : MonoBehaviour
         if(collision.tag == "Player" && !completed)
         {
             EventManager.InteractEvent += UnlockKey;
+            circumventDoor.SetActive(true);
             inRange = true;
         }
     }
@@ -50,6 +53,8 @@ public class KeyPadPuzzle : MonoBehaviour
         {
             EventManager.InteractEvent -= UnlockKey;
             EventManager.Room4DoorUnlock -= DestroyComponent;
+
+            circumventDoor.SetActive(false);
 
             inRange = false;
         }
@@ -84,5 +89,6 @@ public class KeyPadPuzzle : MonoBehaviour
         Destroy(GetComponent<KeyPadPuzzle>());
         EventManager.Room4DoorUnlock -= DestroyComponent;
     }
+
 
 }
