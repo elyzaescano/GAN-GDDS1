@@ -45793,7 +45793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1109684170
 Transform:
   m_ObjectHideFlags: 0
@@ -48001,6 +48001,7 @@ GameObject:
   - component: {fileID: 1368047281}
   - component: {fileID: 1368047282}
   - component: {fileID: 1368047283}
+  - component: {fileID: 1368047284}
   m_Layer: 0
   m_Name: Room3ItemSpawnWorkAround
   m_TagString: Untagged
@@ -48147,6 +48148,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1368047284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368047280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63afb419afcaa1844a3b9cecbbb63d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPadUI: {fileID: 1109510189}
+  completed: 0
+  room4TP: {fileID: 1489991883}
+  itemToBlockRoom4: {fileID: 11400000, guid: 3a0d7492d1bf93247b81b4f3ef003900, type: 2}
 --- !u!1 &1379748363
 GameObject:
   m_ObjectHideFlags: 0
@@ -49271,19 +49288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018207c31d0dc404c9a66b4c3ce92621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1489991885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489991882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb8485ec8247bed4787a3f422e22d35d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLocked: 1
 --- !u!114 &1489991886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50467,7 +50471,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030342102, y: -0.0060682297}
+  m_Offset: {x: 0.06, y: -0.95}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -50478,7 +50482,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4781494, y: 1.0121365}
+  m_Size: {x: 0.76, y: 0.47}
   m_EdgeRadius: 0
 --- !u!1 &1656909265
 GameObject:
@@ -51620,7 +51624,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021133423, y: 0.21837759}
+  m_Offset: {x: 0.021133423, y: -0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -51631,7 +51635,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7326202, y: 0.7886667}
+  m_Size: {x: 2.07, y: 0.7886667}
   m_EdgeRadius: 0
 --- !u!114 &1753238512
 MonoBehaviour:
@@ -51645,9 +51649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceda75802c142244d941425ff9d5ae62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteText: {fileID: 0}
+  noteText: {fileID: 883060587}
   note: 3675
-  paperNote: {fileID: 0}
+  paperNote: {fileID: 1666775673}
   playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: eefacea00fef9ff4a812a821575f442d, type: 2}
   itemNeeded: 1
@@ -51657,7 +51661,7 @@ MonoBehaviour:
   UponSuccesfulInteractEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1666775673}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -51672,7 +51676,7 @@ MonoBehaviour:
   NoteCloseEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1666775673}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

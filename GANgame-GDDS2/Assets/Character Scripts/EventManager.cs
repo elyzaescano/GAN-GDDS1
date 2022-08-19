@@ -30,10 +30,15 @@ public class EventManager : MonoBehaviour
 
     //Room 4 house 2 Only
     public static event Action Room4DoorUnlock;
+    public static event Action MasterDoorUnlock;
 
     private void Awake()
     {
         dialogBox = GameObject.FindGameObjectWithTag("Dialog").transform.GetChild(0).gameObject;
+    }
+    public static void ForceUnlock()
+    {
+        MasterDoorUnlock?.Invoke();
     }
 
     public static void InventoryToggle()

@@ -64,11 +64,17 @@ public class KeypadScreen : MonoBehaviour
                 itemSpawn.canSpawn = true;
                 itemSpawn.itemNeeded = true;
                 itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
-                if (!itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad)) { return; } else {keyPad.completed = true; }
+                if (!itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad)) { return; } 
+                else {  keyPad.completed = true; }
                 itemSpawn.Spawn();
             }
 
-            if (RoomTPBlock != null) { this.gameObject.SetActive(false); EventManager.UnlockDoor4(); RoomTPBlock.itemRequired = null; }
+            if (RoomTPBlock != null) 
+            {
+                this.gameObject.SetActive(false); 
+                EventManager.UnlockDoor4(); 
+                RoomTPBlock.itemRequired = null; 
+            }
             
             codeTextValue = "";
 

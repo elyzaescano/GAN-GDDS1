@@ -15,7 +15,6 @@ public class KeyPadPuzzle : MonoBehaviour
     //For Door
     public RoomTeleporter room4TP;
     public ItemObject itemToBlockRoom4;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +30,9 @@ public class KeyPadPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(completed)room4TP.isLocked = false;
+
+        if(completed && room4TP != null)
+        {room4TP.isLocked = false; print("completed");}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
