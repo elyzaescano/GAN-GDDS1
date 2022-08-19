@@ -25,7 +25,6 @@ namespace Dialogue
             pause = FindObjectOfType<PauseScreen>();
 
             simulateClick = true;
-            simulateClick = false;
         }
 
         private void Update()
@@ -35,8 +34,8 @@ namespace Dialogue
                 if(isTyping) return;
             
                 AdvanceConversation();
-                EventManager.InteractEvent -= AdvanceConversation;
                 simulateClick = false;
+                EventManager.InteractEvent -= AdvanceConversation;
             } 
             if (gameObject.activeInHierarchy == true)
             {

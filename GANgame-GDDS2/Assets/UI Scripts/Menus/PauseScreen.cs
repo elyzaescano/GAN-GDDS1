@@ -61,8 +61,8 @@ public class PauseScreen : MonoBehaviour
     public void TryAgain()
     {
         loseScreen.SetActive(false);
-        menuButton.Play();
         youLost = false;
+        menuButton.Play();
         AudioManager.instance.Play("Level");
     }
     

@@ -23,12 +23,14 @@ namespace EnemyAI
         {
             //patrolState = FindObjectOfType<PatrolState>();
             player = GameObject.FindGameObjectWithTag("Player");
-            transform.right = player.transform.position - transform.position;
-
-            StartCoroutine(FOVCheck());
+            currentTarget = player;
+            
+            
+            //transform.right = player.transform.position - transform.position;
+            //StartCoroutine(FOVCheck());
             //Checks if the player is in 5 times per second as opposed to every frame
         }
-
+/*
         protected void LateUpdate()
         {
             transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
@@ -118,6 +120,6 @@ namespace EnemyAI
             return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
         }
         #endregion
-        
+*/       
     }
 }

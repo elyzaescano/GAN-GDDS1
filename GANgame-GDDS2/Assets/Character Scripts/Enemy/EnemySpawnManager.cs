@@ -32,7 +32,9 @@ namespace EnemyAI
 
         void SpawnEnemy()
         {
-            if (currentRoom != null) { 
+            if (currentRoom != null) 
+            {
+             
             dialogBox.SetActive(true);
             DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
             dd.conversation = con_enemyspawn;
@@ -41,7 +43,7 @@ namespace EnemyAI
             Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
             canSpawn = false;
                 
-                AudioManager.instance.Play("Monster");
+            AudioManager.instance.Play("Monster");
             }
         }
 
