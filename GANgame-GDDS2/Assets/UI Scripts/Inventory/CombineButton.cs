@@ -84,6 +84,7 @@ public class CombineButton : MonoBehaviour
         {
             uiVariables[i] = null;
         }
+        readyToCraft = false;
     }
 
 }
