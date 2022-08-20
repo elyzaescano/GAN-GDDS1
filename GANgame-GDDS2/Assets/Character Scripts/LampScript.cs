@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LampScript : ItemSpawn
+public class LampScript : MonoBehaviour
 {
+    [SerializeField]ItemObject itemRequired;
     public float timeToBurn;
     float currentBurnTime;
     bool isBurning = false;
     public UnityEvent LampBurnEvent;
+    public UnityEvent LampBurnEndEvent;
 
     public Light candleLight;
 
@@ -51,9 +53,7 @@ public class LampScript : ItemSpawn
 
     public void SpawnAfterBurn()
     {
-        itemNeeded = true;
-        canSpawn = true;
-        Spawn();
+        LampBurnEndEvent?.Invoke();
         isBurning = false;
     }
 

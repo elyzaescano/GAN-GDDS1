@@ -54371,6 +54371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1443358532}
   - component: {fileID: 1443358533}
+  - component: {fileID: 1443358534}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -54408,6 +54409,35 @@ MonoBehaviour:
   convoToPlay: {fileID: 11400000, guid: fe2e5c3656d5a984aaba6a574d8a9f69, type: 2}
   playOnce: 0
   mustInteract: 0
+--- !u!114 &1443358534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443358531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9364accb6f6ac45469774cf30f0d8da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab:
+  - {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
+  spawnPoint: {fileID: 1443358532}
+  canSpawn: 1
+  itemNeeded: 1
+  playerInventory: {fileID: 0}
+  itemRequired: {fileID: 0}
+  usekey: 0
+  Keytype: 0
+  em: {fileID: 0}
+  ItemSpawnedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  InteractWithoutItemSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+  spawnerID: 0
 --- !u!1001 &1450500212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59368,23 +59398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac8782e23552b04fa751d486b9a4f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab:
-  - {fileID: 5160231406496139668, guid: ca0605329996bb94fbc3fd726f9fc3a2, type: 3}
-  spawnPoint: {fileID: 1443358532}
-  canSpawn: 0
-  itemNeeded: 0
-  playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: e6903db603ed7a247b4e3f65e9b8b20b, type: 2}
-  usekey: 0
-  Keytype: 0
-  em: {fileID: 0}
-  ItemSpawnedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  InteractWithoutItemSpawn:
-    m_PersistentCalls:
-      m_Calls: []
-  spawnerID: 0
   timeToBurn: 60
   LampBurnEvent:
     m_PersistentCalls:
@@ -59410,6 +59424,21 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 900000
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  LampBurnEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1443358534}
+        m_TargetAssemblyTypeName: ItemSpawn, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
