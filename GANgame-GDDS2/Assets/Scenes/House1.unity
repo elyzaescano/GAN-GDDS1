@@ -9372,6 +9372,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621597030}
     m_Modifications:
+    - target: {fileID: 6549345407167639374, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2102839088}
+    - target: {fileID: 6549345407167639374, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryAgain
+      objectReference: {fileID: 0}
     - target: {fileID: 6549345407261430372, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9471,6 +9479,14 @@ PrefabInstance:
     - target: {fileID: 6549345407330749146, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
       propertyPath: m_Name
       value: YouLose
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549345407447781513, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2102839088}
+    - target: {fileID: 6549345407447781513, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BacktoMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
