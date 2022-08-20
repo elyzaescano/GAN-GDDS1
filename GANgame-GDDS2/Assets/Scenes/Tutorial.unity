@@ -1020,7 +1020,7 @@ MonoBehaviour:
   background: {fileID: 164824533}
   canMove: 0
   menuButton: {fileID: 1110833989}
-  loseScreen: {fileID: 581707325}
+  loseScreen: {fileID: 0}
   youLost: 0
 --- !u!224 &387326158
 RectTransform:
@@ -13476,11 +13476,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &581707325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8260765251399846357, guid: f5d3926b108556e468700bb9a8d803cf, type: 3}
-  m_PrefabInstance: {fileID: 800013233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &601962541
 GameObject:
   m_ObjectHideFlags: 0
