@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  playerInventory: {fileID: 11400000, guid: 934c6734ee0000f4684d0a16ee3e28c6, type: 2}
+  spriteImage: {fileID: 0}
+  playerInventory: {fileID: 0}
   UI: {fileID: 0}
   itemSlotID: 0
   selected: 0

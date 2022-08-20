@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 713.3953, y: 862.0458}
+  m_SizeDelta: {x: 841.6, y: 951.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22613489
 MonoBehaviour:
@@ -8789,8 +8789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -10.496704}
+  m_SizeDelta: {x: -131.9585, y: -128.9596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &411847380
 CanvasRenderer:
@@ -8825,9 +8825,9 @@ MonoBehaviour:
     m_FontSize: 128
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 143
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -52727,7 +52727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -52, y: 39}
+  m_AnchoredPosition: {x: -105.8, y: 39}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1187448454
@@ -57465,7 +57465,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteText: {fileID: 411847381}
-  note: 3636
+  note: '>Entry No. 36
+
+
+    It feels like I''ve been trapped in her for ages, I
+    can''t feel my legs or hands. My head feels like its rotting from within. I need
+    to get out of here, so I can pay that **** a visit.... For what he did to me,
+    death would only be a blessing. I can''t leave, I can''t eat... anything that
+    isn''t human meat. 20 bodies and counting, I can''t wait savour the taste everytime
+    a new body enters this place. I think there''s someone outside right now....
+
+
+    Jun'
   paperNote: {fileID: 1731543793}
   playerInventory: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: fbc80e14b7e1c9543a0d62365a36d209, type: 2}
@@ -57532,6 +57543,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 411847381}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_fontSize
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 55
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -60137,7 +60160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755698, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: passCode
-      value: 6363
+      value: 3620
       objectReference: {fileID: 0}
     - target: {fileID: 7444564139893755698, guid: f106bee5766e6774eab88182f091f98c, type: 3}
       propertyPath: itemSpawn
@@ -61856,7 +61879,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 756.5104, y: 909.2256}
+  m_SizeDelta: {x: 915.4, y: 985.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2143039382
 GameObject:

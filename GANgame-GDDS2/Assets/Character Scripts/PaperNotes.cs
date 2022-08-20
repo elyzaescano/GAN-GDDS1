@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PaperNotes : MonoBehaviour
 {
     public Text noteText;
+    [TextArea(15, 30)]
     public string note; //ur input 
     public GameObject paperNote;
     protected bool viewNote = false;
