@@ -17,6 +17,7 @@ public class UnlockBox : MonoBehaviour
     public GameObject dialoguebox;
     public Conversation unlockMessage;
     public UnityEvent UnlockEvent;
+    public UnityEvent LockEvent;
 
     Collider2D[] colliders;
     // Start is called before the first frame update
@@ -54,8 +55,11 @@ public class UnlockBox : MonoBehaviour
     {
         if (canSpawn && this.enabled)
         {
-            if (unlockMessage != null) {dialoguebox.SetActive(true); 
-            dialoguebox.GetComponent<DialogDisplay>().conversation = unlockMessage;}
+            if (unlockMessage != null)
+            {
+                dialoguebox.SetActive(true);
+                dialoguebox.GetComponent<DialogDisplay>().conversation = unlockMessage;
+            }
             foreach (Collider2D col in colliders)
             {
                 col.enabled = true;
@@ -63,6 +67,7 @@ public class UnlockBox : MonoBehaviour
             box.itemNeeded = false;
             EventManager.InteractEvent -= this.Unlock;
         }
+        else LockEvent?.Invoke();
     }
 }
 

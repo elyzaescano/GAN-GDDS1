@@ -8596,6 +8596,53 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7444564139893755711, guid: f106bee5766e6774eab88182f091f98c, type: 3}
   m_PrefabInstance: {fileID: 179611818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &180024775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180024776}
+  - component: {fileID: 180024777}
+  m_Layer: 0
+  m_Name: dialogueHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &180024776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180024775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1753238509}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &180024777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180024775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119e639aa480a5842ba6324f7a00e269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 0}
+  convoToPlay: {fileID: 11400000, guid: f6c788ecef9d680449ebd77623699930, type: 2}
+  playOnce: 0
+  mustInteract: 0
 --- !u!1 &180604506
 GameObject:
   m_ObjectHideFlags: 0
@@ -24004,6 +24051,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1579322373}
+  - {fileID: 952996108}
   m_Father: {fileID: 286295089}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24112,7 +24160,19 @@ MonoBehaviour:
       m_Calls: []
   InteractWithoutItemSpawn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952996109}
+        m_TargetAssemblyTypeName: TriggerDialog, Assembly-CSharp
+        m_MethodName: PlayDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   spawnerID: 0
 --- !u!1 &430688627
 GameObject:
@@ -44459,6 +44519,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &952996107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952996108}
+  - component: {fileID: 952996109}
+  m_Layer: 0
+  m_Name: DialogueHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &952996108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952996107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 407946006}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952996109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952996107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119e639aa480a5842ba6324f7a00e269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 0}
+  convoToPlay: {fileID: 11400000, guid: fd45a4b1c1a55df4694f1b8f6dc7b228, type: 2}
+  playOnce: 0
+  mustInteract: 0
 --- !u!1 &953333844
 GameObject:
   m_ObjectHideFlags: 0
@@ -44801,6 +44908,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969670768}
   m_CullTransparentMesh: 1
+--- !u!1 &979623104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979623105}
+  - component: {fileID: 979623106}
+  m_Layer: 0
+  m_Name: DialogueHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &979623105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979623104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1708797247}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979623106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979623104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119e639aa480a5842ba6324f7a00e269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 0}
+  convoToPlay: {fileID: 11400000, guid: fd380454156d0564eb353f2f70c2d54c, type: 2}
+  playOnce: 0
+  mustInteract: 0
 --- !u!1 &981528957
 GameObject:
   m_ObjectHideFlags: 0
@@ -44837,10 +44991,10 @@ RectTransform:
   - {fileID: 1547382790}
   - {fileID: 1527346146}
   - {fileID: 1666775674}
+  - {fileID: 1734718845}
   - {fileID: 884431087}
   - {fileID: 4385019}
   - {fileID: 1156076495}
-  - {fileID: 1734718845}
   - {fileID: 1219724526}
   - {fileID: 1586356768}
   - {fileID: 2001248244}
@@ -46045,15 +46199,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6336555415564696130, guid: 23dc923a90938a54a82de241c706310c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.44613
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6336555415564696130, guid: 23dc923a90938a54a82de241c706310c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.44613
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6336555415564696130, guid: 23dc923a90938a54a82de241c706310c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.44613
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6336555415564696130, guid: 23dc923a90938a54a82de241c706310c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48069,7 +48223,7 @@ PrefabInstance:
     - target: {fileID: 2740724538498087285, guid: 506cb7ce65695124e862eb200631808f, type: 3}
       propertyPath: conversation
       value: 
-      objectReference: {fileID: 11400000, guid: 4246e6c57c5afab439537b2b95d29a61, type: 2}
+      objectReference: {fileID: 11400000, guid: d6b180a59942a7847b18012720a9d22d, type: 2}
     - target: {fileID: 2740724538498087285, guid: 506cb7ce65695124e862eb200631808f, type: 3}
       propertyPath: itemRequired
       value: 
@@ -50427,7 +50581,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.75, y: -8.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 979623105}
   m_Father: {fileID: 286295089}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50481,6 +50636,33 @@ MonoBehaviour:
       - m_Target: {fileID: 1358727819}
         m_TargetAssemblyTypeName: ItemSpawn, Assembly-CSharp
         m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2006732231094939728}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  LockEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 979623106}
+        m_TargetAssemblyTypeName: TriggerDialog, Assembly-CSharp
+        m_MethodName: PlayDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50696,7 +50878,7 @@ RectTransform:
   - {fileID: 847112741}
   - {fileID: 969670769}
   m_Father: {fileID: 981528958}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -50775,6 +50957,7 @@ Transform:
   - {fileID: 956928720}
   - {fileID: 2045244702}
   - {fileID: 83118425}
+  - {fileID: 180024776}
   m_Father: {fileID: 1109684170}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50850,7 +51033,19 @@ MonoBehaviour:
   itemNeeded: 1
   itemNeededToInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180024777}
+        m_TargetAssemblyTypeName: TriggerDialog, Assembly-CSharp
+        m_MethodName: PlayDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UponSuccesfulInteractEvent:
     m_PersistentCalls:
       m_Calls:
@@ -51980,7 +52175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6549345407330749145, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6549345407330749145, guid: cc4a5a6fdea65224cb4fd18b6d71c330, type: 3}
       propertyPath: m_AnchorMax.x
@@ -52931,6 +53126,7 @@ GameObject:
   - component: {fileID: 2006732231094939727}
   - component: {fileID: 2006732231094939726}
   - component: {fileID: 2006732231094939725}
+  - component: {fileID: 2006732231094939728}
   m_Layer: 0
   m_Name: Box2
   m_TagString: Untagged
@@ -53009,6 +53205,22 @@ Transform:
   m_Father: {fileID: 1109684170}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2006732231094939728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006732231094939724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119e639aa480a5842ba6324f7a00e269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 0}
+  convoToPlay: {fileID: 11400000, guid: ef56c0d6f31a58b4ea7928a8efc04f1d, type: 2}
+  playOnce: 1
+  mustInteract: 1
 --- !u!1 &2006732231531918773
 GameObject:
   m_ObjectHideFlags: 0

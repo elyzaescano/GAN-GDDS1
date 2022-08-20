@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e730679dae0477a4d889d2c0d9db1bb4, type: 3}
-  m_Name: FaxInteract
+  m_Name: DoorStuck
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
   lines:
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
-    text: A...fax machine, I think? Doesn't seem to work though...
-  - character: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
-    text: Oh?
-  - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
-    text: It's making noise. Is it missing something?
+    text: Lock's busted, maybe I could pry it open...
