@@ -49786,7 +49786,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxCount: 3
+  maxCount: 5
 --- !u!82 &1596414628
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50136,8 +50136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 0}
-  convoToPlay: {fileID: 0}
-  playOnce: 0
+  convoToPlay: {fileID: 11400000, guid: ef56c0d6f31a58b4ea7928a8efc04f1d, type: 2}
+  playOnce: 1
   mustInteract: 1
 --- !u!61 &1692176129
 BoxCollider2D:
@@ -50649,7 +50649,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2006732231094939728}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -53130,7 +53130,6 @@ GameObject:
   - component: {fileID: 2006732231094939727}
   - component: {fileID: 2006732231094939726}
   - component: {fileID: 2006732231094939725}
-  - component: {fileID: 2006732231094939728}
   m_Layer: 0
   m_Name: Box2
   m_TagString: Untagged
@@ -53209,22 +53208,6 @@ Transform:
   m_Father: {fileID: 1109684170}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2006732231094939728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006732231094939724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119e639aa480a5842ba6324f7a00e269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogBox: {fileID: 0}
-  convoToPlay: {fileID: 11400000, guid: ef56c0d6f31a58b4ea7928a8efc04f1d, type: 2}
-  playOnce: 1
-  mustInteract: 1
 --- !u!1 &2006732231531918773
 GameObject:
   m_ObjectHideFlags: 0

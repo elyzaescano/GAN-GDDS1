@@ -61,6 +61,7 @@ public class LampPuzzle : MonoBehaviour
 
     public void Interacted()
     {
+        print(count);
         DisableInput();
         io.RemoveItem(io.equippedItem);
         io.equippedItem = null;
@@ -73,7 +74,7 @@ public class LampPuzzle : MonoBehaviour
     bool AddToCount()
     {
         count++;
-        bool puzzleComplete = count == 3 ? true : false;
+        bool puzzleComplete = count == 5 ? true : false;
         return puzzleComplete;
     }
 
