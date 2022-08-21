@@ -17,12 +17,12 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
     transition: 0
     directorToggler: 1
-    text: Not quite.
+    text: Shit... There's no door
   - character: {fileID: 11400000, guid: 62555fcb247fe674b8ab5ff6b062dacc, type: 2}
     transition: 0
     directorToggler: 1
-    text: What.
+    text: M...M..MEEEAATT
   - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
     transition: 0
     directorToggler: 0
-    text: (Let's go!)
+    text: (The window!)

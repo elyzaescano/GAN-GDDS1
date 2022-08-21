@@ -16,47 +16,74 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
     transition: 0
+    directorToggler: 0
     text: What's up?
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
+    directorToggler: 0
     text: Well...
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
+    directorToggler: 0
     text: It's the family.
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
     transition: 0
-    text: Ever since my business failed, my wife chews my ear off about money.
+    directorToggler: 0
+    text: Since the business went under, it's been nonstop problems with money.
   - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
     transition: 0
-    text: It's bad. I have to eat once a day to keep my kids from gettin' hungry.
+    directorToggler: 0
+    text: It's getting pretty bad. been eating once a day so my kids can get a proper
+      diet.
   - character: {fileID: 11400000, guid: 1796a3c49d2549742ade56925184a694, type: 2}
     transition: 0
+    directorToggler: 0
     text: These "inspection" jobs have really been helping me out.
   - character: {fileID: 11400000, guid: 45c3267f0360e464d9c4f77ba9ff738e, type: 2}
     transition: 0
+    directorToggler: 0
     text: Glad to hear.
   - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
     transition: 0
-    text: While I can't exactly give you a job at the agency, you've been filling
-      up a lot of gaps.
+    directorToggler: 0
+    text: While I can't exactly give you a job at the agency, you've been a huge
+      help to me
   - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
     transition: 0
-    text: You've done a lot for us.
+    directorToggler: 0
+    text: You've done a lot. I owe you big
   - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
     transition: 0
+    directorToggler: 0
     text: It's nothing.
   - character: {fileID: 11400000, guid: 45c3267f0360e464d9c4f77ba9ff738e, type: 2}
     transition: 0
-    text: No, really. The bosses have noticed the extra help.
+    directorToggler: 0
+    text: No, really. This promotion I got? Half of it is because of you. We're a
+      good team.
   - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
     transition: 0
-    text: In fact, they're ready to offer you a permanent position here.
+    directorToggler: 0
+    text: And I think I've found a house that'll really bump us up the leaderboard...
   - character: {fileID: 11400000, guid: 31eadbe5f919ee54da7c9cbe56e9b85e, type: 2}
     transition: 0
-    text: You just have to do one more job for us.
+    directorToggler: 0
+    text: 'It''s an old, pre-colonial mansion.
+
+'
+  - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
+    transition: 0
+    directorToggler: 0
+    text: "It's listed on the books as belonging to some Lee guy, but it hasn't seen
+      a soul in ages. \n"
   - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
     transition: 0
-    text: Consider it done. What is it?
+    directorToggler: 0
+    text: 'The one at Telok Blangah? Heard the lease on that relic was expiring soon.
+
+'
   - character: {fileID: 11400000, guid: 31eadbe5f919ee54da7c9cbe56e9b85e, type: 2}
     transition: 1
-    text: It'll be the toughest one yet.
+    directorToggler: 0
+    text: And we HAVE to be the first ones to get it listed! This will be our big
+      break. Just one last job, Joey.

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: 0510bf4face0e60478b84294b62e0079, type: 2}
   lines:
+  - character: {fileID: 11400000, guid: 410986b3adf322146bb054f15b26707d, type: 2}
+    transition: 0
+    directorToggler: 1
+    text: HRRAAAAAGH!!
   - character: {fileID: 11400000, guid: 152229c6ff123b84bae51da36d27cec3, type: 2}
     transition: 0
     directorToggler: 1
-    text: Damn...
-  - character: {fileID: 11400000, guid: 152229c6ff123b84bae51da36d27cec3, type: 2}
-    transition: 0
-    directorToggler: 1
-    text: (No point chasing him. Cops could be here any moment.)
+    text: (Inaudible grumbling)
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
     directorToggler: 0

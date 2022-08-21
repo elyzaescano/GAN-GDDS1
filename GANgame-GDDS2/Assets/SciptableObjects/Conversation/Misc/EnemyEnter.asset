@@ -17,8 +17,12 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 152229c6ff123b84bae51da36d27cec3, type: 2}
     transition: 0
     directorToggler: 1
-    text: I've finally got you cornered.
-  - character: {fileID: 11400000, guid: 158092f7c27688c448460c58af7c4730, type: 2}
+    text: Trap....Here....You...
+  - character: {fileID: 11400000, guid: 152229c6ff123b84bae51da36d27cec3, type: 2}
+    transition: 0
+    directorToggler: 1
+    text: NEXT
+  - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
     transition: 0
     directorToggler: 0
     text: '!!!'

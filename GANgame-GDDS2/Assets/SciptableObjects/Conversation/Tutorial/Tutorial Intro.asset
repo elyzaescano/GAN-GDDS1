@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e730679dae0477a4d889d2c0d9db1bb4, type: 3}
-  m_Name: EnemyHasDespawned
+  m_Name: Tutorial Intro
   m_EditorClassIdentifier: 
-  speaker: {fileID: 11400000, guid: 62555fcb247fe674b8ab5ff6b062dacc, type: 2}
+  speaker: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: 62555fcb247fe674b8ab5ff6b062dacc, type: 2}
-    text: Can't... move...sleepy....
+  - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
+    text: Man this place is remote...
+  - character: {fileID: 11400000, guid: c6d197bdcadb1134f9dd2f30692d7658, type: 2}
+    text: It should be at the end of this path... Hopefully its not locked?
