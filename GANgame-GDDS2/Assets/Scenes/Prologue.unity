@@ -183,7 +183,7 @@ MonoBehaviour:
   directorResume:
     m_PersistentCalls:
       m_Calls: []
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!114 &19517695
 MonoBehaviour:

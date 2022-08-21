@@ -664,7 +664,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!114 &119786676
 MonoBehaviour:
@@ -1208,7 +1208,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!1 &304133102
 GameObject:
@@ -1445,7 +1445,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!1 &336795349
 GameObject:
@@ -5938,7 +5938,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!1001 &726523191
 PrefabInstance:
@@ -26227,7 +26227,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!114 &908261913
 MonoBehaviour:
@@ -26538,7 +26538,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!114 &981762005
 MonoBehaviour:
@@ -26853,7 +26853,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!114 &1072004178
 MonoBehaviour:
@@ -34485,7 +34485,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  typeSpeed: 0.05
+  typeSpeed: 0.035
   simulateClick: 0
 --- !u!114 &2101161466
 MonoBehaviour:
