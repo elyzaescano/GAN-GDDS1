@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class KeypadScreen : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class KeypadScreen : MonoBehaviour
     public ItemSpawn itemSpawn; //refer from itemSpawn
     public RoomTeleporter RoomTPBlock;
 
+    public UnityEvent FailedPasscode;
+    public UnityEvent SuccesfulPasscode;
 
     private void Start()
     {
@@ -68,6 +71,7 @@ public class KeypadScreen : MonoBehaviour
                 if (!itemSpawn.gameObject.TryGetComponent<KeyPadPuzzle>(out KeyPadPuzzle keyPad)) { return; } 
                 else {  keyPad.completed = true; }
                 itemSpawn.Spawn();
+                SuccesfulPasscode?.Invoke();
             }
 
             if (RoomTPBlock != null) 
@@ -75,17 +79,18 @@ public class KeypadScreen : MonoBehaviour
                 EventManager.UnlockDoor4();
                 print("Working");
                 RoomTPBlock.itemRequired = null; 
-                this.gameObject.SetActive(false); 
+                this.gameObject.SetActive(false);
+                SuccesfulPasscode?.Invoke();
             }
-            
+
             codeTextValue = "";
 
         }
         else
         {
-            itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[0]);
+            if(itemSpawn!= null)itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[0]);
             codeTextValue = "";
-            
+            FailedPasscode?.Invoke();
         }
     }
 }
