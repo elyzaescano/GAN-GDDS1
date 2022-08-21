@@ -65,9 +65,9 @@ public class UnlockBox : MonoBehaviour
                 col.enabled = true;
             }
             box.itemNeeded = false;
-            EventManager.InteractEvent -= this.Unlock;
         }
         else LockEvent?.Invoke();
+        EventManager.InteractEvent -= this.Unlock;
     }
 }
 
