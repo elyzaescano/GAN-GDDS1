@@ -17,7 +17,7 @@ MonoBehaviour:
   type: 27
   itemName: FlameThrower
   id: 11
-  description: 'Makeshieft Flamethrower: A pretty crude attempt at arson... As long
+  description: 'Makeshift Flamethrower: A pretty crude attempt at arson... As long
     as I can use it for soemthing...'
   recipes:
   - other: {fileID: 11400000, guid: b9568d204fd472c40a1c16bef2e00c90, type: 2}
