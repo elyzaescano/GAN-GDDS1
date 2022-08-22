@@ -16,23 +16,23 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: What's up?
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: Well...
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: It's the family.
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: Since the business went under, it's been nonstop problems with money.
   - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: It's getting pretty bad, been eating once a day so my kids can get a proper
       diet.
   - character: {fileID: 11400000, guid: 1796a3c49d2549742ade56925184a694, type: 2}
@@ -41,20 +41,20 @@ MonoBehaviour:
     text: These "inspection" jobs have really been helping me out.
   - character: {fileID: 11400000, guid: 45c3267f0360e464d9c4f77ba9ff738e, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: Glad to hear.
   - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: While I can't exactly give you a job at the agency, you've been a huge
       help to me.
   - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: You've done a lot. I owe you big.
   - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: It's nothing.
   - character: {fileID: 11400000, guid: 45c3267f0360e464d9c4f77ba9ff738e, type: 2}
     transition: 0
@@ -67,22 +67,22 @@ MonoBehaviour:
     text: And I think I've found a house that'll really bump us up the leaderboard...
   - character: {fileID: 11400000, guid: 31eadbe5f919ee54da7c9cbe56e9b85e, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: It's an old, pre-colonial mansion.
   - character: {fileID: 11400000, guid: a4fb94537656e05418256c3f3914be06, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: 'It''s listed on the books as belonging to some Lee guy, but it hasn''t
       seen a soul in ages. '
   - character: {fileID: 11400000, guid: 9e28f060c89294d46b538b99a0d81a32, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: 'The one at Telok Blangah? Heard the lease on that relic was expiring soon.
 
 '
   - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
     transition: 0
-    directorToggler: 0
+    directorToggler: 1
     text: And we HAVE to be the first ones to get it listed! This will be our big
       break.
   - character: {fileID: 11400000, guid: 31eadbe5f919ee54da7c9cbe56e9b85e, type: 2}
