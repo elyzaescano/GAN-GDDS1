@@ -23,6 +23,7 @@ public class NextScene : LockDoor
         other.TryGetComponent<InventoryObject>(out InventoryObject inventory);
         if (inventory.equippedItem == itemRequired && !isLocked)
         {
+            EventManager.InteractEvent -= PlayDialog;
             EventManager.InteractEvent += GoToNextScene;
         }
         else

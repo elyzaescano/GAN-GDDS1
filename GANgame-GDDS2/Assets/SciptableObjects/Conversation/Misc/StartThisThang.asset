@@ -81,7 +81,7 @@ MonoBehaviour:
 
 '
   - character: {fileID: 11400000, guid: 45811f2378cd53443bc100f5950b30b4, type: 2}
-    transition: 1
+    transition: 0
     directorToggler: 0
     text: And we HAVE to be the first ones to get it listed! This will be our big
       break.
