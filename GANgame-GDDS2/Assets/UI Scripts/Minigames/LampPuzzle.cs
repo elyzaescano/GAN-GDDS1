@@ -11,6 +11,7 @@ public class LampPuzzle : MonoBehaviour
     [SerializeField]InventoryObject io;
     [SerializeField] ItemObject itemRequired;
     bool canInteract;
+    [SerializeField]bool minigameComplete = false;
     AudioSource au;
     [Header("Events")]
     public UnityEvent FailedInteractEvent;
@@ -43,7 +44,10 @@ public class LampPuzzle : MonoBehaviour
             if (io.equippedItem != itemRequired)
             {
                 //Event should include: Audio & Dialog
+                if(!minigameComplete){
                 EventManager.InteractEvent += PlayFailedDialog;
+
+                }
                 return;
             }else EventManager.InteractEvent += Interacted;
         }
@@ -75,6 +79,7 @@ public class LampPuzzle : MonoBehaviour
         count++;
         bool puzzleComplete = count == 5 ? true : false;
         EventManager.ItemEquip();
+        minigameComplete = true;
         return puzzleComplete;
     }
 

@@ -59,6 +59,7 @@ public class UnlockBox : MonoBehaviour
             {
                 dialoguebox.SetActive(true);
                 dialoguebox.GetComponent<DialogDisplay>().conversation = unlockMessage;
+                dialoguebox.GetComponent<DialogDisplay>().simulateClick = true;
             }
             foreach (Collider2D col in colliders)
             {
