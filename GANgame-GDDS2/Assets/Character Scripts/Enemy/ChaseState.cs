@@ -9,7 +9,7 @@ namespace EnemyAI
     {
         public SearchState searchState;
         public GameObject enemyHolder;
-        public float timeToChase = 10f;
+        public float timeToChase = 25f;
 
         public float distanceFromTarget;
         public float stoppingDistance;
@@ -39,7 +39,10 @@ namespace EnemyAI
             if (timeToChase <= 0)
             {
                 EventManager.EnemyDied();
-                Destroy(enemyHolder);
+
+                enemyHolder.gameObject.SetActive(false);
+                enemyHolder.transform.position = enemySpawn.enemySpawnLocation.position;
+
                 EventManager.EnemyDeath += enemySpawn.DespawnEnemy;
 
             }

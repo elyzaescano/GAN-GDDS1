@@ -10,6 +10,7 @@ namespace EnemyAI
     {
         public bool canSpawn;
         public GameObject enemy;
+        public Transform enemySpawnLocation;
         public GameObject currentRoom;
         PlayerController player;
         public GameObject dialogBox;
@@ -18,6 +19,10 @@ namespace EnemyAI
         private void Start() 
         {
             player = FindObjectOfType<PlayerController>();
+
+            enemy.transform.position = enemySpawnLocation.transform.position;
+            enemy.gameObject.SetActive(false);
+
             canSpawn = true;
 
             dialogBox = EventManager.dialogBox;
@@ -41,20 +46,25 @@ namespace EnemyAI
                 DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
                 dd.conversation = con_enemyspawn;
                 dd.simulateClick = true;
-                
-                Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
+
+                enemy.transform.position = currentRoom.GetComponent<Room>().spawnPoint.position;
+                enemy.gameObject.SetActive(true);
+                enemy.transform.parent = null;
+                enemy.GetComponent<ChaseState>().timeToChase = 25f; 
+
                 canSpawn = false;
                 
                 if(AudioManager.instance != null)
                 AudioManager.instance.Play("Monster");
             }
+            
         }
 
         public void DespawnEnemy()
         {
-            canSpawn = true;
             EventManager.EnemyCanSpawn -= SpawnEnemy;
             EventManager.EnemyCanSpawn += SpawnEnemy;
+            canSpawn = true;
 
             EventManager.AfterEnemyDied();
             EventManager.OnEnemyDeath += PlayDeathConversation;

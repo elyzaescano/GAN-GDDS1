@@ -14,8 +14,11 @@ public class OpenSimon : MonoBehaviour
     void Start()
     {
         em = FindObjectOfType<EventManager>();
-        gameDoor = this.gameObject.GetComponent<RoomTeleporter>();
-        EventManager.SimonWon += gameDoor.ForceTeleport;
+        if (gameDoor != null)
+        {
+            gameDoor = this.gameObject.GetComponent<RoomTeleporter>();
+            EventManager.SimonWon += gameDoor.ForceTeleport;
+        }
     }
 
     // Update is called once per frame
@@ -36,7 +39,13 @@ public class OpenSimon : MonoBehaviour
         if(collision.tag == "Player")
         {
             isNear = true;
-            if (simonPanel.GetComponent<SimonSays>().win == false) EventManager.InteractEvent += SimonGame;
+            if(simonPanel != null && simonGame != null)
+            {
+                if (simonPanel.GetComponent<SimonSays>().win == false)
+                {
+                    EventManager.InteractEvent += SimonGame;
+                }
+            }
         }
     }
 
