@@ -10,7 +10,7 @@ public class SimonSays : MonoBehaviour
     int colourOrderRunCount;
     bool pass = false;
     bool fail;
-    bool win = false;
+    public bool win = false;
     AudioSource audios;
     [SerializeField] AudioClip[] buttonSounds;
     [SerializeField] GameObject[] buttons;
@@ -34,7 +34,12 @@ public class SimonSays : MonoBehaviour
         {
             closeSimon.SetActive(true);
             EventManager.WinSimon();
-            if (gameDoor != null) {gameDoor.GetComponent<RoomTeleporter>().isLocked = false;} //make the door false
+            if (gameDoor != null) 
+            {
+                gameDoor.GetComponent<RoomTeleporter>().isLocked = false;//make the door false
+                gameDoor.GetComponent<RoomTeleporter>().itemNeeded = false;
+                gameDoor.GetComponent<RoomTeleporter>().itemRequired = null;
+            } 
         }
 
         if (fail)

@@ -54,7 +54,7 @@ public class RoomTeleporter : LockDoor
                 itemNeeded = true;
                 isLocked = false;
             }
-            else
+            else if (conversation != null)
             {
                 EventManager.InteractEvent += PlayDialog;
             }

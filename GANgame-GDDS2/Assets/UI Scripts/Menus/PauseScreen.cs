@@ -11,6 +11,7 @@ public class PauseScreen : MonoBehaviour
     public bool canMove;
     public AudioSource menuButton;
     public GameObject loseScreen;
+    public List<GameObject> minigames;
     public bool youLost;
 
     private void Update() 
@@ -22,6 +23,11 @@ public class PauseScreen : MonoBehaviour
         else
         {
             isPaused = false;
+        }
+
+        foreach (GameObject minigame in minigames)
+        {
+            if (minigame.activeInHierarchy) isPaused = true;
         }
     }
 
