@@ -46295,16 +46295,28 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.43361998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -46312,15 +46324,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -47215,6 +47227,10 @@ PrefabInstance:
       propertyPath: gameDoor
       value: 
       objectReference: {fileID: 1927647085}
+    - target: {fileID: 7706325461122294774, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
+      propertyPath: lightSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7706325461122294774, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
       propertyPath: lightOrder.Array.size
       value: 4

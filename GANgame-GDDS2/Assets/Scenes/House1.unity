@@ -26863,6 +26863,10 @@ PrefabInstance:
       propertyPath: gameDoor
       value: 
       objectReference: {fileID: 1840847898}
+    - target: {fileID: 7706325461122294774, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
+      propertyPath: lightSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8575197533668067192, guid: 156a1affa5497ac4eb25040cd8ff1e62, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

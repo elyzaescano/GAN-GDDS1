@@ -95,6 +95,13 @@ public class RoomTeleporter : LockDoor
         }
     }
 
+    public void ForceTeleport() //this is strictly for the simonsays minigame
+    {
+        doorOpenClose.Play();
+        destination.z = player.transform.position.z;
+        player.transform.position = destination;
+    }
+
     public void PlayDialog()
     {
         dialog.SetActive(true);

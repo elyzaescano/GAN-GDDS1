@@ -15,7 +15,7 @@ public class OpenSimon : MonoBehaviour
     {
         em = FindObjectOfType<EventManager>();
         gameDoor = this.gameObject.GetComponent<RoomTeleporter>();
-        EventManager.SimonWon += gameDoor.Teleport;
+        EventManager.SimonWon += gameDoor.ForceTeleport;
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class OpenSimon : MonoBehaviour
             if(simonPanel.GetComponent<SimonSays>().win)
             {
                 EventManager.InteractEvent -= SimonGame;
+                EventManager.SimonWon += gameDoor.ForceTeleport;
             }
         }
     }
