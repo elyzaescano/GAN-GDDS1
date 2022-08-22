@@ -50920,6 +50920,7 @@ MonoBehaviour:
   em: {fileID: 180604510}
   io: {fileID: 0}
   itemRequired: {fileID: 11400000, guid: 718593efc9a33b947831adcf5aa9d9e1, type: 2}
+  minigameComplete: 0
   FailedInteractEvent:
     m_PersistentCalls:
       m_Calls:
@@ -53149,10 +53150,10 @@ Transform:
   m_LocalPosition: {x: -1.9, y: -47.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 904209332718064400}
   - {fileID: 762324385}
   - {fileID: 2031480941}
   - {fileID: 1481883997}
-  - {fileID: 904209332718064400}
   - {fileID: 694548757}
   - {fileID: 2103150042}
   m_Father: {fileID: 0}
@@ -54673,7 +54674,7 @@ Transform:
   - {fileID: 1136250249}
   - {fileID: 1379748364}
   m_Father: {fileID: 1936962963}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &904209332718064401
 MonoBehaviour:
