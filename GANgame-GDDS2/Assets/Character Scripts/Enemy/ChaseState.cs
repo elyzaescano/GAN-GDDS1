@@ -40,7 +40,6 @@ namespace EnemyAI
             {
                 EventManager.EnemyDied();
 
-                enemyHolder.gameObject.SetActive(false);
                 enemyHolder.transform.position = enemySpawn.enemySpawnLocation.position;
 
                 EventManager.EnemyDeath += enemySpawn.DespawnEnemy;

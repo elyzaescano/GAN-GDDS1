@@ -10,6 +10,7 @@ namespace EnemyAI
     {
         public bool canSpawn;
         public GameObject enemy;
+        public ChaseState enemyChase;
         public Transform enemySpawnLocation;
         public GameObject currentRoom;
         PlayerController player;
@@ -50,7 +51,6 @@ namespace EnemyAI
                 enemy.transform.position = currentRoom.GetComponent<Room>().spawnPoint.position;
                 enemy.gameObject.SetActive(true);
                 enemy.transform.parent = null;
-                enemy.GetComponent<ChaseState>().timeToChase = 25f; 
 
                 canSpawn = false;
                 
@@ -68,6 +68,9 @@ namespace EnemyAI
 
             EventManager.AfterEnemyDied();
             EventManager.OnEnemyDeath += PlayDeathConversation;
+
+            enemy.gameObject.SetActive(false);
+            enemyChase.timeToChase = 25f; 
 
             if(AudioManager.instance != null)
             AudioManager.instance.Stop("Monster");
