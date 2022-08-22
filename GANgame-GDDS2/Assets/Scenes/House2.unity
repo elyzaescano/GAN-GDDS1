@@ -50293,8 +50293,8 @@ PrefabInstance:
     - target: {fileID: 2125875187787803739, guid: 104a0f0f299f2e54f9ea7248117390a3, type: 3}
       propertyPath: note
       value: I know he's here I kn_w he's near I c_n hear him breathing. Every door
-        I open I can see his shadow crawling on the walls. His g_ze pierces the back
-        of my skull and I can't stop to think. I have to keep runn!ng. There's a
+        I open I can see his shadow crawling on the walls. His gaze pierces the back
+        of my skull and I can't stop to think. I have to keep runn_ng. There's a
         way out of here ther_ has to be... I'm scared... Daisy... Help...
       objectReference: {fileID: 0}
     - target: {fileID: 2125875187787803739, guid: 104a0f0f299f2e54f9ea7248117390a3, type: 3}
@@ -52379,6 +52379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSpawn: 0
   enemy: {fileID: 3137335781818844240, guid: 4a9cf336c7da8d144b434c8a1c0fbca1, type: 3}
+  enemySpawnLocation: {fileID: 0}
   currentRoom: {fileID: 553292740}
   dialogBox: {fileID: 1872512753}
   con_enemyspawn: {fileID: 11400000, guid: 4fc8648708b8fc24a91ace9f3006bf9e, type: 2}
