@@ -63982,7 +63982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5822823758406038000, guid: b0833d1088d05a340a2271da12c5a925, type: 3}
       propertyPath: Keytype
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5822823758406038000, guid: b0833d1088d05a340a2271da12c5a925, type: 3}
       propertyPath: itemPrefab
