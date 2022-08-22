@@ -22,6 +22,7 @@ public class EventManager : MonoBehaviour
 
     public static event Action EnemyCanSpawn;
     public static event Action EnemyDeath;
+    public static event Action OnEnemyDeath;
     public static event Action GamePause;
     public static event Action GameResume;
     public static event Action EnemyWarning;
@@ -80,6 +81,11 @@ public class EventManager : MonoBehaviour
     public static void EnemyDied()
     {
         EnemyDeath?.Invoke();
+    }
+
+    public static void AfterEnemyDied()
+    {
+        OnEnemyDeath?.Invoke();
     }
 
     public static void PauseGame()//UNUSED

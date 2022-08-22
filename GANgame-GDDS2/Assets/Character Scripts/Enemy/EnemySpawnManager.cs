@@ -23,6 +23,7 @@ namespace EnemyAI
             dialogBox = EventManager.dialogBox;
             EventManager.EnemyCanSpawn += SpawnEnemy; //Subscribed!
             EventManager.EnemyDeath += DespawnEnemy;
+            EventManager.OnEnemyDeath += PlayDeathConversation;
 
         }
         
@@ -43,20 +44,33 @@ namespace EnemyAI
                 
                 Instantiate(enemy, currentRoom.GetComponent<Room>().spawnPoint);
                 canSpawn = false;
-                    
+                
+                if(AudioManager.instance != null)
                 AudioManager.instance.Play("Monster");
-
             }
         }
 
         public void DespawnEnemy()
         {
-            print("Stop audio");
             canSpawn = true;
             EventManager.EnemyCanSpawn -= SpawnEnemy;
-            EventManager.EnemyCanSpawn += SpawnEnemy;                
-            
+            EventManager.EnemyCanSpawn += SpawnEnemy;
+
+            EventManager.AfterEnemyDied();
+            EventManager.OnEnemyDeath += PlayDeathConversation;
+
+            if(AudioManager.instance != null)
             AudioManager.instance.Stop("Monster");
+        }
+
+        public void PlayDeathConversation()
+        {
+            dialogBox.SetActive(true);
+            DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
+            dd.conversation = con_enemydeath;
+            dd.simulateClick = true;
+
+            EventManager.OnEnemyDeath -= PlayDeathConversation;
         }
 
         public GameObject FindRoom()

@@ -9107,7 +9107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260833368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.71, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 383016472}
@@ -24144,7 +24144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383016471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: -49, z: 0}
+  m_LocalPosition: {x: -2.59, y: -48.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 260833369}
@@ -24805,6 +24805,7 @@ Transform:
   m_Children:
   - {fileID: 1353421135}
   - {fileID: 340319280}
+  - {fileID: 1077569446}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46282,6 +46283,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1077569445
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 430688636}
+    m_Modifications:
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.43361998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085062, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_Name
+      value: DustFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976794115239085062, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+--- !u!4 &1077569446 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4976794115239085061, guid: ece67e18e7220414181de66b06a3581c, type: 3}
+  m_PrefabInstance: {fileID: 1077569445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1078427803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51789,7 +51856,7 @@ MonoBehaviour:
   currentRoom: {fileID: 553292740}
   dialogBox: {fileID: 1872512753}
   con_enemyspawn: {fileID: 11400000, guid: 4fc8648708b8fc24a91ace9f3006bf9e, type: 2}
-  con_enemydeath: {fileID: 0}
+  con_enemydeath: {fileID: 11400000, guid: d1ff3bbf440f3114ea976cb48bfd7970, type: 2}
 --- !u!4 &1723411017
 Transform:
   m_ObjectHideFlags: 0

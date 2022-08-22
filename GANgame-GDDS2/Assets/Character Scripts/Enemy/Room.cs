@@ -16,9 +16,7 @@ namespace EnemyAI
         EnemySpawnManager esm;
         public AudioSource warning;
         bool isWarned = false;
-       
-        
-        
+               
         private void Start() 
         {
             esm = FindObjectOfType<EnemySpawnManager>();
