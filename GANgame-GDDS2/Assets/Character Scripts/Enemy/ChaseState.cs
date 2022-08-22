@@ -8,7 +8,6 @@ namespace EnemyAI
     public class ChaseState : State
     {
         public SearchState searchState;
-
         public GameObject enemyHolder;
         public float timeToChase = 10f;
 
@@ -17,7 +16,9 @@ namespace EnemyAI
 
         public override State Tick(EnemyManager enemyManager, EnemyFieldOfView enemyFOV, EnemySpawnManager enemySpawn, EnemyAnimationHandler enemyAnim)
         {
-            timeToChase -= Time.deltaTime;
+            if (enemySpawn.dialogBox.activeInHierarchy) timeToChase -= 0;
+            else timeToChase -= Time.deltaTime;
+            
             if (enemyFOV.currentTarget != null)
             {
                 //Resets the time to search for the Search State
