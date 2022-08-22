@@ -17,11 +17,11 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: df5d9d17e7af2894c9c8450a1b84cbc6, type: 2}
     transition: 0
     directorToggler: 1
-    text: Is this...? one of his victims?
+    text: Is this...? One of his victims?
   - character: {fileID: 11400000, guid: 697ee67663a58dd41b57aab1737baf21, type: 2}
     transition: 0
     directorToggler: 1
-    text: I recognise this face... It's from the Tan murder case...
+    text: I recognise this face... It's from the Tan murder case!
   - character: {fileID: 11400000, guid: 6a85aae3426029944a80698093269383, type: 2}
     transition: 0
     directorToggler: 0
