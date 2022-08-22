@@ -65,7 +65,6 @@ public class LampPuzzle : MonoBehaviour
         DisableInput();
         io.RemoveItem(io.equippedItem);
         io.equippedItem = null;
-        EventManager.ItemEquip();
         bool completed = AddToCount();
         if (completed) FinishedPuzzleEvent?.Invoke();
         else UnfinishedPuzzleEvent?.Invoke();
@@ -75,6 +74,7 @@ public class LampPuzzle : MonoBehaviour
     {
         count++;
         bool puzzleComplete = count == 5 ? true : false;
+        EventManager.ItemEquip();
         return puzzleComplete;
     }
 
