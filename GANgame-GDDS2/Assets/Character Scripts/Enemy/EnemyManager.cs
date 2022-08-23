@@ -118,7 +118,7 @@ namespace EnemyAI
             deathScreen.SetActive(true);
             GameObject.FindGameObjectWithTag("Player").transform.position = playerReset.position;
             enemySpawn.canSpawn = true;
-            Destroy(enemyHolder);
+            enemyHolder.gameObject.SetActive(false);
         }
     }
 }

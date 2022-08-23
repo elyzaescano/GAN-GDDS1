@@ -36,6 +36,8 @@ namespace EnemyAI
         private void Update()
         {
             currentRoom = FindRoom();
+
+            if(enemy == null) Instantiate(enemy, enemySpawnLocation);
         }
 
         void SpawnEnemy()
