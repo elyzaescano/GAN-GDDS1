@@ -36,15 +36,15 @@ namespace EnemyAI
         private void Update()
         {
             currentRoom = FindRoom();
-
-            if(enemy == null) Instantiate(enemy, enemySpawnLocation);
         }
 
         void SpawnEnemy()
         {
+            if(enemy == null) Instantiate(enemy, enemySpawnLocation);
+            
             if (currentRoom != null) 
             {
-             
+                
                 dialogBox.SetActive(true);
                 DialogDisplay dd = dialogBox.GetComponentInChildren<DialogDisplay>();
                 dd.conversation = con_enemyspawn;
