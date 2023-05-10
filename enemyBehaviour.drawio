@@ -1,9 +1,159 @@
-<mxfile host="app.diagrams.net" modified="2023-05-10T02:37:08.386Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.2.6" etag="2HdJCv4Qy5XkeuLCA7zK" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-10T03:26:17.511Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="OlhHjTeehIw0rbI2OIQ4" version="21.2.6" type="github">
   <diagram name="Page-1" id="gWAZc-sNZe4aPi-GWydx">
-    <mxGraphModel>
+    <mxGraphModel dx="1235" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-1" target="KpnUxVcMFO6DVMMjrXok-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-1" value="&lt;b&gt;START&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="333.75" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340.0000000000002" y="353.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-2" value="Initialise:&lt;br&gt;- ship&lt;br&gt;- enemy&lt;br&gt;- position on ship&lt;br&gt;- no. of teammates" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="180" y="310" width="120" height="87.5" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-13" target="KpnUxVcMFO6DVMMjrXok-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-13" value="Go to cannon" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="340" y="333.75" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-38" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-19" target="KpnUxVcMFO6DVMMjrXok-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-19" target="KpnUxVcMFO6DVMMjrXok-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1139.97" y="444.97" />
+              <mxPoint x="1289.97" y="444.97" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-45" value="No&lt;br&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KpnUxVcMFO6DVMMjrXok-43">
+          <mxGeometry x="-0.107" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-19" value="Cannon in range of player ship?" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="310" width="120" height="83.75" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-22" target="KpnUxVcMFO6DVMMjrXok-69">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1259.97" y="239.97" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-22" value="Fire cannon" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="235" width="80" height="19.97" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-27" target="KpnUxVcMFO6DVMMjrXok-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-27" value="Ship moves to camera view" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="336.88" width="120" height="33.75" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-42" target="KpnUxVcMFO6DVMMjrXok-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-42" value="Wait" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="430" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-60" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-58" target="KpnUxVcMFO6DVMMjrXok-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-102" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-58" target="KpnUxVcMFO6DVMMjrXok-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-58" value="Player ship still alive?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="204.98" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-62" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-59" target="KpnUxVcMFO6DVMMjrXok-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-59" value="Enemy AI wins" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="229.97" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-61" value="&lt;b&gt;END&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="224.97" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-65" target="KpnUxVcMFO6DVMMjrXok-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="142" />
+              <mxPoint x="1030" y="310" />
+              <mxPoint x="1040" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-65" value="&quot;Reload cannon&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="127.41" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-69" target="KpnUxVcMFO6DVMMjrXok-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-69" value="Player ship takes damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="224.98" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-74" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-71" target="KpnUxVcMFO6DVMMjrXok-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-100" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-71" target="KpnUxVcMFO6DVMMjrXok-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-71" value="Shot by player?" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="620" y="313.75" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-73" target="KpnUxVcMFO6DVMMjrXok-90">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-73" value="Ship takes damage" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="250" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-78" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-75" target="KpnUxVcMFO6DVMMjrXok-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-75" target="KpnUxVcMFO6DVMMjrXok-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="950" y="351" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-95" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KpnUxVcMFO6DVMMjrXok-94">
+          <mxGeometry x="-0.8226" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-75" value="Reached 0 hp?" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="910" y="230" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-80" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-77" target="KpnUxVcMFO6DVMMjrXok-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-77" value="Ship sinks, all enemy on board dies" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="890" y="147.32" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-79" value="&lt;b&gt;END&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="910.0000000000001" y="22.41" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-87" target="KpnUxVcMFO6DVMMjrXok-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-87" value="Play sinking animation" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="890" y="92.41" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KpnUxVcMFO6DVMMjrXok-90" target="KpnUxVcMFO6DVMMjrXok-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KpnUxVcMFO6DVMMjrXok-90" value="Play damage FX (sfx, pfx)" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="740" y="247.5" width="120" height="35" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
